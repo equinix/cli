@@ -22,7 +22,6 @@ THE SOFTWARE.
 package cmd
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -55,14 +54,11 @@ func init() {
 	// will be global for your application.
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cli.yaml)")
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 // initConfig reads in config file and ENV variables if set.
 func initConfig() {
+	// TODO: Might be best to avoid using the global viper instance
 	if cfgFile != "" {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
@@ -71,16 +67,27 @@ func initConfig() {
 		home, err := os.UserHomeDir()
 		cobra.CheckErr(err)
 
-		// Search config in home directory with name ".cli" (without extension).
-		viper.AddConfigPath(home)
+		viper.AddConfigPath(home + "/.config/equinix")
 		viper.SetConfigType("yaml")
-		viper.SetConfigName(".cli")
+		viper.SetConfigName("equinix")
+		err = viper.MergeInConfig()
+		cobra.CheckErr(err)
+
+		// Read Metal auth token from metal CLI config if it
+		// wasn't set in env or equinix config
+		if viper.GetString("metal_auth_token") == "" {
+			metal := viper.New()
+			metalPath := home + "/.config/equinix/metal.yaml"
+			metal.SetConfigFile(metalPath)
+			err = metal.MergeInConfig()
+
+			// We don't care if there's an error reading the file, since
+			// this CLI prefers equinix.yaml and related env vars for config
+			if err == nil && metal.GetString("token") != "" {
+				viper.Set("metal_auth_token", metal.GetString("token"))
+			}
+		}
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
-
-	// If a config file is found, read it in.
-	if err := viper.ReadInConfig(); err == nil {
-		fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
-	}
 }

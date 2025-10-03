@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 
 	equinixoauth2 "github.com/equinix/equinix-sdk-go/extensions/equinixoauth2"
@@ -107,7 +108,14 @@ func (c *Client) Request(apiPath, method string, data string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer resp.Body.Close()
+
+	defer func() {
+		err := resp.Body.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}()
+
 	if resp.StatusCode >= 400 {
 		return nil, fmt.Errorf("API error: %s", resp.Status)
 	}

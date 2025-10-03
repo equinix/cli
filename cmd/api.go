@@ -53,9 +53,10 @@ var apiCmd = &cobra.Command{
 
 		// TODO: move formatting elsewhere, possibly replicating
 		// output package from metal CLI
-		if format == "json" {
+		switch format {
+		case "json":
 			pretty, err = json.MarshalIndent(raw, "", "  ")
-		} else if format == "yaml" {
+		case "yaml":
 			pretty, err = yaml.Marshal(raw)
 		}
 

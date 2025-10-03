@@ -1,0 +1,31 @@
+version: "2"
+run:
+  modules-download-mode: readonly
+  timeout: 10m
+linters:
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - revive
+  exclusions:
+    rules:
+    # Allow underscores in names in test files because the
+    # HashiCorp-recommended/documented convention uses
+    # underscores in function names
+    - path: _test\.go
+      linters:
+        - revive
+      text: "^var-naming"
+    - path: _test\.go
+      linters:
+        - stylecheck
+      text: "^ST1003"
+formatters:
+  enable:
+    - goimports
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0

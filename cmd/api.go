@@ -22,7 +22,7 @@ var apiCmd = &cobra.Command{
 	Short: "Make a raw API request to the given Equinix API path",
 	Long:  `Make a raw authenticated request to the Equinix API using your configured credentials.`,
 	Args:  cobra.ExactArgs(1),
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		path := args[0]
 
 		var client *api.Client

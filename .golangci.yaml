@@ -12,17 +12,9 @@ linters:
     - revive
   exclusions:
     rules:
-    # Allow underscores in names in test files because the
-    # HashiCorp-recommended/documented convention uses
-    # underscores in function names
-    - path: _test\.go
-      linters:
+    - linters:
         - revive
-      text: "^var-naming"
-    - path: _test\.go
-      linters:
-        - stylecheck
-      text: "^ST1003"
+      text: "^package-comments"
 formatters:
   enable:
     - goimports

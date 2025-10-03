@@ -17,12 +17,15 @@ var standardHeaders = map[string]string{
 	"User-Agent": "equinix-cli/version generic-request-client",
 }
 
+// Client is a generic Equinix API client that can be used for any Equinix API.
 type Client struct {
 	BaseURL        string
 	DefaultHeaders map[string]string
 	HTTPClient     *http.Client
 }
 
+// NewStandardClient creates a new Client for Equinix APIs that exist under
+// api.equinix.com and use OAuth2 client credentials for authentication
 func NewStandardClient() (*Client, error) {
 	client := &Client{
 		BaseURL:        "https://api.equinix.com",
@@ -47,6 +50,8 @@ func NewStandardClient() (*Client, error) {
 	return client, nil
 }
 
+// NewPortalClient creates a new Client for Equinix APIs that exist under
+// portal.equinix.com and rely on Cookies to transmit OAuth2 tokens
 func NewPortalClient() (*Client, error) {
 	client := &Client{
 		BaseURL:        "https://portal.equinix.com/api",
@@ -66,6 +71,7 @@ func NewPortalClient() (*Client, error) {
 	return client, nil
 }
 
+// NewMetalClient creates a new Client for the Equinix Metal API
 func NewMetalClient() (*Client, error) {
 	client := &Client{
 		BaseURL:        "https://api.equinix.com",
@@ -81,6 +87,8 @@ func NewMetalClient() (*Client, error) {
 	return client, nil
 }
 
+// Request makes an HTTP request to the specified API path with the given method and data.
+//
 // TODO: May be useful to support debug logging of requests/responses.  That could
 // be done here but probably better to do it with a custom Transport that is shared
 // across generic and generated clients for a consistent debug experience.

@@ -1,3 +1,9 @@
+// Package api provides a set of Equinix API clients that can be used
+// to make arbitrary requests to Equinix APIs.  This is useful for
+// integrating with API endpoints that are not mentioned in the
+// Equinix API catalog (https://docs.equinix.com/api-catalog).
+// Inspired by https://github.com/displague/equinix-api/ which
+// implements the same functionality in bash.
 package api
 
 import (

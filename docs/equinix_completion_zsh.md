@@ -42,7 +42,7 @@ equinix completion zsh [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.cli.yaml)
+      --config string   config file (default is $HOME/equinix/equinix.yaml)
 ```
 
 ### SEE ALSO

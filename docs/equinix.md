@@ -9,7 +9,7 @@ Command-line interface for Equinix APIs
 ### Options
 
 ```
-      --config string   config file (default is $HOME/.cli.yaml)
+      --config string   config file (default is $HOME/equinix/equinix.yaml)
   -h, --help            help for equinix
 ```
 

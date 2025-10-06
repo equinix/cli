@@ -8,4 +8,4 @@ TODO
 
 ## Usage
 
-TODO
+The full CLI documentation can be found [in the docs directory](docs/equinix.md).

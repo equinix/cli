@@ -70,8 +70,15 @@ func initConfig() {
 		viper.AddConfigPath(home + "/.config/equinix")
 		viper.SetConfigType("yaml")
 		viper.SetConfigName("equinix")
+
 		err = viper.MergeInConfig()
-		cobra.CheckErr(err)
+		// If the config file doesn't exist, ignore it.  There are
+		// other ways to configure the CLI, such as env vars, so
+		// we don't have to force the existence of a config file
+		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+			// Another error occurred while reading the config file; handle it as a fatal error
+			cobra.CheckErr(err)
+		}
 
 		// Read Metal auth token from metal CLI config if it
 		// wasn't set in env or equinix config

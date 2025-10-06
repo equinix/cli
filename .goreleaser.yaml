@@ -32,3 +32,20 @@ checksum:
   name_template: "equinix_{{ .Version }}_checksums.txt"
 release:
   mode: "keep-existing"
+
+homebrew_casks:
+  - name: equinix
+    homepage: "https://docs.equinix.com/"
+    description: "Official Equinix CLI"
+    license: "MIT"
+    commit_msg_template: "Brew formula update for {{ .Binary }} version {{ .Tag }}"
+    hooks:
+      post:
+        install: |
+          if OS.mac?
+            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/equinix"]
+          end
+    repository:
+      owner: equinix
+      name: homebrew-tap
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"

@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: write # needed to create the GitHub release and upload binary artifacts
+  issues: write # needed for "included in release" comments from semantic-release bot
   pull-requests: write # needed for "included in release" comments from semantic-release bot
 
 jobs:

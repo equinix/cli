@@ -17,7 +17,7 @@ See each sub-command's help for details on how to use the generated script.
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.cli.yaml)
+      --config string   config file (default is $HOME/equinix/equinix.yaml)
 ```
 
 ### SEE ALSO

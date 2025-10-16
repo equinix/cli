@@ -1,0 +1,28 @@
+## equinix fabricv4 routing-protocols validate-routing-protocol
+
+Execute validate-routing-protocol operation
+
+### Synopsis
+
+Execute the ValidateRoutingProtocol operation on this service
+
+```
+equinix fabricv4 routing-protocols validate-routing-protocol [flags]
+```
+
+### Options
+
+```
+  -h, --help   help for validate-routing-protocol
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/equinix/equinix.yaml)
+```
+
+### SEE ALSO
+
+* [equinix fabricv4 routing-protocols](equinix_fabricv4_routing-protocols.md)	 - Manage routing-protocols resources
+

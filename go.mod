@@ -4,6 +4,7 @@ go 1.24.5
 
 require (
 	github.com/equinix/equinix-sdk-go v0.58.0
+	github.com/hashicorp/go-retryablehttp v0.7.8
 	github.com/spf13/cobra v1.10.1
 	github.com/spf13/viper v1.20.1
 	gopkg.in/yaml.v3 v3.0.1
@@ -13,6 +14,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.6 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
+	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
@@ -27,4 +29,5 @@ require (
 	golang.org/x/oauth2 v0.26.0 // indirect
 	golang.org/x/sys v0.29.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
+	gopkg.in/validator.v2 v2.0.1 // indirect
 )

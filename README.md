@@ -18,7 +18,7 @@ If you prefer, you can also install `equinix` with Homebrew by running the follo
 
 ```sh
 brew tap equinix/homebrew-tap
-brew install metal-cli
+brew install equinix
 ```
 
 ## Usage

@@ -24,12 +24,6 @@ providing access to all available API services.`,
 		_, err := fabricv4.NewClient()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error initializing Fabric v4 client: %v\n", err)
-			fmt.Fprintln(os.Stderr, "\nPlease ensure the following are set:")
-			fmt.Fprintln(os.Stderr, "  - EQUINIX_CLIENT_ID environment variable")
-			fmt.Fprintln(os.Stderr, "  - EQUINIX_CLIENT_SECRET environment variable")
-			fmt.Fprintln(os.Stderr, "\nOr in your config file (~/.config/equinix/equinix.yaml):")
-			fmt.Fprintln(os.Stderr, "  equinix_client_id: your-client-id")
-			fmt.Fprintln(os.Stderr, "  equinix_client_secret: your-client-secret")
 			os.Exit(1)
 		}
 	},

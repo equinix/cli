@@ -38,22 +38,6 @@ var apiCmd = &cobra.Command{
 
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error creating API client: %v\n", err)
-			fmt.Fprintln(os.Stderr, "\nPlease ensure the following are set:")
-			if portal {
-				fmt.Fprintln(os.Stderr, "  - EQUINIX_PORTAL_COOKIE environment variable")
-				fmt.Fprintln(os.Stderr, "\nOr in your config file (~/.config/equinix/equinix.yaml):")
-				fmt.Fprintln(os.Stderr, "  equinix_portal_cookie: your-cookie-value")
-			} else if isMetalPath(path) {
-				fmt.Fprintln(os.Stderr, "  - METAL_AUTH_TOKEN environment variable")
-				fmt.Fprintln(os.Stderr, "\nOr in your config file (~/.config/equinix/equinix.yaml):")
-				fmt.Fprintln(os.Stderr, "  metal_auth_token: your-token")
-			} else {
-				fmt.Fprintln(os.Stderr, "  - EQUINIX_CLIENT_ID environment variable")
-				fmt.Fprintln(os.Stderr, "  - EQUINIX_CLIENT_SECRET environment variable")
-				fmt.Fprintln(os.Stderr, "\nOr in your config file (~/.config/equinix/equinix.yaml):")
-				fmt.Fprintln(os.Stderr, "  equinix_client_id: your-client-id")
-				fmt.Fprintln(os.Stderr, "  equinix_client_secret: your-client-secret")
-			}
 			os.Exit(1)
 		}
 

@@ -19,7 +19,8 @@ equinix fabricv4 route-filter-rules get-route-filter-rule-changes [flags]
 
 ```
   -h, --help             help for get-route-filter-rule-changes
-      --request string   Raw JSON payload for fabricv4.ApiGetRouteFilterRuleChangesRequest
+      --request string   Raw JSON payload for optional request fields
+      --rule-id string   rule-id (required)
 ```
 
 ### Options inherited from parent commands

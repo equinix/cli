@@ -19,7 +19,7 @@ equinix fabricv4 networks search-networks [flags]
 
 ```
   -h, --help             help for search-networks
-      --request string   Raw JSON payload for fabricv4.ApiSearchNetworksRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

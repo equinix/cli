@@ -19,7 +19,8 @@ equinix fabricv4 ports get-vlans [flags]
 
 ```
   -h, --help             help for get-vlans
-      --request string   Raw JSON payload for fabricv4.ApiGetVlansRequest
+      --param-1 string   param-1 (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

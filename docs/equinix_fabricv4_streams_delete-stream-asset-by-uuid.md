@@ -18,8 +18,10 @@ equinix fabricv4 streams delete-stream-asset-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for delete-stream-asset-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiDeleteStreamAssetByUuidRequest
+      --asset string       asset (required)
+  -h, --help               help for delete-stream-asset-by-uuid
+      --request string     Raw JSON payload for optional request fields
+      --stream-id string   stream-id (required)
 ```
 
 ### Options inherited from parent commands

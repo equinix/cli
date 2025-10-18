@@ -18,8 +18,9 @@ equinix fabricv4 cloud-routers get-cloud-router-command [flags]
 ### Options
 
 ```
-  -h, --help             help for get-cloud-router-command
-      --request string   Raw JSON payload for fabricv4.ApiGetCloudRouterCommandRequest
+  -h, --help               help for get-cloud-router-command
+      --request string     Raw JSON payload for optional request fields
+      --router-id string   router-id (required)
 ```
 
 ### Options inherited from parent commands

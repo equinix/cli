@@ -18,8 +18,10 @@ equinix fabricv4 cloud-events get-cloud-event-by-asset-id [flags]
 ### Options
 
 ```
-  -h, --help             help for get-cloud-event-by-asset-id
-      --request string   Raw JSON payload for fabricv4.ApiGetCloudEventByAssetIdRequest
+      --cloud-event-asset-type string   cloud-event-asset-type (required)
+  -h, --help                            help for get-cloud-event-by-asset-id
+      --param-2 string                  param-2 (required)
+      --request string                  Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

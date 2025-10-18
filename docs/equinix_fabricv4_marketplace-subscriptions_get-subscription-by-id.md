@@ -18,8 +18,9 @@ equinix fabricv4 marketplace-subscriptions get-subscription-by-id [flags]
 ### Options
 
 ```
-  -h, --help             help for get-subscription-by-id
-      --request string   Raw JSON payload for fabricv4.ApiGetSubscriptionByIdRequest
+  -h, --help                     help for get-subscription-by-id
+      --request string           Raw JSON payload for optional request fields
+      --subscription-id string   subscription-id (required)
 ```
 
 ### Options inherited from parent commands

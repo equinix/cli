@@ -18,8 +18,9 @@ equinix fabricv4 cloud-routers search-connection-advertised-routes [flags]
 ### Options
 
 ```
-  -h, --help             help for search-connection-advertised-routes
-      --request string   Raw JSON payload for fabricv4.ApiSearchConnectionAdvertisedRoutesRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for search-connection-advertised-routes
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

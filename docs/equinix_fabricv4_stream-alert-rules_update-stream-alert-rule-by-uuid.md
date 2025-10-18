@@ -18,8 +18,9 @@ equinix fabricv4 stream-alert-rules update-stream-alert-rule-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for update-stream-alert-rule-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiUpdateStreamAlertRuleByUuidRequest
+  -h, --help               help for update-stream-alert-rule-by-uuid
+      --request string     Raw JSON payload for optional request fields
+      --stream-id string   stream-id (required)
 ```
 
 ### Options inherited from parent commands

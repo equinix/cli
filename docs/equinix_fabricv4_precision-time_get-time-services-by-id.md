@@ -19,7 +19,8 @@ equinix fabricv4 precision-time get-time-services-by-id [flags]
 
 ```
   -h, --help             help for get-time-services-by-id
-      --request string   Raw JSON payload for fabricv4.ApiGetTimeServicesByIdRequest
+      --id string        id (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

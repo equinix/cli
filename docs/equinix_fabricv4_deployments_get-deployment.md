@@ -19,7 +19,8 @@ equinix fabricv4 deployments get-deployment [flags]
 
 ```
   -h, --help             help for get-deployment
-      --request string   Raw JSON payload for fabricv4.ApiGetDeploymentRequest
+      --param-1 string   param-1 (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

@@ -18,8 +18,9 @@ equinix fabricv4 cloud-routers search-router-actions [flags]
 ### Options
 
 ```
-  -h, --help             help for search-router-actions
-      --request string   Raw JSON payload for fabricv4.ApiSearchRouterActionsRequest
+  -h, --help               help for search-router-actions
+      --request string     Raw JSON payload for optional request fields
+      --router-id string   router-id (required)
 ```
 
 ### Options inherited from parent commands

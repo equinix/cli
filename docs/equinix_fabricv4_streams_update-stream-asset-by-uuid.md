@@ -18,8 +18,10 @@ equinix fabricv4 streams update-stream-asset-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for update-stream-asset-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiUpdateStreamAssetByUuidRequest
+      --asset string       asset (required)
+  -h, --help               help for update-stream-asset-by-uuid
+      --request string     Raw JSON payload for optional request fields
+      --stream-id string   stream-id (required)
 ```
 
 ### Options inherited from parent commands

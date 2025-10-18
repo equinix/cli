@@ -18,8 +18,9 @@ equinix fabricv4 cloud-routers get-cloud-router-actions-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for get-cloud-router-actions-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiGetCloudRouterActionsByUuidRequest
+  -h, --help               help for get-cloud-router-actions-by-uuid
+      --request string     Raw JSON payload for optional request fields
+      --router-id string   router-id (required)
 ```
 
 ### Options inherited from parent commands

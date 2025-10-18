@@ -18,8 +18,9 @@ equinix fabricv4 streams delete-stream-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for delete-stream-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiDeleteStreamByUuidRequest
+  -h, --help               help for delete-stream-by-uuid
+      --request string     Raw JSON payload for optional request fields
+      --stream-id string   stream-id (required)
 ```
 
 ### Options inherited from parent commands

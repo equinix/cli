@@ -19,7 +19,7 @@ equinix fabricv4 precision-time search-time-services [flags]
 
 ```
   -h, --help             help for search-time-services
-      --request string   Raw JSON payload for fabricv4.ApiSearchTimeServicesRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

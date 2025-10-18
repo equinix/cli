@@ -18,8 +18,9 @@ equinix fabricv4 service-tokens update-service-token-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for update-service-token-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiUpdateServiceTokenByUuidRequest
+  -h, --help              help for update-service-token-by-uuid
+      --request string    Raw JSON payload for optional request fields
+      --token-id string   token-id (required)
 ```
 
 ### Options inherited from parent commands

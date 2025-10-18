@@ -19,7 +19,8 @@ equinix fabricv4 cloud-events get-cloud-event [flags]
 
 ```
   -h, --help             help for get-cloud-event
-      --request string   Raw JSON payload for fabricv4.ApiGetCloudEventRequest
+      --param-1 string   param-1 (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

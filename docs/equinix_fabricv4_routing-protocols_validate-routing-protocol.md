@@ -18,8 +18,9 @@ equinix fabricv4 routing-protocols validate-routing-protocol [flags]
 ### Options
 
 ```
-  -h, --help             help for validate-routing-protocol
-      --request string   Raw JSON payload for fabricv4.ApiValidateRoutingProtocolRequest
+  -h, --help                 help for validate-routing-protocol
+      --protocol-id string   protocol-id (required)
+      --request string       Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

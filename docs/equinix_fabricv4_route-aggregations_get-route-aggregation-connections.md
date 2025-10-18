@@ -18,8 +18,9 @@ equinix fabricv4 route-aggregations get-route-aggregation-connections [flags]
 ### Options
 
 ```
-  -h, --help             help for get-route-aggregation-connections
-      --request string   Raw JSON payload for fabricv4.ApiGetRouteAggregationConnectionsRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for get-route-aggregation-connections
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

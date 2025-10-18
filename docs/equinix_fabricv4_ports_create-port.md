@@ -19,7 +19,7 @@ equinix fabricv4 ports create-port [flags]
 
 ```
   -h, --help             help for create-port
-      --request string   Raw JSON payload for fabricv4.ApiCreatePortRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

@@ -18,8 +18,10 @@ equinix fabricv4 metrics get-metric-by-asset-id [flags]
 ### Options
 
 ```
-  -h, --help             help for get-metric-by-asset-id
-      --request string   Raw JSON payload for fabricv4.ApiGetMetricByAssetIdRequest
+  -h, --help                       help for get-metric-by-asset-id
+      --metric-asset-type string   metric-asset-type (required)
+      --param-2 string             param-2 (required)
+      --request string             Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

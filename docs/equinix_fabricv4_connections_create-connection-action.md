@@ -18,8 +18,9 @@ equinix fabricv4 connections create-connection-action [flags]
 ### Options
 
 ```
-  -h, --help             help for create-connection-action
-      --request string   Raw JSON payload for fabricv4.ApiCreateConnectionActionRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for create-connection-action
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

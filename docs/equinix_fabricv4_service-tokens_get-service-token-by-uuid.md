@@ -18,8 +18,9 @@ equinix fabricv4 service-tokens get-service-token-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for get-service-token-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiGetServiceTokenByUuidRequest
+  -h, --help              help for get-service-token-by-uuid
+      --request string    Raw JSON payload for optional request fields
+      --token-id string   token-id (required)
 ```
 
 ### Options inherited from parent commands

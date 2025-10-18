@@ -18,8 +18,9 @@ equinix fabricv4 service-tokens create-service-token-action [flags]
 ### Options
 
 ```
-  -h, --help             help for create-service-token-action
-      --request string   Raw JSON payload for fabricv4.ApiCreateServiceTokenActionRequest
+  -h, --help              help for create-service-token-action
+      --request string    Raw JSON payload for optional request fields
+      --token-id string   token-id (required)
 ```
 
 ### Options inherited from parent commands

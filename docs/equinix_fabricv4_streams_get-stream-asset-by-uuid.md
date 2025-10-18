@@ -18,8 +18,10 @@ equinix fabricv4 streams get-stream-asset-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for get-stream-asset-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiGetStreamAssetByUuidRequest
+      --asset string       asset (required)
+  -h, --help               help for get-stream-asset-by-uuid
+      --request string     Raw JSON payload for optional request fields
+      --stream-id string   stream-id (required)
 ```
 
 ### Options inherited from parent commands

@@ -19,7 +19,8 @@ equinix fabricv4 route-filter-rules patch-route-filter-rule-by-uuid [flags]
 
 ```
   -h, --help             help for patch-route-filter-rule-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiPatchRouteFilterRuleByUuidRequest
+      --request string   Raw JSON payload for optional request fields
+      --rule-id string   rule-id (required)
 ```
 
 ### Options inherited from parent commands

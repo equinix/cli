@@ -19,7 +19,8 @@ equinix fabricv4 route-filter-rules get-route-filter-rule-change-by-uuid [flags]
 
 ```
   -h, --help             help for get-route-filter-rule-change-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiGetRouteFilterRuleChangeByUuidRequest
+      --request string   Raw JSON payload for optional request fields
+      --rule-id string   rule-id (required)
 ```
 
 ### Options inherited from parent commands

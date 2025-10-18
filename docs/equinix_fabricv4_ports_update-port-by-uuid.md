@@ -19,7 +19,8 @@ equinix fabricv4 ports update-port-by-uuid [flags]
 
 ```
   -h, --help             help for update-port-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiUpdatePortByUuidRequest
+      --port-id string   port-id (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

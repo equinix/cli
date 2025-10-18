@@ -18,8 +18,9 @@ equinix fabricv4 networks update-network-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for update-network-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiUpdateNetworkByUuidRequest
+  -h, --help                help for update-network-by-uuid
+      --network-id string   network-id (required)
+      --request string      Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

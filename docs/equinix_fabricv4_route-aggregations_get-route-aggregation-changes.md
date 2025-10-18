@@ -18,8 +18,9 @@ equinix fabricv4 route-aggregations get-route-aggregation-changes [flags]
 ### Options
 
 ```
-  -h, --help             help for get-route-aggregation-changes
-      --request string   Raw JSON payload for fabricv4.ApiGetRouteAggregationChangesRequest
+      --aggregation-id string   aggregation-id (required)
+  -h, --help                    help for get-route-aggregation-changes
+      --request string          Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

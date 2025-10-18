@@ -18,8 +18,9 @@ equinix fabricv4 precision-time get-time-services-connections-by-service-id [fla
 ### Options
 
 ```
-  -h, --help             help for get-time-services-connections-by-service-id
-      --request string   Raw JSON payload for fabricv4.ApiGetTimeServicesConnectionsByServiceIdRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for get-time-services-connections-by-service-id
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

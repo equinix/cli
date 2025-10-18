@@ -19,7 +19,7 @@ equinix fabricv4 streams get-streams-assets [flags]
 
 ```
   -h, --help             help for get-streams-assets
-      --request string   Raw JSON payload for fabricv4.ApiGetStreamsAssetsRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

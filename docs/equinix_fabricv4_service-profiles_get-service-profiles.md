@@ -19,7 +19,7 @@ equinix fabricv4 service-profiles get-service-profiles [flags]
 
 ```
   -h, --help             help for get-service-profiles
-      --request string   Raw JSON payload for fabricv4.ApiGetServiceProfilesRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

@@ -19,7 +19,7 @@ equinix fabricv4 cloud-events search-cloud-events [flags]
 
 ```
   -h, --help             help for search-cloud-events
-      --request string   Raw JSON payload for fabricv4.ApiSearchCloudEventsRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

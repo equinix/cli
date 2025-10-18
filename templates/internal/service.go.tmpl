@@ -1,0 +1,31 @@
+package {{SERVICE}}
+
+import (
+	"github.com/equinix/cli/internal/api"
+	"github.com/equinix/equinix-sdk-go/services/{{SERVICE}}"
+)
+
+// NewClient creates a new {{SERVICE_DISPLAY}} API client using the standard
+// authentication configuration from internal/api
+func NewClient() (*{{SERVICE}}.APIClient, error) {
+	// Use the standard client setup for authentication
+	stdClient, err := api.NewStandardClient()
+	if err != nil {
+		return nil, err
+	}
+
+	// Configure the {{SERVICE_DISPLAY}} client
+	configuration := {{SERVICE}}.NewConfiguration()
+	configuration.HTTPClient = stdClient.HTTPClient
+	configuration.AddDefaultHeader("X-SOURCE", "equinix-cli")
+
+	return {{SERVICE}}.NewAPIClient(configuration), nil
+}
+
+// NewClientForDiscovery creates a {{SERVICE_DISPLAY}} API client for command discovery
+// This is used at CLI initialization time to register commands without requiring credentials
+func NewClientForDiscovery() (*{{SERVICE}}.APIClient, error) {
+	// Create a basic client with no authentication for structure discovery only
+	configuration := {{SERVICE}}.NewConfiguration()
+	return {{SERVICE}}.NewAPIClient(configuration), nil
+}

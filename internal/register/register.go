@@ -116,6 +116,12 @@ func registerServiceMethods(parentCmd *cobra.Command, service interface{}, _ str
 			continue
 		}
 
+		// Only register methods that end with "Execute" as these are the actual API execution methods
+		// Methods without "Execute" are request builders that return ApiRequest structs
+		if !strings.HasSuffix(method.Name, "Execute") {
+			continue
+		}
+
 		// Create a command for this method
 		methodName := extractMethodName(method.Name)
 		methodCmd := createMethodCommand(methodName, method.Name, service, method)
@@ -125,8 +131,11 @@ func registerServiceMethods(parentCmd *cobra.Command, service interface{}, _ str
 }
 
 // extractMethodName converts a method name to a CLI-friendly name
-// e.g., "GetConnectionByUuid" -> "get-connection-by-uuid"
+// e.g., "GetConnectionByUuidExecute" -> "get-connection-by-uuid"
 func extractMethodName(methodName string) string {
+	// Remove the "Execute" suffix first
+	methodName = strings.TrimSuffix(methodName, "Execute")
+
 	// Convert the whole method name to kebab-case for uniqueness
 	var result strings.Builder
 	for i, r := range methodName {

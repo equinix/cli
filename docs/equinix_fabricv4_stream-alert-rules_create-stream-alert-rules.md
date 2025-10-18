@@ -18,8 +18,9 @@ equinix fabricv4 stream-alert-rules create-stream-alert-rules [flags]
 ### Options
 
 ```
-  -h, --help             help for create-stream-alert-rules
-      --request string   Raw JSON payload for fabricv4.ApiCreateStreamAlertRulesRequest
+  -h, --help               help for create-stream-alert-rules
+      --request string     Raw JSON payload for optional request fields
+      --stream-id string   stream-id (required)
 ```
 
 ### Options inherited from parent commands

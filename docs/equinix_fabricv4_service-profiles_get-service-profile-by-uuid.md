@@ -18,8 +18,9 @@ equinix fabricv4 service-profiles get-service-profile-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for get-service-profile-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiGetServiceProfileByUuidRequest
+  -h, --help                help for get-service-profile-by-uuid
+      --profile-id string   profile-id (required)
+      --request string      Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

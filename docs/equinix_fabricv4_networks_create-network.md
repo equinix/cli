@@ -19,7 +19,7 @@ equinix fabricv4 networks create-network [flags]
 
 ```
   -h, --help             help for create-network
-      --request string   Raw JSON payload for fabricv4.ApiCreateNetworkRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

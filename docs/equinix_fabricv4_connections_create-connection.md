@@ -19,7 +19,7 @@ equinix fabricv4 connections create-connection [flags]
 
 ```
   -h, --help             help for create-connection
-      --request string   Raw JSON payload for fabricv4.ApiCreateConnectionRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

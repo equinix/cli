@@ -19,7 +19,8 @@ equinix fabricv4 statistics get-port-stats-by-port-uuid [flags]
 
 ```
   -h, --help             help for get-port-stats-by-port-uuid
-      --request string   Raw JSON payload for fabricv4.ApiGetPortStatsByPortUuidRequest
+      --port-id string   port-id (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

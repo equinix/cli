@@ -19,7 +19,8 @@ equinix fabricv4 route-filter-rules delete-route-filter-rule-by-uuid [flags]
 
 ```
   -h, --help             help for delete-route-filter-rule-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiDeleteRouteFilterRuleByUuidRequest
+      --request string   Raw JSON payload for optional request fields
+      --rule-id string   rule-id (required)
 ```
 
 ### Options inherited from parent commands

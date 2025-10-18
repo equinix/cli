@@ -19,7 +19,8 @@ equinix fabricv4 route-aggregation-rules get-route-aggregation-rules [flags]
 
 ```
   -h, --help             help for get-route-aggregation-rules
-      --request string   Raw JSON payload for fabricv4.ApiGetRouteAggregationRulesRequest
+      --request string   Raw JSON payload for optional request fields
+      --rule-id string   rule-id (required)
 ```
 
 ### Options inherited from parent commands

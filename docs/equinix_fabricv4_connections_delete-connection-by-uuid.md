@@ -18,8 +18,9 @@ equinix fabricv4 connections delete-connection-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for delete-connection-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiDeleteConnectionByUuidRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for delete-connection-by-uuid
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

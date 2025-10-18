@@ -19,7 +19,7 @@ equinix fabricv4 route-filters create-route-filter [flags]
 
 ```
   -h, --help             help for create-route-filter
-      --request string   Raw JSON payload for fabricv4.ApiCreateRouteFilterRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

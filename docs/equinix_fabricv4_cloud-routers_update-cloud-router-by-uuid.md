@@ -18,8 +18,9 @@ equinix fabricv4 cloud-routers update-cloud-router-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for update-cloud-router-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiUpdateCloudRouterByUuidRequest
+  -h, --help               help for update-cloud-router-by-uuid
+      --request string     Raw JSON payload for optional request fields
+      --router-id string   router-id (required)
 ```
 
 ### Options inherited from parent commands

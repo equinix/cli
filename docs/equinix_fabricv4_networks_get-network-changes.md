@@ -18,8 +18,9 @@ equinix fabricv4 networks get-network-changes [flags]
 ### Options
 
 ```
-  -h, --help             help for get-network-changes
-      --request string   Raw JSON payload for fabricv4.ApiGetNetworkChangesRequest
+  -h, --help                help for get-network-changes
+      --network-id string   network-id (required)
+      --request string      Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

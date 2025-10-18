@@ -18,8 +18,9 @@ equinix fabricv4 routing-protocols get-connection-routing-protocols-changes [fla
 ### Options
 
 ```
-  -h, --help             help for get-connection-routing-protocols-changes
-      --request string   Raw JSON payload for fabricv4.ApiGetConnectionRoutingProtocolsChangesRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for get-connection-routing-protocols-changes
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

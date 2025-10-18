@@ -19,7 +19,8 @@ equinix fabricv4 deployments delete-deployment [flags]
 
 ```
   -h, --help             help for delete-deployment
-      --request string   Raw JSON payload for fabricv4.ApiDeleteDeploymentRequest
+      --param-1 string   param-1 (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

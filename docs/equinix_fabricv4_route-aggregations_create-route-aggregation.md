@@ -19,7 +19,7 @@ equinix fabricv4 route-aggregations create-route-aggregation [flags]
 
 ```
   -h, --help             help for create-route-aggregation
-      --request string   Raw JSON payload for fabricv4.ApiCreateRouteAggregationRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

@@ -19,7 +19,7 @@ equinix fabricv4 precision-time create-time-services [flags]
 
 ```
   -h, --help             help for create-time-services
-      --request string   Raw JSON payload for fabricv4.ApiCreateTimeServicesRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

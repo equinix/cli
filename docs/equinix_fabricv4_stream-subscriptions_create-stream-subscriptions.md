@@ -18,8 +18,9 @@ equinix fabricv4 stream-subscriptions create-stream-subscriptions [flags]
 ### Options
 
 ```
-  -h, --help             help for create-stream-subscriptions
-      --request string   Raw JSON payload for fabricv4.ApiCreateStreamSubscriptionsRequest
+  -h, --help                     help for create-stream-subscriptions
+      --request string           Raw JSON payload for optional request fields
+      --subscription-id string   subscription-id (required)
 ```
 
 ### Options inherited from parent commands

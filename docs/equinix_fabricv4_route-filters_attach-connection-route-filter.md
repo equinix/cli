@@ -18,8 +18,9 @@ equinix fabricv4 route-filters attach-connection-route-filter [flags]
 ### Options
 
 ```
-  -h, --help             help for attach-connection-route-filter
-      --request string   Raw JSON payload for fabricv4.ApiAttachConnectionRouteFilterRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for attach-connection-route-filter
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

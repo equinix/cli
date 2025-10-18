@@ -18,8 +18,9 @@ equinix fabricv4 cloud-routers create-cloud-router-action [flags]
 ### Options
 
 ```
-  -h, --help             help for create-cloud-router-action
-      --request string   Raw JSON payload for fabricv4.ApiCreateCloudRouterActionRequest
+  -h, --help               help for create-cloud-router-action
+      --request string     Raw JSON payload for optional request fields
+      --router-id string   router-id (required)
 ```
 
 ### Options inherited from parent commands

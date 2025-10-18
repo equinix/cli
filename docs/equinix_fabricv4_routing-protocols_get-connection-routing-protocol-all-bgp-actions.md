@@ -18,8 +18,9 @@ equinix fabricv4 routing-protocols get-connection-routing-protocol-all-bgp-actio
 ### Options
 
 ```
-  -h, --help             help for get-connection-routing-protocol-all-bgp-actions
-      --request string   Raw JSON payload for fabricv4.ApiGetConnectionRoutingProtocolAllBgpActionsRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for get-connection-routing-protocol-all-bgp-actions
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

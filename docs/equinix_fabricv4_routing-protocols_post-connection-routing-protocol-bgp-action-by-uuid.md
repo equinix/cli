@@ -18,8 +18,9 @@ equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-b
 ### Options
 
 ```
-  -h, --help             help for post-connection-routing-protocol-bgp-action-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiPostConnectionRoutingProtocolBgpActionByUuidRequest
+      --connection-id string   connection-id (required)
+  -h, --help                   help for post-connection-routing-protocol-bgp-action-by-uuid
+      --request string         Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

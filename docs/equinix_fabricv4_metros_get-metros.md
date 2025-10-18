@@ -19,7 +19,7 @@ equinix fabricv4 metros get-metros [flags]
 
 ```
   -h, --help             help for get-metros
-      --request string   Raw JSON payload for fabricv4.ApiGetMetrosRequest
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

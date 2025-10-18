@@ -19,7 +19,8 @@ equinix fabricv4 precision-time fulfill-time-services [flags]
 
 ```
   -h, --help             help for fulfill-time-services
-      --request string   Raw JSON payload for fabricv4.ApiFulfillTimeServicesRequest
+      --param-1 string   param-1 (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

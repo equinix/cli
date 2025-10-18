@@ -19,7 +19,8 @@ equinix fabricv4 ports delete-port [flags]
 
 ```
   -h, --help             help for delete-port
-      --request string   Raw JSON payload for fabricv4.ApiDeletePortRequest
+      --port-id string   port-id (required)
+      --request string   Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

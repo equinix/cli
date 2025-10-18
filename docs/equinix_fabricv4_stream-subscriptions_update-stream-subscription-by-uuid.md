@@ -18,8 +18,9 @@ equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for update-stream-subscription-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiUpdateStreamSubscriptionByUuidRequest
+  -h, --help                     help for update-stream-subscription-by-uuid
+      --request string           Raw JSON payload for optional request fields
+      --subscription-id string   subscription-id (required)
 ```
 
 ### Options inherited from parent commands

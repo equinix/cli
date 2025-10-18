@@ -18,8 +18,9 @@ equinix fabricv4 stream-subscriptions delete-stream-subscription-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for delete-stream-subscription-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiDeleteStreamSubscriptionByUuidRequest
+  -h, --help                     help for delete-stream-subscription-by-uuid
+      --request string           Raw JSON payload for optional request fields
+      --subscription-id string   subscription-id (required)
 ```
 
 ### Options inherited from parent commands

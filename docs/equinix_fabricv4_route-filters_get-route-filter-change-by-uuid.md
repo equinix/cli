@@ -18,8 +18,9 @@ equinix fabricv4 route-filters get-route-filter-change-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help             help for get-route-filter-change-by-uuid
-      --request string   Raw JSON payload for fabricv4.ApiGetRouteFilterChangeByUuidRequest
+      --filter-id string   filter-id (required)
+  -h, --help               help for get-route-filter-change-by-uuid
+      --request string     Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands

@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-events get-cloud-event-by-asset-id
 
-Execute get-cloud-event-by-asset-id operation
+Get Cloud Events by Asset Id
 
 ### Synopsis
 
-Execute the get-cloud-event-by-asset-id operation on this service.
+This API provides capability to retrieve cloud events of an asset id
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-events get-cloud-event-by-asset-id [flags]

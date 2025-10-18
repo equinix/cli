@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations delete-route-aggregation-by-uuid
 
-Execute delete-route-aggregation-by-uuid operation
+Delete Aggregation
 
 ### Synopsis
 
-Execute the delete-route-aggregation-by-uuid operation on this service.
+This API provides capability to delete a Route Aggregation
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations delete-route-aggregation-by-uuid [flags]

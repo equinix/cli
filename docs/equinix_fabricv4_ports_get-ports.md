@@ -1,15 +1,12 @@
 ## equinix fabricv4 ports get-ports
 
-Execute get-ports operation
+Get All Ports
 
 ### Synopsis
 
-Execute the get-ports operation on this service.
+Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 ports get-ports [flags]

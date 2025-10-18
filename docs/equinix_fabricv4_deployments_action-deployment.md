@@ -1,15 +1,12 @@
 ## equinix fabricv4 deployments action-deployment
 
-Execute action-deployment operation
+Deploy, Dry Run or Destroy Deployment
 
 ### Synopsis
 
-Execute the action-deployment operation on this service.
+The deployment action is used to deploy, dry run or destroy a deployment. The request body must contain the type of action to be performed and the connection details. The response will contain the status of the action.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 deployments action-deployment [flags]

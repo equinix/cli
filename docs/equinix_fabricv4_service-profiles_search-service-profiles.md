@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-profiles search-service-profiles
 
-Execute search-service-profiles operation
+Profile Search
 
 ### Synopsis
 
-Execute the search-service-profiles operation on this service.
+Search service profiles by search criteria
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-profiles search-service-profiles [flags]

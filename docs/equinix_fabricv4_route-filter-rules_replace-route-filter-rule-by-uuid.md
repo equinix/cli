@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-filter-rules replace-route-filter-rule-by-uuid
 
-Execute replace-route-filter-rule-by-uuid operation
+Replace Route Filter Rule
 
 ### Synopsis
 
-Execute the replace-route-filter-rule-by-uuid operation on this service.
+This API provides capability to replace a Route Filter Rule completely
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-filter-rules replace-route-filter-rule-by-uuid [flags]

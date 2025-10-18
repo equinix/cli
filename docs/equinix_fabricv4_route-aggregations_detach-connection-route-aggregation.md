@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations detach-connection-route-aggregation
 
-Execute detach-connection-route-aggregation operation
+Detach Aggregation
 
 ### Synopsis
 
-Execute the detach-connection-route-aggregation operation on this service.
+This API provides capability to detach a Route Aggregation from a Connection
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations detach-connection-route-aggregation [flags]

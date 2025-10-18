@@ -1,15 +1,12 @@
 ## equinix fabricv4 stream-alert-rules update-stream-alert-rule-by-uuid
 
-Execute update-stream-alert-rule-by-uuid operation
+Update Stream Alert Rules
 
 ### Synopsis
 
-Execute the update-stream-alert-rule-by-uuid operation on this service.
+This API provides capability to update a user's stream alert rule
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 stream-alert-rules update-stream-alert-rule-by-uuid [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations get-route-aggregation-change-by-uuid
 
-Execute get-route-aggregation-change-by-uuid operation
+Get Change By ID
 
 ### Synopsis
 
-Execute the get-route-aggregation-change-by-uuid operation on this service.
+This API provides capability to retrieve a specific Route Aggregation's Changes
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations get-route-aggregation-change-by-uuid [flags]

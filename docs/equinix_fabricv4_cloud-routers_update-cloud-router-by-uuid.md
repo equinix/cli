@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers update-cloud-router-by-uuid
 
-Execute update-cloud-router-by-uuid operation
+Update Routers
 
 ### Synopsis
 
-Execute the update-cloud-router-by-uuid operation on this service.
+This API provides capability to update user's Cloud Routers
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers update-cloud-router-by-uuid [flags]

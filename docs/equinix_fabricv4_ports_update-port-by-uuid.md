@@ -1,15 +1,12 @@
 ## equinix fabricv4 ports update-port-by-uuid
 
-Execute update-port-by-uuid operation
+Update by UUID
 
 ### Synopsis
 
-Execute the update-port-by-uuid operation on this service.
+Update Port by UUID
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 ports update-port-by-uuid [flags]

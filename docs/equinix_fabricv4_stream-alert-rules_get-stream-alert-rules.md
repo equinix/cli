@@ -1,15 +1,12 @@
 ## equinix fabricv4 stream-alert-rules get-stream-alert-rules
 
-Execute get-stream-alert-rules operation
+Get Stream Alert Rules
 
 ### Synopsis
 
-Execute the get-stream-alert-rules operation on this service.
+This API provides capability to retrieve stream alert rules
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 stream-alert-rules get-stream-alert-rules [flags]

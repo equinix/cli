@@ -1,15 +1,12 @@
 ## equinix fabricv4 networks search-networks
 
-Execute search-networks operation
+Search Network
 
 ### Synopsis
 
-Execute the search-networks operation on this service.
+The API provides capability to get list of user's Fabric Network using search criteria, including optional filtering, pagination and sorting
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 networks search-networks [flags]

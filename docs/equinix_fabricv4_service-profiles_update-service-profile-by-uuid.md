@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-profiles update-service-profile-by-uuid
 
-Execute update-service-profile-by-uuid operation
+Update Profile
 
 ### Synopsis
 
-Execute the update-service-profile-by-uuid operation on this service.
+Update Service Profile by UUID
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-profiles update-service-profile-by-uuid [flags]

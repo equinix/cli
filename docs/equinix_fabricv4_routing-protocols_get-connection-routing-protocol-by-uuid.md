@@ -1,15 +1,12 @@
 ## equinix fabricv4 routing-protocols get-connection-routing-protocol-by-uuid
 
-Execute get-connection-routing-protocol-by-uuid operation
+Get Protocol
 
 ### Synopsis
 
-Execute the get-connection-routing-protocol-by-uuid operation on this service.
+This API provides capability to accept/reject user's virtual connection
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 routing-protocols get-connection-routing-protocol-by-uuid [flags]

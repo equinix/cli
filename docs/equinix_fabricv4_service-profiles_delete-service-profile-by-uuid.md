@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-profiles delete-service-profile-by-uuid
 
-Execute delete-service-profile-by-uuid operation
+Delete Profile
 
 ### Synopsis
 
-Execute the delete-service-profile-by-uuid operation on this service.
+delete Service Profile by UUID
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-profiles delete-service-profile-by-uuid [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers search-router-actions
 
-Execute search-router-actions operation
+Search Route Table Actions
 
 ### Synopsis
 
-Execute the search-router-actions operation on this service.
+This API provides capability to refresh route table and bgp session summary information
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers search-router-actions [flags]

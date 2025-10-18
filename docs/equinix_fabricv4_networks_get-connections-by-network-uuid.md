@@ -1,15 +1,12 @@
 ## equinix fabricv4 networks get-connections-by-network-uuid
 
-Execute get-connections-by-network-uuid operation
+Get Connections
 
 ### Synopsis
 
-Execute the get-connections-by-network-uuid operation on this service.
+The API provides capability to get list of user's Fabric Network connections
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 networks get-connections-by-network-uuid [flags]

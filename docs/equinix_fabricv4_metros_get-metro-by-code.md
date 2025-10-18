@@ -1,15 +1,12 @@
 ## equinix fabricv4 metros get-metro-by-code
 
-Execute get-metro-by-code operation
+Get Metro by Code
 
 ### Synopsis
 
-Execute the get-metro-by-code operation on this service.
+GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 metros get-metro-by-code [flags]

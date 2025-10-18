@@ -1,15 +1,12 @@
 ## equinix fabricv4 connections get-connection-by-uuid
 
-Execute get-connection-by-uuid operation
+Get Connection by ID
 
 ### Synopsis
 
-Execute the get-connection-by-uuid operation on this service.
+The API provides capability to get user's virtual connection details (Service Tokens, Access Points, Link Protocols, etc) by it's connection ID (UUID)
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 connections get-connection-by-uuid [flags]

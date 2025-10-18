@@ -1,15 +1,12 @@
 ## equinix fabricv4 prices search-prices
 
-Execute search-prices operation
+Get Prices
 
 ### Synopsis
 
-Execute the search-prices operation on this service.
+Search prices by search criteria
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 prices search-prices [flags]

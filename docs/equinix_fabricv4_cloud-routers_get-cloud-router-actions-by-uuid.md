@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers get-cloud-router-actions-by-uuid
 
-Execute get-cloud-router-actions-by-uuid operation
+Get Route Table Action by ID
 
 ### Synopsis
 
-Execute the get-cloud-router-actions-by-uuid operation on this service.
+This API provides capability to fetch action status
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers get-cloud-router-actions-by-uuid [flags]

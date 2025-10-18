@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-filters attach-connection-route-filter
 
-Execute attach-connection-route-filter operation
+Attach Route Filter
 
 ### Synopsis
 
-Execute the attach-connection-route-filter operation on this service.
+This API provides capability to attach a Route Filter to a Connection
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-filters attach-connection-route-filter [flags]

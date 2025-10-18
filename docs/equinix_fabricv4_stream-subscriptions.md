@@ -21,9 +21,9 @@ Commands for managing stream-subscriptions resources in the API
 ### SEE ALSO
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix Fabric v4 resources
-* [equinix fabricv4 stream-subscriptions create-stream-subscriptions](equinix_fabricv4_stream-subscriptions_create-stream-subscriptions.md)	 - Execute create-stream-subscriptions operation
-* [equinix fabricv4 stream-subscriptions delete-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_delete-stream-subscription-by-uuid.md)	 - Execute delete-stream-subscription-by-uuid operation
-* [equinix fabricv4 stream-subscriptions get-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_get-stream-subscription-by-uuid.md)	 - Execute get-stream-subscription-by-uuid operation
-* [equinix fabricv4 stream-subscriptions get-stream-subscriptions](equinix_fabricv4_stream-subscriptions_get-stream-subscriptions.md)	 - Execute get-stream-subscriptions operation
-* [equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_update-stream-subscription-by-uuid.md)	 - Execute update-stream-subscription-by-uuid operation
+* [equinix fabricv4 stream-subscriptions create-stream-subscriptions](equinix_fabricv4_stream-subscriptions_create-stream-subscriptions.md)	 - Create Subscription
+* [equinix fabricv4 stream-subscriptions delete-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_delete-stream-subscription-by-uuid.md)	 - Delete Subscription
+* [equinix fabricv4 stream-subscriptions get-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_get-stream-subscription-by-uuid.md)	 - Get Subscription
+* [equinix fabricv4 stream-subscriptions get-stream-subscriptions](equinix_fabricv4_stream-subscriptions_get-stream-subscriptions.md)	 - Get Subscriptions
+* [equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_update-stream-subscription-by-uuid.md)	 - Update Subscription
 

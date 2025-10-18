@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-tokens create-service-token-action
 
-Execute create-service-token-action operation
+ServiceToken Actions
 
 ### Synopsis
 
-Execute the create-service-token-action operation on this service.
+This API provides capability to accept/reject user's servicetokens
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-tokens create-service-token-action [flags]

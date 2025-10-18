@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-tokens create-service-token
 
-Execute create-service-token operation
+Create Service Token
 
 ### Synopsis
 
-Execute the create-service-token operation on this service.
+Create Service Tokens generates Equinix Fabric™ service tokens. These tokens authorize users to access protected resources and services.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-tokens create-service-token [flags]

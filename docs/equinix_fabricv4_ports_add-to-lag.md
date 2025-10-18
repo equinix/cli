@@ -1,15 +1,12 @@
 ## equinix fabricv4 ports add-to-lag
 
-Execute add-to-lag operation
+Add to Lag
 
 ### Synopsis
 
-Execute the add-to-lag operation on this service.
+Add Physical Ports to Virtual Port.<font color="red"> <sup color='red'>Preview</sup></font>
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 ports add-to-lag [flags]

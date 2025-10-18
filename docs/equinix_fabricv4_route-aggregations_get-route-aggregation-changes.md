@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations get-route-aggregation-changes
 
-Execute get-route-aggregation-changes operation
+Get All Changes
 
 ### Synopsis
 
-Execute the get-route-aggregation-changes operation on this service.
+This API provides capability to retrieve all of a Route Aggregation's Changes
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations get-route-aggregation-changes [flags]

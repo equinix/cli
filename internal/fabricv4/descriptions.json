@@ -1,0 +1,1886 @@
+{
+  "services": {
+    "client-interfaces": {
+      "service_name": "client-interfaces",
+      "service_description": "",
+      "methods": {
+        "CreateTerraformTemplates": {
+          "short_description": "Generate Terraform Deployment Templates",
+          "long_description": "The Client Interfaces API is used to generate Terraform Templates based on Deployment details.",
+          "parameters": {
+            "": "Deployment UUID"
+          }
+        },
+        "CreateTerraformTemplatesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "cloud-events": {
+      "service_name": "cloud-events",
+      "service_description": "",
+      "methods": {
+        "GetCloudEvent": {
+          "short_description": "Get Cloud Event",
+          "long_description": "This API provides capability to retrieve a cloud event by uuid",
+          "parameters": {
+            "": "Cloud Event UUID"
+          }
+        },
+        "GetCloudEventByAssetId": {
+          "short_description": "Get Cloud Events by Asset Id",
+          "long_description": "This API provides capability to retrieve cloud events of an asset id",
+          "parameters": {
+            "": "asset UUID"
+          }
+        },
+        "GetCloudEventByAssetIdExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetCloudEventExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchCloudEvents": {
+          "short_description": "Search Cloud Events",
+          "long_description": "This API provides capability to search cloud events from a filtered query",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchCloudEventsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "cloud-routers": {
+      "service_name": "cloud-routers",
+      "service_description": "",
+      "methods": {
+        "CreateCloudRouter": {
+          "short_description": "Create Routers",
+          "long_description": "This API provides capability to create user's Cloud Routers",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateCloudRouterAction": {
+          "short_description": "Create Route Table Action",
+          "long_description": "This API provides capability to refresh route table and bgp session summary information",
+          "parameters": {
+            "": "Router UUID"
+          }
+        },
+        "CreateCloudRouterActionExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateCloudRouterCommand": {
+          "short_description": "Initiate Command",
+          "long_description": "This API provides capability to initiate Command",
+          "parameters": {
+            "": "Router UUID"
+          }
+        },
+        "CreateCloudRouterCommandExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateCloudRouterExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteCloudRouterByUuid": {
+          "short_description": "Delete Routers",
+          "long_description": "This API provides capability to delete user's Cloud Routers",
+          "parameters": {
+            "": "Cloud Router UUID"
+          }
+        },
+        "DeleteCloudRouterByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteCloudRouterCommandByUuid": {
+          "short_description": "Delete Command",
+          "long_description": "This API provides capability to delete command based on command Id",
+          "parameters": {
+            "": "Command UUID"
+          }
+        },
+        "DeleteCloudRouterCommandByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetAllCloudRouterCommands": {
+          "short_description": "Get Commands",
+          "long_description": "This API provides capability to fetch all commands",
+          "parameters": {
+            "": "Router UUID"
+          }
+        },
+        "GetAllCloudRouterCommandsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetCloudRouterActions": {
+          "short_description": "Get Route Table Actions",
+          "long_description": "This API provides capability to fetch action status",
+          "parameters": {
+            "": "Router UUID"
+          }
+        },
+        "GetCloudRouterActionsByUuid": {
+          "short_description": "Get Route Table Action by ID",
+          "long_description": "This API provides capability to fetch action status",
+          "parameters": {
+            "": "Action UUID"
+          }
+        },
+        "GetCloudRouterActionsByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetCloudRouterActionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetCloudRouterByUuid": {
+          "short_description": "Get Routers",
+          "long_description": "This API provides capability to retrieve user's Cloud Routers",
+          "parameters": {
+            "": "Cloud Router UUID"
+          }
+        },
+        "GetCloudRouterByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetCloudRouterCommand": {
+          "short_description": "Get Command",
+          "long_description": "This API provides capability to fetch command using command Id",
+          "parameters": {
+            "": "Command UUID"
+          }
+        },
+        "GetCloudRouterCommandExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetCloudRouterPackageByCode": {
+          "short_description": "Get Package Details",
+          "long_description": "This API provides capability to retrieve user's Cloud Routers Package Details",
+          "parameters": {
+            "": "Equinix-assigned Cloud Router package identifier"
+          }
+        },
+        "GetCloudRouterPackageByCodeExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetCloudRouterPackages": {
+          "short_description": "List Packages",
+          "long_description": "This API provides capability to retrieve user's Cloud Routers Packages",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetCloudRouterPackagesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchCloudRouterCommands": {
+          "short_description": "Search Commands",
+          "long_description": "This API provides capability to search commands",
+          "parameters": {
+            "": "Router UUID"
+          }
+        },
+        "SearchCloudRouterCommandsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchCloudRouterRoutes": {
+          "short_description": "Search Route Table",
+          "long_description": "The API provides capability to get list of user's Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "Router UUID"
+          }
+        },
+        "SearchCloudRouterRoutesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchCloudRouters": {
+          "short_description": "Search Routers",
+          "long_description": "The API provides capability to get list of user's Cloud Routers using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchCloudRoutersExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchConnectionAdvertisedRoutes": {
+          "short_description": "Search Advertised Routes",
+          "long_description": "The API provides capability to get list of user's advertised routes using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "SearchConnectionAdvertisedRoutesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchConnectionReceivedRoutes": {
+          "short_description": "Search Received Routes",
+          "long_description": "The API provides capability to get list of received routes using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "SearchConnectionReceivedRoutesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchRouterActions": {
+          "short_description": "Search Route Table Actions",
+          "long_description": "This API provides capability to refresh route table and bgp session summary information",
+          "parameters": {
+            "": "Router UUID"
+          }
+        },
+        "SearchRouterActionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateCloudRouterByUuid": {
+          "short_description": "Update Routers",
+          "long_description": "This API provides capability to update user's Cloud Routers",
+          "parameters": {
+            "": "Cloud Router UUID"
+          }
+        },
+        "UpdateCloudRouterByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "connections": {
+      "service_name": "connections",
+      "service_description": "",
+      "methods": {
+        "CreateConnection": {
+          "short_description": "Create Connection",
+          "long_description": "This API provides capability to create user's virtual connection",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateConnectionAction": {
+          "short_description": "Connection Actions",
+          "long_description": "This API provides capability to accept/reject user's virtual connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "CreateConnectionActionExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateConnectionExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteConnectionByUuid": {
+          "short_description": "Delete by ID",
+          "long_description": "Delete Connection by ID",
+          "parameters": {
+            "": "Connection UUID"
+          }
+        },
+        "DeleteConnectionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionByUuid": {
+          "short_description": "Get Connection by ID",
+          "long_description": "The API provides capability to get user's virtual connection details (Service Tokens, Access Points, Link Protocols, etc) by it's connection ID (UUID)",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchConnections": {
+          "short_description": "Search connections",
+          "long_description": "The API provides capability to get list of user's virtual connections using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchConnectionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateConnectionByUuid": {
+          "short_description": "Update by ID",
+          "long_description": "Update Connection by ID",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "UpdateConnectionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "ValidateConnections": {
+          "short_description": "Validate Connection",
+          "long_description": "This API provides capability to validate by auth key",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "ValidateConnectionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "deployments": {
+      "service_name": "deployments",
+      "service_description": "",
+      "methods": {
+        "ActionDeployment": {
+          "short_description": "Deploy, Dry Run or Destroy Deployment",
+          "long_description": "The deployment action is used to deploy, dry run or destroy a deployment. The request body must contain the type of action to be performed and the connection details. The response will contain the status of the action.",
+          "parameters": {
+            "": "Deployment UUID"
+          }
+        },
+        "ActionDeploymentExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateTopologyDeployment": {
+          "short_description": "Create a new topology deployment",
+          "long_description": "The deployment API is used to creates new deployment topologies. It allows users to define the properties of the deployment, including Fabric and CSP providers.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateTopologyDeploymentExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteDeployment": {
+          "short_description": "Delete Deployment using UUID",
+          "long_description": "This API provides capability to delete user's deployment",
+          "parameters": {
+            "": "Deployment UUID"
+          }
+        },
+        "DeleteDeploymentExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetDeployment": {
+          "short_description": "Retrieve Deployment details using UUID",
+          "long_description": "This API provides capability to retrieve user's deployment details.",
+          "parameters": {
+            "": "Deployment UUID"
+          }
+        },
+        "GetDeploymentExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchDeployments": {
+          "short_description": "Search deployments",
+          "long_description": "The API provides capability to get list of user's deployment using search criteria.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchDeploymentsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchProviderResources": {
+          "short_description": "Search provider resources",
+          "long_description": "The API provides capability to get list of user's provider resources using search criteria, including optional filtering",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchProviderResourcesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "health": {
+      "service_name": "health",
+      "service_description": "",
+      "methods": {
+        "GetStatus": {
+          "short_description": "Get service status",
+          "long_description": "GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetStatusExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "marketplace-subscriptions": {
+      "service_name": "marketplace-subscriptions",
+      "service_description": "",
+      "methods": {
+        "GetSubscriptionById": {
+          "short_description": "Get Subscription",
+          "long_description": "The API provides capability to get subscription",
+          "parameters": {
+            "": "Subscription UUID"
+          }
+        },
+        "GetSubscriptionByIdExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "metrics": {
+      "service_name": "metrics",
+      "service_description": "",
+      "methods": {
+        "GetMetricByAssetId": {
+          "short_description": "Get Metrics by Asset Id",
+          "long_description": "This API provides capability to retrieve Metrics of an asset id",
+          "parameters": {
+            "": "asset UUID"
+          }
+        },
+        "GetMetricByAssetIdExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "metros": {
+      "service_name": "metros",
+      "service_description": "",
+      "methods": {
+        "GetMetroByCode": {
+          "short_description": "Get Metro by Code",
+          "long_description": "GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.",
+          "parameters": {
+            "": "Metro Code"
+          }
+        },
+        "GetMetroByCodeExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetMetros": {
+          "short_description": "Get all Metros",
+          "long_description": "GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetMetrosExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "networks": {
+      "service_name": "networks",
+      "service_description": "",
+      "methods": {
+        "CreateNetwork": {
+          "short_description": "Create Network",
+          "long_description": "This API provides capability to create user's Fabric Network",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateNetworkExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteNetworkByUuid": {
+          "short_description": "Delete Network By ID",
+          "long_description": "This API provides capability to delete user's Fabric Network",
+          "parameters": {
+            "": "Network UUID"
+          }
+        },
+        "DeleteNetworkByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionsByNetworkUuid": {
+          "short_description": "Get Connections",
+          "long_description": "The API provides capability to get list of user's Fabric Network connections",
+          "parameters": {
+            "": "Network UUID"
+          }
+        },
+        "GetConnectionsByNetworkUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetNetworkByUuid": {
+          "short_description": "Get Network By ID",
+          "long_description": "This API provides capability to retrieve user's Fabric Network",
+          "parameters": {
+            "": "Network UUID"
+          }
+        },
+        "GetNetworkByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetNetworkChangeByUuid": {
+          "short_description": "Get Change By ID",
+          "long_description": "This API provides capability to retrieve user's Fabric Network Change",
+          "parameters": {
+            "": "Network Change UUID"
+          }
+        },
+        "GetNetworkChangeByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetNetworkChanges": {
+          "short_description": "Get Network Changes",
+          "long_description": "The API provides capability to get list of user's Fabric Network changes",
+          "parameters": {
+            "": "Network UUID"
+          }
+        },
+        "GetNetworkChangesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchNetworks": {
+          "short_description": "Search Network",
+          "long_description": "The API provides capability to get list of user's Fabric Network using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchNetworksExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateNetworkByUuid": {
+          "short_description": "Update Network By ID",
+          "long_description": "This API provides capability to update user's Fabric Network",
+          "parameters": {
+            "": "Network UUID"
+          }
+        },
+        "UpdateNetworkByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "ports": {
+      "service_name": "ports",
+      "service_description": "",
+      "methods": {
+        "AddToLag": {
+          "short_description": "Add to Lag",
+          "long_description": "Add Physical Ports to Virtual Port.\u003cfont color=\"red\"\u003e \u003csup color='red'\u003ePreview\u003c/sup\u003e\u003c/font\u003e",
+          "parameters": {
+            "": "Port UUID"
+          }
+        },
+        "AddToLagExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreatePort": {
+          "short_description": "Create Port",
+          "long_description": "Creates Equinix Fabric™ Port.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreatePortExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeletePort": {
+          "short_description": "Delete a single port",
+          "long_description": "The API provides capability to delete a single port",
+          "parameters": {
+            "": "Port UUID"
+          }
+        },
+        "DeletePortExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetPortByUuid": {
+          "short_description": "Get Port by uuid",
+          "long_description": "Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.",
+          "parameters": {
+            "": "Port UUID"
+          }
+        },
+        "GetPortByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetPorts": {
+          "short_description": "Get All Ports",
+          "long_description": "Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetPortsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetVlans": {
+          "short_description": "Get Vlans",
+          "long_description": "The API provides capability to retrieve Vlans for a Port.",
+          "parameters": {
+            "": "Port UUID"
+          }
+        },
+        "GetVlansExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchPorts": {
+          "short_description": "Search ports",
+          "long_description": "The API provides capability to get list of user's virtual ports using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchPortsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdatePortByUuid": {
+          "short_description": "Update by UUID",
+          "long_description": "Update Port by UUID",
+          "parameters": {
+            "": "Port UUID"
+          }
+        },
+        "UpdatePortByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "precision-time": {
+      "service_name": "precision-time",
+      "service_description": "",
+      "methods": {
+        "CreateTimeServices": {
+          "short_description": "Create Time Service",
+          "long_description": "The API provides capability to create Precision Time service",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateTimeServicesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteTimeServiceById": {
+          "short_description": "Delete by ID.",
+          "long_description": "The API provides capability to delete Precision Time Service by service id.",
+          "parameters": {
+            "": "Service UUID"
+          }
+        },
+        "DeleteTimeServiceByIdExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "FulfillTimeServices": {
+          "short_description": "Configure Service.",
+          "long_description": "The API provides capability to Configure/Fulfill the Precision Time Service.",
+          "parameters": {
+            "": "Service UUID"
+          }
+        },
+        "FulfillTimeServicesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetTimeServicesById": {
+          "short_description": "Get Service By ID.",
+          "long_description": "The API provides capability to get Precision Time Service details",
+          "parameters": {
+            "": "Service UUID"
+          }
+        },
+        "GetTimeServicesByIdExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetTimeServicesConnectionsByServiceId": {
+          "short_description": "Get Connection Links",
+          "long_description": "The API provides capability to get prevision timing service's details",
+          "parameters": {
+            "": "Service UUID"
+          }
+        },
+        "GetTimeServicesConnectionsByServiceIdExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetTimeServicesPackageByCode": {
+          "short_description": "Get Package By Code",
+          "long_description": "The API provides capability to get timing service's package by code",
+          "parameters": {
+            "": "Package Code"
+          }
+        },
+        "GetTimeServicesPackageByCodeExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetTimeServicesPackages": {
+          "short_description": "Get Packages",
+          "long_description": "The API provides capability to get timing service's packages",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetTimeServicesPackagesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchTimeServices": {
+          "short_description": "Search Time Services",
+          "long_description": "The API provides capability to get list of user's Time Services using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchTimeServicesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateTimeServicesById": {
+          "short_description": "Update By ID.",
+          "long_description": "The API provides capability to update Precision Time Service by service id.",
+          "parameters": {
+            "": "Service UUID"
+          }
+        },
+        "UpdateTimeServicesByIdExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "prices": {
+      "service_name": "prices",
+      "service_description": "",
+      "methods": {
+        "SearchPrices": {
+          "short_description": "Get Prices",
+          "long_description": "Search prices by search criteria",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchPricesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "route-aggregation-rules": {
+      "service_name": "route-aggregation-rules",
+      "service_description": "",
+      "methods": {
+        "CreateRouteAggregationRule": {
+          "short_description": "Create RARule",
+          "long_description": "This API provides capability to create a Route Aggregation Rule",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "CreateRouteAggregationRuleExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateRouteAggregationRulesInBulk": {
+          "short_description": "Bulk RARules",
+          "long_description": "This API provides capability to create bulk route aggregation rules",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "CreateRouteAggregationRulesInBulkExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteRouteAggregationRuleByUuid": {
+          "short_description": "DeleteRARule",
+          "long_description": "This API provides capability to delete a Route aggregation Rule",
+          "parameters": {
+            "": "Route Aggregation Rules Id"
+          }
+        },
+        "DeleteRouteAggregationRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationRuleByUuid": {
+          "short_description": "GetRARule By UUID",
+          "long_description": "This API provides capability to view a Route Aggregation Rule by UUID",
+          "parameters": {
+            "": "Route Aggregation Rules Id"
+          }
+        },
+        "GetRouteAggregationRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationRuleChangeByUuid": {
+          "short_description": "Get Change By ID",
+          "long_description": "This API provides capability to retrieve a specific Route Aggregation Rule's Changes",
+          "parameters": {
+            "": "Route Aggregation Rule Change UUID"
+          }
+        },
+        "GetRouteAggregationRuleChangeByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationRuleChanges": {
+          "short_description": "Get All Changes",
+          "long_description": "This API provides capability to retrieve all of a Route Aggregation Rule's Changes",
+          "parameters": {
+            "": "Route Aggregation Rules Id"
+          }
+        },
+        "GetRouteAggregationRuleChangesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationRules": {
+          "short_description": "GetRARules",
+          "long_description": "This API provides capability to get all Route Aggregations Rules for Fabric",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "GetRouteAggregationRulesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "PatchRouteAggregationRuleByUuid": {
+          "short_description": "PatchRARule",
+          "long_description": "This API provides capability to partially update a Route Aggregation Rule",
+          "parameters": {
+            "": "Route Aggregation Rules Id"
+          }
+        },
+        "PatchRouteAggregationRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "ReplaceRouteAggregationRuleByUuid": {
+          "short_description": "ReplaceRARule",
+          "long_description": "This API provides capability to replace a Route Aggregation Rule completely",
+          "parameters": {
+            "": "Route Aggregation Rules Id"
+          }
+        },
+        "ReplaceRouteAggregationRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "route-aggregations": {
+      "service_name": "route-aggregations",
+      "service_description": "",
+      "methods": {
+        "AttachConnectionRouteAggregation": {
+          "short_description": "Attach Aggregation",
+          "long_description": "This API provides capability to attach a Route Aggregation to a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "AttachConnectionRouteAggregationExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateRouteAggregation": {
+          "short_description": "Create Aggregations",
+          "long_description": "This API provides capability to create a Route Aggregation",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateRouteAggregationExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteRouteAggregationByUuid": {
+          "short_description": "Delete Aggregation",
+          "long_description": "This API provides capability to delete a Route Aggregation",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "DeleteRouteAggregationByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DetachConnectionRouteAggregation": {
+          "short_description": "Detach Aggregation",
+          "long_description": "This API provides capability to detach a Route Aggregation from a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "DetachConnectionRouteAggregationExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRouteAggregationByUuid": {
+          "short_description": "Get Aggregation",
+          "long_description": "This API provides capability to view a specific Route Aggregation attached to a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionRouteAggregationByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRouteAggregations": {
+          "short_description": "Get All Aggregations",
+          "long_description": "This API provides capability to view all Route Aggregations attached to a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionRouteAggregationsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationByUuid": {
+          "short_description": "Get Aggregation",
+          "long_description": "This API provides capability to view a Route Aggregation by UUID",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "GetRouteAggregationByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationChangeByUuid": {
+          "short_description": "Get Change By ID",
+          "long_description": "This API provides capability to retrieve a specific Route Aggregation's Changes",
+          "parameters": {
+            "": "Routing Protocol Change UUID"
+          }
+        },
+        "GetRouteAggregationChangeByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationChanges": {
+          "short_description": "Get All Changes",
+          "long_description": "This API provides capability to retrieve all of a Route Aggregation's Changes",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "GetRouteAggregationChangesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteAggregationConnections": {
+          "short_description": "Get All Connections on Route Aggregation",
+          "long_description": "This API provides capability to view all Connections using the Route Aggregation",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "GetRouteAggregationConnectionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "PatchRouteAggregationByUuid": {
+          "short_description": "Patch Aggregation",
+          "long_description": "This API provides capability to partially update a Route Aggregation",
+          "parameters": {
+            "": "Route Aggregations Id"
+          }
+        },
+        "PatchRouteAggregationByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchRouteAggregations": {
+          "short_description": "Search Aggregations",
+          "long_description": "This API provides capability to search Route Aggregations",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchRouteAggregationsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "route-filter-rules": {
+      "service_name": "route-filter-rules",
+      "service_description": "",
+      "methods": {
+        "CreateRouteFilterRule": {
+          "short_description": "Create Route Filter Rule",
+          "long_description": "This API provides capability to create a Route Filter Rule",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "CreateRouteFilterRuleExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateRouteFilterRulesInBulk": {
+          "short_description": "Bulk Create Route Filter Rules",
+          "long_description": "This API provides capability to create bulk route filter rules",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "CreateRouteFilterRulesInBulkExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteRouteFilterRuleByUuid": {
+          "short_description": "Delete Route Filter Rule",
+          "long_description": "This API provides capability to delete a Route Filter Rule",
+          "parameters": {
+            "": "Route  Filter  Rules Id"
+          }
+        },
+        "DeleteRouteFilterRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterRuleByUuid": {
+          "short_description": "Get Route Filter Rule By UUID",
+          "long_description": "This API provides capability to view a Route Filter Rule by UUID",
+          "parameters": {
+            "": "Route  Filter  Rules Id"
+          }
+        },
+        "GetRouteFilterRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterRuleChangeByUuid": {
+          "short_description": "Get Change By ID",
+          "long_description": "This API provides capability to retrieve a specific Route Filter Rule's Changes",
+          "parameters": {
+            "": "Route Filter Rule Change UUID"
+          }
+        },
+        "GetRouteFilterRuleChangeByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterRuleChanges": {
+          "short_description": "Get All Changes",
+          "long_description": "This API provides capability to retrieve all of a Route Filter Rule's Changes",
+          "parameters": {
+            "": "Route  Filter  Rules Id"
+          }
+        },
+        "GetRouteFilterRuleChangesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterRules": {
+          "short_description": "Get Route Filter Rules",
+          "long_description": "This API provides capability to get all Route Filters Rules for Fabric",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "GetRouteFilterRulesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "PatchRouteFilterRuleByUuid": {
+          "short_description": "Patch Route Filter Rule",
+          "long_description": "This API provides capability to partially update a Route Filter Rule",
+          "parameters": {
+            "": "Route  Filter  Rules Id"
+          }
+        },
+        "PatchRouteFilterRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "ReplaceRouteFilterRuleByUuid": {
+          "short_description": "Replace Route Filter Rule",
+          "long_description": "This API provides capability to replace a Route Filter Rule completely",
+          "parameters": {
+            "": "Route  Filter  Rules Id"
+          }
+        },
+        "ReplaceRouteFilterRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "route-filters": {
+      "service_name": "route-filters",
+      "service_description": "",
+      "methods": {
+        "AttachConnectionRouteFilter": {
+          "short_description": "Attach Route Filter",
+          "long_description": "This API provides capability to attach a Route Filter to a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "AttachConnectionRouteFilterExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateRouteFilter": {
+          "short_description": "Create Route Filters",
+          "long_description": "This API provides capability to create a Route Filter",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateRouteFilterExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteRouteFilterByUuid": {
+          "short_description": "Delete Route Filter",
+          "long_description": "This API provides capability to delete a Route Filter",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "DeleteRouteFilterByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DetachConnectionRouteFilter": {
+          "short_description": "Detach Route Filter",
+          "long_description": "This API provides capability to detach a Route Filter from a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "DetachConnectionRouteFilterExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRouteFilterByUuid": {
+          "short_description": "Get Route Filter",
+          "long_description": "This API provides capability to view a specific Route Filter attached to a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionRouteFilterByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRouteFilters": {
+          "short_description": "Get All Route Filters",
+          "long_description": "This API provides capability to view all Route Filters attached to a Connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionRouteFiltersExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterByUuid": {
+          "short_description": "Get Route Filter By UUID",
+          "long_description": "This API provides capability to view a Route Filter by UUID",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "GetRouteFilterByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterChangeByUuid": {
+          "short_description": "Get Change By ID",
+          "long_description": "This API provides capability to retrieve a specific Route Filter's Changes",
+          "parameters": {
+            "": "Routing Protocol Change UUID"
+          }
+        },
+        "GetRouteFilterChangeByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterChanges": {
+          "short_description": "Get All Changes",
+          "long_description": "This API provides capability to retrieve all of a Route Filter's Changes",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "GetRouteFilterChangesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetRouteFilterConnections": {
+          "short_description": "Get All Connections on Route Filter",
+          "long_description": "This API provides capability to view all Connections using the Route Filter",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "GetRouteFilterConnectionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "PatchRouteFilterByUuid": {
+          "short_description": "Patch Route Filter",
+          "long_description": "This API provides capability to partially update a Route Filter",
+          "parameters": {
+            "": "Route Filters Id"
+          }
+        },
+        "PatchRouteFilterByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchRouteFilters": {
+          "short_description": "Search Route Filters",
+          "long_description": "This API provides capability to search Route Filters",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchRouteFiltersExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "routing-protocols": {
+      "service_name": "routing-protocols",
+      "service_description": "",
+      "methods": {
+        "CreateConnectionRoutingProtocol": {
+          "short_description": "Create Protocol",
+          "long_description": "This API provides capability to create Routing Protocol for connections",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "CreateConnectionRoutingProtocolExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateConnectionRoutingProtocolsInBulk": {
+          "short_description": "Bulk Create Protocol",
+          "long_description": "This API provides capability to create Routing Protocol for connections",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "CreateConnectionRoutingProtocolsInBulkExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteConnectionRoutingProtocolByUuid": {
+          "short_description": "Delete Protocol",
+          "long_description": "This API provides capability to delete Routing Protocols on virtual connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "DeleteConnectionRoutingProtocolByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRoutingProtocolAllBgpActions": {
+          "short_description": "Get BGP Actions",
+          "long_description": "This API provides capability to get all BGP actions status",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionRoutingProtocolAllBgpActionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRoutingProtocolByUuid": {
+          "short_description": "Get Protocol",
+          "long_description": "This API provides capability to accept/reject user's virtual connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionRoutingProtocolByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRoutingProtocols": {
+          "short_description": "GetRoutingProtocols",
+          "long_description": "This API provides capability to get Routing Protocols for connections",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "GetConnectionRoutingProtocolsBgpActionByUuid": {
+          "short_description": "Get BGP Action",
+          "long_description": "This API provides capability to retrieve specific BGP action",
+          "parameters": {
+            "": "BGP Action UUID"
+          }
+        },
+        "GetConnectionRoutingProtocolsBgpActionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRoutingProtocolsChangeByUuid": {
+          "short_description": "Get Change By ID",
+          "long_description": "This API provides capability to retrieve specific Routing Protocol Change",
+          "parameters": {
+            "": "Routing Protocol Change UUID"
+          }
+        },
+        "GetConnectionRoutingProtocolsChangeByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRoutingProtocolsChanges": {
+          "short_description": "Get Changes",
+          "long_description": "This API provides capability to retrieve user's Routing Protocol Changes",
+          "parameters": {
+            "": "Routing Protocol Id"
+          }
+        },
+        "GetConnectionRoutingProtocolsChangesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetConnectionRoutingProtocolsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "PatchConnectionRoutingProtocolByUuid": {
+          "short_description": "Patch Protocol",
+          "long_description": "This API provides capability to partially update Routing Protocols on a virtual connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "PatchConnectionRoutingProtocolByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "PostConnectionRoutingProtocolBgpActionByUuid": {
+          "short_description": "Clear/Reset BGP",
+          "long_description": "This API provides capability to clear/reset Routing Protocols BGP session",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "PostConnectionRoutingProtocolBgpActionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "ReplaceConnectionRoutingProtocolByUuid": {
+          "short_description": "Replace Protocol",
+          "long_description": "This API provides capability to replace complete Routing Protocols on a virtual connection",
+          "parameters": {
+            "": "Connection Id"
+          }
+        },
+        "ReplaceConnectionRoutingProtocolByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "ValidateRoutingProtocol": {
+          "short_description": "Validate Subnet",
+          "long_description": "This API provides capability to validate all subnets associated with any connection in the given FCR",
+          "parameters": {
+            "": "Cloud Router UUID"
+          }
+        },
+        "ValidateRoutingProtocolExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "service-profiles": {
+      "service_name": "service-profiles",
+      "service_description": "",
+      "methods": {
+        "CreateServiceProfile": {
+          "short_description": "Create Profile",
+          "long_description": "Create Service Profile creates Equinix Fabric™ Service Profile.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateServiceProfileExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteServiceProfileByUuid": {
+          "short_description": "Delete Profile",
+          "long_description": "delete Service Profile by UUID",
+          "parameters": {
+            "": "Service Profile UUID"
+          }
+        },
+        "DeleteServiceProfileByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetServiceProfileByUuid": {
+          "short_description": "Get Profile",
+          "long_description": "Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view.",
+          "parameters": {
+            "": "Service Profile UUID"
+          }
+        },
+        "GetServiceProfileByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetServiceProfileMetrosByUuid": {
+          "short_description": "Get Profile Metros",
+          "long_description": "Get service profile metros by UUID.",
+          "parameters": {
+            "": "Service Profile UUID"
+          }
+        },
+        "GetServiceProfileMetrosByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetServiceProfiles": {
+          "short_description": "Get all Profiles",
+          "long_description": "The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetServiceProfilesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "PutServiceProfileByUuid": {
+          "short_description": "Replace Profile",
+          "long_description": "This API request replaces a service profile definition",
+          "parameters": {
+            "": "Service Profile UUID"
+          }
+        },
+        "PutServiceProfileByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchServiceProfiles": {
+          "short_description": "Profile Search",
+          "long_description": "Search service profiles by search criteria",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchServiceProfilesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateServiceProfileByUuid": {
+          "short_description": "Update Profile",
+          "long_description": "Update Service Profile by UUID",
+          "parameters": {
+            "": "Service Profile UUID"
+          }
+        },
+        "UpdateServiceProfileByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "service-tokens": {
+      "service_name": "service-tokens",
+      "service_description": "",
+      "methods": {
+        "CreateServiceToken": {
+          "short_description": "Create Service Token",
+          "long_description": "Create Service Tokens generates Equinix Fabric™ service tokens. These tokens authorize users to access protected resources and services.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateServiceTokenAction": {
+          "short_description": "ServiceToken Actions",
+          "long_description": "This API provides capability to accept/reject user's servicetokens",
+          "parameters": {
+            "": "Service Token UUID"
+          }
+        },
+        "CreateServiceTokenActionExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CreateServiceTokenExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteServiceTokenByUuid": {
+          "short_description": "Delete Token by uuid",
+          "long_description": "Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.",
+          "parameters": {
+            "": "Service Token UUID"
+          }
+        },
+        "DeleteServiceTokenByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetServiceTokenByUuid": {
+          "short_description": "Get Token by uuid",
+          "long_description": "Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token's type, state, location, bandwidth, and other key properties.",
+          "parameters": {
+            "": "Service Token UUID"
+          }
+        },
+        "GetServiceTokenByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetServiceTokens": {
+          "short_description": "Get All Tokens",
+          "long_description": "Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber's account.",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetServiceTokensExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SearchServiceTokens": {
+          "short_description": "Search servicetokens",
+          "long_description": "The API provides capability to get list of user's servicetokens using search criteria, including optional filtering, pagination and sorting",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "SearchServiceTokensExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateServiceTokenByUuid": {
+          "short_description": "Update Token By ID",
+          "long_description": "This API provides capability to update user's Service Token",
+          "parameters": {
+            "": "Service Token UUID"
+          }
+        },
+        "UpdateServiceTokenByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "statistics": {
+      "service_name": "statistics",
+      "service_description": "",
+      "methods": {
+        "GetConnectionStatsByPortUuid": {
+          "short_description": "Get Stats by uuid **(DEPRECATED)**",
+          "long_description": "This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)** Deprecated",
+          "parameters": {
+            "": "Connection UUID"
+          }
+        },
+        "GetConnectionStatsByPortUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": "Deprecated"
+        },
+        "GetPortStatsByPortUuid": {
+          "short_description": "Get Stats by uuid **(DEPRECATED)**",
+          "long_description": "This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)** Deprecated",
+          "parameters": {
+            "": "Port UUID"
+          }
+        },
+        "GetPortStatsByPortUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": "Deprecated"
+        }
+      }
+    },
+    "stream-alert-rules": {
+      "service_name": "stream-alert-rules",
+      "service_description": "",
+      "methods": {
+        "CreateStreamAlertRules": {
+          "short_description": "Create Stream Alert Rules",
+          "long_description": "This API provides capability to create user's Stream Alert Rules",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "CreateStreamAlertRulesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteStreamAlertRuleByUuid": {
+          "short_description": "Update Stream Alert Rules",
+          "long_description": "This API provides capability to delete a user's stream alert rule",
+          "parameters": {
+            "": "alert rule UUID"
+          }
+        },
+        "DeleteStreamAlertRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreamAlertRuleByUuid": {
+          "short_description": "Get Stream Alert Rules",
+          "long_description": "This API provides capability to get user's stream alert rules",
+          "parameters": {
+            "": "alert rule UUID"
+          }
+        },
+        "GetStreamAlertRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreamAlertRules": {
+          "short_description": "Get Stream Alert Rules",
+          "long_description": "This API provides capability to retrieve stream alert rules",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "GetStreamAlertRulesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateStreamAlertRuleByUuid": {
+          "short_description": "Update Stream Alert Rules",
+          "long_description": "This API provides capability to update a user's stream alert rule",
+          "parameters": {
+            "": "alert rule UUID"
+          }
+        },
+        "UpdateStreamAlertRuleByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "stream-subscriptions": {
+      "service_name": "stream-subscriptions",
+      "service_description": "",
+      "methods": {
+        "CreateStreamSubscriptions": {
+          "short_description": "Create Subscription",
+          "long_description": "This API provides capability to create user's Stream Subscriptions",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "CreateStreamSubscriptionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteStreamSubscriptionByUuid": {
+          "short_description": "Delete Subscription",
+          "long_description": "This API provides capability to delete user's Stream Subscriptions",
+          "parameters": {
+            "": "Stream Subscription UUID"
+          }
+        },
+        "DeleteStreamSubscriptionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreamSubscriptionByUuid": {
+          "short_description": "Get Subscription",
+          "long_description": "This API provides capability to delete user's get Stream Subscriptions",
+          "parameters": {
+            "": "Stream Subscription UUID"
+          }
+        },
+        "GetStreamSubscriptionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreamSubscriptions": {
+          "short_description": "Get Subscriptions",
+          "long_description": "This API provides capability to retrieve stream subscriptions",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "GetStreamSubscriptionsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateStreamSubscriptionByUuid": {
+          "short_description": "Update Subscription",
+          "long_description": "This API provides capability to update user's Stream Subscriptions",
+          "parameters": {
+            "": "Stream Subscription UUID"
+          }
+        },
+        "UpdateStreamSubscriptionByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    },
+    "streams": {
+      "service_name": "streams",
+      "service_description": "",
+      "methods": {
+        "CreateStreams": {
+          "short_description": "Create Stream",
+          "long_description": "This API provides capability to create user's stream",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "CreateStreamsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteStreamAssetByUuid": {
+          "short_description": "Detach Asset",
+          "long_description": "This API provides capability to detach an asset from a stream",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "DeleteStreamAssetByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "DeleteStreamByUuid": {
+          "short_description": "Delete Stream",
+          "long_description": "This API provides capability to delete user's stream",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "DeleteStreamByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreamAssetByUuid": {
+          "short_description": "Get Asset",
+          "long_description": "This API provides capability to get user's assets attached to a stream",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "GetStreamAssetByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreamByUuid": {
+          "short_description": "Get Stream",
+          "long_description": "This API provides capability to get user's stream",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "GetStreamByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreams": {
+          "short_description": "Get Streams",
+          "long_description": "This API provides capability to retrieve streams",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetStreamsAssets": {
+          "short_description": "Get Assets",
+          "long_description": "This API provides capability to retrieve stream assets",
+          "parameters": {
+            "": "context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+          }
+        },
+        "GetStreamsAssetsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GetStreamsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateStreamAssetByUuid": {
+          "short_description": "Attach Asset",
+          "long_description": "This API provides capability to attach an asset to a stream",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "UpdateStreamAssetByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "UpdateStreamByUuid": {
+          "short_description": "Update Stream",
+          "long_description": "This API provides capability to update user's stream",
+          "parameters": {
+            "": "Stream UUID"
+          }
+        },
+        "UpdateStreamByUuidExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      }
+    }
+  }
+}

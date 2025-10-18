@@ -1,15 +1,12 @@
 ## equinix fabricv4 stream-alert-rules get-stream-alert-rule-by-uuid
 
-Execute get-stream-alert-rule-by-uuid operation
+Get Stream Alert Rules
 
 ### Synopsis
 
-Execute the get-stream-alert-rule-by-uuid operation on this service.
+This API provides capability to get user's stream alert rules
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 stream-alert-rules get-stream-alert-rule-by-uuid [flags]

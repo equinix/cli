@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-profiles get-service-profiles
 
-Execute get-service-profiles operation
+Get all Profiles
 
 ### Synopsis
 
-Execute the get-service-profiles operation on this service.
+The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-profiles get-service-profiles [flags]

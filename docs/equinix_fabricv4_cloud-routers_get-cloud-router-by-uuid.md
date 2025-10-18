@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers get-cloud-router-by-uuid
 
-Execute get-cloud-router-by-uuid operation
+Get Routers
 
 ### Synopsis
 
-Execute the get-cloud-router-by-uuid operation on this service.
+This API provides capability to retrieve user's Cloud Routers
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers get-cloud-router-by-uuid [flags]

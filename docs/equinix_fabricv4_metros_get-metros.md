@@ -1,15 +1,12 @@
 ## equinix fabricv4 metros get-metros
 
-Execute get-metros operation
+Get all Metros
 
 ### Synopsis
 
-Execute the get-metros operation on this service.
+GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 metros get-metros [flags]

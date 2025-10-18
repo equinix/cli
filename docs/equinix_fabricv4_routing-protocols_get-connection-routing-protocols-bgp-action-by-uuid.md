@@ -1,15 +1,12 @@
 ## equinix fabricv4 routing-protocols get-connection-routing-protocols-bgp-action-by-uuid
 
-Execute get-connection-routing-protocols-bgp-action-by-uuid operation
+Get BGP Action
 
 ### Synopsis
 
-Execute the get-connection-routing-protocols-bgp-action-by-uuid operation on this service.
+This API provides capability to retrieve specific BGP action
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 routing-protocols get-connection-routing-protocols-bgp-action-by-uuid [flags]

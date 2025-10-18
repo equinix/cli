@@ -1,15 +1,12 @@
 ## equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-by-uuid
 
-Execute post-connection-routing-protocol-bgp-action-by-uuid operation
+Clear/Reset BGP
 
 ### Synopsis
 
-Execute the post-connection-routing-protocol-bgp-action-by-uuid operation on this service.
+This API provides capability to clear/reset Routing Protocols BGP session
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-by-uuid [flags]

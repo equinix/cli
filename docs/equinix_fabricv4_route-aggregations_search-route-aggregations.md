@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations search-route-aggregations
 
-Execute search-route-aggregations operation
+Search Aggregations
 
 ### Synopsis
 
-Execute the search-route-aggregations operation on this service.
+This API provides capability to search Route Aggregations
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations search-route-aggregations [flags]

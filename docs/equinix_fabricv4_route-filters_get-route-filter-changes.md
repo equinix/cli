@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-filters get-route-filter-changes
 
-Execute get-route-filter-changes operation
+Get All Changes
 
 ### Synopsis
 
-Execute the get-route-filter-changes operation on this service.
+This API provides capability to retrieve all of a Route Filter's Changes
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-filters get-route-filter-changes [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations get-route-aggregation-connections
 
-Execute get-route-aggregation-connections operation
+Get All Connections on Route Aggregation
 
 ### Synopsis
 
-Execute the get-route-aggregation-connections operation on this service.
+This API provides capability to view all Connections using the Route Aggregation
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations get-route-aggregation-connections [flags]

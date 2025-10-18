@@ -1,15 +1,12 @@
 ## equinix fabricv4 ports create-port
 
-Execute create-port operation
+Create Port
 
 ### Synopsis
 
-Execute the create-port operation on this service.
+Creates Equinix Fabric™ Port.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 ports create-port [flags]

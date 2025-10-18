@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers create-cloud-router-command
 
-Execute create-cloud-router-command operation
+Initiate Command
 
 ### Synopsis
 
-Execute the create-cloud-router-command operation on this service.
+This API provides capability to initiate Command
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers create-cloud-router-command [flags]

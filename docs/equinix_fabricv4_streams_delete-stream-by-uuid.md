@@ -1,15 +1,12 @@
 ## equinix fabricv4 streams delete-stream-by-uuid
 
-Execute delete-stream-by-uuid operation
+Delete Stream
 
 ### Synopsis
 
-Execute the delete-stream-by-uuid operation on this service.
+This API provides capability to delete user's stream
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 streams delete-stream-by-uuid [flags]

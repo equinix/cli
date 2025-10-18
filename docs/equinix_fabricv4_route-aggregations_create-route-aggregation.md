@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations create-route-aggregation
 
-Execute create-route-aggregation operation
+Create Aggregations
 
 ### Synopsis
 
-Execute the create-route-aggregation operation on this service.
+This API provides capability to create a Route Aggregation
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations create-route-aggregation [flags]

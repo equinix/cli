@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-tokens get-service-token-by-uuid
 
-Execute get-service-token-by-uuid operation
+Get Token by uuid
 
 ### Synopsis
 
-Execute the get-service-token-by-uuid operation on this service.
+Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token's type, state, location, bandwidth, and other key properties.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-tokens get-service-token-by-uuid [flags]

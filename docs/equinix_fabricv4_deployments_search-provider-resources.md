@@ -1,15 +1,12 @@
 ## equinix fabricv4 deployments search-provider-resources
 
-Execute search-provider-resources operation
+Search provider resources
 
 ### Synopsis
 
-Execute the search-provider-resources operation on this service.
+The API provides capability to get list of user's provider resources using search criteria, including optional filtering
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 deployments search-provider-resources [flags]

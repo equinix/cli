@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations patch-route-aggregation-by-uuid
 
-Execute patch-route-aggregation-by-uuid operation
+Patch Aggregation
 
 ### Synopsis
 
-Execute the patch-route-aggregation-by-uuid operation on this service.
+This API provides capability to partially update a Route Aggregation
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations patch-route-aggregation-by-uuid [flags]

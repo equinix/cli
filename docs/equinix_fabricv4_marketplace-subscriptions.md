@@ -21,5 +21,5 @@ Commands for managing marketplace-subscriptions resources in the API
 ### SEE ALSO
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix Fabric v4 resources
-* [equinix fabricv4 marketplace-subscriptions get-subscription-by-id](equinix_fabricv4_marketplace-subscriptions_get-subscription-by-id.md)	 - Execute get-subscription-by-id operation
+* [equinix fabricv4 marketplace-subscriptions get-subscription-by-id](equinix_fabricv4_marketplace-subscriptions_get-subscription-by-id.md)	 - Get Subscription
 

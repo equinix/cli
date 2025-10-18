@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregations get-connection-route-aggregation-by-uuid
 
-Execute get-connection-route-aggregation-by-uuid operation
+Get Aggregation
 
 ### Synopsis
 
-Execute the get-connection-route-aggregation-by-uuid operation on this service.
+This API provides capability to view a specific Route Aggregation attached to a Connection
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregations get-connection-route-aggregation-by-uuid [flags]

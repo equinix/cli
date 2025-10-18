@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-filter-rules get-route-filter-rules
 
-Execute get-route-filter-rules operation
+Get Route Filter Rules
 
 ### Synopsis
 
-Execute the get-route-filter-rules operation on this service.
+This API provides capability to get all Route Filters Rules for Fabric
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-filter-rules get-route-filter-rules [flags]

@@ -21,17 +21,17 @@ Commands for managing routing-protocols resources in the API
 ### SEE ALSO
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix Fabric v4 resources
-* [equinix fabricv4 routing-protocols create-connection-routing-protocol](equinix_fabricv4_routing-protocols_create-connection-routing-protocol.md)	 - Execute create-connection-routing-protocol operation
-* [equinix fabricv4 routing-protocols create-connection-routing-protocols-in-bulk](equinix_fabricv4_routing-protocols_create-connection-routing-protocols-in-bulk.md)	 - Execute create-connection-routing-protocols-in-bulk operation
-* [equinix fabricv4 routing-protocols delete-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_delete-connection-routing-protocol-by-uuid.md)	 - Execute delete-connection-routing-protocol-by-uuid operation
-* [equinix fabricv4 routing-protocols get-connection-routing-protocol-all-bgp-actions](equinix_fabricv4_routing-protocols_get-connection-routing-protocol-all-bgp-actions.md)	 - Execute get-connection-routing-protocol-all-bgp-actions operation
-* [equinix fabricv4 routing-protocols get-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_get-connection-routing-protocol-by-uuid.md)	 - Execute get-connection-routing-protocol-by-uuid operation
-* [equinix fabricv4 routing-protocols get-connection-routing-protocols](equinix_fabricv4_routing-protocols_get-connection-routing-protocols.md)	 - Execute get-connection-routing-protocols operation
-* [equinix fabricv4 routing-protocols get-connection-routing-protocols-bgp-action-by-uuid](equinix_fabricv4_routing-protocols_get-connection-routing-protocols-bgp-action-by-uuid.md)	 - Execute get-connection-routing-protocols-bgp-action-by-uuid operation
-* [equinix fabricv4 routing-protocols get-connection-routing-protocols-change-by-uuid](equinix_fabricv4_routing-protocols_get-connection-routing-protocols-change-by-uuid.md)	 - Execute get-connection-routing-protocols-change-by-uuid operation
-* [equinix fabricv4 routing-protocols get-connection-routing-protocols-changes](equinix_fabricv4_routing-protocols_get-connection-routing-protocols-changes.md)	 - Execute get-connection-routing-protocols-changes operation
-* [equinix fabricv4 routing-protocols patch-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_patch-connection-routing-protocol-by-uuid.md)	 - Execute patch-connection-routing-protocol-by-uuid operation
-* [equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-by-uuid](equinix_fabricv4_routing-protocols_post-connection-routing-protocol-bgp-action-by-uuid.md)	 - Execute post-connection-routing-protocol-bgp-action-by-uuid operation
-* [equinix fabricv4 routing-protocols replace-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_replace-connection-routing-protocol-by-uuid.md)	 - Execute replace-connection-routing-protocol-by-uuid operation
-* [equinix fabricv4 routing-protocols validate-routing-protocol](equinix_fabricv4_routing-protocols_validate-routing-protocol.md)	 - Execute validate-routing-protocol operation
+* [equinix fabricv4 routing-protocols create-connection-routing-protocol](equinix_fabricv4_routing-protocols_create-connection-routing-protocol.md)	 - Create Protocol
+* [equinix fabricv4 routing-protocols create-connection-routing-protocols-in-bulk](equinix_fabricv4_routing-protocols_create-connection-routing-protocols-in-bulk.md)	 - Bulk Create Protocol
+* [equinix fabricv4 routing-protocols delete-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_delete-connection-routing-protocol-by-uuid.md)	 - Delete Protocol
+* [equinix fabricv4 routing-protocols get-connection-routing-protocol-all-bgp-actions](equinix_fabricv4_routing-protocols_get-connection-routing-protocol-all-bgp-actions.md)	 - Get BGP Actions
+* [equinix fabricv4 routing-protocols get-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_get-connection-routing-protocol-by-uuid.md)	 - Get Protocol
+* [equinix fabricv4 routing-protocols get-connection-routing-protocols](equinix_fabricv4_routing-protocols_get-connection-routing-protocols.md)	 - GetRoutingProtocols
+* [equinix fabricv4 routing-protocols get-connection-routing-protocols-bgp-action-by-uuid](equinix_fabricv4_routing-protocols_get-connection-routing-protocols-bgp-action-by-uuid.md)	 - Get BGP Action
+* [equinix fabricv4 routing-protocols get-connection-routing-protocols-change-by-uuid](equinix_fabricv4_routing-protocols_get-connection-routing-protocols-change-by-uuid.md)	 - Get Change By ID
+* [equinix fabricv4 routing-protocols get-connection-routing-protocols-changes](equinix_fabricv4_routing-protocols_get-connection-routing-protocols-changes.md)	 - Get Changes
+* [equinix fabricv4 routing-protocols patch-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_patch-connection-routing-protocol-by-uuid.md)	 - Patch Protocol
+* [equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-by-uuid](equinix_fabricv4_routing-protocols_post-connection-routing-protocol-bgp-action-by-uuid.md)	 - Clear/Reset BGP
+* [equinix fabricv4 routing-protocols replace-connection-routing-protocol-by-uuid](equinix_fabricv4_routing-protocols_replace-connection-routing-protocol-by-uuid.md)	 - Replace Protocol
+* [equinix fabricv4 routing-protocols validate-routing-protocol](equinix_fabricv4_routing-protocols_validate-routing-protocol.md)	 - Validate Subnet
 

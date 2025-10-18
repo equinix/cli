@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-tokens update-service-token-by-uuid
 
-Execute update-service-token-by-uuid operation
+Update Token By ID
 
 ### Synopsis
 
-Execute the update-service-token-by-uuid operation on this service.
+This API provides capability to update user's Service Token
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-tokens update-service-token-by-uuid [flags]

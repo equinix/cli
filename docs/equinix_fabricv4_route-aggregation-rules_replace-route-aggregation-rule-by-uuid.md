@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregation-rules replace-route-aggregation-rule-by-uuid
 
-Execute replace-route-aggregation-rule-by-uuid operation
+ReplaceRARule
 
 ### Synopsis
 
-Execute the replace-route-aggregation-rule-by-uuid operation on this service.
+This API provides capability to replace a Route Aggregation Rule completely
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregation-rules replace-route-aggregation-rule-by-uuid [flags]

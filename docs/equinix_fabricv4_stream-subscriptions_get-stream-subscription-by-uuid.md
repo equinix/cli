@@ -1,15 +1,12 @@
 ## equinix fabricv4 stream-subscriptions get-stream-subscription-by-uuid
 
-Execute get-stream-subscription-by-uuid operation
+Get Subscription
 
 ### Synopsis
 
-Execute the get-stream-subscription-by-uuid operation on this service.
+This API provides capability to delete user's get Stream Subscriptions
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 stream-subscriptions get-stream-subscription-by-uuid [flags]

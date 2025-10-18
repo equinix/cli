@@ -1,15 +1,12 @@
 ## equinix fabricv4 client-interfaces create-terraform-templates
 
-Execute create-terraform-templates operation
+Generate Terraform Deployment Templates
 
 ### Synopsis
 
-Execute the create-terraform-templates operation on this service.
+The Client Interfaces API is used to generate Terraform Templates based on Deployment details.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 client-interfaces create-terraform-templates [flags]

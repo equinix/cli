@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers search-cloud-routers
 
-Execute search-cloud-routers operation
+Search Routers
 
 ### Synopsis
 
-Execute the search-cloud-routers operation on this service.
+The API provides capability to get list of user's Cloud Routers using search criteria, including optional filtering, pagination and sorting
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers search-cloud-routers [flags]

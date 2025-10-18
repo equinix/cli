@@ -1,15 +1,12 @@
 ## equinix fabricv4 ports get-vlans
 
-Execute get-vlans operation
+Get Vlans
 
 ### Synopsis
 
-Execute the get-vlans operation on this service.
+The API provides capability to retrieve Vlans for a Port.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 ports get-vlans [flags]

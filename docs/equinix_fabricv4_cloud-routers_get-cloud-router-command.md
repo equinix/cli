@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers get-cloud-router-command
 
-Execute get-cloud-router-command operation
+Get Command
 
 ### Synopsis
 
-Execute the get-cloud-router-command operation on this service.
+This API provides capability to fetch command using command Id
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers get-cloud-router-command [flags]

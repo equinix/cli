@@ -1,15 +1,12 @@
 ## equinix fabricv4 streams create-streams
 
-Execute create-streams operation
+Create Stream
 
 ### Synopsis
 
-Execute the create-streams operation on this service.
+This API provides capability to create user's stream
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 streams create-streams [flags]

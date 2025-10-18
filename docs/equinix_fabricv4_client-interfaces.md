@@ -21,5 +21,5 @@ Commands for managing client-interfaces resources in the API
 ### SEE ALSO
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix Fabric v4 resources
-* [equinix fabricv4 client-interfaces create-terraform-templates](equinix_fabricv4_client-interfaces_create-terraform-templates.md)	 - Execute create-terraform-templates operation
+* [equinix fabricv4 client-interfaces create-terraform-templates](equinix_fabricv4_client-interfaces_create-terraform-templates.md)	 - Generate Terraform Deployment Templates
 

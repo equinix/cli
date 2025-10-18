@@ -1,15 +1,12 @@
 ## equinix fabricv4 statistics get-port-stats-by-port-uuid
 
-Execute get-port-stats-by-port-uuid operation
+Get Stats by uuid **(DEPRECATED)**
 
 ### Synopsis
 
-Execute the get-port-stats-by-port-uuid operation on this service.
+This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)** Deprecated
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 statistics get-port-stats-by-port-uuid [flags]

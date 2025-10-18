@@ -1,15 +1,12 @@
 ## equinix fabricv4 stream-subscriptions create-stream-subscriptions
 
-Execute create-stream-subscriptions operation
+Create Subscription
 
 ### Synopsis
 
-Execute the create-stream-subscriptions operation on this service.
+This API provides capability to create user's Stream Subscriptions
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 stream-subscriptions create-stream-subscriptions [flags]

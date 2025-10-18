@@ -1,15 +1,12 @@
 ## equinix fabricv4 ports delete-port
 
-Execute delete-port operation
+Delete a single port
 
 ### Synopsis
 
-Execute the delete-port operation on this service.
+The API provides capability to delete a single port
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 ports delete-port [flags]

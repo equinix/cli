@@ -1,15 +1,12 @@
 ## equinix fabricv4 routing-protocols replace-connection-routing-protocol-by-uuid
 
-Execute replace-connection-routing-protocol-by-uuid operation
+Replace Protocol
 
 ### Synopsis
 
-Execute the replace-connection-routing-protocol-by-uuid operation on this service.
+This API provides capability to replace complete Routing Protocols on a virtual connection
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 routing-protocols replace-connection-routing-protocol-by-uuid [flags]

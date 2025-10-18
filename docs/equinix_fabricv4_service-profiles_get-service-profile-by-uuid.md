@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-profiles get-service-profile-by-uuid
 
-Execute get-service-profile-by-uuid operation
+Get Profile
 
 ### Synopsis
 
-Execute the get-service-profile-by-uuid operation on this service.
+Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-profiles get-service-profile-by-uuid [flags]

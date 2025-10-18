@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-filters search-route-filters
 
-Execute search-route-filters operation
+Search Route Filters
 
 ### Synopsis
 
-Execute the search-route-filters operation on this service.
+This API provides capability to search Route Filters
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-filters search-route-filters [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 ports get-port-by-uuid
 
-Execute get-port-by-uuid operation
+Get Port by uuid
 
 ### Synopsis
 
-Execute the get-port-by-uuid operation on this service.
+Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 ports get-port-by-uuid [flags]

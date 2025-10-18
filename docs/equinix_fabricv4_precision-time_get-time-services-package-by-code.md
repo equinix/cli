@@ -1,15 +1,12 @@
 ## equinix fabricv4 precision-time get-time-services-package-by-code
 
-Execute get-time-services-package-by-code operation
+Get Package By Code
 
 ### Synopsis
 
-Execute the get-time-services-package-by-code operation on this service.
+The API provides capability to get timing service's package by code
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 precision-time get-time-services-package-by-code [flags]

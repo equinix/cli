@@ -1,15 +1,12 @@
 ## equinix fabricv4 precision-time fulfill-time-services
 
-Execute fulfill-time-services operation
+Configure Service.
 
 ### Synopsis
 
-Execute the fulfill-time-services operation on this service.
+The API provides capability to Configure/Fulfill the Precision Time Service.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 precision-time fulfill-time-services [flags]

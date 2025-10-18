@@ -1,15 +1,12 @@
 ## equinix fabricv4 streams update-stream-by-uuid
 
-Execute update-stream-by-uuid operation
+Update Stream
 
 ### Synopsis
 
-Execute the update-stream-by-uuid operation on this service.
+This API provides capability to update user's stream
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 streams update-stream-by-uuid [flags]

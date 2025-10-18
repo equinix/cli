@@ -1,15 +1,12 @@
 ## equinix fabricv4 connections delete-connection-by-uuid
 
-Execute delete-connection-by-uuid operation
+Delete by ID
 
 ### Synopsis
 
-Execute the delete-connection-by-uuid operation on this service.
+Delete Connection by ID
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 connections delete-connection-by-uuid [flags]

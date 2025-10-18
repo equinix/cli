@@ -1,15 +1,12 @@
 ## equinix fabricv4 routing-protocols get-connection-routing-protocols
 
-Execute get-connection-routing-protocols operation
+GetRoutingProtocols
 
 ### Synopsis
 
-Execute the get-connection-routing-protocols operation on this service.
+This API provides capability to get Routing Protocols for connections
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 routing-protocols get-connection-routing-protocols [flags]

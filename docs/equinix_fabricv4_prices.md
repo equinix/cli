@@ -21,5 +21,5 @@ Commands for managing prices resources in the API
 ### SEE ALSO
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix Fabric v4 resources
-* [equinix fabricv4 prices search-prices](equinix_fabricv4_prices_search-prices.md)	 - Execute search-prices operation
+* [equinix fabricv4 prices search-prices](equinix_fabricv4_prices_search-prices.md)	 - Get Prices
 

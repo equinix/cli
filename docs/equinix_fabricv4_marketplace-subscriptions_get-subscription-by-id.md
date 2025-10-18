@@ -1,15 +1,12 @@
 ## equinix fabricv4 marketplace-subscriptions get-subscription-by-id
 
-Execute get-subscription-by-id operation
+Get Subscription
 
 ### Synopsis
 
-Execute the get-subscription-by-id operation on this service.
+The API provides capability to get subscription
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 marketplace-subscriptions get-subscription-by-id [flags]

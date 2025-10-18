@@ -1,15 +1,12 @@
 ## equinix fabricv4 precision-time create-time-services
 
-Execute create-time-services operation
+Create Time Service
 
 ### Synopsis
 
-Execute the create-time-services operation on this service.
+The API provides capability to create Precision Time service
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 precision-time create-time-services [flags]

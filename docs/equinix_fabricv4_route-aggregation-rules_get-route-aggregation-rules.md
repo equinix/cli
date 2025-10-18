@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-aggregation-rules get-route-aggregation-rules
 
-Execute get-route-aggregation-rules operation
+GetRARules
 
 ### Synopsis
 
-Execute the get-route-aggregation-rules operation on this service.
+This API provides capability to get all Route Aggregations Rules for Fabric
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-aggregation-rules get-route-aggregation-rules [flags]

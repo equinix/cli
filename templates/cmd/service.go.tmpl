@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	_ "embed"
 	"fmt"
 	"os"
 
@@ -8,6 +9,9 @@ import (
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
 )
+
+//go:embed descriptions/{{SERVICE}}.json
+var {{SERVICE}}Descriptions []byte
 
 // {{SERVICE}}Cmd represents the {{SERVICE}} command
 var {{SERVICE}}Cmd = &cobra.Command{
@@ -30,6 +34,11 @@ providing access to all available API services.`,
 
 func init() {
 	rootCmd.AddCommand({{SERVICE}}Cmd)
+
+	// Load SDK descriptions for better command documentation
+	if err := register.LoadDescriptions({{SERVICE}}Descriptions); err != nil {
+		fmt.Fprintf(os.Stderr, "Warning: Could not load {{SERVICE}} descriptions: %v\n", err)
+	}
 
 	// Register commands at init time for help/discovery
 	// We use a discovery client that doesn't require credentials for structure introspection
@@ -58,15 +67,4 @@ func init() {
 	//         createCmd.Aliases = []string{"create"}
 	//     }
 	// }
-}
-
-// GetServices returns information about all available {{SERVICE_DISPLAY}} services
-// This can be useful for documentation or introspection
-func GetServices() ([]register.ServiceInfo, error) {
-	client, err := {{SERVICE}}.NewClient()
-	if err != nil {
-		return nil, err
-	}
-
-	return register.GetServiceList(client)
 }

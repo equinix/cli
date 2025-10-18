@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-profiles put-service-profile-by-uuid
 
-Execute put-service-profile-by-uuid operation
+Replace Profile
 
 ### Synopsis
 
-Execute the put-service-profile-by-uuid operation on this service.
+This API request replaces a service profile definition
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-profiles put-service-profile-by-uuid [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-events get-cloud-event
 
-Execute get-cloud-event operation
+Get Cloud Event
 
 ### Synopsis
 
-Execute the get-cloud-event operation on this service.
+This API provides capability to retrieve a cloud event by uuid
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-events get-cloud-event [flags]

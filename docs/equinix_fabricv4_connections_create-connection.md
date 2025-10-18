@@ -1,15 +1,12 @@
 ## equinix fabricv4 connections create-connection
 
-Execute create-connection operation
+Create Connection
 
 ### Synopsis
 
-Execute the create-connection operation on this service.
+This API provides capability to create user's virtual connection
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 connections create-connection [flags]

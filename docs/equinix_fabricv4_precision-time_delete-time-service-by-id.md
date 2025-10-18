@@ -1,15 +1,12 @@
 ## equinix fabricv4 precision-time delete-time-service-by-id
 
-Execute delete-time-service-by-id operation
+Delete by ID.
 
 ### Synopsis
 
-Execute the delete-time-service-by-id operation on this service.
+The API provides capability to delete Precision Time Service by service id.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 precision-time delete-time-service-by-id [flags]
@@ -19,7 +16,7 @@ equinix fabricv4 precision-time delete-time-service-by-id [flags]
 
 ```
   -h, --help             help for delete-time-service-by-id
-      --id string        id (required)
+      --id string        Service UUID (required)
       --request string   Raw JSON payload for optional request fields
 ```
 

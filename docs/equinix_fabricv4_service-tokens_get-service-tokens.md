@@ -1,15 +1,12 @@
 ## equinix fabricv4 service-tokens get-service-tokens
 
-Execute get-service-tokens operation
+Get All Tokens
 
 ### Synopsis
 
-Execute the get-service-tokens operation on this service.
+Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber's account.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 service-tokens get-service-tokens [flags]

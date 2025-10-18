@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-routers get-cloud-router-actions
 
-Execute get-cloud-router-actions operation
+Get Route Table Actions
 
 ### Synopsis
 
-Execute the get-cloud-router-actions operation on this service.
+This API provides capability to fetch action status
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-routers get-cloud-router-actions [flags]

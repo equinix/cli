@@ -1,15 +1,12 @@
 ## equinix fabricv4 deployments delete-deployment
 
-Execute delete-deployment operation
+Delete Deployment using UUID
 
 ### Synopsis
 
-Execute the delete-deployment operation on this service.
+This API provides capability to delete user's deployment
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 deployments delete-deployment [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 connections search-connections
 
-Execute search-connections operation
+Search connections
 
 ### Synopsis
 
-Execute the search-connections operation on this service.
+The API provides capability to get list of user's virtual connections using search criteria, including optional filtering, pagination and sorting
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 connections search-connections [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 route-filter-rules create-route-filter-rule
 
-Execute create-route-filter-rule operation
+Create Route Filter Rule
 
 ### Synopsis
 
-Execute the create-route-filter-rule operation on this service.
+This API provides capability to create a Route Filter Rule
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 route-filter-rules create-route-filter-rule [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 health get-status
 
-Execute get-status operation
+Get service status
 
 ### Synopsis
 
-Execute the get-status operation on this service.
+GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 health get-status [flags]

@@ -1,15 +1,12 @@
 ## equinix fabricv4 streams get-streams
 
-Execute get-streams operation
+Get Streams
 
 ### Synopsis
 
-Execute the get-streams operation on this service.
+This API provides capability to retrieve streams
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 streams get-streams [flags]

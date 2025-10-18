@@ -1,15 +1,12 @@
 ## equinix fabricv4 cloud-events search-cloud-events
 
-Execute search-cloud-events operation
+Search Cloud Events
 
 ### Synopsis
 
-Execute the search-cloud-events operation on this service.
+This API provides capability to search cloud events from a filtered query
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 cloud-events search-cloud-events [flags]

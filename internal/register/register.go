@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/equinix/cli/internal/parser"
 	"github.com/spf13/cobra"
 )
 
@@ -21,6 +22,19 @@ type ServiceInfo struct {
 	Name        string
 	ServiceType reflect.Type
 	Description string
+}
+
+// descriptionsData holds the loaded SDK descriptions
+var descriptionsData *parser.SDKDescriptions
+
+// LoadDescriptions loads SDK descriptions from embedded JSON data
+func LoadDescriptions(jsonData []byte) error {
+	var descriptions parser.SDKDescriptions
+	if err := json.Unmarshal(jsonData, &descriptions); err != nil {
+		return fmt.Errorf("failed to unmarshal descriptions: %w", err)
+	}
+	descriptionsData = &descriptions
+	return nil
 }
 
 // ServiceCommands dynamically creates Cobra commands for each API service
@@ -159,8 +173,8 @@ func extractMethodName(methodName string) string {
 
 // createMethodCommand creates a Cobra command for a specific API method
 func createMethodCommand(methodName, originalMethodName string, service interface{}, method reflect.Method, builderMethod reflect.Method) *cobra.Command {
-	// Extract description from the corresponding non-Execute method
-	description := extractMethodDescription(service, originalMethodName)
+	// Extract description from loaded SDK descriptions or generate default
+	description := extractMethodDescription(service, originalMethodName, builderMethod)
 
 	cmd := &cobra.Command{
 		Use:   methodName,
@@ -173,47 +187,93 @@ func createMethodCommand(methodName, originalMethodName string, service interfac
 
 	// Generate flags based on builder method parameters (not Execute method)
 	// The builder method has the actual request parameters we need
-	registerBuilderMethodFlags(cmd, builderMethod)
+	registerBuilderMethodFlags(cmd, builderMethod, description.ParameterDescriptions)
 
 	return cmd
 }
 
 // MethodDescription holds the description extracted from SDK documentation
 type MethodDescription struct {
-	Short string
-	Long  string
+	Short                 string
+	Long                  string
+	ParameterDescriptions map[string]string
 }
 
-// extractMethodDescription attempts to extract description from the SDK method
-func extractMethodDescription(service interface{}, methodName string) MethodDescription {
+// extractMethodDescription attempts to extract description from loaded SDK descriptions
+func extractMethodDescription(service interface{}, methodName string, _ reflect.Method) MethodDescription {
 	// Remove "Execute" suffix to get the builder method name
 	builderMethodName := strings.TrimSuffix(methodName, "Execute")
 
-	serviceType := reflect.TypeOf(service)
+	// Try to get description from loaded SDK descriptions
+	if descriptionsData != nil {
+		// Get service name from the service type
+		serviceName := getServiceNameFromType(service)
 
-	// Try to find the builder method which has better documentation
-	_, found := serviceType.MethodByName(builderMethodName)
-	if found {
-		// Get the function documentation (this would require parsing source comments)
-		// For now, we'll generate a reasonable description
-		cmdName := extractMethodName(builderMethodName)
-		return MethodDescription{
-			Short: fmt.Sprintf("Execute %s operation", cmdName),
-			Long: fmt.Sprintf(`Execute the %s operation on this service.
+		if serviceDesc, exists := descriptionsData.Services[serviceName]; exists {
+			if methodDesc, exists := serviceDesc.Methods[builderMethodName]; exists {
+				cmdName := extractMethodName(builderMethodName)
+
+				shortDesc := methodDesc.ShortDescription
+				if shortDesc == "" {
+					shortDesc = fmt.Sprintf("Execute %s operation", cmdName)
+				}
+
+				longDesc := methodDesc.LongDescription
+				if longDesc == "" {
+					longDesc = shortDesc
+				}
+
+				// Add usage hint to long description
+				longDesc = fmt.Sprintf("%s\n\nUse --request flag to provide optional JSON payload fields.", longDesc)
+
+				return MethodDescription{
+					Short:                 shortDesc,
+					Long:                  longDesc,
+					ParameterDescriptions: methodDesc.Parameters,
+				}
+			}
+		}
+	}
+
+	// Fallback to generating description
+	cmdName := extractMethodName(builderMethodName)
+	return MethodDescription{
+		Short: fmt.Sprintf("Execute %s operation", cmdName),
+		Long: fmt.Sprintf(`Execute the %s operation on this service.
 
 Use --request flag to provide a JSON payload for the request body.
 Example: --request '{"field":"value"}'
 
 The command accepts parameters based on the SDK method signature.`, cmdName),
+		ParameterDescriptions: nil,
+	}
+}
+
+// getServiceNameFromType extracts the service name from the service interface type
+func getServiceNameFromType(service interface{}) string {
+	serviceType := reflect.TypeOf(service)
+	typeName := serviceType.String()
+
+	// Remove package path and pointer indicator
+	parts := strings.Split(typeName, ".")
+	if len(parts) > 1 {
+		typeName = parts[len(parts)-1]
+	}
+	typeName = strings.TrimPrefix(typeName, "*")
+
+	// Remove "ApiService" suffix
+	typeName = strings.TrimSuffix(typeName, "ApiService")
+
+	// Convert to kebab-case
+	var result strings.Builder
+	for i, r := range typeName {
+		if i > 0 && r >= 'A' && r <= 'Z' {
+			result.WriteRune('-')
 		}
+		result.WriteRune(r)
 	}
 
-	// Fallback to simple description
-	cmdName := extractMethodName(methodName)
-	return MethodDescription{
-		Short: fmt.Sprintf("Execute %s operation", cmdName),
-		Long:  fmt.Sprintf("Execute the %s operation on this service", methodName),
-	}
+	return strings.ToLower(result.String())
 }
 
 // executeMethod performs the actual API call using reflection
@@ -509,7 +569,7 @@ func convertJSONValueToType(jsonValue interface{}, targetType reflect.Type) refl
 }
 
 // registerBuilderMethodFlags creates flags based on the builder method parameters
-func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method) {
+func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method, paramDescriptions map[string]string) {
 	builderType := builderMethod.Type
 
 	// Always add --request flag for JSON payload
@@ -525,23 +585,42 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 			continue
 		}
 
+		// Get description from SDK if available
+		var paramDesc string
+		// Try to find a matching description
+		for key, desc := range paramDescriptions {
+			if strings.Contains(strings.ToLower(key), strings.ToLower(paramName)) ||
+				strings.Contains(strings.ToLower(desc), strings.ToLower(paramName)) {
+				paramDesc = desc
+				break
+			}
+		}
+
 		// Add flags based on parameter type
-		addBuilderFlagForType(cmd, paramName, paramType, builderMethod)
+		addBuilderFlagForType(cmd, paramName, paramType, builderMethod, paramDesc)
 	}
 }
 
 // addBuilderFlagForType adds an appropriate flag for a builder method parameter
-func addBuilderFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type, _ reflect.Method) {
+func addBuilderFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type, _ reflect.Method, sdkDescription string) {
 	// Handle pointer types
 	isOptional := paramType.Kind() == reflect.Ptr
 	if isOptional {
 		paramType = paramType.Elem()
 	}
 
-	// Create description based on method name and parameter
-	description := fmt.Sprintf("%s (required)", paramName)
-	if isOptional {
-		description = fmt.Sprintf("%s (optional)", paramName)
+	// Create description based on SDK description or default
+	var description string
+	if sdkDescription != "" {
+		description = sdkDescription
+		if !isOptional {
+			description = fmt.Sprintf("%s (required)", description)
+		}
+	} else {
+		description = fmt.Sprintf("%s (required)", paramName)
+		if isOptional {
+			description = fmt.Sprintf("%s (optional)", paramName)
+		}
 	}
 
 	// Add flags based on type kind

@@ -1,15 +1,12 @@
 ## equinix fabricv4 deployments create-topology-deployment
 
-Execute create-topology-deployment operation
+Create a new topology deployment
 
 ### Synopsis
 
-Execute the create-topology-deployment operation on this service.
+The deployment API is used to creates new deployment topologies. It allows users to define the properties of the deployment, including Fabric and CSP providers.
 
-Use --request flag to provide a JSON payload for the request body.
-Example: --request '{"field":"value"}'
-
-The command accepts parameters based on the SDK method signature.
+Use --request flag to provide optional JSON payload fields.
 
 ```
 equinix fabricv4 deployments create-topology-deployment [flags]

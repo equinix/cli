@@ -4,6 +4,7 @@ package register
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"reflect"
 	"strings"
@@ -149,26 +150,123 @@ func extractMethodName(methodName string) string {
 }
 
 // createMethodCommand creates a Cobra command for a specific API method
-func createMethodCommand(methodName, originalMethodName string, _ interface{}, method reflect.Method) *cobra.Command {
+func createMethodCommand(methodName, originalMethodName string, service interface{}, method reflect.Method) *cobra.Command {
+	// Extract description from the corresponding non-Execute method
+	description := extractMethodDescription(service, originalMethodName)
+
 	cmd := &cobra.Command{
 		Use:   methodName,
-		Short: fmt.Sprintf("Execute %s operation", methodName),
-		Long:  fmt.Sprintf("Execute the %s operation on this service", originalMethodName),
-		Run: func(_ *cobra.Command, _ []string) {
-			// This is a placeholder implementation
-			// In a real implementation, this would:
-			// 1. Parse flags to get method parameters
-			// 2. Call the method using reflection
-			// 3. Format and display the result
-			fmt.Printf("Executing %s (placeholder - to be implemented)\n", originalMethodName)
-			fmt.Println("This command will be fully implemented in future iterations")
+		Short: description.Short,
+		Long:  description.Long,
+		RunE: func(cmd *cobra.Command, _ []string) error {
+			return executeMethod(cmd, service, method)
 		},
 	}
 
 	// Generate flags based on method parameters
+	// Note: We add a --request flag in registerMethodFlags for API request parameters
 	registerMethodFlags(cmd, method)
 
 	return cmd
+}
+
+// MethodDescription holds the description extracted from SDK documentation
+type MethodDescription struct {
+	Short string
+	Long  string
+}
+
+// extractMethodDescription attempts to extract description from the SDK method
+func extractMethodDescription(service interface{}, methodName string) MethodDescription {
+	// Remove "Execute" suffix to get the builder method name
+	builderMethodName := strings.TrimSuffix(methodName, "Execute")
+
+	serviceType := reflect.TypeOf(service)
+
+	// Try to find the builder method which has better documentation
+	_, found := serviceType.MethodByName(builderMethodName)
+	if found {
+		// Get the function documentation (this would require parsing source comments)
+		// For now, we'll generate a reasonable description
+		cmdName := extractMethodName(builderMethodName)
+		return MethodDescription{
+			Short: fmt.Sprintf("Execute %s operation", cmdName),
+			Long: fmt.Sprintf(`Execute the %s operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.`, cmdName),
+		}
+	}
+
+	// Fallback to simple description
+	cmdName := extractMethodName(methodName)
+	return MethodDescription{
+		Short: fmt.Sprintf("Execute %s operation", cmdName),
+		Long:  fmt.Sprintf("Execute the %s operation on this service", methodName),
+	}
+}
+
+// executeMethod performs the actual API call using reflection
+func executeMethod(cmd *cobra.Command, service interface{}, method reflect.Method) error {
+	ctx := context.Background()
+	serviceValue := reflect.ValueOf(service)
+
+	// Get the builder method name (without Execute suffix)
+	builderMethodName := strings.TrimSuffix(method.Name, "Execute")
+
+	// Get the builder method
+	builderMethod := serviceValue.MethodByName(builderMethodName)
+	if !builderMethod.IsValid() {
+		return fmt.Errorf("could not find builder method %s", builderMethodName)
+	}
+
+	// Call the builder method with context
+	ctxValue := reflect.ValueOf(ctx)
+	builderResult := builderMethod.Call([]reflect.Value{ctxValue})
+	if len(builderResult) == 0 {
+		return fmt.Errorf("builder method returned no value")
+	}
+
+	requestBuilder := builderResult[0]
+
+	// Check if --request flag was provided for JSON payload
+	requestJSON, _ := cmd.Flags().GetString("request")
+	if requestJSON != "" {
+		// TODO: Parse JSON and populate request struct fields
+		// This would require more complex reflection to match JSON fields to struct methods
+		return fmt.Errorf("--request JSON support not yet fully implemented. Coming in future iterations")
+	}
+
+	// Call the Execute method on the request builder
+	executeMethod := requestBuilder.MethodByName("Execute")
+	if !executeMethod.IsValid() {
+		return fmt.Errorf("could not find Execute method on request builder")
+	}
+
+	result := executeMethod.Call([]reflect.Value{})
+	if len(result) < 3 {
+		return fmt.Errorf("unexpected result from Execute method")
+	}
+
+	// Check for errors (third return value)
+	if !result[2].IsNil() {
+		err := result[2].Interface().(error)
+		return fmt.Errorf("API error: %w", err)
+	}
+
+	// Format and display the result (first return value)
+	if !result[0].IsNil() {
+		response := result[0].Interface()
+		jsonBytes, err := json.MarshalIndent(response, "", "  ")
+		if err != nil {
+			return fmt.Errorf("failed to format response: %w", err)
+		}
+		fmt.Println(string(jsonBytes))
+	}
+
+	return nil
 }
 
 // registerMethodFlags inspects a method's signature and adds corresponding flags to the command
@@ -237,6 +335,13 @@ func addFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type
 	// Handle pointer types
 	if paramType.Kind() == reflect.Ptr {
 		paramType = paramType.Elem()
+	}
+
+	// For API request struct types, add a special --request flag with better description
+	typeName := paramType.String()
+	if strings.Contains(typeName, "Request") && paramType.Kind() == reflect.Struct {
+		cmd.Flags().String("request", "", fmt.Sprintf("Raw JSON payload for %s", typeName))
+		return
 	}
 
 	// Add flags based on type kind

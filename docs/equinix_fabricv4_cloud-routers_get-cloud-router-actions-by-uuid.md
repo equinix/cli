@@ -4,7 +4,12 @@ Execute get-cloud-router-actions-by-uuid operation
 
 ### Synopsis
 
-Execute the GetCloudRouterActionsByUuid operation on this service
+Execute the get-cloud-router-actions-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-routers get-cloud-router-actions-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-routers get-cloud-router-actions-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for get-cloud-router-actions-by-uuid
+  -h, --help             help for get-cloud-router-actions-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiGetCloudRouterActionsByUuidRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute create-route-aggregation-rule operation
 
 ### Synopsis
 
-Execute the CreateRouteAggregationRule operation on this service
+Execute the create-route-aggregation-rule operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-aggregation-rules create-route-aggregation-rule [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-aggregation-rules create-route-aggregation-rule [flags]
 ### Options
 
 ```
-  -h, --help   help for create-route-aggregation-rule
+  -h, --help             help for create-route-aggregation-rule
+      --request string   Raw JSON payload for fabricv4.ApiCreateRouteAggregationRuleRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute create-service-token-action operation
 
 ### Synopsis
 
-Execute the CreateServiceTokenAction operation on this service
+Execute the create-service-token-action operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 service-tokens create-service-token-action [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 service-tokens create-service-token-action [flags]
 ### Options
 
 ```
-  -h, --help   help for create-service-token-action
+  -h, --help             help for create-service-token-action
+      --request string   Raw JSON payload for fabricv4.ApiCreateServiceTokenActionRequest
 ```
 
 ### Options inherited from parent commands

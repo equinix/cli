@@ -4,7 +4,12 @@ Execute create-cloud-router-action operation
 
 ### Synopsis
 
-Execute the CreateCloudRouterAction operation on this service
+Execute the create-cloud-router-action operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-routers create-cloud-router-action [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-routers create-cloud-router-action [flags]
 ### Options
 
 ```
-  -h, --help   help for create-cloud-router-action
+  -h, --help             help for create-cloud-router-action
+      --request string   Raw JSON payload for fabricv4.ApiCreateCloudRouterActionRequest
 ```
 
 ### Options inherited from parent commands

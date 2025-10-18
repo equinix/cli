@@ -4,7 +4,12 @@ Execute get-network-changes operation
 
 ### Synopsis
 
-Execute the GetNetworkChanges operation on this service
+Execute the get-network-changes operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 networks get-network-changes [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 networks get-network-changes [flags]
 ### Options
 
 ```
-  -h, --help   help for get-network-changes
+  -h, --help             help for get-network-changes
+      --request string   Raw JSON payload for fabricv4.ApiGetNetworkChangesRequest
 ```
 
 ### Options inherited from parent commands

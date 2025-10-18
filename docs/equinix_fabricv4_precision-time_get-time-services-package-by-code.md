@@ -4,7 +4,12 @@ Execute get-time-services-package-by-code operation
 
 ### Synopsis
 
-Execute the GetTimeServicesPackageByCode operation on this service
+Execute the get-time-services-package-by-code operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 precision-time get-time-services-package-by-code [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 precision-time get-time-services-package-by-code [flags]
 ### Options
 
 ```
-  -h, --help   help for get-time-services-package-by-code
+  -h, --help             help for get-time-services-package-by-code
+      --request string   Raw JSON payload for fabricv4.ApiGetTimeServicesPackageByCodeRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute get-route-aggregation-rules operation
 
 ### Synopsis
 
-Execute the GetRouteAggregationRules operation on this service
+Execute the get-route-aggregation-rules operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-aggregation-rules get-route-aggregation-rules [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-aggregation-rules get-route-aggregation-rules [flags]
 ### Options
 
 ```
-  -h, --help   help for get-route-aggregation-rules
+  -h, --help             help for get-route-aggregation-rules
+      --request string   Raw JSON payload for fabricv4.ApiGetRouteAggregationRulesRequest
 ```
 
 ### Options inherited from parent commands

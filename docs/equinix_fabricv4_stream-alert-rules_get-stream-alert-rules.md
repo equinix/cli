@@ -4,7 +4,12 @@ Execute get-stream-alert-rules operation
 
 ### Synopsis
 
-Execute the GetStreamAlertRules operation on this service
+Execute the get-stream-alert-rules operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 stream-alert-rules get-stream-alert-rules [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 stream-alert-rules get-stream-alert-rules [flags]
 ### Options
 
 ```
-  -h, --help   help for get-stream-alert-rules
+  -h, --help             help for get-stream-alert-rules
+      --request string   Raw JSON payload for fabricv4.ApiGetStreamAlertRulesRequest
 ```
 
 ### Options inherited from parent commands

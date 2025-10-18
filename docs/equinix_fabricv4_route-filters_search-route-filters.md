@@ -4,7 +4,12 @@ Execute search-route-filters operation
 
 ### Synopsis
 
-Execute the SearchRouteFilters operation on this service
+Execute the search-route-filters operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-filters search-route-filters [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-filters search-route-filters [flags]
 ### Options
 
 ```
-  -h, --help   help for search-route-filters
+  -h, --help             help for search-route-filters
+      --request string   Raw JSON payload for fabricv4.ApiSearchRouteFiltersRequest
 ```
 
 ### Options inherited from parent commands

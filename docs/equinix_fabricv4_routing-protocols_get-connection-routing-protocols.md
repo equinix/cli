@@ -4,7 +4,12 @@ Execute get-connection-routing-protocols operation
 
 ### Synopsis
 
-Execute the GetConnectionRoutingProtocols operation on this service
+Execute the get-connection-routing-protocols operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols get-connection-routing-protocols [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols get-connection-routing-protocols [flags]
 ### Options
 
 ```
-  -h, --help   help for get-connection-routing-protocols
+  -h, --help             help for get-connection-routing-protocols
+      --request string   Raw JSON payload for fabricv4.ApiGetConnectionRoutingProtocolsRequest
 ```
 
 ### Options inherited from parent commands

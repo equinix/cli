@@ -4,7 +4,12 @@ Execute get-connections-by-network-uuid operation
 
 ### Synopsis
 
-Execute the GetConnectionsByNetworkUuid operation on this service
+Execute the get-connections-by-network-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 networks get-connections-by-network-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 networks get-connections-by-network-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for get-connections-by-network-uuid
+  -h, --help             help for get-connections-by-network-uuid
+      --request string   Raw JSON payload for fabricv4.ApiGetConnectionsByNetworkUuidRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute get-stream-by-uuid operation
 
 ### Synopsis
 
-Execute the GetStreamByUuid operation on this service
+Execute the get-stream-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 streams get-stream-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 streams get-stream-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for get-stream-by-uuid
+  -h, --help             help for get-stream-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiGetStreamByUuidRequest
 ```
 
 ### Options inherited from parent commands

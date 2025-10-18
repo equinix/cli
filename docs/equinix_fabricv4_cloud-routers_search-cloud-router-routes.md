@@ -4,7 +4,12 @@ Execute search-cloud-router-routes operation
 
 ### Synopsis
 
-Execute the SearchCloudRouterRoutes operation on this service
+Execute the search-cloud-router-routes operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
 ### Options
 
 ```
-  -h, --help   help for search-cloud-router-routes
+  -h, --help             help for search-cloud-router-routes
+      --request string   Raw JSON payload for fabricv4.ApiSearchCloudRouterRoutesRequest
 ```
 
 ### Options inherited from parent commands

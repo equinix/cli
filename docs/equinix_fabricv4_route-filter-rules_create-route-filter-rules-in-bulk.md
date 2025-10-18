@@ -4,7 +4,12 @@ Execute create-route-filter-rules-in-bulk operation
 
 ### Synopsis
 
-Execute the CreateRouteFilterRulesInBulk operation on this service
+Execute the create-route-filter-rules-in-bulk operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-filter-rules create-route-filter-rules-in-bulk [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-filter-rules create-route-filter-rules-in-bulk [flags]
 ### Options
 
 ```
-  -h, --help   help for create-route-filter-rules-in-bulk
+  -h, --help             help for create-route-filter-rules-in-bulk
+      --request string   Raw JSON payload for fabricv4.ApiCreateRouteFilterRulesInBulkRequest
 ```
 
 ### Options inherited from parent commands

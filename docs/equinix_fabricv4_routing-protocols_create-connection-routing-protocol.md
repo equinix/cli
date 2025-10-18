@@ -4,7 +4,12 @@ Execute create-connection-routing-protocol operation
 
 ### Synopsis
 
-Execute the CreateConnectionRoutingProtocol operation on this service
+Execute the create-connection-routing-protocol operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols create-connection-routing-protocol [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols create-connection-routing-protocol [flags]
 ### Options
 
 ```
-  -h, --help   help for create-connection-routing-protocol
+  -h, --help             help for create-connection-routing-protocol
+      --request string   Raw JSON payload for fabricv4.ApiCreateConnectionRoutingProtocolRequest
 ```
 
 ### Options inherited from parent commands

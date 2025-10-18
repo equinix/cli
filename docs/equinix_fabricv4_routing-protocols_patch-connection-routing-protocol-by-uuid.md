@@ -4,7 +4,12 @@ Execute patch-connection-routing-protocol-by-uuid operation
 
 ### Synopsis
 
-Execute the PatchConnectionRoutingProtocolByUuid operation on this service
+Execute the patch-connection-routing-protocol-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols patch-connection-routing-protocol-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols patch-connection-routing-protocol-by-uuid [fl
 ### Options
 
 ```
-  -h, --help   help for patch-connection-routing-protocol-by-uuid
+  -h, --help             help for patch-connection-routing-protocol-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiPatchConnectionRoutingProtocolByUuidRequest
 ```
 
 ### Options inherited from parent commands

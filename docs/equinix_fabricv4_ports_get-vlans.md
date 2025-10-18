@@ -4,7 +4,12 @@ Execute get-vlans operation
 
 ### Synopsis
 
-Execute the GetVlans operation on this service
+Execute the get-vlans operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 ports get-vlans [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 ports get-vlans [flags]
 ### Options
 
 ```
-  -h, --help   help for get-vlans
+  -h, --help             help for get-vlans
+      --request string   Raw JSON payload for fabricv4.ApiGetVlansRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute get-stream-subscriptions operation
 
 ### Synopsis
 
-Execute the GetStreamSubscriptions operation on this service
+Execute the get-stream-subscriptions operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 stream-subscriptions get-stream-subscriptions [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 stream-subscriptions get-stream-subscriptions [flags]
 ### Options
 
 ```
-  -h, --help   help for get-stream-subscriptions
+  -h, --help             help for get-stream-subscriptions
+      --request string   Raw JSON payload for fabricv4.ApiGetStreamSubscriptionsRequest
 ```
 
 ### Options inherited from parent commands

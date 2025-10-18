@@ -4,7 +4,12 @@ Execute create-topology-deployment operation
 
 ### Synopsis
 
-Execute the CreateTopologyDeployment operation on this service
+Execute the create-topology-deployment operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 deployments create-topology-deployment [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 deployments create-topology-deployment [flags]
 ### Options
 
 ```
-  -h, --help   help for create-topology-deployment
+  -h, --help             help for create-topology-deployment
+      --request string   Raw JSON payload for fabricv4.ApiCreateTopologyDeploymentRequest
 ```
 
 ### Options inherited from parent commands

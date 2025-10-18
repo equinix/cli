@@ -4,7 +4,12 @@ Execute create-connection-routing-protocols-in-bulk operation
 
 ### Synopsis
 
-Execute the CreateConnectionRoutingProtocolsInBulk operation on this service
+Execute the create-connection-routing-protocols-in-bulk operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols create-connection-routing-protocols-in-bulk [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols create-connection-routing-protocols-in-bulk [
 ### Options
 
 ```
-  -h, --help   help for create-connection-routing-protocols-in-bulk
+  -h, --help             help for create-connection-routing-protocols-in-bulk
+      --request string   Raw JSON payload for fabricv4.ApiCreateConnectionRoutingProtocolsInBulkRequest
 ```
 
 ### Options inherited from parent commands

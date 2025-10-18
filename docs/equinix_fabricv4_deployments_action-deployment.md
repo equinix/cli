@@ -4,7 +4,12 @@ Execute action-deployment operation
 
 ### Synopsis
 
-Execute the ActionDeployment operation on this service
+Execute the action-deployment operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 deployments action-deployment [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 deployments action-deployment [flags]
 ### Options
 
 ```
-  -h, --help   help for action-deployment
+  -h, --help             help for action-deployment
+      --request string   Raw JSON payload for fabricv4.ApiActionDeploymentRequest
 ```
 
 ### Options inherited from parent commands

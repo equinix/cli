@@ -4,7 +4,12 @@ Execute get-route-aggregation-connections operation
 
 ### Synopsis
 
-Execute the GetRouteAggregationConnections operation on this service
+Execute the get-route-aggregation-connections operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-aggregations get-route-aggregation-connections [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-aggregations get-route-aggregation-connections [flags]
 ### Options
 
 ```
-  -h, --help   help for get-route-aggregation-connections
+  -h, --help             help for get-route-aggregation-connections
+      --request string   Raw JSON payload for fabricv4.ApiGetRouteAggregationConnectionsRequest
 ```
 
 ### Options inherited from parent commands

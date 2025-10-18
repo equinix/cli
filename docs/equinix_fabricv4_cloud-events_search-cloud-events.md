@@ -4,7 +4,12 @@ Execute search-cloud-events operation
 
 ### Synopsis
 
-Execute the SearchCloudEvents operation on this service
+Execute the search-cloud-events operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-events search-cloud-events [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-events search-cloud-events [flags]
 ### Options
 
 ```
-  -h, --help   help for search-cloud-events
+  -h, --help             help for search-cloud-events
+      --request string   Raw JSON payload for fabricv4.ApiSearchCloudEventsRequest
 ```
 
 ### Options inherited from parent commands

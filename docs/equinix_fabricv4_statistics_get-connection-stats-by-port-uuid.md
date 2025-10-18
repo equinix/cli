@@ -4,7 +4,12 @@ Execute get-connection-stats-by-port-uuid operation
 
 ### Synopsis
 
-Execute the GetConnectionStatsByPortUuid operation on this service
+Execute the get-connection-stats-by-port-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 statistics get-connection-stats-by-port-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 statistics get-connection-stats-by-port-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for get-connection-stats-by-port-uuid
+  -h, --help             help for get-connection-stats-by-port-uuid
+      --request string   Raw JSON payload for fabricv4.ApiGetConnectionStatsByPortUuidRequest
 ```
 
 ### Options inherited from parent commands

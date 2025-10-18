@@ -4,7 +4,12 @@ Execute attach-connection-route-aggregation operation
 
 ### Synopsis
 
-Execute the AttachConnectionRouteAggregation operation on this service
+Execute the attach-connection-route-aggregation operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-aggregations attach-connection-route-aggregation [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-aggregations attach-connection-route-aggregation [flags]
 ### Options
 
 ```
-  -h, --help   help for attach-connection-route-aggregation
+  -h, --help             help for attach-connection-route-aggregation
+      --request string   Raw JSON payload for fabricv4.ApiAttachConnectionRouteAggregationRequest
 ```
 
 ### Options inherited from parent commands

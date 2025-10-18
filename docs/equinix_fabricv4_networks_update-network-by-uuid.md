@@ -4,7 +4,12 @@ Execute update-network-by-uuid operation
 
 ### Synopsis
 
-Execute the UpdateNetworkByUuid operation on this service
+Execute the update-network-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 networks update-network-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 networks update-network-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for update-network-by-uuid
+  -h, --help             help for update-network-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiUpdateNetworkByUuidRequest
 ```
 
 ### Options inherited from parent commands

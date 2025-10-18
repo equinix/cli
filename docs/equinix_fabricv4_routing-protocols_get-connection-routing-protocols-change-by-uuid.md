@@ -4,7 +4,12 @@ Execute get-connection-routing-protocols-change-by-uuid operation
 
 ### Synopsis
 
-Execute the GetConnectionRoutingProtocolsChangeByUuid operation on this service
+Execute the get-connection-routing-protocols-change-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols get-connection-routing-protocols-change-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols get-connection-routing-protocols-change-by-uu
 ### Options
 
 ```
-  -h, --help   help for get-connection-routing-protocols-change-by-uuid
+  -h, --help             help for get-connection-routing-protocols-change-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiGetConnectionRoutingProtocolsChangeByUuidRequest
 ```
 
 ### Options inherited from parent commands

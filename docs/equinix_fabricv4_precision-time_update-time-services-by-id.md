@@ -4,7 +4,12 @@ Execute update-time-services-by-id operation
 
 ### Synopsis
 
-Execute the UpdateTimeServicesById operation on this service
+Execute the update-time-services-by-id operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 precision-time update-time-services-by-id [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 precision-time update-time-services-by-id [flags]
 ### Options
 
 ```
-  -h, --help   help for update-time-services-by-id
+  -h, --help             help for update-time-services-by-id
+      --request string   Raw JSON payload for fabricv4.ApiUpdateTimeServicesByIdRequest
 ```
 
 ### Options inherited from parent commands

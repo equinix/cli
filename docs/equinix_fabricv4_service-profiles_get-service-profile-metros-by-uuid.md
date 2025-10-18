@@ -4,7 +4,12 @@ Execute get-service-profile-metros-by-uuid operation
 
 ### Synopsis
 
-Execute the GetServiceProfileMetrosByUuid operation on this service
+Execute the get-service-profile-metros-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 service-profiles get-service-profile-metros-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 service-profiles get-service-profile-metros-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for get-service-profile-metros-by-uuid
+  -h, --help             help for get-service-profile-metros-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiGetServiceProfileMetrosByUuidRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute search-deployments operation
 
 ### Synopsis
 
-Execute the SearchDeployments operation on this service
+Execute the search-deployments operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 deployments search-deployments [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 deployments search-deployments [flags]
 ### Options
 
 ```
-  -h, --help   help for search-deployments
+  -h, --help             help for search-deployments
+      --request string   Raw JSON payload for fabricv4.ApiSearchDeploymentsRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute search-time-services operation
 
 ### Synopsis
 
-Execute the SearchTimeServices operation on this service
+Execute the search-time-services operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 precision-time search-time-services [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 precision-time search-time-services [flags]
 ### Options
 
 ```
-  -h, --help   help for search-time-services
+  -h, --help             help for search-time-services
+      --request string   Raw JSON payload for fabricv4.ApiSearchTimeServicesRequest
 ```
 
 ### Options inherited from parent commands

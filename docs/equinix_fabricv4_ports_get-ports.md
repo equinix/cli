@@ -4,7 +4,12 @@ Execute get-ports operation
 
 ### Synopsis
 
-Execute the GetPorts operation on this service
+Execute the get-ports operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 ports get-ports [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 ports get-ports [flags]
 ### Options
 
 ```
-  -h, --help   help for get-ports
+  -h, --help             help for get-ports
+      --request string   Raw JSON payload for fabricv4.ApiGetPortsRequest
 ```
 
 ### Options inherited from parent commands

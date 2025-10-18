@@ -4,7 +4,12 @@ Execute create-service-profile operation
 
 ### Synopsis
 
-Execute the CreateServiceProfile operation on this service
+Execute the create-service-profile operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 service-profiles create-service-profile [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 service-profiles create-service-profile [flags]
 ### Options
 
 ```
-  -h, --help   help for create-service-profile
+  -h, --help             help for create-service-profile
+      --request string   Raw JSON payload for fabricv4.ApiCreateServiceProfileRequest
 ```
 
 ### Options inherited from parent commands

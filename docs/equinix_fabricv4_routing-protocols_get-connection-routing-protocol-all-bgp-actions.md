@@ -4,7 +4,12 @@ Execute get-connection-routing-protocol-all-bgp-actions operation
 
 ### Synopsis
 
-Execute the GetConnectionRoutingProtocolAllBgpActions operation on this service
+Execute the get-connection-routing-protocol-all-bgp-actions operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols get-connection-routing-protocol-all-bgp-actions [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols get-connection-routing-protocol-all-bgp-actio
 ### Options
 
 ```
-  -h, --help   help for get-connection-routing-protocol-all-bgp-actions
+  -h, --help             help for get-connection-routing-protocol-all-bgp-actions
+      --request string   Raw JSON payload for fabricv4.ApiGetConnectionRoutingProtocolAllBgpActionsRequest
 ```
 
 ### Options inherited from parent commands

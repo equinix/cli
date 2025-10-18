@@ -4,7 +4,12 @@ Execute create-time-services operation
 
 ### Synopsis
 
-Execute the CreateTimeServices operation on this service
+Execute the create-time-services operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 precision-time create-time-services [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 precision-time create-time-services [flags]
 ### Options
 
 ```
-  -h, --help   help for create-time-services
+  -h, --help             help for create-time-services
+      --request string   Raw JSON payload for fabricv4.ApiCreateTimeServicesRequest
 ```
 
 ### Options inherited from parent commands

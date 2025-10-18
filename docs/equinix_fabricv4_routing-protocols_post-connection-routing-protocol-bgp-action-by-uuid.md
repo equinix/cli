@@ -4,7 +4,12 @@ Execute post-connection-routing-protocol-bgp-action-by-uuid operation
 
 ### Synopsis
 
-Execute the PostConnectionRoutingProtocolBgpActionByUuid operation on this service
+Execute the post-connection-routing-protocol-bgp-action-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-b
 ### Options
 
 ```
-  -h, --help   help for post-connection-routing-protocol-bgp-action-by-uuid
+  -h, --help             help for post-connection-routing-protocol-bgp-action-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiPostConnectionRoutingProtocolBgpActionByUuidRequest
 ```
 
 ### Options inherited from parent commands

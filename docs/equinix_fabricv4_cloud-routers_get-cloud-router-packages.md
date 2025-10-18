@@ -4,7 +4,12 @@ Execute get-cloud-router-packages operation
 
 ### Synopsis
 
-Execute the GetCloudRouterPackages operation on this service
+Execute the get-cloud-router-packages operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-routers get-cloud-router-packages [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-routers get-cloud-router-packages [flags]
 ### Options
 
 ```
-  -h, --help   help for get-cloud-router-packages
+  -h, --help             help for get-cloud-router-packages
+      --request string   Raw JSON payload for fabricv4.ApiGetCloudRouterPackagesRequest
 ```
 
 ### Options inherited from parent commands

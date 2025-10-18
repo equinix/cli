@@ -4,7 +4,12 @@ Execute search-connections operation
 
 ### Synopsis
 
-Execute the SearchConnections operation on this service
+Execute the search-connections operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 connections search-connections [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 connections search-connections [flags]
 ### Options
 
 ```
-  -h, --help   help for search-connections
+  -h, --help             help for search-connections
+      --request string   Raw JSON payload for fabricv4.ApiSearchConnectionsRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute create-connection-action operation
 
 ### Synopsis
 
-Execute the CreateConnectionAction operation on this service
+Execute the create-connection-action operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 connections create-connection-action [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 connections create-connection-action [flags]
 ### Options
 
 ```
-  -h, --help   help for create-connection-action
+  -h, --help             help for create-connection-action
+      --request string   Raw JSON payload for fabricv4.ApiCreateConnectionActionRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute delete-cloud-router-command-by-uuid operation
 
 ### Synopsis
 
-Execute the DeleteCloudRouterCommandByUuid operation on this service
+Execute the delete-cloud-router-command-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-routers delete-cloud-router-command-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-routers delete-cloud-router-command-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for delete-cloud-router-command-by-uuid
+  -h, --help             help for delete-cloud-router-command-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiDeleteCloudRouterCommandByUuidRequest
 ```
 
 ### Options inherited from parent commands

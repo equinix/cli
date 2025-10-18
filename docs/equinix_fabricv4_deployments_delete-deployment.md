@@ -4,7 +4,12 @@ Execute delete-deployment operation
 
 ### Synopsis
 
-Execute the DeleteDeployment operation on this service
+Execute the delete-deployment operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 deployments delete-deployment [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 deployments delete-deployment [flags]
 ### Options
 
 ```
-  -h, --help   help for delete-deployment
+  -h, --help             help for delete-deployment
+      --request string   Raw JSON payload for fabricv4.ApiDeleteDeploymentRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute update-connection-by-uuid operation
 
 ### Synopsis
 
-Execute the UpdateConnectionByUuid operation on this service
+Execute the update-connection-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 connections update-connection-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 connections update-connection-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for update-connection-by-uuid
+  -h, --help             help for update-connection-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiUpdateConnectionByUuidRequest
 ```
 
 ### Options inherited from parent commands

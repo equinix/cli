@@ -4,7 +4,12 @@ Execute get-route-filter-changes operation
 
 ### Synopsis
 
-Execute the GetRouteFilterChanges operation on this service
+Execute the get-route-filter-changes operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-filters get-route-filter-changes [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-filters get-route-filter-changes [flags]
 ### Options
 
 ```
-  -h, --help   help for get-route-filter-changes
+  -h, --help             help for get-route-filter-changes
+      --request string   Raw JSON payload for fabricv4.ApiGetRouteFilterChangesRequest
 ```
 
 ### Options inherited from parent commands

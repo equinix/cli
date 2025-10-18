@@ -4,7 +4,12 @@ Execute get-connection-routing-protocols-changes operation
 
 ### Synopsis
 
-Execute the GetConnectionRoutingProtocolsChanges operation on this service
+Execute the get-connection-routing-protocols-changes operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 routing-protocols get-connection-routing-protocols-changes [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 routing-protocols get-connection-routing-protocols-changes [fla
 ### Options
 
 ```
-  -h, --help   help for get-connection-routing-protocols-changes
+  -h, --help             help for get-connection-routing-protocols-changes
+      --request string   Raw JSON payload for fabricv4.ApiGetConnectionRoutingProtocolsChangesRequest
 ```
 
 ### Options inherited from parent commands

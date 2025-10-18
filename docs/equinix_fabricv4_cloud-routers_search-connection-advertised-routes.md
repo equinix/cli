@@ -4,7 +4,12 @@ Execute search-connection-advertised-routes operation
 
 ### Synopsis
 
-Execute the SearchConnectionAdvertisedRoutes operation on this service
+Execute the search-connection-advertised-routes operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-routers search-connection-advertised-routes [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-routers search-connection-advertised-routes [flags]
 ### Options
 
 ```
-  -h, --help   help for search-connection-advertised-routes
+  -h, --help             help for search-connection-advertised-routes
+      --request string   Raw JSON payload for fabricv4.ApiSearchConnectionAdvertisedRoutesRequest
 ```
 
 ### Options inherited from parent commands

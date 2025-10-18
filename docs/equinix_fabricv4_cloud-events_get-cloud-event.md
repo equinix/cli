@@ -4,7 +4,12 @@ Execute get-cloud-event operation
 
 ### Synopsis
 
-Execute the GetCloudEvent operation on this service
+Execute the get-cloud-event operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-events get-cloud-event [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-events get-cloud-event [flags]
 ### Options
 
 ```
-  -h, --help   help for get-cloud-event
+  -h, --help             help for get-cloud-event
+      --request string   Raw JSON payload for fabricv4.ApiGetCloudEventRequest
 ```
 
 ### Options inherited from parent commands

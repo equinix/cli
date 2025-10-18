@@ -4,7 +4,12 @@ Execute search-service-tokens operation
 
 ### Synopsis
 
-Execute the SearchServiceTokens operation on this service
+Execute the search-service-tokens operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 service-tokens search-service-tokens [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 service-tokens search-service-tokens [flags]
 ### Options
 
 ```
-  -h, --help   help for search-service-tokens
+  -h, --help             help for search-service-tokens
+      --request string   Raw JSON payload for fabricv4.ApiSearchServiceTokensRequest
 ```
 
 ### Options inherited from parent commands

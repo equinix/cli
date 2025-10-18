@@ -4,7 +4,12 @@ Execute search-router-actions operation
 
 ### Synopsis
 
-Execute the SearchRouterActions operation on this service
+Execute the search-router-actions operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 cloud-routers search-router-actions [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 cloud-routers search-router-actions [flags]
 ### Options
 
 ```
-  -h, --help   help for search-router-actions
+  -h, --help             help for search-router-actions
+      --request string   Raw JSON payload for fabricv4.ApiSearchRouterActionsRequest
 ```
 
 ### Options inherited from parent commands

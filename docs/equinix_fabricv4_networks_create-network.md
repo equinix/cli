@@ -4,7 +4,12 @@ Execute create-network operation
 
 ### Synopsis
 
-Execute the CreateNetwork operation on this service
+Execute the create-network operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 networks create-network [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 networks create-network [flags]
 ### Options
 
 ```
-  -h, --help   help for create-network
+  -h, --help             help for create-network
+      --request string   Raw JSON payload for fabricv4.ApiCreateNetworkRequest
 ```
 
 ### Options inherited from parent commands

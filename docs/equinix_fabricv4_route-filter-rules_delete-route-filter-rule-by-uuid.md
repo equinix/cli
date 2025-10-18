@@ -4,7 +4,12 @@ Execute delete-route-filter-rule-by-uuid operation
 
 ### Synopsis
 
-Execute the DeleteRouteFilterRuleByUuid operation on this service
+Execute the delete-route-filter-rule-by-uuid operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-filter-rules delete-route-filter-rule-by-uuid [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-filter-rules delete-route-filter-rule-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help   help for delete-route-filter-rule-by-uuid
+  -h, --help             help for delete-route-filter-rule-by-uuid
+      --request string   Raw JSON payload for fabricv4.ApiDeleteRouteFilterRuleByUuidRequest
 ```
 
 ### Options inherited from parent commands

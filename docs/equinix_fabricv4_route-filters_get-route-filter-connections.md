@@ -4,7 +4,12 @@ Execute get-route-filter-connections operation
 
 ### Synopsis
 
-Execute the GetRouteFilterConnections operation on this service
+Execute the get-route-filter-connections operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 route-filters get-route-filter-connections [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 route-filters get-route-filter-connections [flags]
 ### Options
 
 ```
-  -h, --help   help for get-route-filter-connections
+  -h, --help             help for get-route-filter-connections
+      --request string   Raw JSON payload for fabricv4.ApiGetRouteFilterConnectionsRequest
 ```
 
 ### Options inherited from parent commands

@@ -4,7 +4,12 @@ Execute get-metric-by-asset-id operation
 
 ### Synopsis
 
-Execute the GetMetricByAssetId operation on this service
+Execute the get-metric-by-asset-id operation on this service.
+
+Use --request flag to provide a JSON payload for the request body.
+Example: --request '{"field":"value"}'
+
+The command accepts parameters based on the SDK method signature.
 
 ```
 equinix fabricv4 metrics get-metric-by-asset-id [flags]
@@ -13,7 +18,8 @@ equinix fabricv4 metrics get-metric-by-asset-id [flags]
 ### Options
 
 ```
-  -h, --help   help for get-metric-by-asset-id
+  -h, --help             help for get-metric-by-asset-id
+      --request string   Raw JSON payload for fabricv4.ApiGetMetricByAssetIdRequest
 ```
 
 ### Options inherited from parent commands

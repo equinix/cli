@@ -26,7 +26,7 @@ docs-check: docs
 
 # onboard - Scaffold a new service integration
 # Usage: make onboard SERVICE=fabricv5
-# This will create cmd/<service>.go with dynamic command registration
+# This will create cmd/<service>.go and internal/<service>/<service>.go with dynamic command registration
 onboard:
 	@if [ -z "$(SERVICE)" ]; then \
 		echo "Error: SERVICE parameter is required"; \
@@ -35,20 +35,22 @@ onboard:
 	fi
 	@echo "Onboarding new service: $(SERVICE)"
 	@echo "Creating cmd/$(SERVICE).go..."
-	@sed -e 's/fabricv4/$(SERVICE)/g' \
-	     -e 's/Fabric v4/$(shell echo $(SERVICE) | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g' | sed 's/v\([0-9]\)/v\1/g')/g' \
-	     cmd/fabricv4.go > cmd/$(SERVICE).go
-	@echo "Creating internal/api/$(SERVICE).go..."
-	@sed -e 's/fabricv4/$(SERVICE)/g' \
-	     -e 's/FabricV4/$(shell echo $(SERVICE) | sed 's/\(.\)/\u\1/' | sed 's/v\([0-9]\)/V\1/g')/g' \
-	     -e 's/Fabric v4/$(shell echo $(SERVICE) | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g' | sed 's/v\([0-9]\)/v\1/g')/g' \
-	     internal/api/fabricv4.go > internal/api/$(SERVICE).go
+	@mkdir -p cmd
+	@sed -e 's/{{SERVICE}}/$(SERVICE)/g' \
+	     -e 's/{{SERVICE_DISPLAY}}/$(shell echo $(SERVICE) | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g' | sed 's/v\([0-9]\)/v\1/g' | sed 's/\b\(.\)/\u\1/g')/g' \
+	     -e 's/{{SERVICE_ALIAS}}/$(shell echo $(SERVICE) | sed 's/v[0-9]*$$//')/g' \
+	     templates/cmd/service.go.tmpl > cmd/$(SERVICE).go
+	@echo "Creating internal/$(SERVICE)/$(SERVICE).go..."
+	@mkdir -p internal/$(SERVICE)
+	@sed -e 's/{{SERVICE}}/$(SERVICE)/g' \
+	     -e 's/{{SERVICE_DISPLAY}}/$(shell echo $(SERVICE) | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g' | sed 's/v\([0-9]\)/v\1/g' | sed 's/\b\(.\)/\u\1/g')/g' \
+	     templates/internal/service.go.tmpl > internal/$(SERVICE)/$(SERVICE).go
 	@echo ""
 	@echo "Service $(SERVICE) scaffolded successfully!"
 	@echo ""
 	@echo "Next steps:"
 	@echo "1. Review and adjust cmd/$(SERVICE).go"
-	@echo "2. Review and adjust internal/api/$(SERVICE).go"
+	@echo "2. Review and adjust internal/$(SERVICE)/$(SERVICE).go"
 	@echo "3. Ensure the SDK package exists: github.com/equinix/equinix-sdk-go/services/$(SERVICE)"
 	@echo "4. Run 'make build' to verify the integration"
 	@echo "5. Update documentation in README.md"

@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+	"strconv"
 	"strings"
 
 	"github.com/spf13/cobra"
@@ -123,9 +124,16 @@ func registerServiceMethods(parentCmd *cobra.Command, service interface{}, _ str
 			continue
 		}
 
+		// Get the corresponding builder method (without Execute suffix)
+		builderMethodName := strings.TrimSuffix(method.Name, "Execute")
+		builderMethod, hasBuilder := serviceType.MethodByName(builderMethodName)
+		if !hasBuilder {
+			continue
+		}
+
 		// Create a command for this method
 		methodName := extractMethodName(method.Name)
-		methodCmd := createMethodCommand(methodName, method.Name, service, method)
+		methodCmd := createMethodCommand(methodName, method.Name, service, method, builderMethod)
 
 		parentCmd.AddCommand(methodCmd)
 	}
@@ -150,7 +158,7 @@ func extractMethodName(methodName string) string {
 }
 
 // createMethodCommand creates a Cobra command for a specific API method
-func createMethodCommand(methodName, originalMethodName string, service interface{}, method reflect.Method) *cobra.Command {
+func createMethodCommand(methodName, originalMethodName string, service interface{}, method reflect.Method, builderMethod reflect.Method) *cobra.Command {
 	// Extract description from the corresponding non-Execute method
 	description := extractMethodDescription(service, originalMethodName)
 
@@ -158,14 +166,14 @@ func createMethodCommand(methodName, originalMethodName string, service interfac
 		Use:   methodName,
 		Short: description.Short,
 		Long:  description.Long,
-		RunE: func(cmd *cobra.Command, _ []string) error {
-			return executeMethod(cmd, service, method)
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return executeMethod(cmd, service, method, builderMethod, args)
 		},
 	}
 
-	// Generate flags based on method parameters
-	// Note: We add a --request flag in registerMethodFlags for API request parameters
-	registerMethodFlags(cmd, method)
+	// Generate flags based on builder method parameters (not Execute method)
+	// The builder method has the actual request parameters we need
+	registerBuilderMethodFlags(cmd, builderMethod)
 
 	return cmd
 }
@@ -209,34 +217,53 @@ The command accepts parameters based on the SDK method signature.`, cmdName),
 }
 
 // executeMethod performs the actual API call using reflection
-func executeMethod(cmd *cobra.Command, service interface{}, method reflect.Method) error {
+func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, builderMethod reflect.Method, args []string) error {
 	ctx := context.Background()
 	serviceValue := reflect.ValueOf(service)
 
-	// Get the builder method name (without Execute suffix)
-	builderMethodName := strings.TrimSuffix(method.Name, "Execute")
+	// Build the arguments for the builder method
+	builderArgs := []reflect.Value{reflect.ValueOf(ctx)}
 
-	// Get the builder method
-	builderMethod := serviceValue.MethodByName(builderMethodName)
-	if !builderMethod.IsValid() {
-		return fmt.Errorf("could not find builder method %s", builderMethodName)
+	// Get builder method parameters (skip receiver at index 0 and context at index 1)
+	builderType := builderMethod.Type
+	for i := 2; i < builderType.NumIn(); i++ {
+		paramType := builderType.In(i)
+		paramName := getParamNameFromPosition(builderMethod, i)
+
+		// Try to get the value from flags or args
+		var paramValue reflect.Value
+		if cmd.Flags().Changed(paramName) {
+			// Get value from flag
+			paramValue = getValueFromFlag(cmd, paramName, paramType)
+		} else if i-2 < len(args) {
+			// Get value from positional argument
+			paramValue = convertStringToType(args[i-2], paramType)
+		} else {
+			return fmt.Errorf("missing required parameter: %s", paramName)
+		}
+
+		builderArgs = append(builderArgs, paramValue)
 	}
 
-	// Call the builder method with context
-	ctxValue := reflect.ValueOf(ctx)
-	builderResult := builderMethod.Call([]reflect.Value{ctxValue})
+	// Call the builder method with arguments
+	builderResult := builderMethod.Func.Call(append([]reflect.Value{serviceValue}, builderArgs...))
 	if len(builderResult) == 0 {
 		return fmt.Errorf("builder method returned no value")
 	}
 
 	requestBuilder := builderResult[0]
 
-	// Check if --request flag was provided for JSON payload
+	// Check if --request flag was provided for JSON payload to set optional fields
 	requestJSON, _ := cmd.Flags().GetString("request")
 	if requestJSON != "" {
-		// TODO: Parse JSON and populate request struct fields
-		// This would require more complex reflection to match JSON fields to struct methods
-		return fmt.Errorf("--request JSON support not yet fully implemented. Coming in future iterations")
+		// Parse JSON and populate request struct fields using setter methods
+		var jsonData map[string]interface{}
+		if err := json.Unmarshal([]byte(requestJSON), &jsonData); err != nil {
+			return fmt.Errorf("failed to parse JSON request: %w", err)
+		}
+
+		// Try to call setter methods on the request builder
+		requestBuilder = applyJSONToRequestBuilder(requestBuilder, jsonData)
 	}
 
 	// Call the Execute method on the request builder
@@ -269,23 +296,11 @@ func executeMethod(cmd *cobra.Command, service interface{}, method reflect.Metho
 	return nil
 }
 
-// registerMethodFlags inspects a method's signature and adds corresponding flags to the command
-func registerMethodFlags(cmd *cobra.Command, method reflect.Method) {
-	methodType := method.Type
-
-	// Iterate through method parameters (skip receiver at index 0)
-	for i := 1; i < methodType.NumIn(); i++ {
-		paramType := methodType.In(i)
-		paramName := generateParamName(i, paramType)
-
-		// Add flags based on parameter type
-		addFlagForType(cmd, paramName, paramType, i)
-	}
-}
-
-// generateParamName creates a CLI-friendly parameter name
-func generateParamName(index int, paramType reflect.Type) string {
-	// Try to extract meaningful name from the type
+// getParamNameFromPosition extracts parameter name from method signature
+func getParamNameFromPosition(method reflect.Method, position int) string {
+	// For now, use a simple naming convention based on position
+	// In a real implementation, we might parse the method name or use Go AST
+	paramType := method.Type.In(position)
 	typeName := paramType.String()
 
 	// Remove package paths
@@ -306,69 +321,251 @@ func generateParamName(index int, paramType reflect.Type) string {
 		result.WriteRune(r)
 	}
 
-	flagName := strings.ToLower(result.String())
+	name := strings.ToLower(result.String())
 
-	// Handle common types with better names
-	switch {
-	case strings.Contains(typeName, "Context"):
-		return "context"
-	case strings.Contains(typeName, "Request"):
-		return "request"
-	case strings.Contains(typeName, "Options"):
-		return "options"
-	default:
-		// If the name is generic, add param index
-		if flagName == "string" || flagName == "int" || flagName == "bool" {
-			return fmt.Sprintf("param-%d", index)
+	// Handle common parameter names by examining the method name
+	methodName := method.Name
+	lowerMethod := strings.ToLower(methodName)
+
+	// For string types, try to infer from method name
+	if name == "string" || strings.Contains(typeName, "string") {
+		// Try to extract resource type from method name
+		if strings.Contains(lowerMethod, "connection") {
+			return "connection-id"
 		}
-		return flagName
+		if strings.Contains(lowerMethod, "port") {
+			return "port-id"
+		}
+		if strings.Contains(lowerMethod, "router") {
+			return "router-id"
+		}
+		if strings.Contains(lowerMethod, "network") {
+			return "network-id"
+		}
+		if strings.Contains(lowerMethod, "profile") {
+			return "profile-id"
+		}
+		if strings.Contains(lowerMethod, "token") {
+			return "token-id"
+		}
+		if strings.Contains(lowerMethod, "subscription") {
+			return "subscription-id"
+		}
+		if strings.Contains(lowerMethod, "stream") {
+			return "stream-id"
+		}
+		if strings.Contains(lowerMethod, "rule") {
+			return "rule-id"
+		}
+		if strings.Contains(lowerMethod, "filter") {
+			return "filter-id"
+		}
+		if strings.Contains(lowerMethod, "protocol") {
+			return "protocol-id"
+		}
+		if strings.Contains(lowerMethod, "aggregation") {
+			return "aggregation-id"
+		}
+
+		// Generic UUID/ID handling
+		if strings.Contains(methodName, "ByUuid") || strings.Contains(methodName, "ByUUID") {
+			return "uuid"
+		}
+		if strings.Contains(methodName, "ById") || strings.Contains(methodName, "ByID") {
+			return "id"
+		}
+
+		// Default for string
+		return fmt.Sprintf("param-%d", position-1)
+	}
+
+	return name
+}
+
+// getValueFromFlag retrieves a flag value and converts it to the target type
+func getValueFromFlag(cmd *cobra.Command, flagName string, targetType reflect.Type) reflect.Value {
+	// Handle pointer types
+	if targetType.Kind() == reflect.Ptr {
+		targetType = targetType.Elem()
+	}
+
+	switch targetType.Kind() {
+	case reflect.String:
+		val, _ := cmd.Flags().GetString(flagName)
+		return reflect.ValueOf(val)
+	case reflect.Int, reflect.Int32, reflect.Int64:
+		val, _ := cmd.Flags().GetInt(flagName)
+		return reflect.ValueOf(val).Convert(targetType)
+	case reflect.Bool:
+		val, _ := cmd.Flags().GetBool(flagName)
+		return reflect.ValueOf(val)
+	default:
+		// For complex types, try to get as string and parse
+		val, _ := cmd.Flags().GetString(flagName)
+		return convertStringToType(val, targetType)
 	}
 }
 
-// addFlagForType adds an appropriate flag to the command based on the parameter type
-func addFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type, _ int) {
-	// Skip context.Context parameters as they're handled internally
-	if strings.Contains(paramType.String(), "context.Context") {
-		return
+// convertStringToType converts a string to the target type
+func convertStringToType(value string, targetType reflect.Type) reflect.Value {
+	// Handle pointer types
+	if targetType.Kind() == reflect.Ptr {
+		targetType = targetType.Elem()
 	}
 
+	switch targetType.Kind() {
+	case reflect.String:
+		return reflect.ValueOf(value)
+	case reflect.Int, reflect.Int32, reflect.Int64:
+		// Try to parse as int
+		if val, err := strconv.ParseInt(value, 10, 64); err == nil {
+			return reflect.ValueOf(val).Convert(targetType)
+		}
+	case reflect.Bool:
+		if val, err := strconv.ParseBool(value); err == nil {
+			return reflect.ValueOf(val)
+		}
+	}
+
+	// Default: return zero value
+	return reflect.Zero(targetType)
+}
+
+// applyJSONToRequestBuilder applies JSON data to request builder using setter methods
+func applyJSONToRequestBuilder(requestBuilder reflect.Value, jsonData map[string]interface{}) reflect.Value {
+	builderType := requestBuilder.Type()
+
+	// Iterate through all methods to find setters
+	for i := 0; i < builderType.NumMethod(); i++ {
+		method := builderType.Method(i)
+
+		// Skip Execute and other non-setter methods
+		if method.Name == "Execute" || !method.IsExported() {
+			continue
+		}
+
+		// Check if we have a value for this setter in the JSON
+		// Try both exact match and lowercase match
+		for jsonKey, jsonValue := range jsonData {
+			if strings.EqualFold(jsonKey, method.Name) {
+				// Try to call the setter method
+				methodFunc := requestBuilder.MethodByName(method.Name)
+				if methodFunc.IsValid() && methodFunc.Type().NumIn() == 1 {
+					// Convert JSON value to the expected type
+					paramType := methodFunc.Type().In(0)
+					paramValue := convertJSONValueToType(jsonValue, paramType)
+					if paramValue.IsValid() {
+						// Call the setter method
+						result := methodFunc.Call([]reflect.Value{paramValue})
+						if len(result) > 0 {
+							requestBuilder = result[0]
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return requestBuilder
+}
+
+// convertJSONValueToType converts a JSON value to a reflect.Value of the target type
+func convertJSONValueToType(jsonValue interface{}, targetType reflect.Type) reflect.Value {
 	// Handle pointer types
-	if paramType.Kind() == reflect.Ptr {
+	if targetType.Kind() == reflect.Ptr {
+		targetType = targetType.Elem()
+	}
+
+	// Try direct type assertion first
+	jsonValueType := reflect.TypeOf(jsonValue)
+	if jsonValueType != nil && jsonValueType.AssignableTo(targetType) {
+		return reflect.ValueOf(jsonValue)
+	}
+
+	// Convert based on target type
+	switch targetType.Kind() {
+	case reflect.String:
+		return reflect.ValueOf(fmt.Sprintf("%v", jsonValue))
+	case reflect.Int, reflect.Int32, reflect.Int64:
+		if val, ok := jsonValue.(float64); ok {
+			return reflect.ValueOf(int64(val)).Convert(targetType)
+		}
+	case reflect.Bool:
+		if val, ok := jsonValue.(bool); ok {
+			return reflect.ValueOf(val)
+		}
+	case reflect.Struct, reflect.Map, reflect.Slice:
+		// For complex types, marshal to JSON and unmarshal to target type
+		jsonBytes, err := json.Marshal(jsonValue)
+		if err == nil {
+			newValue := reflect.New(targetType)
+			if err := json.Unmarshal(jsonBytes, newValue.Interface()); err == nil {
+				return newValue.Elem()
+			}
+		}
+	}
+
+	return reflect.Value{}
+}
+
+// registerBuilderMethodFlags creates flags based on the builder method parameters
+func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method) {
+	builderType := builderMethod.Type
+
+	// Always add --request flag for JSON payload
+	cmd.Flags().String("request", "", "Raw JSON payload for optional request fields")
+
+	// Iterate through builder method parameters (skip receiver at index 0, context at index 1)
+	for i := 2; i < builderType.NumIn(); i++ {
+		paramType := builderType.In(i)
+		paramName := getParamNameFromPosition(builderMethod, i)
+
+		// Check if flag already exists (to avoid redefinition)
+		if cmd.Flags().Lookup(paramName) != nil {
+			continue
+		}
+
+		// Add flags based on parameter type
+		addBuilderFlagForType(cmd, paramName, paramType, builderMethod)
+	}
+}
+
+// addBuilderFlagForType adds an appropriate flag for a builder method parameter
+func addBuilderFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type, _ reflect.Method) {
+	// Handle pointer types
+	isOptional := paramType.Kind() == reflect.Ptr
+	if isOptional {
 		paramType = paramType.Elem()
 	}
 
-	// For API request struct types, add a special --request flag with better description
-	typeName := paramType.String()
-	if strings.Contains(typeName, "Request") && paramType.Kind() == reflect.Struct {
-		cmd.Flags().String("request", "", fmt.Sprintf("Raw JSON payload for %s", typeName))
-		return
+	// Create description based on method name and parameter
+	description := fmt.Sprintf("%s (required)", paramName)
+	if isOptional {
+		description = fmt.Sprintf("%s (optional)", paramName)
 	}
 
 	// Add flags based on type kind
 	switch paramType.Kind() {
 	case reflect.String:
-		cmd.Flags().String(paramName, "", fmt.Sprintf("Parameter: %s (string)", paramName))
-	case reflect.Int, reflect.Int32, reflect.Int64:
-		cmd.Flags().Int(paramName, 0, fmt.Sprintf("Parameter: %s (int)", paramName))
-	case reflect.Bool:
-		cmd.Flags().Bool(paramName, false, fmt.Sprintf("Parameter: %s (bool)", paramName))
-	case reflect.Float32, reflect.Float64:
-		cmd.Flags().Float64(paramName, 0.0, fmt.Sprintf("Parameter: %s (float)", paramName))
-	case reflect.Struct:
-		// For struct types, we could potentially generate nested flags
-		// For now, we'll just indicate it needs JSON input
-		cmd.Flags().String(paramName, "", fmt.Sprintf("Parameter: %s (JSON object of type %s)", paramName, paramType.Name()))
-	case reflect.Slice:
-		// Handle slices
-		elemType := paramType.Elem()
-		if elemType.Kind() == reflect.String {
-			cmd.Flags().StringSlice(paramName, []string{}, fmt.Sprintf("Parameter: %s (string array)", paramName))
-		} else {
-			cmd.Flags().String(paramName, "", fmt.Sprintf("Parameter: %s (JSON array of %s)", paramName, elemType.Name()))
+		cmd.Flags().String(paramName, "", description)
+		if !isOptional {
+			_ = cmd.MarkFlagRequired(paramName)
 		}
+	case reflect.Int, reflect.Int32, reflect.Int64:
+		cmd.Flags().Int(paramName, 0, description)
+		if !isOptional {
+			_ = cmd.MarkFlagRequired(paramName)
+		}
+	case reflect.Bool:
+		cmd.Flags().Bool(paramName, false, description)
+	case reflect.Float32, reflect.Float64:
+		cmd.Flags().Float64(paramName, 0.0, description)
 	default:
-		// For other complex types, accept JSON string
-		cmd.Flags().String(paramName, "", fmt.Sprintf("Parameter: %s (JSON of type %s)", paramName, paramType.String()))
+		// For complex types, accept as string (will be parsed later)
+		cmd.Flags().String(paramName, "", fmt.Sprintf("%s (JSON or string)", description))
+		if !isOptional {
+			_ = cmd.MarkFlagRequired(paramName)
+		}
 	}
 }
 

@@ -278,9 +278,77 @@ func getServiceNameFromType(service interface{}) string {
 	return strings.ToLower(result.String())
 }
 
+// getServiceFromClient extracts a service field from the client by service name
+func getServiceFromClient(client interface{}, serviceName string) interface{} {
+	clientValue := reflect.ValueOf(client)
+	if clientValue.Kind() == reflect.Ptr {
+		clientValue = clientValue.Elem()
+	}
+	
+	if clientValue.Kind() != reflect.Struct {
+		return nil
+	}
+	
+	// Convert kebab-case service name back to field name format
+	// e.g., "cloud-routers" -> "CloudRouters"
+	parts := strings.Split(serviceName, "-")
+	var fieldNameBuilder strings.Builder
+	for _, part := range parts {
+		if len(part) > 0 {
+			fieldNameBuilder.WriteString(strings.ToUpper(string(part[0])))
+			if len(part) > 1 {
+				fieldNameBuilder.WriteString(part[1:])
+			}
+		}
+	}
+	fieldNameBase := fieldNameBuilder.String()
+	
+	// Try to find the field with Api or ApiService suffix
+	for i := 0; i < clientValue.NumField(); i++ {
+		field := clientValue.Type().Field(i)
+		fieldName := field.Name
+		
+		// Check if this matches the service name
+		if strings.HasPrefix(fieldName, fieldNameBase) {
+			if strings.HasSuffix(fieldName, "Api") || strings.HasSuffix(fieldName, "ApiService") {
+				return clientValue.Field(i).Interface()
+			}
+		}
+	}
+	
+	return nil
+}
+
+// ClientFactoryFunc is a function that creates a new authenticated API client
+type ClientFactoryFunc func() (interface{}, error)
+
+var clientFactory ClientFactoryFunc
+
+// SetClientFactory sets the factory function for creating authenticated clients
+func SetClientFactory(factory ClientFactoryFunc) {
+	clientFactory = factory
+}
+
 // executeMethod performs the actual API call using reflection
 func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, builderMethod reflect.Method, args []string, paramDescriptions []parser.ParameterDescription) error {
 	ctx := context.Background()
+	
+	// Create a fresh authenticated client if factory is set
+	if clientFactory != nil {
+		freshClient, err := clientFactory()
+		if err != nil {
+			return fmt.Errorf("failed to create authenticated client: %w", err)
+		}
+		
+		// Get the service from the fresh client
+		// Extract the service name to find the matching field
+		serviceName := getServiceNameFromType(service)
+		freshService := getServiceFromClient(freshClient, serviceName)
+		if freshService != nil {
+			service = freshService
+		}
+	}
+	
 	serviceValue := reflect.ValueOf(service)
 
 	// Build the arguments for the builder method
@@ -904,7 +972,8 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 					paramName := camelToKebab(method.Name)
 					
 					// Expand this setter parameter into flags
-					addBuilderFlagForType(cmd, paramName, paramType, builderMethod, fmt.Sprintf("%s field", paramName))
+					// All setter parameters are optional - they're optional fields on the request builder
+					addSetterFlagForType(cmd, paramName, paramType, builderMethod, fmt.Sprintf("%s field", paramName))
 					settersExpanded = true
 				}
 			}
@@ -946,6 +1015,42 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 
 		// Add flags based on parameter type
 		addBuilderFlagForType(cmd, paramName, paramType, builderMethod, paramDesc)
+	}
+}
+
+// addSetterFlagForType adds an appropriate flag for a setter method parameter (always optional)
+func addSetterFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type, _ reflect.Method, sdkDescription string) {
+	// Setter parameters are always optional by definition
+	// Handle pointer types
+	if paramType.Kind() == reflect.Ptr {
+		paramType = paramType.Elem()
+	}
+
+	// Create description based on SDK description or default
+	var description string
+	if sdkDescription != "" {
+		description = sdkDescription
+	} else {
+		description = paramName
+	}
+
+	// Add flags based on parameter type - all are optional (no MarkFlagRequired)
+	switch paramType.Kind() {
+	case reflect.String:
+		cmd.Flags().String(paramName, "", description)
+	case reflect.Int, reflect.Int32, reflect.Int64:
+		cmd.Flags().Int(paramName, 0, description)
+	case reflect.Bool:
+		cmd.Flags().Bool(paramName, false, description)
+	case reflect.Float32, reflect.Float64:
+		cmd.Flags().Float64(paramName, 0.0, description)
+	case reflect.Struct:
+		// For struct types, expand fields as individual flags with prefix
+		// Mark parent as optional so all children are optional too
+		expandStructFields(cmd, paramName, paramType, true)
+	default:
+		// For complex types, accept as string (will be parsed later)
+		cmd.Flags().String(paramName, "", fmt.Sprintf("%s (JSON or string)", description))
 	}
 }
 

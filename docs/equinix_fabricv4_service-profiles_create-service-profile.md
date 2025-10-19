@@ -16,7 +16,7 @@ equinix fabricv4 service-profiles create-service-profile [flags]
 
 ```
   -h, --help             help for create-service-profile
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: service-profile-request (ServiceProfileRequest)
 ```
 
 ### Options inherited from parent commands

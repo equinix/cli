@@ -17,7 +17,7 @@ equinix fabricv4 ports add-to-lag [flags]
 ```
   -h, --help             help for add-to-lag
       --port-id string   Port UUID (required)
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: bulk-physical-port (BulkPhysicalPort)
 ```
 
 ### Options inherited from parent commands

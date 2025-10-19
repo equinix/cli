@@ -16,7 +16,7 @@ equinix fabricv4 ports create-port [flags]
 
 ```
   -h, --help             help for create-port
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: dry-run (bool), port-request (PortRequest)
 ```
 
 ### Options inherited from parent commands

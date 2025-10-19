@@ -16,7 +16,7 @@ equinix fabricv4 route-aggregations get-route-aggregation-by-uuid [flags]
 
 ```
   -h, --help                          help for get-route-aggregation-by-uuid
-      --request string                Raw JSON payload for optional request fields
+      --request string                Raw JSON payload for request body fields
       --route-aggregation-id string   Route Aggregations Id (required)
 ```
 

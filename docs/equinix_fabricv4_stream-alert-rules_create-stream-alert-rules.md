@@ -16,7 +16,7 @@ equinix fabricv4 stream-alert-rules create-stream-alert-rules [flags]
 
 ```
   -h, --help               help for create-stream-alert-rules
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: alert-rule-post-request (AlertRulePostRequest)
       --stream-id string   Stream UUID (required)
 ```
 

@@ -17,7 +17,7 @@ equinix fabricv4 precision-time get-time-services-package-by-code [flags]
 ```
   -h, --help                  help for get-time-services-package-by-code
       --package-code string   Package Code (required)
-      --request string        Raw JSON payload for optional request fields
+      --request string        Raw JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

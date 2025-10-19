@@ -16,7 +16,7 @@ equinix fabricv4 route-aggregation-rules delete-route-aggregation-rule-by-uuid [
 
 ```
   -h, --help                               help for delete-route-aggregation-rule-by-uuid
-      --request string                     Raw JSON payload for optional request fields
+      --request string                     Raw JSON payload for request body fields
       --route-aggregation-id string        Route Aggregations Id (required)
       --route-aggregation-rule-id string   Route Aggregation Rules Id (required)
 ```

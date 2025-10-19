@@ -16,7 +16,7 @@ equinix fabricv4 stream-subscriptions create-stream-subscriptions [flags]
 
 ```
   -h, --help               help for create-stream-subscriptions
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: stream-subscription-post-request (StreamSubscriptionPostRequest)
       --stream-id string   Stream UUID (required)
 ```
 

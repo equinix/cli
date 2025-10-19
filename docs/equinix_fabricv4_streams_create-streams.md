@@ -16,7 +16,7 @@ equinix fabricv4 streams create-streams [flags]
 
 ```
   -h, --help             help for create-streams
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: stream-post-request (StreamPostRequest)
 ```
 
 ### Options inherited from parent commands

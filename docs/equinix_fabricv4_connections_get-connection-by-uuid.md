@@ -17,7 +17,7 @@ equinix fabricv4 connections get-connection-by-uuid [flags]
 ```
       --connection-id string   Connection Id (required)
   -h, --help                   help for get-connection-by-uuid
-      --request string         Raw JSON payload for optional request fields
+      --request string         JSON payload for request body. Available fields: direction (ConnectionDirection)
 ```
 
 ### Options inherited from parent commands

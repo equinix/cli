@@ -17,7 +17,7 @@ equinix fabricv4 routing-protocols create-connection-routing-protocol [flags]
 ```
       --connection-id string   Connection Id (required)
   -h, --help                   help for create-connection-routing-protocol
-      --request string         Raw JSON payload for optional request fields
+      --request string         JSON payload for request body. Available fields: routing-protocol-base (RoutingProtocolBase)
 ```
 
 ### Options inherited from parent commands

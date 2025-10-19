@@ -16,7 +16,7 @@ equinix fabricv4 streams get-stream-by-uuid [flags]
 
 ```
   -h, --help               help for get-stream-by-uuid
-      --request string     Raw JSON payload for optional request fields
+      --request string     Raw JSON payload for request body fields
       --stream-id string   Stream UUID (required)
 ```
 

@@ -17,7 +17,7 @@ equinix fabricv4 cloud-events get-cloud-event [flags]
 ```
       --cloud-event-id string   Cloud Event UUID (required)
   -h, --help                    help for get-cloud-event
-      --request string          Raw JSON payload for optional request fields
+      --request string          Raw JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

@@ -16,7 +16,7 @@ equinix fabricv4 routing-protocols validate-routing-protocol [flags]
 
 ```
   -h, --help               help for validate-routing-protocol
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: validate-request (ValidateRequest)
       --router-id string   Cloud Router UUID (required)
 ```
 

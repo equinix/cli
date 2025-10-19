@@ -18,7 +18,7 @@ equinix fabricv4 streams update-stream-asset-by-uuid [flags]
       --asset string       asset (required)
       --asset-id string    asset UUID (required)
   -h, --help               help for update-stream-asset-by-uuid
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: stream-asset-put-request (StreamAssetPutRequest)
       --stream-id string   Stream UUID (required)
 ```
 

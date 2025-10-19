@@ -18,7 +18,7 @@ equinix fabricv4 routing-protocols get-connection-routing-protocols-bgp-action-b
       --action-id string             BGP Action UUID (required)
       --connection-id string         Connection Id (required)
   -h, --help                         help for get-connection-routing-protocols-bgp-action-by-uuid
-      --request string               Raw JSON payload for optional request fields
+      --request string               Raw JSON payload for request body fields
       --routing-protocol-id string   Routing Protocol Id (required)
 ```
 

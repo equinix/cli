@@ -17,7 +17,7 @@ equinix fabricv4 statistics get-port-stats-by-port-uuid [flags]
 ```
   -h, --help             help for get-port-stats-by-port-uuid
       --port-id string   Port UUID (required)
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: end-date-time (Time), start-date-time (Time)
 ```
 
 ### Options inherited from parent commands

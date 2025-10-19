@@ -16,7 +16,7 @@ equinix fabricv4 service-tokens update-service-token-by-uuid [flags]
 
 ```
   -h, --help                      help for update-service-token-by-uuid
-      --request string            Raw JSON payload for optional request fields
+      --request string            JSON payload for request body. Available fields: dry-run (bool), service-token-change-operation (ServiceTokenChangeOperation)
       --service-token-id string   Service Token UUID (required)
 ```
 

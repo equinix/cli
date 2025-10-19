@@ -16,7 +16,7 @@ equinix fabricv4 route-aggregation-rules create-route-aggregation-rule [flags]
 
 ```
   -h, --help                          help for create-route-aggregation-rule
-      --request string                Raw JSON payload for optional request fields
+      --request string                JSON payload for request body. Available fields: route-aggregation-rules-base (RouteAggregationRulesBase)
       --route-aggregation-id string   Route Aggregations Id (required)
 ```
 

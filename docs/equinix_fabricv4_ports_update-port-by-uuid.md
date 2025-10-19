@@ -17,7 +17,7 @@ equinix fabricv4 ports update-port-by-uuid [flags]
 ```
   -h, --help             help for update-port-by-uuid
       --port-id string   Port UUID (required)
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: dry-run (bool), port-change-operation (PortChangeOperation)
 ```
 
 ### Options inherited from parent commands

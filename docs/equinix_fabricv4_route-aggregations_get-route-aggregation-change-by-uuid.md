@@ -17,7 +17,7 @@ equinix fabricv4 route-aggregations get-route-aggregation-change-by-uuid [flags]
 ```
       --change-id string              Routing Protocol Change UUID (required)
   -h, --help                          help for get-route-aggregation-change-by-uuid
-      --request string                Raw JSON payload for optional request fields
+      --request string                Raw JSON payload for request body fields
       --route-aggregation-id string   Route Aggregations Id (required)
 ```
 

@@ -16,7 +16,7 @@ equinix fabricv4 prices search-prices [flags]
 
 ```
   -h, --help             help for search-prices
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: filter-body (FilterBody)
 ```
 
 ### Options inherited from parent commands

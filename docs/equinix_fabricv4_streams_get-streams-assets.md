@@ -16,7 +16,7 @@ equinix fabricv4 streams get-streams-assets [flags]
 
 ```
   -h, --help             help for get-streams-assets
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: limit (int32), offset (int32), stream-asset-search-request (StreamAssetSearchRequest)
 ```
 
 ### Options inherited from parent commands

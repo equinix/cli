@@ -16,7 +16,7 @@ equinix fabricv4 networks create-network [flags]
 
 ```
   -h, --help             help for create-network
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: dry-run (bool), network-post-request (NetworkPostRequest)
 ```
 
 ### Options inherited from parent commands

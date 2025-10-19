@@ -6,6 +6,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"reflect"
 	"strconv"
 	"strings"
@@ -337,10 +338,47 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 		return fmt.Errorf("unexpected result from Execute method")
 	}
 
+	// Get HTTP response (second return value) for additional context
+	var httpResp *http.Response
+	if !result[1].IsNil() {
+		httpResp = result[1].Interface().(*http.Response)
+	}
+
 	// Check for errors (third return value)
 	if !result[2].IsNil() {
 		err := result[2].Interface().(error)
-		return fmt.Errorf("API error: %w", err)
+		errMsg := err.Error()
+
+		// Add HTTP status code if available
+		statusInfo := ""
+		if httpResp != nil {
+			statusInfo = fmt.Sprintf(" (HTTP %d %s)", httpResp.StatusCode, httpResp.Status)
+		}
+
+		// Provide helpful hints for common errors
+		if strings.Contains(errMsg, "is required") && strings.Contains(errMsg, "must be specified") {
+			// Extract field name if possible
+			hint := "\n\nHint: This command requires additional fields in the request body."
+			hint += "\nUse the --request flag with a JSON payload. For example:"
+			hint += "\n  --request '{\"fieldName\": \"value\"}'"
+			hint += "\n\nRun with --help to see available request body fields."
+			return fmt.Errorf("API error%s: %w%s", statusInfo, err, hint)
+		}
+
+		if strings.Contains(errMsg, "cannot unmarshal") {
+			hint := "\n\nHint: Failed to parse API response."
+			if httpResp != nil {
+				hint += fmt.Sprintf("\nHTTP Status: %d %s", httpResp.StatusCode, httpResp.Status)
+				if httpResp.StatusCode >= 400 {
+					hint += "\nThe API returned an error response that couldn't be parsed."
+					hint += "\nThis might indicate an authentication issue or API error."
+				}
+			}
+			hint += "\nTry running with --debug to see the raw HTTP request and response."
+			return fmt.Errorf("API error%s: %w%s", statusInfo, err, hint)
+		}
+
+		return fmt.Errorf("API error%s: %w", statusInfo, err)
 	}
 
 	// Format and display the result (first return value)
@@ -351,6 +389,11 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 			return fmt.Errorf("failed to format response: %w", err)
 		}
 		fmt.Println(string(jsonBytes))
+	} else {
+		// Some endpoints might return no content (e.g., DELETE operations)
+		if httpResp != nil && httpResp.StatusCode >= 200 && httpResp.StatusCode < 300 {
+			fmt.Printf("Success (HTTP %d %s)\n", httpResp.StatusCode, httpResp.Status)
+		}
 	}
 
 	return nil
@@ -610,8 +653,46 @@ func convertJSONValueToType(jsonValue interface{}, targetType reflect.Type) refl
 func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method, paramDescriptions []parser.ParameterDescription) {
 	builderType := builderMethod.Type
 
-	// Always add --request flag for JSON payload
-	cmd.Flags().String("request", "", "Raw JSON payload for optional request fields")
+	// Determine what request body fields are available by checking the return type
+	requestHelpText := "Raw JSON payload for request body fields"
+	if builderType.NumOut() > 0 {
+		returnType := builderType.Out(0)
+		// Check if the return type has setter methods that suggest request body fields
+		if returnType.Kind() == reflect.Struct || (returnType.Kind() == reflect.Ptr && returnType.Elem().Kind() == reflect.Struct) {
+			actualType := returnType
+			if returnType.Kind() == reflect.Ptr {
+				actualType = returnType.Elem()
+			}
+
+			// Find setter methods on the request type
+			setterHints := []string{}
+			for i := 0; i < actualType.NumMethod(); i++ {
+				method := actualType.Method(i)
+				// Look for setter methods (single param, returns same type)
+				if method.Type.NumIn() == 2 && method.Type.NumOut() == 1 && method.Name != "Execute" {
+					// This looks like a setter
+					paramType := method.Type.In(1)
+					typeName := paramType.String()
+					// Simplify type name
+					if idx := strings.LastIndex(typeName, "."); idx >= 0 {
+						typeName = typeName[idx+1:]
+					}
+					typeName = strings.TrimPrefix(typeName, "*")
+
+					setterHints = append(setterHints, fmt.Sprintf("%s (%s)", camelToKebab(method.Name), typeName))
+					if len(setterHints) >= 5 {
+						break // Limit hints to avoid overwhelming the user
+					}
+				}
+			}
+
+			if len(setterHints) > 0 {
+				requestHelpText = fmt.Sprintf("JSON payload for request body. Available fields: %s", strings.Join(setterHints, ", "))
+			}
+		}
+	}
+
+	cmd.Flags().String("request", "", requestHelpText)
 
 	// Iterate through builder method parameters (skip receiver at index 0, context at index 1)
 	for i := 2; i < builderType.NumIn(); i++ {

@@ -16,7 +16,7 @@ equinix fabricv4 route-filters get-route-filter-connections [flags]
 
 ```
   -h, --help                     help for get-route-filter-connections
-      --request string           Raw JSON payload for optional request fields
+      --request string           Raw JSON payload for request body fields
       --route-filter-id string   Route Filters Id (required)
 ```
 

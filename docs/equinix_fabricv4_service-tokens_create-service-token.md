@@ -16,7 +16,7 @@ equinix fabricv4 service-tokens create-service-token [flags]
 
 ```
   -h, --help             help for create-service-token
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: dry-run (bool), service-token (ServiceToken)
 ```
 
 ### Options inherited from parent commands

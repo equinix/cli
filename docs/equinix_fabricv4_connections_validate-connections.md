@@ -16,7 +16,7 @@ equinix fabricv4 connections validate-connections [flags]
 
 ```
   -h, --help             help for validate-connections
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: validate-request (ValidateRequest)
 ```
 
 ### Options inherited from parent commands

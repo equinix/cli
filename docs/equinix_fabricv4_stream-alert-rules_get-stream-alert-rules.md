@@ -16,7 +16,7 @@ equinix fabricv4 stream-alert-rules get-stream-alert-rules [flags]
 
 ```
   -h, --help               help for get-stream-alert-rules
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: limit (int32), offset (int32)
       --stream-id string   Stream UUID (required)
 ```
 

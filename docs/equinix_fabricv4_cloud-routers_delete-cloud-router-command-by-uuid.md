@@ -17,7 +17,7 @@ equinix fabricv4 cloud-routers delete-cloud-router-command-by-uuid [flags]
 ```
       --command-id string   Command UUID (required)
   -h, --help                help for delete-cloud-router-command-by-uuid
-      --request string      Raw JSON payload for optional request fields
+      --request string      Raw JSON payload for request body fields
       --router-id string    Router UUID (required)
 ```
 

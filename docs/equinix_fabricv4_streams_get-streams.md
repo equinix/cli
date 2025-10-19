@@ -16,7 +16,7 @@ equinix fabricv4 streams get-streams [flags]
 
 ```
   -h, --help             help for get-streams
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: limit (int32), offset (int32)
 ```
 
 ### Options inherited from parent commands

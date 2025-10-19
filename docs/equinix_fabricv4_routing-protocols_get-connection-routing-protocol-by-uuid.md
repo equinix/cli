@@ -17,7 +17,7 @@ equinix fabricv4 routing-protocols get-connection-routing-protocol-by-uuid [flag
 ```
       --connection-id string         Connection Id (required)
   -h, --help                         help for get-connection-routing-protocol-by-uuid
-      --request string               Raw JSON payload for optional request fields
+      --request string               Raw JSON payload for request body fields
       --routing-protocol-id string   Routing Protocol Id (required)
 ```
 

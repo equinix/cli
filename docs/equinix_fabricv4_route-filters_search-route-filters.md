@@ -16,7 +16,7 @@ equinix fabricv4 route-filters search-route-filters [flags]
 
 ```
   -h, --help             help for search-route-filters
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: route-filters-search-base (RouteFiltersSearchBase)
 ```
 
 ### Options inherited from parent commands

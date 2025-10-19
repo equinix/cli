@@ -16,7 +16,7 @@ equinix fabricv4 route-filter-rules create-route-filter-rule [flags]
 
 ```
   -h, --help                     help for create-route-filter-rule
-      --request string           Raw JSON payload for optional request fields
+      --request string           JSON payload for request body. Available fields: route-filter-rules-base (RouteFilterRulesBase)
       --route-filter-id string   Route Filters Id (required)
 ```
 

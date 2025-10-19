@@ -16,7 +16,7 @@ equinix fabricv4 ports search-ports [flags]
 
 ```
   -h, --help             help for search-ports
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: port-v4-search-request (PortV4SearchRequest)
 ```
 
 ### Options inherited from parent commands

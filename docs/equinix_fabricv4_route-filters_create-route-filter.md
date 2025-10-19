@@ -18,10 +18,10 @@ equinix fabricv4 route-filters create-route-filter [flags]
   -h, --help                                                      help for create-route-filter
       --request string                                            JSON payload for additional optional fields not exposed as flags
       --route-filters-base-additional-properties string           route-filters-base-additional-properties (required) (JSON)
-      --route-filters-base-description string                     route-filters-base-description
+      --route-filters-base-description string                     Customer-provided connection description
       --route-filters-base-name string                            route-filters-base-name (required)
       --route-filters-base-project-additional-properties string   route-filters-base-project-additional-properties (required) (JSON)
-      --route-filters-base-project-project-id string              route-filters-base-project-project-id (required)
+      --route-filters-base-project-project-id string              Subscriber-assigned project ID (required)
       --route-filters-base-type string                            route-filters-base-type (required)
 ```
 

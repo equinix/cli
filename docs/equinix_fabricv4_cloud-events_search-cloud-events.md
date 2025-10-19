@@ -19,8 +19,8 @@ equinix fabricv4 cloud-events search-cloud-events [flags]
       --cloud-event-search-request-filter-additional-properties string       cloud-event-search-request-filter-additional-properties (JSON)
       --cloud-event-search-request-filter-and string                         cloud-event-search-request-filter-and (JSON array)
       --cloud-event-search-request-pagination-additional-properties string   cloud-event-search-request-pagination-additional-properties (JSON)
-      --cloud-event-search-request-pagination-limit int                      cloud-event-search-request-pagination-limit
-      --cloud-event-search-request-pagination-offset int                     cloud-event-search-request-pagination-offset
+      --cloud-event-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --cloud-event-search-request-pagination-offset int                     Index of the first element.
   -h, --help                                                                 help for search-cloud-events
       --request string                                                       JSON payload for additional optional fields not exposed as flags
 ```

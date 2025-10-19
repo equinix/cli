@@ -369,15 +369,35 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 			return fmt.Errorf("API error%s: %w%s", statusInfo, err, hint)
 		}
 
+		// Handle unmarshal errors - these typically indicate the API returned an error response
+		// in a different format than expected (e.g., error object instead of success array)
 		if strings.Contains(errMsg, "cannot unmarshal") {
+			// If we have an HTTP response with an error status code, this is an API error
+			// not a parsing error with a successful response
+			if httpResp != nil && httpResp.StatusCode >= 400 {
+				// Extract just the status from the error message if it's cleaner
+				cleanMsg := errMsg
+				// The SDK sometimes includes "json: cannot unmarshal..." which isn't useful
+				// when we know it's an API error response
+				if httpResp.StatusCode == 401 {
+					cleanMsg = "Authentication failed - invalid or missing credentials"
+				} else if httpResp.StatusCode == 403 {
+					cleanMsg = "Access forbidden - insufficient permissions"
+				} else if httpResp.StatusCode == 404 {
+					cleanMsg = "Resource not found"
+				}
+				
+				hint := "\n\nHint: The API returned an error response."
+				hint += "\nTry running with --debug to see the full HTTP request and response."
+				return fmt.Errorf("API error%s: %s%s", statusInfo, cleanMsg, hint)
+			}
+			
+			// Otherwise it's a real unmarshal error with a successful response
 			hint := "\n\nHint: Failed to parse API response."
 			if httpResp != nil {
 				hint += fmt.Sprintf("\nHTTP Status: %d %s", httpResp.StatusCode, httpResp.Status)
-				if httpResp.StatusCode >= 400 {
-					hint += "\nThe API returned an error response that couldn't be parsed."
-					hint += "\nThis might indicate an authentication issue or API error."
-				}
 			}
+			hint += "\nThis might indicate an unexpected response format."
 			hint += "\nTry running with --debug to see the raw HTTP request and response."
 			return fmt.Errorf("API error%s: %w%s", statusInfo, err, hint)
 		}
@@ -967,6 +987,31 @@ func addBuilderFlagForType(cmd *cobra.Command, paramName string, paramType refle
 	}
 }
 
+// getFieldDescription looks up field description from SDK documentation
+func getFieldDescription(typeName string, fieldName string) string {
+	if descriptionsData == nil {
+		return ""
+	}
+	
+	// Look in global types first
+	if typeDesc, ok := descriptionsData.Types[typeName]; ok {
+		if fieldDesc, ok := typeDesc.Fields[fieldName]; ok {
+			return fieldDesc.Description
+		}
+	}
+	
+	// Also check in service-specific types
+	for _, service := range descriptionsData.Services {
+		if typeDesc, ok := service.Types[typeName]; ok {
+			if fieldDesc, ok := typeDesc.Fields[fieldName]; ok {
+				return fieldDesc.Description
+			}
+		}
+	}
+	
+	return ""
+}
+
 // expandStructFields recursively expands struct fields into CLI flags
 func expandStructFields(cmd *cobra.Command, prefix string, structType reflect.Type, parentOptional bool) {
 	// Limit expansion depth to avoid excessive flags
@@ -1021,9 +1066,13 @@ func expandStructFieldsWithDepth(cmd *cobra.Command, prefix string, structType r
 			fieldType = fieldType.Elem()
 		}
 
-		// Get field description from struct comment if available
-		fieldDesc := field.Tag.Get("description")
+		// Get field description from SDK documentation
+		typeName := structType.Name()
+		sdkFieldDesc := getFieldDescription(typeName, field.Name)
+		
+		fieldDesc := sdkFieldDesc
 		if fieldDesc == "" {
+			// Fallback to using the flag name
 			fieldDesc = flagName
 		}
 		

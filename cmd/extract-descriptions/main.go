@@ -29,8 +29,9 @@ func main() {
 
 	fmt.Printf("Found %d services\n", len(descriptions.Services))
 	for name, service := range descriptions.Services {
-		fmt.Printf("  - %s: %d methods\n", name, len(service.Methods))
+		fmt.Printf("  - %s: %d methods, %d types\n", name, len(service.Methods), len(service.Types))
 	}
+	fmt.Printf("Found %d global types\n", len(descriptions.Types))
 
 	fmt.Printf("Saving descriptions to: %s\n", *outputFile)
 	if err := descriptions.SaveToFile(*outputFile); err != nil {

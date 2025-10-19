@@ -24,8 +24,8 @@ equinix fabricv4 ports search-ports [flags]
       --port-v4-search-request-filter-property string                    port-v4-search-request-filter-property
       --port-v4-search-request-filter-values string                      port-v4-search-request-filter-values (JSON array)
       --port-v4-search-request-pagination-additional-properties string   port-v4-search-request-pagination-additional-properties (JSON)
-      --port-v4-search-request-pagination-limit int                      port-v4-search-request-pagination-limit
-      --port-v4-search-request-pagination-offset int                     port-v4-search-request-pagination-offset
+      --port-v4-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --port-v4-search-request-pagination-offset int                     Index of the first element.
       --port-v4-search-request-sort string                               port-v4-search-request-sort (JSON array)
       --request string                                                   JSON payload for additional optional fields not exposed as flags
 ```

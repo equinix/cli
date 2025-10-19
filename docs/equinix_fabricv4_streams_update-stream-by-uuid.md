@@ -19,8 +19,8 @@ equinix fabricv4 streams update-stream-by-uuid [flags]
       --request string                                    JSON payload for additional optional fields not exposed as flags
       --stream-id string                                  Stream UUID (required)
       --stream-put-request-additional-properties string   stream-put-request-additional-properties (required) (JSON)
-      --stream-put-request-description string             stream-put-request-description
-      --stream-put-request-name string                    stream-put-request-name
+      --stream-put-request-description string             Customer-provided stream description
+      --stream-put-request-name string                    Customer-provided stream name
 ```
 
 ### Options inherited from parent commands

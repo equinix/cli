@@ -21,8 +21,8 @@ equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
       --route-table-entry-search-request-filter-additional-properties string       route-table-entry-search-request-filter-additional-properties (JSON)
       --route-table-entry-search-request-filter-and string                         route-table-entry-search-request-filter-and (JSON array)
       --route-table-entry-search-request-pagination-additional-properties string   route-table-entry-search-request-pagination-additional-properties (JSON)
-      --route-table-entry-search-request-pagination-limit int                      route-table-entry-search-request-pagination-limit
-      --route-table-entry-search-request-pagination-offset int                     route-table-entry-search-request-pagination-offset
+      --route-table-entry-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --route-table-entry-search-request-pagination-offset int                     Index of the first element.
       --route-table-entry-search-request-sort string                               route-table-entry-search-request-sort (JSON array)
       --router-id string                                                           Router UUID (required)
 ```

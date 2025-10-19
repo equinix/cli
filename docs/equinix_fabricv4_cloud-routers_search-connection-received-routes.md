@@ -20,8 +20,8 @@ equinix fabricv4 cloud-routers search-connection-received-routes [flags]
       --connection-route-search-request-filter-additional-properties string       connection-route-search-request-filter-additional-properties (JSON)
       --connection-route-search-request-filter-and string                         connection-route-search-request-filter-and (JSON array)
       --connection-route-search-request-pagination-additional-properties string   connection-route-search-request-pagination-additional-properties (JSON)
-      --connection-route-search-request-pagination-limit int                      connection-route-search-request-pagination-limit
-      --connection-route-search-request-pagination-offset int                     connection-route-search-request-pagination-offset
+      --connection-route-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --connection-route-search-request-pagination-offset int                     Index of the first element.
       --connection-route-search-request-sort string                               connection-route-search-request-sort (JSON array)
   -h, --help                                                                      help for search-connection-received-routes
       --request string                                                            JSON payload for additional optional fields not exposed as flags

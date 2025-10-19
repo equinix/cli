@@ -23,8 +23,8 @@ equinix fabricv4 streams get-streams-assets [flags]
       --stream-asset-search-request-filter-additional-properties string       stream-asset-search-request-filter-additional-properties (JSON)
       --stream-asset-search-request-filter-and string                         stream-asset-search-request-filter-and (JSON array)
       --stream-asset-search-request-pagination-additional-properties string   stream-asset-search-request-pagination-additional-properties (JSON)
-      --stream-asset-search-request-pagination-limit int                      stream-asset-search-request-pagination-limit
-      --stream-asset-search-request-pagination-offset int                     stream-asset-search-request-pagination-offset
+      --stream-asset-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --stream-asset-search-request-pagination-offset int                     Index of the first element.
       --stream-asset-search-request-sort string                               stream-asset-search-request-sort (JSON array)
 ```
 

@@ -24,8 +24,8 @@ equinix fabricv4 networks search-networks [flags]
       --network-search-request-filter-property string                    network-search-request-filter-property
       --network-search-request-filter-values string                      network-search-request-filter-values (JSON array)
       --network-search-request-pagination-additional-properties string   network-search-request-pagination-additional-properties (JSON)
-      --network-search-request-pagination-limit int                      network-search-request-pagination-limit
-      --network-search-request-pagination-offset int                     network-search-request-pagination-offset
+      --network-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --network-search-request-pagination-offset int                     Index of the first element.
       --network-search-request-sort string                               network-search-request-sort (JSON array)
       --request string                                                   JSON payload for additional optional fields not exposed as flags
 ```

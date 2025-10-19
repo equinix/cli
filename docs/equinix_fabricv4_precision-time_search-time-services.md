@@ -21,8 +21,8 @@ equinix fabricv4 precision-time search-time-services [flags]
       --time-services-search-request-filter-additional-properties string       time-services-search-request-filter-additional-properties (JSON)
       --time-services-search-request-filter-and string                         time-services-search-request-filter-and (JSON array)
       --time-services-search-request-pagination-additional-properties string   time-services-search-request-pagination-additional-properties (JSON)
-      --time-services-search-request-pagination-limit int                      time-services-search-request-pagination-limit
-      --time-services-search-request-pagination-offset int                     time-services-search-request-pagination-offset
+      --time-services-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --time-services-search-request-pagination-offset int                     Index of the first element.
       --time-services-search-request-sort string                               time-services-search-request-sort (JSON array)
 ```
 

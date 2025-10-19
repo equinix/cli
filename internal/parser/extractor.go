@@ -19,6 +19,20 @@ type ParameterDescription struct {
 	Description string `json:"description"`
 }
 
+// FieldDescription holds documentation for a struct field
+type FieldDescription struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	JSONTag     string `json:"json_tag,omitempty"`
+}
+
+// TypeDescription holds documentation for a type (struct)
+type TypeDescription struct {
+	TypeName    string                      `json:"type_name"`
+	Description string                      `json:"description,omitempty"`
+	Fields      map[string]FieldDescription `json:"fields,omitempty"`
+}
+
 // MethodDescription holds documentation for a method
 type MethodDescription struct {
 	ShortDescription string                 `json:"short_description"`
@@ -31,17 +45,20 @@ type ServiceDescriptions struct {
 	ServiceName        string                       `json:"service_name"`
 	ServiceDescription string                       `json:"service_description"`
 	Methods            map[string]MethodDescription `json:"methods"`
+	Types              map[string]TypeDescription   `json:"types,omitempty"`
 }
 
 // SDKDescriptions holds all service descriptions
 type SDKDescriptions struct {
 	Services map[string]ServiceDescriptions `json:"services"`
+	Types    map[string]TypeDescription     `json:"types,omitempty"` // Global types
 }
 
 // ExtractDescriptions extracts method and parameter descriptions from SDK source files
 func ExtractDescriptions(sdkPath string) (*SDKDescriptions, error) {
 	descriptions := &SDKDescriptions{
 		Services: make(map[string]ServiceDescriptions),
+		Types:    make(map[string]TypeDescription),
 	}
 
 	// Walk through the SDK directory
@@ -82,6 +99,92 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 
 	// Walk through all declarations in the file
 	for _, decl := range node.Decls {
+		// Handle type declarations (structs)
+		if genDecl, ok := decl.(*ast.GenDecl); ok && genDecl.Tok == token.TYPE {
+			for _, spec := range genDecl.Specs {
+				typeSpec, ok := spec.(*ast.TypeSpec)
+				if !ok {
+					continue
+				}
+				
+				structType, ok := typeSpec.Type.(*ast.StructType)
+				if !ok {
+					continue
+				}
+				
+				typeName := typeSpec.Name.Name
+				typeDesc := TypeDescription{
+					TypeName: typeName,
+					Fields:   make(map[string]FieldDescription),
+				}
+				
+				// Extract type-level documentation
+				if genDecl.Doc != nil {
+					typeDesc.Description = strings.TrimSpace(genDecl.Doc.Text())
+				}
+				
+				// Extract field documentation
+				for _, field := range structType.Fields.List {
+					if len(field.Names) == 0 {
+						// Embedded field
+						continue
+					}
+					
+					fieldName := field.Names[0].Name
+					fieldDesc := FieldDescription{
+						Name: fieldName,
+					}
+					
+					// Extract field comment
+					if field.Doc != nil {
+						fieldDesc.Description = strings.TrimSpace(field.Doc.Text())
+					} else if field.Comment != nil {
+						fieldDesc.Description = strings.TrimSpace(field.Comment.Text())
+					}
+					
+					// Extract JSON tag if present
+					if field.Tag != nil {
+						tag := field.Tag.Value
+						// Remove quotes
+						tag = strings.Trim(tag, "`")
+						// Extract json tag
+						if strings.Contains(tag, "json:") {
+							parts := strings.Split(tag, "json:")
+							if len(parts) > 1 {
+								jsonPart := strings.Trim(parts[1], "\"")
+								// Get just the field name (before comma)
+								jsonTag := strings.Split(jsonPart, ",")[0]
+								fieldDesc.JSONTag = jsonTag
+							}
+						}
+					}
+					
+					typeDesc.Fields[fieldName] = fieldDesc
+				}
+				
+				// Store in global types map
+				descriptions.Types[typeName] = typeDesc
+				
+				// Also store in service-specific types if we have a service context
+				if serviceName != "" {
+					// Ensure service exists
+					service, exists := descriptions.Services[serviceName]
+					if !exists {
+						service = ServiceDescriptions{
+							ServiceName: serviceName,
+							Methods:     make(map[string]MethodDescription),
+							Types:       make(map[string]TypeDescription),
+						}
+					} else if service.Types == nil {
+						service.Types = make(map[string]TypeDescription)
+					}
+					service.Types[typeName] = typeDesc
+					descriptions.Services[serviceName] = service
+				}
+			}
+			continue
+		}
+		
 		funcDecl, ok := decl.(*ast.FuncDecl)
 		if !ok || funcDecl.Doc == nil {
 			continue
@@ -119,6 +222,7 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 			descriptions.Services[serviceName] = ServiceDescriptions{
 				ServiceName: serviceName,
 				Methods:     make(map[string]MethodDescription),
+				Types:       make(map[string]TypeDescription),
 			}
 		}
 

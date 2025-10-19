@@ -26,8 +26,8 @@ equinix fabricv4 service-tokens search-service-tokens [flags]
       --service-token-search-request-filter-property string                    service-token-search-request-filter-property
       --service-token-search-request-filter-values string                      service-token-search-request-filter-values (JSON array)
       --service-token-search-request-pagination-additional-properties string   service-token-search-request-pagination-additional-properties (JSON)
-      --service-token-search-request-pagination-limit int                      service-token-search-request-pagination-limit
-      --service-token-search-request-pagination-offset int                     service-token-search-request-pagination-offset
+      --service-token-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --service-token-search-request-pagination-offset int                     Index of the first element.
 ```
 
 ### Options inherited from parent commands

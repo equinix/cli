@@ -18,10 +18,10 @@ equinix fabricv4 streams create-streams [flags]
   -h, --help                                                       help for create-streams
       --request string                                             JSON payload for additional optional fields not exposed as flags
       --stream-post-request-additional-properties string           stream-post-request-additional-properties (required) (JSON)
-      --stream-post-request-description string                     stream-post-request-description
-      --stream-post-request-name string                            stream-post-request-name
+      --stream-post-request-description string                     Customer-provided stream description
+      --stream-post-request-name string                            Customer-provided stream name
       --stream-post-request-project-additional-properties string   stream-post-request-project-additional-properties (JSON)
-      --stream-post-request-project-project-id string              stream-post-request-project-project-id
+      --stream-post-request-project-project-id string              Subscriber-assigned project ID
       --stream-post-request-type string                            stream-post-request-type
 ```
 

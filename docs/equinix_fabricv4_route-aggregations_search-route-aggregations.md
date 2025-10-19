@@ -21,11 +21,11 @@ equinix fabricv4 route-aggregations search-route-aggregations [flags]
       --route-aggregations-search-base-filter-additional-properties string       route-aggregations-search-base-filter-additional-properties (JSON)
       --route-aggregations-search-base-filter-and string                         route-aggregations-search-base-filter-and (JSON array)
       --route-aggregations-search-base-pagination-additional-properties string   route-aggregations-search-base-pagination-additional-properties (JSON)
-      --route-aggregations-search-base-pagination-limit int                      route-aggregations-search-base-pagination-limit
-      --route-aggregations-search-base-pagination-next string                    route-aggregations-search-base-pagination-next
-      --route-aggregations-search-base-pagination-offset int                     route-aggregations-search-base-pagination-offset
-      --route-aggregations-search-base-pagination-previous string                route-aggregations-search-base-pagination-previous
-      --route-aggregations-search-base-pagination-total int                      route-aggregations-search-base-pagination-total
+      --route-aggregations-search-base-pagination-limit int                      Maximum number of search results returned per page. Number must be between 1 and 100, and the default is 20.
+      --route-aggregations-search-base-pagination-next string                    URL relative to the next item in the response.
+      --route-aggregations-search-base-pagination-offset int                     Index of the first item returned in the response. The default is 0.
+      --route-aggregations-search-base-pagination-previous string                URL relative to the previous item in the response.
+      --route-aggregations-search-base-pagination-total int                      Total number of elements returned.
       --route-aggregations-search-base-sort string                               route-aggregations-search-base-sort (JSON array)
 ```
 

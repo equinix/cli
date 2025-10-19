@@ -17,7 +17,7 @@ equinix fabricv4 networks get-connections-by-network-uuid [flags]
 ```
   -h, --help                help for get-connections-by-network-uuid
       --network-id string   Network UUID (required)
-      --request string      Raw JSON payload for request body fields
+      --request string      JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

@@ -17,7 +17,9 @@ equinix fabricv4 routing-protocols get-connection-routing-protocols [flags]
 ```
       --connection-id string   Connection Id (required)
   -h, --help                   help for get-connection-routing-protocols
-      --request string         JSON payload for request body. Available fields: limit (int32), offset (int32)
+      --limit int              limit field (required)
+      --offset int             offset field (required)
+      --request string         JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

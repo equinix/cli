@@ -16,8 +16,9 @@ equinix fabricv4 service-profiles get-service-profile-by-uuid [flags]
 
 ```
   -h, --help                        help for get-service-profile-by-uuid
-      --request string              JSON payload for request body. Available fields: view-point (GetServiceProfilesViewPointParameter)
+      --request string              JSON payload for additional optional fields not exposed as flags
       --service-profile-id string   Service Profile UUID (required)
+      --view-point string           view-point field (required)
 ```
 
 ### Options inherited from parent commands

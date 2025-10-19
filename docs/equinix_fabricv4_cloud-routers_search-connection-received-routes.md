@@ -15,9 +15,16 @@ equinix fabricv4 cloud-routers search-connection-received-routes [flags]
 ### Options
 
 ```
-      --connection-id string   Connection Id (required)
-  -h, --help                   help for search-connection-received-routes
-      --request string         JSON payload for request body. Available fields: connection-route-search-request (ConnectionRouteSearchRequest)
+      --connection-id string                                                      Connection Id (required)
+      --connection-route-search-request-additional-properties string              connection-route-search-request-additional-properties (required) (JSON)
+      --connection-route-search-request-filter-additional-properties string       connection-route-search-request-filter-additional-properties (JSON)
+      --connection-route-search-request-filter-and string                         connection-route-search-request-filter-and (JSON array)
+      --connection-route-search-request-pagination-additional-properties string   connection-route-search-request-pagination-additional-properties (JSON)
+      --connection-route-search-request-pagination-limit int                      connection-route-search-request-pagination-limit
+      --connection-route-search-request-pagination-offset int                     connection-route-search-request-pagination-offset
+      --connection-route-search-request-sort string                               connection-route-search-request-sort (JSON array)
+  -h, --help                                                                      help for search-connection-received-routes
+      --request string                                                            JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

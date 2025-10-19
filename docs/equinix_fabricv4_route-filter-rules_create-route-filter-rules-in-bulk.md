@@ -15,9 +15,11 @@ equinix fabricv4 route-filter-rules create-route-filter-rules-in-bulk [flags]
 ### Options
 
 ```
-  -h, --help                     help for create-route-filter-rules-in-bulk
-      --request string           JSON payload for request body. Available fields: route-filter-rules-post-request (RouteFilterRulesPostRequest)
-      --route-filter-id string   Route Filters Id (required)
+  -h, --help                                                           help for create-route-filter-rules-in-bulk
+      --request string                                                 JSON payload for additional optional fields not exposed as flags
+      --route-filter-id string                                         Route Filters Id (required)
+      --route-filter-rules-post-request-additional-properties string   route-filter-rules-post-request-additional-properties (required) (JSON)
+      --route-filter-rules-post-request-data string                    route-filter-rules-post-request-data (JSON array)
 ```
 
 ### Options inherited from parent commands

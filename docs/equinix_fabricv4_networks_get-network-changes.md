@@ -17,7 +17,7 @@ equinix fabricv4 networks get-network-changes [flags]
 ```
   -h, --help                help for get-network-changes
       --network-id string   Network UUID (required)
-      --request string      Raw JSON payload for request body fields
+      --request string      JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

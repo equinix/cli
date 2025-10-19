@@ -16,7 +16,7 @@ equinix fabricv4 precision-time get-time-services-connections-by-service-id [fla
 
 ```
   -h, --help                help for get-time-services-connections-by-service-id
-      --request string      Raw JSON payload for request body fields
+      --request string      JSON payload for request body fields
       --service-id string   Service UUID (required)
 ```
 

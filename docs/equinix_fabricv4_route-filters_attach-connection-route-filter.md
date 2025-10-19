@@ -15,10 +15,12 @@ equinix fabricv4 route-filters attach-connection-route-filter [flags]
 ### Options
 
 ```
-      --connection-id string     Connection Id (required)
-  -h, --help                     help for attach-connection-route-filter
-      --request string           JSON payload for request body. Available fields: connection-route-filters-base (ConnectionRouteFiltersBase)
-      --route-filter-id string   Route Filters Id (required)
+      --connection-id string                                         Connection Id (required)
+      --connection-route-filters-base-additional-properties string   connection-route-filters-base-additional-properties (required) (JSON)
+      --connection-route-filters-base-direction string               connection-route-filters-base-direction (required)
+  -h, --help                                                         help for attach-connection-route-filter
+      --request string                                               JSON payload for additional optional fields not exposed as flags
+      --route-filter-id string                                       Route Filters Id (required)
 ```
 
 ### Options inherited from parent commands

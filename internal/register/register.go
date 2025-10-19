@@ -13,6 +13,7 @@ import (
 
 	"github.com/equinix/cli/internal/parser"
 	"github.com/spf13/cobra"
+	"github.com/spf13/pflag"
 )
 
 // APIClientInterface represents any API client that can be used for command registration
@@ -314,6 +315,9 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 
 	requestBuilder := builderResult[0]
 
+	// Apply setter method values from expanded flags
+	requestBuilder = applyFlagsToRequestBuilder(cmd, requestBuilder)
+
 	// Check if --request flag was provided for JSON payload to set optional fields
 	requestJSON, _ := cmd.Flags().GetString("request")
 	if requestJSON != "" {
@@ -519,9 +523,12 @@ func camelToKebab(s string) string {
 // getValueFromFlag retrieves a flag value and converts it to the target type
 func getValueFromFlag(cmd *cobra.Command, flagName string, targetType reflect.Type) reflect.Value {
 	// Handle pointer types
-	if targetType.Kind() == reflect.Ptr {
+	isPtr := targetType.Kind() == reflect.Ptr
+	if isPtr {
 		targetType = targetType.Elem()
 	}
+
+	var result reflect.Value
 
 	switch targetType.Kind() {
 	case reflect.String:
@@ -529,18 +536,132 @@ func getValueFromFlag(cmd *cobra.Command, flagName string, targetType reflect.Ty
 		// For string-based types (including enums), create a value of the target type
 		newValue := reflect.New(targetType).Elem()
 		newValue.SetString(val)
-		return newValue
+		result = newValue
 	case reflect.Int, reflect.Int32, reflect.Int64:
 		val, _ := cmd.Flags().GetInt(flagName)
-		return reflect.ValueOf(val).Convert(targetType)
+		result = reflect.ValueOf(val).Convert(targetType)
 	case reflect.Bool:
 		val, _ := cmd.Flags().GetBool(flagName)
-		return reflect.ValueOf(val)
+		result = reflect.ValueOf(val)
+	case reflect.Struct:
+		// Build struct from expanded flags
+		result = buildStructFromFlags(cmd, flagName, targetType)
 	default:
 		// For complex types, try to get as string and parse
 		val, _ := cmd.Flags().GetString(flagName)
-		return convertStringToType(val, targetType)
+		result = convertStringToType(val, targetType)
 	}
+
+	// If the original type was a pointer, wrap the result
+	if isPtr && result.IsValid() {
+		ptrValue := reflect.New(result.Type())
+		ptrValue.Elem().Set(result)
+		return ptrValue
+	}
+
+	return result
+}
+
+// buildStructFromFlags constructs a struct value from CLI flags
+func buildStructFromFlags(cmd *cobra.Command, prefix string, structType reflect.Type) reflect.Value {
+	structValue := reflect.New(structType).Elem()
+
+	for i := 0; i < structType.NumField(); i++ {
+		field := structType.Field(i)
+		
+		// Skip unexported fields
+		if !field.IsExported() {
+			continue
+		}
+
+		// Get JSON tag for field name
+		fieldName := field.Name
+		jsonTag := field.Tag.Get("json")
+		if jsonTag != "" && jsonTag != "-" {
+			parts := strings.Split(jsonTag, ",")
+			if parts[0] != "" {
+				fieldName = parts[0]
+			}
+		}
+
+		// Convert to kebab-case for CLI flag name
+		flagName := camelToKebab(fieldName)
+		if prefix != "" {
+			flagName = prefix + "-" + flagName
+		}
+
+		// Check if the flag was set
+		if !cmd.Flags().Changed(flagName) {
+			continue
+		}
+
+		// Get the field type
+		fieldType := field.Type
+		isPtr := fieldType.Kind() == reflect.Ptr
+		if isPtr {
+			fieldType = fieldType.Elem()
+		}
+
+		// Get value from flag based on type
+		var fieldValue reflect.Value
+		switch fieldType.Kind() {
+		case reflect.String:
+			val, _ := cmd.Flags().GetString(flagName)
+			fieldValue = reflect.New(fieldType).Elem()
+			fieldValue.SetString(val)
+		case reflect.Int, reflect.Int32, reflect.Int64:
+			val, _ := cmd.Flags().GetInt(flagName)
+			fieldValue = reflect.ValueOf(val).Convert(fieldType)
+		case reflect.Bool:
+			val, _ := cmd.Flags().GetBool(flagName)
+			fieldValue = reflect.ValueOf(val)
+		case reflect.Float32, reflect.Float64:
+			val, _ := cmd.Flags().GetFloat64(flagName)
+			fieldValue = reflect.ValueOf(val).Convert(fieldType)
+		case reflect.Struct:
+			// Recursively build nested struct
+			fieldValue = buildStructFromFlags(cmd, flagName, fieldType)
+		case reflect.Slice:
+			// Parse JSON array from string
+			val, _ := cmd.Flags().GetString(flagName)
+			if val != "" {
+				fieldValue = parseJSONToType(val, fieldType)
+			}
+		default:
+			// Try to parse as JSON
+			val, _ := cmd.Flags().GetString(flagName)
+			if val != "" {
+				fieldValue = parseJSONToType(val, fieldType)
+			}
+		}
+
+		if fieldValue.IsValid() {
+			// Set the field
+			if isPtr {
+				ptrValue := reflect.New(fieldType)
+				ptrValue.Elem().Set(fieldValue)
+				structValue.Field(i).Set(ptrValue)
+			} else {
+				structValue.Field(i).Set(fieldValue)
+			}
+		}
+	}
+
+	return structValue
+}
+
+// parseJSONToType parses a JSON string into a reflect.Value of the target type
+func parseJSONToType(jsonStr string, targetType reflect.Type) reflect.Value {
+	// Create a new instance of the target type
+	newValue := reflect.New(targetType)
+	
+	// Try to unmarshal JSON into it
+	if err := json.Unmarshal([]byte(jsonStr), newValue.Interface()); err == nil {
+		return newValue.Elem()
+	}
+	
+	// If JSON parsing fails, return zero value
+	return reflect.Zero(targetType)
 }
 
 // convertStringToType converts a string to the target type
@@ -570,6 +691,83 @@ func convertStringToType(value string, targetType reflect.Type) reflect.Value {
 
 	// Default: return zero value
 	return reflect.Zero(targetType)
+}
+
+// applyFlagsToRequestBuilder applies flag values to request builder using setter methods
+func applyFlagsToRequestBuilder(cmd *cobra.Command, requestBuilder reflect.Value) reflect.Value {
+	builderType := requestBuilder.Type()
+
+	// Iterate through all methods to find setters
+	for i := 0; i < builderType.NumMethod(); i++ {
+		method := builderType.Method(i)
+
+		// Skip Execute and other non-setter methods
+		if method.Name == "Execute" || !method.IsExported() {
+			continue
+		}
+
+		// Check if this is a setter (1 param in, returns builder type)
+		if method.Type.NumIn() != 2 || method.Type.NumOut() != 1 {
+			continue
+		}
+
+		// Get the flag name for this setter
+		flagName := camelToKebab(method.Name)
+		
+		// Get the parameter type for this setter
+		paramType := method.Type.In(1)
+		
+		// Check if we have flags for this setter (either direct or expanded struct fields)
+		if hasAnyFlagsWithPrefix(cmd, flagName) {
+			// Build the value from flags
+			var paramValue reflect.Value
+			
+			// Handle pointer types
+			isPtr := paramType.Kind() == reflect.Ptr
+			actualType := paramType
+			if isPtr {
+				actualType = paramType.Elem()
+			}
+			
+			// Build value based on type
+			if actualType.Kind() == reflect.Struct {
+				// Build struct from expanded flags
+				paramValue = buildStructFromFlags(cmd, flagName, actualType)
+				if isPtr {
+					ptrValue := reflect.New(actualType)
+					ptrValue.Elem().Set(paramValue)
+					paramValue = ptrValue
+				}
+			} else if cmd.Flags().Changed(flagName) {
+				// Get simple value from flag
+				paramValue = getValueFromFlag(cmd, flagName, paramType)
+			}
+			
+			// Call the setter if we have a value
+			if paramValue.IsValid() && !paramValue.IsZero() {
+				methodFunc := requestBuilder.MethodByName(method.Name)
+				if methodFunc.IsValid() {
+					result := methodFunc.Call([]reflect.Value{paramValue})
+					if len(result) > 0 {
+						requestBuilder = result[0]
+					}
+				}
+			}
+		}
+	}
+
+	return requestBuilder
+}
+
+// hasAnyFlagsWithPrefix checks if any flags exist with the given prefix
+func hasAnyFlagsWithPrefix(cmd *cobra.Command, prefix string) bool {
+	hasFlags := false
+	cmd.Flags().VisitAll(func(flag *pflag.Flag) {
+		if flag.Changed && strings.HasPrefix(flag.Name, prefix) {
+			hasFlags = true
+		}
+	})
+	return hasFlags
 }
 
 // applyJSONToRequestBuilder applies JSON data to request builder using setter methods
@@ -653,8 +851,8 @@ func convertJSONValueToType(jsonValue interface{}, targetType reflect.Type) refl
 func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method, paramDescriptions []parser.ParameterDescription) {
 	builderType := builderMethod.Type
 
-	// Determine what request body fields are available by checking the return type
-	requestHelpText := "Raw JSON payload for request body fields"
+	// Check if the return type has setter methods
+	settersExpanded := false
 	if builderType.NumOut() > 0 {
 		returnType := builderType.Out(0)
 		// Check if the return type has setter methods that suggest request body fields
@@ -664,35 +862,29 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 				actualType = returnType.Elem()
 			}
 
-			// Find setter methods on the request type
-			setterHints := []string{}
+			// Find setter methods on the request type and expand them as flags
 			for i := 0; i < actualType.NumMethod(); i++ {
 				method := actualType.Method(i)
 				// Look for setter methods (single param, returns same type)
 				if method.Type.NumIn() == 2 && method.Type.NumOut() == 1 && method.Name != "Execute" {
 					// This looks like a setter
 					paramType := method.Type.In(1)
-					typeName := paramType.String()
-					// Simplify type name
-					if idx := strings.LastIndex(typeName, "."); idx >= 0 {
-						typeName = typeName[idx+1:]
-					}
-					typeName = strings.TrimPrefix(typeName, "*")
-
-					setterHints = append(setterHints, fmt.Sprintf("%s (%s)", camelToKebab(method.Name), typeName))
-					if len(setterHints) >= 5 {
-						break // Limit hints to avoid overwhelming the user
-					}
+					paramName := camelToKebab(method.Name)
+					
+					// Expand this setter parameter into flags
+					addBuilderFlagForType(cmd, paramName, paramType, builderMethod, fmt.Sprintf("%s field", paramName))
+					settersExpanded = true
 				}
-			}
-
-			if len(setterHints) > 0 {
-				requestHelpText = fmt.Sprintf("JSON payload for request body. Available fields: %s", strings.Join(setterHints, ", "))
 			}
 		}
 	}
 
-	cmd.Flags().String("request", "", requestHelpText)
+	// Only add --request flag for additional fields if we expanded setters
+	if settersExpanded {
+		cmd.Flags().String("request", "", "JSON payload for additional optional fields not exposed as flags")
+	} else {
+		cmd.Flags().String("request", "", "JSON payload for request body fields")
+	}
 
 	// Iterate through builder method parameters (skip receiver at index 0, context at index 1)
 	for i := 2; i < builderType.NumIn(); i++ {
@@ -763,11 +955,113 @@ func addBuilderFlagForType(cmd *cobra.Command, paramName string, paramType refle
 		cmd.Flags().Bool(paramName, false, description)
 	case reflect.Float32, reflect.Float64:
 		cmd.Flags().Float64(paramName, 0.0, description)
+	case reflect.Struct:
+		// For struct types, expand fields as individual flags with prefix
+		expandStructFields(cmd, paramName, paramType, isOptional)
 	default:
 		// For complex types, accept as string (will be parsed later)
 		cmd.Flags().String(paramName, "", fmt.Sprintf("%s (JSON or string)", description))
 		if !isOptional {
 			_ = cmd.MarkFlagRequired(paramName)
+		}
+	}
+}
+
+// expandStructFields recursively expands struct fields into CLI flags
+func expandStructFields(cmd *cobra.Command, prefix string, structType reflect.Type, parentOptional bool) {
+	// Limit expansion depth to avoid excessive flags
+	const maxDepth = 2
+	expandStructFieldsWithDepth(cmd, prefix, structType, parentOptional, 0, maxDepth)
+}
+
+// expandStructFieldsWithDepth expands struct fields with depth control
+func expandStructFieldsWithDepth(cmd *cobra.Command, prefix string, structType reflect.Type, parentOptional bool, depth int, maxDepth int) {
+	if depth >= maxDepth {
+		// Stop recursion, just add a JSON flag for the whole struct
+		description := fmt.Sprintf("%s (JSON)", prefix)
+		cmd.Flags().String(prefix, "", description)
+		return
+	}
+
+	for i := 0; i < structType.NumField(); i++ {
+		field := structType.Field(i)
+		
+		// Skip unexported fields
+		if !field.IsExported() {
+			continue
+		}
+
+		// Get JSON tag for field name
+		fieldName := field.Name
+		jsonTag := field.Tag.Get("json")
+		if jsonTag != "" && jsonTag != "-" {
+			// Use JSON tag name (before the comma)
+			parts := strings.Split(jsonTag, ",")
+			if parts[0] != "" {
+				fieldName = parts[0]
+			}
+		}
+
+		// Convert to kebab-case for CLI
+		flagName := camelToKebab(fieldName)
+		if prefix != "" {
+			flagName = prefix + "-" + flagName
+		}
+
+		// Check if flag already exists
+		if cmd.Flags().Lookup(flagName) != nil {
+			continue
+		}
+
+		// Determine if field is optional (pointer or has omitempty)
+		fieldType := field.Type
+		isOptional := parentOptional || fieldType.Kind() == reflect.Ptr || strings.Contains(jsonTag, "omitempty")
+		
+		if fieldType.Kind() == reflect.Ptr {
+			fieldType = fieldType.Elem()
+		}
+
+		// Get field description from struct comment if available
+		fieldDesc := field.Tag.Get("description")
+		if fieldDesc == "" {
+			fieldDesc = flagName
+		}
+		
+		if !isOptional && fieldType.Kind() != reflect.Bool {
+			fieldDesc = fmt.Sprintf("%s (required)", fieldDesc)
+		}
+
+		// Add flag based on field type
+		switch fieldType.Kind() {
+		case reflect.String:
+			cmd.Flags().String(flagName, "", fieldDesc)
+			if !isOptional {
+				_ = cmd.MarkFlagRequired(flagName)
+			}
+		case reflect.Int, reflect.Int32, reflect.Int64:
+			cmd.Flags().Int(flagName, 0, fieldDesc)
+			if !isOptional {
+				_ = cmd.MarkFlagRequired(flagName)
+			}
+		case reflect.Bool:
+			cmd.Flags().Bool(flagName, false, fieldDesc)
+		case reflect.Float32, reflect.Float64:
+			cmd.Flags().Float64(flagName, 0.0, fieldDesc)
+		case reflect.Slice:
+			// For slices, accept JSON array as string
+			cmd.Flags().String(flagName, "", fmt.Sprintf("%s (JSON array)", fieldDesc))
+			if !isOptional {
+				_ = cmd.MarkFlagRequired(flagName)
+			}
+		case reflect.Struct:
+			// Recursively expand nested structs
+			expandStructFieldsWithDepth(cmd, flagName, fieldType, isOptional, depth+1, maxDepth)
+		default:
+			// For other complex types, accept as JSON string
+			cmd.Flags().String(flagName, "", fmt.Sprintf("%s (JSON)", fieldDesc))
+			if !isOptional {
+				_ = cmd.MarkFlagRequired(flagName)
+			}
 		}
 	}
 }

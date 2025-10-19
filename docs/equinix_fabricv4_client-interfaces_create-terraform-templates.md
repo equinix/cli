@@ -15,9 +15,13 @@ equinix fabricv4 client-interfaces create-terraform-templates [flags]
 ### Options
 
 ```
-      --deployment-id string   Deployment UUID (required)
-  -h, --help                   help for create-terraform-templates
-      --request string         JSON payload for request body. Available fields: client-interfaces (ClientInterfaces)
+      --client-interfaces-additional-properties string   client-interfaces-additional-properties (required) (JSON)
+      --client-interfaces-description string             client-interfaces-description (required)
+      --client-interfaces-name string                    client-interfaces-name (required)
+      --client-interfaces-type string                    client-interfaces-type (required)
+      --deployment-id string                             Deployment UUID (required)
+  -h, --help                                             help for create-terraform-templates
+      --request string                                   JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

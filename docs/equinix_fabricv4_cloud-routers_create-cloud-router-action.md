@@ -15,9 +15,13 @@ equinix fabricv4 cloud-routers create-cloud-router-action [flags]
 ### Options
 
 ```
-  -h, --help               help for create-cloud-router-action
-      --request string     JSON payload for request body. Available fields: cloud-router-action-request (CloudRouterActionRequest)
-      --router-id string   Router UUID (required)
+      --cloud-router-action-request-additional-properties string              cloud-router-action-request-additional-properties (required) (JSON)
+      --cloud-router-action-request-connection-additional-properties string   cloud-router-action-request-connection-additional-properties (JSON)
+      --cloud-router-action-request-connection-uuid string                    cloud-router-action-request-connection-uuid
+      --cloud-router-action-request-type string                               cloud-router-action-request-type (required)
+  -h, --help                                                                  help for create-cloud-router-action
+      --request string                                                        JSON payload for additional optional fields not exposed as flags
+      --router-id string                                                      Router UUID (required)
 ```
 
 ### Options inherited from parent commands

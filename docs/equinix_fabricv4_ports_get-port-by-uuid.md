@@ -17,7 +17,7 @@ equinix fabricv4 ports get-port-by-uuid [flags]
 ```
   -h, --help             help for get-port-by-uuid
       --port-id string   Port UUID (required)
-      --request string   Raw JSON payload for request body fields
+      --request string   JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

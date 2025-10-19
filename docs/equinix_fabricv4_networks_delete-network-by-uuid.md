@@ -17,7 +17,7 @@ equinix fabricv4 networks delete-network-by-uuid [flags]
 ```
   -h, --help                help for delete-network-by-uuid
       --network-id string   Network UUID (required)
-      --request string      Raw JSON payload for request body fields
+      --request string      JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

@@ -15,9 +15,11 @@ equinix fabricv4 service-tokens create-service-token-action [flags]
 ### Options
 
 ```
-  -h, --help                      help for create-service-token-action
-      --request string            JSON payload for request body. Available fields: service-token-action-request (ServiceTokenActionRequest)
-      --service-token-id string   Service Token UUID (required)
+  -h, --help                                                        help for create-service-token-action
+      --request string                                              JSON payload for additional optional fields not exposed as flags
+      --service-token-action-request-additional-properties string   service-token-action-request-additional-properties (required) (JSON)
+      --service-token-action-request-type string                    service-token-action-request-type (required)
+      --service-token-id string                                     Service Token UUID (required)
 ```
 
 ### Options inherited from parent commands

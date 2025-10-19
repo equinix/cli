@@ -15,10 +15,11 @@ equinix fabricv4 route-aggregation-rules patch-route-aggregation-rule-by-uuid [f
 ### Options
 
 ```
-  -h, --help                               help for patch-route-aggregation-rule-by-uuid
-      --request string                     JSON payload for request body. Available fields: route-aggregation-rules-patch-request-item (RouteAggregationRulesPatchRequestItem)
-      --route-aggregation-id string        Route Aggregations Id (required)
-      --route-aggregation-rule-id string   Route Aggregation Rules Id (required)
+  -h, --help                                                help for patch-route-aggregation-rule-by-uuid
+      --request string                                      JSON payload for additional optional fields not exposed as flags
+      --route-aggregation-id string                         Route Aggregations Id (required)
+      --route-aggregation-rule-id string                    Route Aggregation Rules Id (required)
+      --route-aggregation-rules-patch-request-item string   route-aggregation-rules-patch-request-item field (required) (JSON or string)
 ```
 
 ### Options inherited from parent commands

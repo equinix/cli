@@ -15,15 +15,17 @@ equinix fabricv4 route-filters get-route-filter-change-by-uuid [flags]
 ### Options
 
 ```
-      --filter-id string   filter-id (required)
-  -h, --help               help for get-route-filter-change-by-uuid
-      --request string     Raw JSON payload for optional request fields
+      --change-id string         Routing Protocol Change UUID (required)
+  -h, --help                     help for get-route-filter-change-by-uuid
+      --request string           Raw JSON payload for optional request fields
+      --route-filter-id string   Route Filters Id (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

@@ -15,15 +15,17 @@ equinix fabricv4 routing-protocols get-connection-routing-protocol-all-bgp-actio
 ### Options
 
 ```
-      --connection-id string   connection-id (required)
-  -h, --help                   help for get-connection-routing-protocol-all-bgp-actions
-      --request string         Raw JSON payload for optional request fields
+      --connection-id string         Connection Id (required)
+  -h, --help                         help for get-connection-routing-protocol-all-bgp-actions
+      --request string               Raw JSON payload for optional request fields
+      --routing-protocol-id string   Routing Protocol Id (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

@@ -15,15 +15,16 @@ equinix fabricv4 precision-time delete-time-service-by-id [flags]
 ### Options
 
 ```
-  -h, --help             help for delete-time-service-by-id
-      --id string        Service UUID (required)
-      --request string   Raw JSON payload for optional request fields
+  -h, --help                help for delete-time-service-by-id
+      --request string      Raw JSON payload for optional request fields
+      --service-id string   Service UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

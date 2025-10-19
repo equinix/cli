@@ -15,15 +15,16 @@ equinix fabricv4 stream-subscriptions create-stream-subscriptions [flags]
 ### Options
 
 ```
-  -h, --help                     help for create-stream-subscriptions
-      --request string           Raw JSON payload for optional request fields
-      --subscription-id string   subscription-id (required)
+  -h, --help               help for create-stream-subscriptions
+      --request string     Raw JSON payload for optional request fields
+      --stream-id string   Stream UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

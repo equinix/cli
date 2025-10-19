@@ -15,15 +15,17 @@ equinix fabricv4 cloud-routers delete-cloud-router-command-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help               help for delete-cloud-router-command-by-uuid
-      --request string     Raw JSON payload for optional request fields
-      --router-id string   router-id (required)
+      --command-id string   Command UUID (required)
+  -h, --help                help for delete-cloud-router-command-by-uuid
+      --request string      Raw JSON payload for optional request fields
+      --router-id string    Router UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

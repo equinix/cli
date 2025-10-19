@@ -15,15 +15,17 @@ equinix fabricv4 cloud-routers get-cloud-router-command [flags]
 ### Options
 
 ```
-  -h, --help               help for get-cloud-router-command
-      --request string     Raw JSON payload for optional request fields
-      --router-id string   router-id (required)
+      --command-id string   Command UUID (required)
+  -h, --help                help for get-cloud-router-command
+      --request string      Raw JSON payload for optional request fields
+      --router-id string    Router UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

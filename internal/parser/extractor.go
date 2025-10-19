@@ -13,11 +13,17 @@ import (
 	"strings"
 )
 
+// ParameterDescription holds documentation for a parameter
+type ParameterDescription struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
+}
+
 // MethodDescription holds documentation for a method
 type MethodDescription struct {
-	ShortDescription string            `json:"short_description"`
-	LongDescription  string            `json:"long_description"`
-	Parameters       map[string]string `json:"parameters,omitempty"`
+	ShortDescription string                 `json:"short_description"`
+	LongDescription  string                 `json:"long_description"`
+	Parameters       []ParameterDescription `json:"parameters,omitempty"`
 }
 
 // ServiceDescriptions holds all descriptions for a service
@@ -125,7 +131,7 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 		// Parse the documentation
 		lines := strings.Split(strings.TrimSpace(doc), "\n")
 		var shortDesc, longDesc string
-		var params map[string]string
+		var params []ParameterDescription
 
 		if len(lines) > 0 {
 			// First line is typically "MethodName Short Description"
@@ -140,17 +146,38 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 			// Rest is long description
 			if len(lines) > 1 {
 				longLines := []string{}
-				params = make(map[string]string)
+				params = []ParameterDescription{}
 
 				for i := 1; i < len(lines); i++ {
 					line := strings.TrimSpace(lines[i])
-					// Check for @param annotations
+					// Check for @param annotations (may have leading whitespace/tabs in original)
 					if strings.HasPrefix(line, "@param") {
-						parts := strings.SplitN(strings.TrimPrefix(line, "@param"), " ", 3)
-						if len(parts) >= 3 {
+						// Format: @param paramName paramType - description
+						// or: @param paramName description
+						paramLine := strings.TrimPrefix(line, "@param")
+						paramLine = strings.TrimSpace(paramLine)
+
+						// Split on first space to get param name
+						parts := strings.SplitN(paramLine, " ", 2)
+						if len(parts) >= 1 {
 							paramName := strings.TrimSpace(parts[0])
-							paramDesc := strings.TrimSpace(parts[2])
-							params[paramName] = paramDesc
+							paramDesc := ""
+							if len(parts) == 2 {
+								// Get description, removing type if present
+								descPart := strings.TrimSpace(parts[1])
+								// If there's a dash, description is after it
+								if idx := strings.Index(descPart, "-"); idx >= 0 {
+									paramDesc = strings.TrimSpace(descPart[idx+1:])
+								} else {
+									paramDesc = descPart
+								}
+							}
+							if paramName != "" {
+								params = append(params, ParameterDescription{
+									Name:        paramName,
+									Description: paramDesc,
+								})
+							}
 						}
 					} else if !strings.HasPrefix(line, "@") && line != "" {
 						longLines = append(longLines, line)

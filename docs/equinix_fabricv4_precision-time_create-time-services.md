@@ -23,6 +23,7 @@ equinix fabricv4 precision-time create-time-services [flags]
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

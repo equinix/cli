@@ -13,7 +13,8 @@ providing access to all available API services.
 ### Options
 
 ```
-  -h, --help   help for fabricv4
+      --debug   Enable debug mode to show HTTP requests and responses
+  -h, --help    help for fabricv4
 ```
 
 ### Options inherited from parent commands

@@ -17,13 +17,14 @@ equinix fabricv4 marketplace-subscriptions get-subscription-by-id [flags]
 ```
   -h, --help                     help for get-subscription-by-id
       --request string           Raw JSON payload for optional request fields
-      --subscription-id string   subscription-id (required)
+      --subscription-id string   Subscription UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

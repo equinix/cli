@@ -17,13 +17,14 @@ equinix fabricv4 cloud-routers get-cloud-router-package-by-code [flags]
 ```
   -h, --help                         help for get-cloud-router-package-by-code
       --request string               Raw JSON payload for optional request fields
-      --router-package-code string   router-package-code (required)
+      --router-package-code string   assigned Cloud Router package identifier (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

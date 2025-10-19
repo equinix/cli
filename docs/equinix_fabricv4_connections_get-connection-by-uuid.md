@@ -15,7 +15,7 @@ equinix fabricv4 connections get-connection-by-uuid [flags]
 ### Options
 
 ```
-      --connection-id string   connection-id (required)
+      --connection-id string   Connection Id (required)
   -h, --help                   help for get-connection-by-uuid
       --request string         Raw JSON payload for optional request fields
 ```
@@ -24,6 +24,7 @@ equinix fabricv4 connections get-connection-by-uuid [flags]
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

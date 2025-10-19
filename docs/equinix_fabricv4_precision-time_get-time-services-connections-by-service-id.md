@@ -15,15 +15,16 @@ equinix fabricv4 precision-time get-time-services-connections-by-service-id [fla
 ### Options
 
 ```
-      --connection-id string   connection-id (required)
-  -h, --help                   help for get-time-services-connections-by-service-id
-      --request string         Raw JSON payload for optional request fields
+  -h, --help                help for get-time-services-connections-by-service-id
+      --request string      Raw JSON payload for optional request fields
+      --service-id string   Service UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

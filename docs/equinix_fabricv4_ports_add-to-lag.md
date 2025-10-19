@@ -16,7 +16,7 @@ equinix fabricv4 ports add-to-lag [flags]
 
 ```
   -h, --help             help for add-to-lag
-      --param-1 string   param-1 (required)
+      --port-id string   Port UUID (required)
       --request string   Raw JSON payload for optional request fields
 ```
 
@@ -24,6 +24,7 @@ equinix fabricv4 ports add-to-lag [flags]
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

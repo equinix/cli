@@ -15,15 +15,16 @@ equinix fabricv4 service-profiles get-service-profile-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help                help for get-service-profile-by-uuid
-      --profile-id string   profile-id (required)
-      --request string      Raw JSON payload for optional request fields
+  -h, --help                        help for get-service-profile-by-uuid
+      --request string              Raw JSON payload for optional request fields
+      --service-profile-id string   Service Profile UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

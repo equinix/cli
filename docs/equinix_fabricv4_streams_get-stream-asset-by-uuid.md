@@ -16,15 +16,17 @@ equinix fabricv4 streams get-stream-asset-by-uuid [flags]
 
 ```
       --asset string       asset (required)
+      --asset-id string    asset UUID (required)
   -h, --help               help for get-stream-asset-by-uuid
       --request string     Raw JSON payload for optional request fields
-      --stream-id string   stream-id (required)
+      --stream-id string   Stream UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

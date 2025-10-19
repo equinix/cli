@@ -20,7 +20,7 @@ equinix fabricv4 route-aggregation-rules replace-route-aggregation-rule-by-uuid 
       --route-aggregation-id string                                 Route Aggregations Id (required)
       --route-aggregation-rule-id string                            Route Aggregation Rules Id (required)
       --route-aggregation-rules-base-additional-properties string   route-aggregation-rules-base-additional-properties (required) (JSON)
-      --route-aggregation-rules-base-description string             route-aggregation-rules-base-description
+      --route-aggregation-rules-base-description string             Customer-provided Route Aggregation Rule description
       --route-aggregation-rules-base-name string                    route-aggregation-rules-base-name
       --route-aggregation-rules-base-prefix string                  route-aggregation-rules-base-prefix (required)
 ```

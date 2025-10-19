@@ -16,7 +16,7 @@ equinix fabricv4 ports add-to-lag [flags]
 
 ```
       --bulk-physical-port-additional-properties string   bulk-physical-port-additional-properties (required) (JSON)
-      --bulk-physical-port-data string                    bulk-physical-port-data (JSON array)
+      --bulk-physical-port-data string                    add physical ports to virtual port (JSON array)
   -h, --help                                              help for add-to-lag
       --port-id string                                    Port UUID (required)
       --request string                                    JSON payload for additional optional fields not exposed as flags

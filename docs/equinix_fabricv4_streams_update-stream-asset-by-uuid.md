@@ -20,7 +20,7 @@ equinix fabricv4 streams update-stream-asset-by-uuid [flags]
   -h, --help                                                    help for update-stream-asset-by-uuid
       --request string                                          JSON payload for additional optional fields not exposed as flags
       --stream-asset-put-request-additional-properties string   stream-asset-put-request-additional-properties (required) (JSON)
-      --stream-asset-put-request-metrics-enabled                stream-asset-put-request-metrics-enabled
+      --stream-asset-put-request-metrics-enabled                enable metric
       --stream-id string                                        Stream UUID (required)
 ```
 

@@ -21,8 +21,8 @@ equinix fabricv4 service-profiles search-service-profiles [flags]
       --service-profile-search-request-filter-service-profile-and-filter string          service-profile-search-request-filter-service-profile-and-filter (JSON)
       --service-profile-search-request-filter-service-profile-simple-expression string   service-profile-search-request-filter-service-profile-simple-expression (JSON)
       --service-profile-search-request-pagination-additional-properties string           service-profile-search-request-pagination-additional-properties (JSON)
-      --service-profile-search-request-pagination-limit int                              service-profile-search-request-pagination-limit
-      --service-profile-search-request-pagination-offset int                             service-profile-search-request-pagination-offset
+      --service-profile-search-request-pagination-limit int                              Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --service-profile-search-request-pagination-offset int                             Index of the first element.
       --service-profile-search-request-sort string                                       service-profile-search-request-sort (JSON array)
       --view-point string                                                                view-point field (required)
 ```

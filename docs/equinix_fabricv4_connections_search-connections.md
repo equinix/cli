@@ -25,8 +25,8 @@ equinix fabricv4 connections search-connections [flags]
       --search-request-filter-property string                    search-request-filter-property
       --search-request-filter-values string                      search-request-filter-values (JSON array)
       --search-request-pagination-additional-properties string   search-request-pagination-additional-properties (JSON)
-      --search-request-pagination-limit int                      search-request-pagination-limit
-      --search-request-pagination-offset int                     search-request-pagination-offset
+      --search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --search-request-pagination-offset int                     Index of the first element.
       --search-request-sort string                               search-request-sort (JSON array)
 ```
 

@@ -21,11 +21,11 @@ equinix fabricv4 route-filters search-route-filters [flags]
       --route-filters-search-base-filter-additional-properties string       route-filters-search-base-filter-additional-properties (JSON)
       --route-filters-search-base-filter-and string                         route-filters-search-base-filter-and (JSON array)
       --route-filters-search-base-pagination-additional-properties string   route-filters-search-base-pagination-additional-properties (JSON)
-      --route-filters-search-base-pagination-limit int                      route-filters-search-base-pagination-limit
-      --route-filters-search-base-pagination-next string                    route-filters-search-base-pagination-next
-      --route-filters-search-base-pagination-offset int                     route-filters-search-base-pagination-offset
-      --route-filters-search-base-pagination-previous string                route-filters-search-base-pagination-previous
-      --route-filters-search-base-pagination-total int                      route-filters-search-base-pagination-total
+      --route-filters-search-base-pagination-limit int                      Maximum number of search results returned per page. Number must be between 1 and 100, and the default is 20.
+      --route-filters-search-base-pagination-next string                    URL relative to the next item in the response.
+      --route-filters-search-base-pagination-offset int                     Index of the first item returned in the response. The default is 0.
+      --route-filters-search-base-pagination-previous string                URL relative to the previous item in the response.
+      --route-filters-search-base-pagination-total int                      Total number of elements returned.
       --route-filters-search-base-sort string                               route-filters-search-base-sort (JSON array)
 ```
 

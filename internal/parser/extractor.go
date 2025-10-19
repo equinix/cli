@@ -106,42 +106,42 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 				if !ok {
 					continue
 				}
-				
+
 				structType, ok := typeSpec.Type.(*ast.StructType)
 				if !ok {
 					continue
 				}
-				
+
 				typeName := typeSpec.Name.Name
 				typeDesc := TypeDescription{
 					TypeName: typeName,
 					Fields:   make(map[string]FieldDescription),
 				}
-				
+
 				// Extract type-level documentation
 				if genDecl.Doc != nil {
 					typeDesc.Description = strings.TrimSpace(genDecl.Doc.Text())
 				}
-				
+
 				// Extract field documentation
 				for _, field := range structType.Fields.List {
 					if len(field.Names) == 0 {
 						// Embedded field
 						continue
 					}
-					
+
 					fieldName := field.Names[0].Name
 					fieldDesc := FieldDescription{
 						Name: fieldName,
 					}
-					
+
 					// Extract field comment
 					if field.Doc != nil {
 						fieldDesc.Description = strings.TrimSpace(field.Doc.Text())
 					} else if field.Comment != nil {
 						fieldDesc.Description = strings.TrimSpace(field.Comment.Text())
 					}
-					
+
 					// Extract JSON tag if present
 					if field.Tag != nil {
 						tag := field.Tag.Value
@@ -158,13 +158,13 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 							}
 						}
 					}
-					
+
 					typeDesc.Fields[fieldName] = fieldDesc
 				}
-				
+
 				// Store in global types map
 				descriptions.Types[typeName] = typeDesc
-				
+
 				// Also store in service-specific types if we have a service context
 				if serviceName != "" {
 					// Ensure service exists
@@ -184,7 +184,7 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 			}
 			continue
 		}
-		
+
 		funcDecl, ok := decl.(*ast.FuncDecl)
 		if !ok || funcDecl.Doc == nil {
 			continue

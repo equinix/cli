@@ -87,13 +87,13 @@ func NewStandardClient(options ...ClientOption) (*Client, error) {
 		BaseURL:      client.BaseURL,
 	}
 	authTransport := authConfig.New()
-	
+
 	// Apply options to potentially wrap the transport
 	transport := http.RoundTripper(authTransport)
 	for _, opt := range options {
 		transport = opt(transport)
 	}
-	
+
 	client.HTTPClient.Transport = transport
 
 	return client, nil

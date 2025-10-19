@@ -15,15 +15,16 @@ equinix fabricv4 precision-time get-time-services-package-by-code [flags]
 ### Options
 
 ```
-      --get-time-services-package-by-code-package-code-parameter string   get-time-services-package-by-code-package-code-parameter (required)
-  -h, --help                                                              help for get-time-services-package-by-code
-      --request string                                                    Raw JSON payload for optional request fields
+  -h, --help                  help for get-time-services-package-by-code
+      --package-code string   Package Code (required)
+      --request string        Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

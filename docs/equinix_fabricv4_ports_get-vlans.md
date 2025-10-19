@@ -15,15 +15,16 @@ equinix fabricv4 ports get-vlans [flags]
 ### Options
 
 ```
-  -h, --help             help for get-vlans
-      --param-1 string   param-1 (required)
-      --request string   Raw JSON payload for optional request fields
+  -h, --help               help for get-vlans
+      --port-uuid string   Port UUID (required)
+      --request string     Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

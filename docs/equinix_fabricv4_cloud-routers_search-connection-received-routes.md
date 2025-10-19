@@ -15,7 +15,7 @@ equinix fabricv4 cloud-routers search-connection-received-routes [flags]
 ### Options
 
 ```
-      --connection-id string   connection-id (required)
+      --connection-id string   Connection Id (required)
   -h, --help                   help for search-connection-received-routes
       --request string         Raw JSON payload for optional request fields
 ```
@@ -24,6 +24,7 @@ equinix fabricv4 cloud-routers search-connection-received-routes [flags]
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

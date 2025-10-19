@@ -15,15 +15,16 @@ equinix fabricv4 service-tokens delete-service-token-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help              help for delete-service-token-by-uuid
-      --request string    Raw JSON payload for optional request fields
-      --token-id string   token-id (required)
+  -h, --help                      help for delete-service-token-by-uuid
+      --request string            Raw JSON payload for optional request fields
+      --service-token-id string   Service Token UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

@@ -23,6 +23,7 @@ equinix fabricv4 deployments search-provider-resources [flags]
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

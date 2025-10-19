@@ -181,7 +181,7 @@ func createMethodCommand(methodName, originalMethodName string, service interfac
 		Short: description.Short,
 		Long:  description.Long,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return executeMethod(cmd, service, method, builderMethod, args)
+			return executeMethod(cmd, service, method, builderMethod, args, description.ParameterDescriptions)
 		},
 	}
 
@@ -196,7 +196,7 @@ func createMethodCommand(methodName, originalMethodName string, service interfac
 type MethodDescription struct {
 	Short                 string
 	Long                  string
-	ParameterDescriptions map[string]string
+	ParameterDescriptions []parser.ParameterDescription
 }
 
 // extractMethodDescription attempts to extract description from loaded SDK descriptions
@@ -277,7 +277,7 @@ func getServiceNameFromType(service interface{}) string {
 }
 
 // executeMethod performs the actual API call using reflection
-func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, builderMethod reflect.Method, args []string) error {
+func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, builderMethod reflect.Method, args []string, paramDescriptions []parser.ParameterDescription) error {
 	ctx := context.Background()
 	serviceValue := reflect.ValueOf(service)
 
@@ -288,7 +288,7 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 	builderType := builderMethod.Type
 	for i := 2; i < builderType.NumIn(); i++ {
 		paramType := builderType.In(i)
-		paramName := getParamNameFromPosition(builderMethod, i)
+		paramName := getParamNameFromPosition(builderMethod, i, paramDescriptions)
 
 		// Try to get the value from flags or args
 		var paramValue reflect.Value
@@ -357,9 +357,8 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 }
 
 // getParamNameFromPosition extracts parameter name from method signature
-func getParamNameFromPosition(method reflect.Method, position int) string {
-	// For now, use a simple naming convention based on position
-	// In a real implementation, we might parse the method name or use Go AST
+// It uses SDK descriptions when available, falling back to heuristics
+func getParamNameFromPosition(method reflect.Method, position int, paramDescriptions []parser.ParameterDescription) string {
 	paramType := method.Type.In(position)
 	typeName := paramType.String()
 
@@ -382,6 +381,26 @@ func getParamNameFromPosition(method reflect.Method, position int) string {
 	}
 
 	name := strings.ToLower(result.String())
+
+	// First, try to get parameter name from SDK descriptions
+	// The descriptions are now in order, so we can match by position
+	if len(paramDescriptions) > 0 {
+		// Position 2+ are actual parameters (skip receiver at 0, ctx at 1)
+		paramIndex := position - 2
+
+		// Find the non-ctx parameter at this index
+		actualParamIndex := 0
+		for _, param := range paramDescriptions {
+			if param.Name == "ctx" {
+				continue
+			}
+			if actualParamIndex == paramIndex {
+				// Found the matching parameter
+				return camelToKebab(param.Name)
+			}
+			actualParamIndex++
+		}
+	}
 
 	// Handle common parameter names by examining the method name
 	methodName := method.Name
@@ -442,6 +461,18 @@ func getParamNameFromPosition(method reflect.Method, position int) string {
 	return name
 }
 
+// camelToKebab converts camelCase to kebab-case
+func camelToKebab(s string) string {
+	var result strings.Builder
+	for i, r := range s {
+		if i > 0 && r >= 'A' && r <= 'Z' {
+			result.WriteRune('-')
+		}
+		result.WriteRune(r)
+	}
+	return strings.ToLower(result.String())
+}
+
 // getValueFromFlag retrieves a flag value and converts it to the target type
 func getValueFromFlag(cmd *cobra.Command, flagName string, targetType reflect.Type) reflect.Value {
 	// Handle pointer types
@@ -452,7 +483,10 @@ func getValueFromFlag(cmd *cobra.Command, flagName string, targetType reflect.Ty
 	switch targetType.Kind() {
 	case reflect.String:
 		val, _ := cmd.Flags().GetString(flagName)
-		return reflect.ValueOf(val)
+		// For string-based types (including enums), create a value of the target type
+		newValue := reflect.New(targetType).Elem()
+		newValue.SetString(val)
+		return newValue
 	case reflect.Int, reflect.Int32, reflect.Int64:
 		val, _ := cmd.Flags().GetInt(flagName)
 		return reflect.ValueOf(val).Convert(targetType)
@@ -475,7 +509,11 @@ func convertStringToType(value string, targetType reflect.Type) reflect.Value {
 
 	switch targetType.Kind() {
 	case reflect.String:
-		return reflect.ValueOf(value)
+		// For string types or string-based types (like enums), create a value of the target type
+		// This handles both plain strings and type-aliased strings
+		newValue := reflect.New(targetType).Elem()
+		newValue.SetString(value)
+		return newValue
 	case reflect.Int, reflect.Int32, reflect.Int64:
 		// Try to parse as int
 		if val, err := strconv.ParseInt(value, 10, 64); err == nil {
@@ -569,7 +607,7 @@ func convertJSONValueToType(jsonValue interface{}, targetType reflect.Type) refl
 }
 
 // registerBuilderMethodFlags creates flags based on the builder method parameters
-func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method, paramDescriptions map[string]string) {
+func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method, paramDescriptions []parser.ParameterDescription) {
 	builderType := builderMethod.Type
 
 	// Always add --request flag for JSON payload
@@ -578,7 +616,7 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 	// Iterate through builder method parameters (skip receiver at index 0, context at index 1)
 	for i := 2; i < builderType.NumIn(); i++ {
 		paramType := builderType.In(i)
-		paramName := getParamNameFromPosition(builderMethod, i)
+		paramName := getParamNameFromPosition(builderMethod, i, paramDescriptions)
 
 		// Check if flag already exists (to avoid redefinition)
 		if cmd.Flags().Lookup(paramName) != nil {
@@ -587,13 +625,18 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 
 		// Get description from SDK if available
 		var paramDesc string
-		// Try to find a matching description
-		for key, desc := range paramDescriptions {
-			if strings.Contains(strings.ToLower(key), strings.ToLower(paramName)) ||
-				strings.Contains(strings.ToLower(desc), strings.ToLower(paramName)) {
-				paramDesc = desc
+		// Find matching parameter description
+		paramIndex := i - 2
+		actualParamIndex := 0
+		for _, param := range paramDescriptions {
+			if param.Name == "ctx" {
+				continue
+			}
+			if actualParamIndex == paramIndex {
+				paramDesc = param.Description
 				break
 			}
+			actualParamIndex++
 		}
 
 		// Add flags based on parameter type

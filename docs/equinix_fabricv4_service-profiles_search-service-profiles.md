@@ -23,6 +23,7 @@ equinix fabricv4 service-profiles search-service-profiles [flags]
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

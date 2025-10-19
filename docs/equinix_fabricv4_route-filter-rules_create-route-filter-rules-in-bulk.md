@@ -15,15 +15,16 @@ equinix fabricv4 route-filter-rules create-route-filter-rules-in-bulk [flags]
 ### Options
 
 ```
-  -h, --help             help for create-route-filter-rules-in-bulk
-      --request string   Raw JSON payload for optional request fields
-      --rule-id string   rule-id (required)
+  -h, --help                     help for create-route-filter-rules-in-bulk
+      --request string           Raw JSON payload for optional request fields
+      --route-filter-id string   Route Filters Id (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

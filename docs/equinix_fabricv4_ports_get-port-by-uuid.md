@@ -16,7 +16,7 @@ equinix fabricv4 ports get-port-by-uuid [flags]
 
 ```
   -h, --help             help for get-port-by-uuid
-      --port-id string   port-id (required)
+      --port-id string   Port UUID (required)
       --request string   Raw JSON payload for optional request fields
 ```
 
@@ -24,6 +24,7 @@ equinix fabricv4 ports get-port-by-uuid [flags]
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

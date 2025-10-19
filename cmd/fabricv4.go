@@ -22,9 +22,12 @@ cloud routers, networks, ports, service profiles, and more.
 
 The fabricv4 commands are dynamically generated based on the Fabric v4 API client,
 providing access to all available API services.`,
-	PersistentPreRun: func(_ *cobra.Command, _ []string) {
+	PersistentPreRun: func(cmd *cobra.Command, _ []string) {
 		// Ensure client is initialized when actually running commands
 		// This validates credentials before execution
+		debug, _ := cmd.Flags().GetBool("debug")
+		fabricv4.SetDebug(debug)
+
 		_, err := fabricv4.NewClient()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error initializing Fabric v4 client: %v\n", err)
@@ -35,6 +38,9 @@ providing access to all available API services.`,
 
 func init() {
 	rootCmd.AddCommand(fabricv4Cmd)
+
+	// Add debug flag
+	fabricv4Cmd.PersistentFlags().Bool("debug", false, "Enable debug mode to show HTTP requests and responses")
 
 	// Load SDK descriptions for better command documentation
 	if err := register.LoadDescriptions(fabricv4Descriptions); err != nil {

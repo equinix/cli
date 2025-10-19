@@ -17,13 +17,15 @@ equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid [flags]
 ```
   -h, --help                     help for update-stream-subscription-by-uuid
       --request string           Raw JSON payload for optional request fields
-      --subscription-id string   subscription-id (required)
+      --stream-id string         Stream UUID (required)
+      --subscription-id string   Stream Subscription UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

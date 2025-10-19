@@ -15,15 +15,16 @@ equinix fabricv4 cloud-events get-cloud-event [flags]
 ### Options
 
 ```
-  -h, --help             help for get-cloud-event
-      --param-1 string   param-1 (required)
-      --request string   Raw JSON payload for optional request fields
+      --cloud-event-id string   Cloud Event UUID (required)
+  -h, --help                    help for get-cloud-event
+      --request string          Raw JSON payload for optional request fields
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

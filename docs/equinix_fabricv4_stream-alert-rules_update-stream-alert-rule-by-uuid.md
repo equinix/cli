@@ -15,15 +15,17 @@ equinix fabricv4 stream-alert-rules update-stream-alert-rule-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help               help for update-stream-alert-rule-by-uuid
-      --request string     Raw JSON payload for optional request fields
-      --stream-id string   stream-id (required)
+      --alert-rule-id string   alert rule UUID (required)
+  -h, --help                   help for update-stream-alert-rule-by-uuid
+      --request string         Raw JSON payload for optional request fields
+      --stream-id string       Stream UUID (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
       --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --debug           Enable debug mode to show HTTP requests and responses
 ```
 
 ### SEE ALSO

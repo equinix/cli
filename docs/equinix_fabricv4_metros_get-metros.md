@@ -16,9 +16,9 @@ equinix fabricv4 metros get-metros [flags]
 
 ```
   -h, --help              help for get-metros
-      --limit int         limit field (required)
-      --offset int        offset field (required)
-      --presence string   presence field (required)
+      --limit int         limit field
+      --offset int        offset field
+      --presence string   presence field
       --request string    JSON payload for additional optional fields not exposed as flags
 ```
 

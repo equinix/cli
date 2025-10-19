@@ -16,7 +16,7 @@ equinix fabricv4 stream-alert-rules update-stream-alert-rule-by-uuid [flags]
 
 ```
       --alert-rule-id string                                                    alert rule UUID (required)
-      --alert-rule-put-request-additional-properties string                     alert-rule-put-request-additional-properties (required) (JSON)
+      --alert-rule-put-request-additional-properties string                     alert-rule-put-request-additional-properties (JSON)
       --alert-rule-put-request-critical-threshold string                        Stream alert rule metric critical threshold
       --alert-rule-put-request-description string                               Customer-provided stream description
       --alert-rule-put-request-enabled                                          Stream alert rule enabled status

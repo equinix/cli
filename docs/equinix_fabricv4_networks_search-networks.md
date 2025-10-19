@@ -16,7 +16,7 @@ equinix fabricv4 networks search-networks [flags]
 
 ```
   -h, --help                                                             help for search-networks
-      --network-search-request-additional-properties string              network-search-request-additional-properties (required) (JSON)
+      --network-search-request-additional-properties string              network-search-request-additional-properties (JSON)
       --network-search-request-filter-additional-properties string       network-search-request-filter-additional-properties (JSON)
       --network-search-request-filter-and string                         network-search-request-filter-and (JSON array)
       --network-search-request-filter-operator string                    network-search-request-filter-operator

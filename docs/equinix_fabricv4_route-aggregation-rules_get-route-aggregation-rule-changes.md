@@ -16,8 +16,8 @@ equinix fabricv4 route-aggregation-rules get-route-aggregation-rule-changes [fla
 
 ```
   -h, --help                               help for get-route-aggregation-rule-changes
-      --limit int                          limit field (required)
-      --offset int                         offset field (required)
+      --limit int                          limit field
+      --offset int                         offset field
       --request string                     JSON payload for additional optional fields not exposed as flags
       --route-aggregation-id string        Route Aggregations Id (required)
       --route-aggregation-rule-id string   Route Aggregation Rules Id (required)

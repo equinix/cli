@@ -15,7 +15,7 @@ equinix fabricv4 deployments search-deployments [flags]
 ### Options
 
 ```
-      --deployment-search-request-additional-properties string          deployment-search-request-additional-properties (required) (JSON)
+      --deployment-search-request-additional-properties string          deployment-search-request-additional-properties (JSON)
       --deployment-search-request-filter-additional-properties string   deployment-search-request-filter-additional-properties (JSON)
       --deployment-search-request-filter-and string                     deployment-search-request-filter-and (JSON array)
       --deployment-search-request-filter-or string                      deployment-search-request-filter-or (JSON array)

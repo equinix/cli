@@ -16,8 +16,8 @@ equinix fabricv4 service-tokens get-service-tokens [flags]
 
 ```
   -h, --help             help for get-service-tokens
-      --limit float      limit field (required)
-      --offset float     offset field (required)
+      --limit float      limit field
+      --offset float     offset field
       --request string   JSON payload for additional optional fields not exposed as flags
 ```
 

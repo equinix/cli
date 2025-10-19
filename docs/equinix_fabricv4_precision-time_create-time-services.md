@@ -16,21 +16,21 @@ equinix fabricv4 precision-time create-time-services [flags]
 
 ```
   -h, --help                                                                                     help for create-time-services
-      --precision-time-service-request-additional-properties string                              precision-time-service-request-additional-properties (required) (JSON)
-      --precision-time-service-request-connections string                                        precision-time-service-request-connections (required) (JSON array)
-      --precision-time-service-request-ipv4-additional-properties string                         precision-time-service-request-ipv4-additional-properties (required) (JSON)
+      --precision-time-service-request-additional-properties string                              precision-time-service-request-additional-properties (JSON)
+      --precision-time-service-request-connections string                                        precision-time-service-request-connections (JSON array)
+      --precision-time-service-request-ipv4-additional-properties string                         precision-time-service-request-ipv4-additional-properties (JSON)
       --precision-time-service-request-ipv4-default-gateway string                               Gateway Interface IP address
-      --precision-time-service-request-ipv4-network-mask string                                  Network Mask (required)
-      --precision-time-service-request-ipv4-primary string                                       Primary Timing Server IP Address (required)
-      --precision-time-service-request-ipv4-secondary string                                     Secondary Timing Server IP Address (required)
-      --precision-time-service-request-name string                                               Precision Time Service name. (required)
+      --precision-time-service-request-ipv4-network-mask string                                  Network Mask
+      --precision-time-service-request-ipv4-primary string                                       Primary Timing Server IP Address
+      --precision-time-service-request-ipv4-secondary string                                     Secondary Timing Server IP Address
+      --precision-time-service-request-name string                                               Precision Time Service name.
       --precision-time-service-request-ntp-advanced-configuration string                         NTP Advanced configuration - MD5 Authentication. (JSON array)
       --precision-time-service-request-order-additional-properties string                        precision-time-service-request-order-additional-properties (JSON)
       --precision-time-service-request-order-customer-reference-number string                    Customer reference number
       --precision-time-service-request-order-order-number string                                 Order Reference Number
       --precision-time-service-request-order-purchase-order-number string                        Purchase order number
-      --precision-time-service-request-package-additional-properties string                      precision-time-service-request-package-additional-properties (required) (JSON)
-      --precision-time-service-request-package-code string                                       precision-time-service-request-package-code (required)
+      --precision-time-service-request-package-additional-properties string                      precision-time-service-request-package-additional-properties (JSON)
+      --precision-time-service-request-package-code string                                       precision-time-service-request-package-code
       --precision-time-service-request-project-additional-properties string                      precision-time-service-request-project-additional-properties (JSON)
       --precision-time-service-request-project-project-id string                                 Subscriber-assigned project ID
       --precision-time-service-request-ptp-advanced-configuration-additional-properties string   precision-time-service-request-ptp-advanced-configuration-additional-properties (JSON)
@@ -43,7 +43,7 @@ equinix fabricv4 precision-time create-time-services [flags]
       --precision-time-service-request-ptp-advanced-configuration-priority2 int                  The priority2 value differentiates and prioritizes the primary clock to avoid confusion when priority1-value is the same for different primary clocks in a network.
       --precision-time-service-request-ptp-advanced-configuration-time-scale string              precision-time-service-request-ptp-advanced-configuration-time-scale
       --precision-time-service-request-ptp-advanced-configuration-transport-mode string          precision-time-service-request-ptp-advanced-configuration-transport-mode
-      --precision-time-service-request-type string                                               precision-time-service-request-type (required)
+      --precision-time-service-request-type string                                               precision-time-service-request-type
       --request string                                                                           JSON payload for additional optional fields not exposed as flags
 ```
 

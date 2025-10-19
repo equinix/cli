@@ -15,9 +15,9 @@ equinix fabricv4 connections update-connection-by-uuid [flags]
 ### Options
 
 ```
-      --connection-change-operation string   connection-change-operation field (required) (JSON or string)
+      --connection-change-operation string   connection-change-operation field (JSON or string)
       --connection-id string                 Connection Id (required)
-      --dry-run                              dry-run field (required)
+      --dry-run                              dry-run field
   -h, --help                                 help for update-connection-by-uuid
       --request string                       JSON payload for additional optional fields not exposed as flags
 ```

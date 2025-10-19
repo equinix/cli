@@ -16,10 +16,10 @@ equinix fabricv4 service-tokens search-service-tokens [flags]
 
 ```
   -h, --help                                                                   help for search-service-tokens
-      --limit float                                                            limit field (required)
-      --offset float                                                           offset field (required)
+      --limit float                                                            limit field
+      --offset float                                                           offset field
       --request string                                                         JSON payload for additional optional fields not exposed as flags
-      --service-token-search-request-additional-properties string              service-token-search-request-additional-properties (required) (JSON)
+      --service-token-search-request-additional-properties string              service-token-search-request-additional-properties (JSON)
       --service-token-search-request-filter-additional-properties string       service-token-search-request-filter-additional-properties (JSON)
       --service-token-search-request-filter-and string                         service-token-search-request-filter-and (JSON array)
       --service-token-search-request-filter-operator string                    service-token-search-request-filter-operator

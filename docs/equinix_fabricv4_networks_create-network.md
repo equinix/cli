@@ -15,21 +15,21 @@ equinix fabricv4 networks create-network [flags]
 ### Options
 
 ```
-      --dry-run                                                      dry-run field (required)
+      --dry-run                                                      dry-run field
   -h, --help                                                         help for create-network
-      --network-post-request-additional-properties string            network-post-request-additional-properties (required) (JSON)
+      --network-post-request-additional-properties string            network-post-request-additional-properties (JSON)
       --network-post-request-location-additional-properties string   network-post-request-location-additional-properties (JSON)
       --network-post-request-location-ibx string                     Deprecated
       --network-post-request-location-metro-code string              network-post-request-location-metro-code
       --network-post-request-location-metro-href string              network-post-request-location-metro-href
       --network-post-request-location-metro-name string              network-post-request-location-metro-name
       --network-post-request-location-region string                  network-post-request-location-region
-      --network-post-request-name string                             Customer-provided network name (required)
-      --network-post-request-notifications string                    Preferences for notifications on network configuration or status changes (required) (JSON array)
+      --network-post-request-name string                             Customer-provided network name
+      --network-post-request-notifications string                    Preferences for notifications on network configuration or status changes (JSON array)
       --network-post-request-project-additional-properties string    network-post-request-project-additional-properties (JSON)
       --network-post-request-project-project-id string               Subscriber-assigned project ID
-      --network-post-request-scope string                            network-post-request-scope (required)
-      --network-post-request-type string                             network-post-request-type (required)
+      --network-post-request-scope string                            network-post-request-scope
+      --network-post-request-type string                             network-post-request-type
       --request string                                               JSON payload for additional optional fields not exposed as flags
 ```
 

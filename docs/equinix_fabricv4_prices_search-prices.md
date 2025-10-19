@@ -15,7 +15,7 @@ equinix fabricv4 prices search-prices [flags]
 ### Options
 
 ```
-      --filter-body-additional-properties string          filter-body-additional-properties (required) (JSON)
+      --filter-body-additional-properties string          filter-body-additional-properties (JSON)
       --filter-body-filter-additional-properties string   filter-body-filter-additional-properties (JSON)
       --filter-body-filter-and string                     filter-body-filter-and (JSON array)
       --filter-body-filter-operator string                filter-body-filter-operator

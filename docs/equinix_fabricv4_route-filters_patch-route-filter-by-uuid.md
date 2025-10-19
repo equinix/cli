@@ -18,7 +18,7 @@ equinix fabricv4 route-filters patch-route-filter-by-uuid [flags]
   -h, --help                                      help for patch-route-filter-by-uuid
       --request string                            JSON payload for additional optional fields not exposed as flags
       --route-filter-id string                    Route Filters Id (required)
-      --route-filters-patch-request-item string   route-filters-patch-request-item field (required) (JSON or string)
+      --route-filters-patch-request-item string   route-filters-patch-request-item field (JSON or string)
 ```
 
 ### Options inherited from parent commands

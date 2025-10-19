@@ -15,11 +15,11 @@ equinix fabricv4 ports create-port [flags]
 ### Options
 
 ```
-      --dry-run                                                         dry-run field (required)
+      --dry-run                                                         dry-run field
   -h, --help                                                            help for create-port
       --port-request-account-account-name string                        Account name
       --port-request-account-account-number int                         Account number
-      --port-request-account-additional-properties string               port-request-account-additional-properties (required) (JSON)
+      --port-request-account-additional-properties string               port-request-account-additional-properties (JSON)
       --port-request-account-global-cust-id string                      Account name
       --port-request-account-global-org-id string                       Global organization identifier
       --port-request-account-global-organization-name string            Global organization name
@@ -31,7 +31,7 @@ equinix fabricv4 ports create-port [flags]
       --port-request-account-reseller-ucm-id string                     Reseller account ucmId
       --port-request-account-ucm-id string                              Account ucmId
       --port-request-additional-info string                             Port additional information (JSON array)
-      --port-request-additional-properties string                       port-request-additional-properties (required) (JSON)
+      --port-request-additional-properties string                       port-request-additional-properties (JSON)
       --port-request-asn int                                            Port ASN
       --port-request-available-bandwidth int                            Equinix assigned response attribute for Port available bandwidth in Mbps
       --port-request-bandwidth int                                      Equinix assigned response attribute for Port bandwidth in Mbps
@@ -59,7 +59,7 @@ equinix fabricv4 ports create-port [flags]
       --port-request-change-updated-date-time string                    port-request-change-updated-date-time (JSON)
       --port-request-change-uuid string                                 Uniquely identifies a change
       --port-request-connections-count int                              Equinix assigned response attribute for Connection count
-      --port-request-connectivity-source-type string                    port-request-connectivity-source-type (required)
+      --port-request-connectivity-source-type string                    port-request-connectivity-source-type
       --port-request-demarcation-point-additional-properties string     port-request-demarcation-point-additional-properties (JSON)
       --port-request-demarcation-point-cabinet-unique-space-id string   Port cabinet unique space id
       --port-request-demarcation-point-cage-unique-space-id string      Port cage unique space id
@@ -75,7 +75,7 @@ equinix fabricv4 ports create-port [flags]
       --port-request-device-name string                                 Device name
       --port-request-device-redundancy string                           port-request-device-redundancy (JSON)
       --port-request-device-vc-bandwidth-max int                        Maximum bandwidth allowed for connection.
-      --port-request-encapsulation-additional-properties string         port-request-encapsulation-additional-properties (required) (JSON)
+      --port-request-encapsulation-additional-properties string         port-request-encapsulation-additional-properties (JSON)
       --port-request-encapsulation-tag-protocol-id string               Port encapsulation tag protocol identifier
       --port-request-encapsulation-type string                          port-request-encapsulation-type
       --port-request-end-customer-additional-properties string          port-request-end-customer-additional-properties (JSON)
@@ -92,7 +92,7 @@ equinix fabricv4 ports create-port [flags]
       --port-request-lag-member-status string                           member status
       --port-request-lag-name string                                    name
       --port-request-loas string                                        Port Loas (JSON array)
-      --port-request-location-additional-properties string              port-request-location-additional-properties (required) (JSON)
+      --port-request-location-additional-properties string              port-request-location-additional-properties (JSON)
       --port-request-location-ibx string                                Deprecated
       --port-request-location-metro-code string                         port-request-location-metro-code
       --port-request-location-metro-href string                         port-request-location-metro-href
@@ -121,8 +121,8 @@ equinix fabricv4 ports create-port [flags]
       --port-request-physical-port-quantity int                         Number of physical ports
       --port-request-physical-ports string                              Physical ports that implement this port (JSON array)
       --port-request-physical-ports-count int                           port-request-physical-ports-count
-      --port-request-physical-ports-speed int                           Physical Ports Speed in Mbps (required)
-      --port-request-physical-ports-type string                         port-request-physical-ports-type (required)
+      --port-request-physical-ports-speed int                           Physical Ports Speed in Mbps
+      --port-request-physical-ports-type string                         port-request-physical-ports-type
       --port-request-project-additional-properties string               port-request-project-additional-properties (JSON)
       --port-request-project-project-id string                          Subscriber-assigned project ID
       --port-request-redundancy-additional-properties string            port-request-redundancy-additional-properties (JSON)
@@ -131,7 +131,7 @@ equinix fabricv4 ports create-port [flags]
                                                                         Deprecated
       --port-request-redundancy-priority string                         port-request-redundancy-priority
       --port-request-service-type string                                Deprecated
-      --port-request-settings-additional-properties string              port-request-settings-additional-properties (required) (JSON)
+      --port-request-settings-additional-properties string              port-request-settings-additional-properties (JSON)
       --port-request-settings-buyout                                    Deprecated
       --port-request-settings-layer3-enabled                            Deprecated
       --port-request-settings-package-type string                       Deprecated
@@ -141,7 +141,7 @@ equinix fabricv4 ports create-port [flags]
       --port-request-settings-view-port-permission                      Deprecated
       --port-request-state string                                       port-request-state
       --port-request-tether-ibx string                                  z-side/Equinix ibx
-      --port-request-type string                                        port-request-type (required)
+      --port-request-type string                                        port-request-type
       --port-request-used-bandwidth int                                 Equinix assigned response attribute for Port used bandwidth in Mbps
       --port-request-uuid string                                        Equinix assigned response attribute for  port identifier
       --request string                                                  JSON payload for additional optional fields not exposed as flags

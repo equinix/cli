@@ -16,7 +16,7 @@ equinix fabricv4 cloud-routers search-connection-advertised-routes [flags]
 
 ```
       --connection-id string                                                      Connection Id (required)
-      --connection-route-search-request-additional-properties string              connection-route-search-request-additional-properties (required) (JSON)
+      --connection-route-search-request-additional-properties string              connection-route-search-request-additional-properties (JSON)
       --connection-route-search-request-filter-additional-properties string       connection-route-search-request-filter-additional-properties (JSON)
       --connection-route-search-request-filter-and string                         connection-route-search-request-filter-and (JSON array)
       --connection-route-search-request-pagination-additional-properties string   connection-route-search-request-pagination-additional-properties (JSON)

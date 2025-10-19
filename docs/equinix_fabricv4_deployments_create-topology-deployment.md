@@ -17,7 +17,7 @@ equinix fabricv4 deployments create-topology-deployment [flags]
 ```
       --deployment-account-account-name string               Account name
       --deployment-account-account-number int                Account number
-      --deployment-account-additional-properties string      deployment-account-additional-properties (required) (JSON)
+      --deployment-account-additional-properties string      deployment-account-additional-properties (JSON)
       --deployment-account-global-cust-id string             Account name
       --deployment-account-global-org-id string              Global organization identifier
       --deployment-account-global-organization-name string   Global organization name
@@ -28,9 +28,9 @@ equinix fabricv4 deployments create-topology-deployment [flags]
       --deployment-account-reseller-org-id int               Reseller customer organization identifier
       --deployment-account-reseller-ucm-id string            Reseller account ucmId
       --deployment-account-ucm-id string                     Account ucmId
-      --deployment-additional-properties string              deployment-additional-properties (required) (JSON)
+      --deployment-additional-properties string              deployment-additional-properties (JSON)
       --deployment-description string                        deployment-description
-      --deployment-name string                               deployment-name (required)
+      --deployment-name string                               deployment-name
       --deployment-notifications string                      Preferences for notifications on deployement status changes (JSON array)
       --deployment-order-additional-properties string        deployment-order-additional-properties (JSON)
       --deployment-order-billing-tier string                 Billing tier for connection bandwidth
@@ -39,12 +39,12 @@ equinix fabricv4 deployments create-topology-deployment [flags]
       --deployment-order-order-number string                 Order Reference Number
       --deployment-order-purchase-order-number string        Purchase order number
       --deployment-order-term-length int                     Term length in months, valid values are 1, 12, 24, 36 where 1 is the default value (for on-demand case).
-      --deployment-project-additional-properties string      deployment-project-additional-properties (required) (JSON)
-      --deployment-project-project-id string                 Subscriber-assigned project ID (required)
-      --deployment-providers string                          deployment-providers (required) (JSON array)
+      --deployment-project-additional-properties string      deployment-project-additional-properties (JSON)
+      --deployment-project-project-id string                 Subscriber-assigned project ID
+      --deployment-providers string                          deployment-providers (JSON array)
       --deployment-topology-additional-properties string     deployment-topology-additional-properties (JSON)
       --deployment-topology-uuid string                      deployment-topology-uuid
-      --deployment-type string                               deployment-type (required)
+      --deployment-type string                               deployment-type
   -h, --help                                                 help for create-topology-deployment
       --request string                                       JSON payload for additional optional fields not exposed as flags
 ```

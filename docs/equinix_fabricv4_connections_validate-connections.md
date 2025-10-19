@@ -17,7 +17,7 @@ equinix fabricv4 connections validate-connections [flags]
 ```
   -h, --help                                                   help for validate-connections
       --request string                                         JSON payload for additional optional fields not exposed as flags
-      --validate-request-additional-properties string          validate-request-additional-properties (required) (JSON)
+      --validate-request-additional-properties string          validate-request-additional-properties (JSON)
       --validate-request-filter-additional-properties string   validate-request-filter-additional-properties (JSON)
       --validate-request-filter-and string                     validate-request-filter-and (JSON array)
 ```

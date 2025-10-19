@@ -17,8 +17,8 @@ equinix fabricv4 routing-protocols get-connection-routing-protocols-changes [fla
 ```
       --connection-id string         Connection Id (required)
   -h, --help                         help for get-connection-routing-protocols-changes
-      --limit int                    limit field (required)
-      --offset int                   offset field (required)
+      --limit int                    limit field
+      --offset int                   offset field
       --request string               JSON payload for additional optional fields not exposed as flags
       --routing-protocol-id string   Routing Protocol Id (required)
 ```

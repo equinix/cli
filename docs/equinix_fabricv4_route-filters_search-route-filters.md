@@ -17,7 +17,7 @@ equinix fabricv4 route-filters search-route-filters [flags]
 ```
   -h, --help                                                                help for search-route-filters
       --request string                                                      JSON payload for additional optional fields not exposed as flags
-      --route-filters-search-base-additional-properties string              route-filters-search-base-additional-properties (required) (JSON)
+      --route-filters-search-base-additional-properties string              route-filters-search-base-additional-properties (JSON)
       --route-filters-search-base-filter-additional-properties string       route-filters-search-base-filter-additional-properties (JSON)
       --route-filters-search-base-filter-and string                         route-filters-search-base-filter-and (JSON array)
       --route-filters-search-base-pagination-additional-properties string   route-filters-search-base-pagination-additional-properties (JSON)

@@ -15,8 +15,8 @@ equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-b
 ### Options
 
 ```
-      --b-g-p-action-request-additional-properties string   b-g-p-action-request-additional-properties (required) (JSON)
-      --b-g-p-action-request-type string                    b-g-p-action-request-type (required)
+      --b-g-p-action-request-additional-properties string   b-g-p-action-request-additional-properties (JSON)
+      --b-g-p-action-request-type string                    b-g-p-action-request-type
       --connection-id string                                Connection Id (required)
   -h, --help                                                help for post-connection-routing-protocol-bgp-action-by-uuid
       --request string                                      JSON payload for additional optional fields not exposed as flags

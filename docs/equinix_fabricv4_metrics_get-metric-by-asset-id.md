@@ -18,9 +18,9 @@ equinix fabricv4 metrics get-metric-by-asset-id [flags]
       --asset string      asset (required)
       --asset-id string   asset UUID (required)
   -h, --help              help for get-metric-by-asset-id
-      --limit int         limit field (required)
-      --name string       name field (required)
-      --offset int        offset field (required)
+      --limit int         limit field
+      --name string       name field
+      --offset int        offset field
       --request string    JSON payload for additional optional fields not exposed as flags
 ```
 

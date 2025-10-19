@@ -284,11 +284,11 @@ func getServiceFromClient(client interface{}, serviceName string) interface{} {
 	if clientValue.Kind() == reflect.Ptr {
 		clientValue = clientValue.Elem()
 	}
-	
+
 	if clientValue.Kind() != reflect.Struct {
 		return nil
 	}
-	
+
 	// Convert kebab-case service name back to field name format
 	// e.g., "cloud-routers" -> "CloudRouters"
 	parts := strings.Split(serviceName, "-")
@@ -302,12 +302,12 @@ func getServiceFromClient(client interface{}, serviceName string) interface{} {
 		}
 	}
 	fieldNameBase := fieldNameBuilder.String()
-	
+
 	// Try to find the field with Api or ApiService suffix
 	for i := 0; i < clientValue.NumField(); i++ {
 		field := clientValue.Type().Field(i)
 		fieldName := field.Name
-		
+
 		// Check if this matches the service name
 		if strings.HasPrefix(fieldName, fieldNameBase) {
 			if strings.HasSuffix(fieldName, "Api") || strings.HasSuffix(fieldName, "ApiService") {
@@ -315,7 +315,7 @@ func getServiceFromClient(client interface{}, serviceName string) interface{} {
 			}
 		}
 	}
-	
+
 	return nil
 }
 
@@ -332,14 +332,14 @@ func SetClientFactory(factory ClientFactoryFunc) {
 // executeMethod performs the actual API call using reflection
 func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, builderMethod reflect.Method, args []string, paramDescriptions []parser.ParameterDescription) error {
 	ctx := context.Background()
-	
+
 	// Create a fresh authenticated client if factory is set
 	if clientFactory != nil {
 		freshClient, err := clientFactory()
 		if err != nil {
 			return fmt.Errorf("failed to create authenticated client: %w", err)
 		}
-		
+
 		// Get the service from the fresh client
 		// Extract the service name to find the matching field
 		serviceName := getServiceNameFromType(service)
@@ -348,7 +348,7 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 			service = freshService
 		}
 	}
-	
+
 	serviceValue := reflect.ValueOf(service)
 
 	// Build the arguments for the builder method
@@ -445,7 +445,7 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 			if httpResp != nil && httpResp.StatusCode >= 400 {
 				// Try to provide a cleaner message based on status code
 				cleanMsg := errMsg
-				
+
 				// Common HTTP error codes
 				switch httpResp.StatusCode {
 				case 401:
@@ -466,12 +466,12 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 						cleanMsg = strings.TrimSpace(parts[0])
 					}
 				}
-				
+
 				hint := "\n\nHint: The API returned an error response."
 				hint += "\nTry running with --debug to see the full HTTP request and response for details."
 				return fmt.Errorf("API error%s: %s%s", statusInfo, cleanMsg, hint)
 			}
-			
+
 			// Otherwise it's a real unmarshal error with a successful response
 			hint := "\n\nHint: Failed to parse API response."
 			if httpResp != nil {
@@ -668,7 +668,7 @@ func buildStructFromFlags(cmd *cobra.Command, prefix string, structType reflect.
 
 	for i := 0; i < structType.NumField(); i++ {
 		field := structType.Field(i)
-		
+
 		// Skip unexported fields
 		if !field.IsExported() {
 			continue
@@ -754,12 +754,12 @@ func buildStructFromFlags(cmd *cobra.Command, prefix string, structType reflect.
 func parseJSONToType(jsonStr string, targetType reflect.Type) reflect.Value {
 	// Create a new instance of the target type
 	newValue := reflect.New(targetType)
-	
+
 	// Try to unmarshal JSON into it
 	if err := json.Unmarshal([]byte(jsonStr), newValue.Interface()); err == nil {
 		return newValue.Elem()
 	}
-	
+
 	// If JSON parsing fails, return zero value
 	return reflect.Zero(targetType)
 }
@@ -813,22 +813,22 @@ func applyFlagsToRequestBuilder(cmd *cobra.Command, requestBuilder reflect.Value
 
 		// Get the flag name for this setter
 		flagName := camelToKebab(method.Name)
-		
+
 		// Get the parameter type for this setter
 		paramType := method.Type.In(1)
-		
+
 		// Check if we have flags for this setter (either direct or expanded struct fields)
 		if hasAnyFlagsWithPrefix(cmd, flagName) {
 			// Build the value from flags
 			var paramValue reflect.Value
-			
+
 			// Handle pointer types
 			isPtr := paramType.Kind() == reflect.Ptr
 			actualType := paramType
 			if isPtr {
 				actualType = paramType.Elem()
 			}
-			
+
 			// Build value based on type
 			if actualType.Kind() == reflect.Struct {
 				// Build struct from expanded flags
@@ -842,7 +842,7 @@ func applyFlagsToRequestBuilder(cmd *cobra.Command, requestBuilder reflect.Value
 				// Get simple value from flag
 				paramValue = getValueFromFlag(cmd, flagName, paramType)
 			}
-			
+
 			// Call the setter if we have a value
 			if paramValue.IsValid() && !paramValue.IsZero() {
 				methodFunc := requestBuilder.MethodByName(method.Name)
@@ -970,7 +970,7 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 					// This looks like a setter
 					paramType := method.Type.In(1)
 					paramName := camelToKebab(method.Name)
-					
+
 					// Expand this setter parameter into flags
 					// All setter parameters are optional - they're optional fields on the request builder
 					addSetterFlagForType(cmd, paramName, paramType, builderMethod, fmt.Sprintf("%s field", paramName))
@@ -1109,14 +1109,14 @@ func getFieldDescription(typeName string, fieldName string) string {
 	if descriptionsData == nil {
 		return ""
 	}
-	
+
 	// Look in global types first
 	if typeDesc, ok := descriptionsData.Types[typeName]; ok {
 		if fieldDesc, ok := typeDesc.Fields[fieldName]; ok {
 			return fieldDesc.Description
 		}
 	}
-	
+
 	// Also check in service-specific types
 	for _, service := range descriptionsData.Services {
 		if typeDesc, ok := service.Types[typeName]; ok {
@@ -1125,7 +1125,7 @@ func getFieldDescription(typeName string, fieldName string) string {
 			}
 		}
 	}
-	
+
 	return ""
 }
 
@@ -1147,7 +1147,7 @@ func expandStructFieldsWithDepth(cmd *cobra.Command, prefix string, structType r
 
 	for i := 0; i < structType.NumField(); i++ {
 		field := structType.Field(i)
-		
+
 		// Skip unexported fields
 		if !field.IsExported() {
 			continue
@@ -1178,7 +1178,7 @@ func expandStructFieldsWithDepth(cmd *cobra.Command, prefix string, structType r
 		// Determine if field is optional (pointer or has omitempty)
 		fieldType := field.Type
 		isOptional := parentOptional || fieldType.Kind() == reflect.Ptr || strings.Contains(jsonTag, "omitempty")
-		
+
 		if fieldType.Kind() == reflect.Ptr {
 			fieldType = fieldType.Elem()
 		}
@@ -1186,13 +1186,13 @@ func expandStructFieldsWithDepth(cmd *cobra.Command, prefix string, structType r
 		// Get field description from SDK documentation
 		typeName := structType.Name()
 		sdkFieldDesc := getFieldDescription(typeName, field.Name)
-		
+
 		fieldDesc := sdkFieldDesc
 		if fieldDesc == "" {
 			// Fallback to using the flag name
 			fieldDesc = flagName
 		}
-		
+
 		if !isOptional && fieldType.Kind() != reflect.Bool {
 			fieldDesc = fmt.Sprintf("%s (required)", fieldDesc)
 		}

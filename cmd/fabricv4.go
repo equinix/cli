@@ -23,16 +23,9 @@ cloud routers, networks, ports, service profiles, and more.
 The fabricv4 commands are dynamically generated based on the Fabric v4 API client,
 providing access to all available API services.`,
 	PersistentPreRun: func(cmd *cobra.Command, _ []string) {
-		// Ensure client is initialized when actually running commands
-		// This validates credentials before execution
+		// Set debug mode based on the flag
 		debug, _ := cmd.Flags().GetBool("debug")
 		fabricv4.SetDebug(debug)
-
-		_, err := fabricv4.NewClient()
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error initializing Fabric v4 client: %v\n", err)
-			os.Exit(1)
-		}
 	},
 }
 
@@ -57,6 +50,11 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Could not register fabricv4 commands: %v\n", err)
 		return
 	}
+
+	// Set the client factory function for creating authenticated clients at runtime
+	register.SetClientFactory(func() (interface{}, error) {
+		return fabricv4.NewClient()
+	})
 
 	// Register all service commands dynamically
 	err = register.ServiceCommands(fabricv4Cmd, client, "fabricv4")

@@ -372,23 +372,35 @@ func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, bu
 		// Handle unmarshal errors - these typically indicate the API returned an error response
 		// in a different format than expected (e.g., error object instead of success array)
 		if strings.Contains(errMsg, "cannot unmarshal") {
-			// If we have an HTTP response with an error status code, this is an API error
-			// not a parsing error with a successful response
+			// If we have an HTTP response with an error status code, this is likely an API error
+			// The SDK tries to unmarshal error responses into the success type, which fails
 			if httpResp != nil && httpResp.StatusCode >= 400 {
-				// Extract just the status from the error message if it's cleaner
+				// Try to provide a cleaner message based on status code
 				cleanMsg := errMsg
-				// The SDK sometimes includes "json: cannot unmarshal..." which isn't useful
-				// when we know it's an API error response
-				if httpResp.StatusCode == 401 {
+				
+				// Common HTTP error codes
+				switch httpResp.StatusCode {
+				case 401:
 					cleanMsg = "Authentication failed - invalid or missing credentials"
-				} else if httpResp.StatusCode == 403 {
+				case 403:
 					cleanMsg = "Access forbidden - insufficient permissions"
-				} else if httpResp.StatusCode == 404 {
+				case 404:
 					cleanMsg = "Resource not found"
+				case 400:
+					// For 400 errors, try to extract meaningful error from the original message
+					// The SDK might have included some useful info before the unmarshal error
+					cleanMsg = "Bad request - check your parameters"
+				default:
+					// For other error codes, try to extract any useful message
+					// Sometimes the error contains the actual API error before "cannot unmarshal"
+					parts := strings.Split(errMsg, "cannot unmarshal")
+					if len(parts) > 0 && strings.TrimSpace(parts[0]) != "" {
+						cleanMsg = strings.TrimSpace(parts[0])
+					}
 				}
 				
 				hint := "\n\nHint: The API returned an error response."
-				hint += "\nTry running with --debug to see the full HTTP request and response."
+				hint += "\nTry running with --debug to see the full HTTP request and response for details."
 				return fmt.Errorf("API error%s: %s%s", statusInfo, cleanMsg, hint)
 			}
 			

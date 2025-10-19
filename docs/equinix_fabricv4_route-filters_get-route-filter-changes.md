@@ -16,7 +16,9 @@ equinix fabricv4 route-filters get-route-filter-changes [flags]
 
 ```
   -h, --help                     help for get-route-filter-changes
-      --request string           JSON payload for request body. Available fields: limit (int32), offset (int32)
+      --limit int                limit field (required)
+      --offset int               offset field (required)
+      --request string           JSON payload for additional optional fields not exposed as flags
       --route-filter-id string   Route Filters Id (required)
 ```
 

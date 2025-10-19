@@ -15,8 +15,19 @@ equinix fabricv4 ports search-ports [flags]
 ### Options
 
 ```
-  -h, --help             help for search-ports
-      --request string   JSON payload for request body. Available fields: port-v4-search-request (PortV4SearchRequest)
+  -h, --help                                                             help for search-ports
+      --port-v4-search-request-additional-properties string              port-v4-search-request-additional-properties (required) (JSON)
+      --port-v4-search-request-filter-additional-properties string       port-v4-search-request-filter-additional-properties (JSON)
+      --port-v4-search-request-filter-and string                         port-v4-search-request-filter-and (JSON array)
+      --port-v4-search-request-filter-operator string                    port-v4-search-request-filter-operator
+      --port-v4-search-request-filter-or string                          port-v4-search-request-filter-or (JSON array)
+      --port-v4-search-request-filter-property string                    port-v4-search-request-filter-property
+      --port-v4-search-request-filter-values string                      port-v4-search-request-filter-values (JSON array)
+      --port-v4-search-request-pagination-additional-properties string   port-v4-search-request-pagination-additional-properties (JSON)
+      --port-v4-search-request-pagination-limit int                      port-v4-search-request-pagination-limit
+      --port-v4-search-request-pagination-offset int                     port-v4-search-request-pagination-offset
+      --port-v4-search-request-sort string                               port-v4-search-request-sort (JSON array)
+      --request string                                                   JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

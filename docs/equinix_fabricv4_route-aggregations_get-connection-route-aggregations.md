@@ -17,7 +17,7 @@ equinix fabricv4 route-aggregations get-connection-route-aggregations [flags]
 ```
       --connection-id string   Connection Id (required)
   -h, --help                   help for get-connection-route-aggregations
-      --request string         Raw JSON payload for request body fields
+      --request string         JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

@@ -17,7 +17,7 @@ equinix fabricv4 metros get-metro-by-code [flags]
 ```
   -h, --help                help for get-metro-by-code
       --metro-code string   Metro Code (required)
-      --request string      Raw JSON payload for request body fields
+      --request string      JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

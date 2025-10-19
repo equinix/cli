@@ -15,8 +15,14 @@ equinix fabricv4 cloud-events search-cloud-events [flags]
 ### Options
 
 ```
-  -h, --help             help for search-cloud-events
-      --request string   JSON payload for request body. Available fields: cloud-event-search-request (CloudEventSearchRequest)
+      --cloud-event-search-request-additional-properties string              cloud-event-search-request-additional-properties (required) (JSON)
+      --cloud-event-search-request-filter-additional-properties string       cloud-event-search-request-filter-additional-properties (JSON)
+      --cloud-event-search-request-filter-and string                         cloud-event-search-request-filter-and (JSON array)
+      --cloud-event-search-request-pagination-additional-properties string   cloud-event-search-request-pagination-additional-properties (JSON)
+      --cloud-event-search-request-pagination-limit int                      cloud-event-search-request-pagination-limit
+      --cloud-event-search-request-pagination-offset int                     cloud-event-search-request-pagination-offset
+  -h, --help                                                                 help for search-cloud-events
+      --request string                                                       JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

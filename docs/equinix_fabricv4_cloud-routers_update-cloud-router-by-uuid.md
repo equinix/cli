@@ -15,9 +15,10 @@ equinix fabricv4 cloud-routers update-cloud-router-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help               help for update-cloud-router-by-uuid
-      --request string     JSON payload for request body. Available fields: cloud-router-change-operation (CloudRouterChangeOperation)
-      --router-id string   Cloud Router UUID (required)
+      --cloud-router-change-operation string   cloud-router-change-operation field (required) (JSON or string)
+  -h, --help                                   help for update-cloud-router-by-uuid
+      --request string                         JSON payload for additional optional fields not exposed as flags
+      --router-id string                       Cloud Router UUID (required)
 ```
 
 ### Options inherited from parent commands

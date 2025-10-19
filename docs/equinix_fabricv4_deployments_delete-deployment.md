@@ -17,7 +17,7 @@ equinix fabricv4 deployments delete-deployment [flags]
 ```
       --deployment-id string   Deployment UUID (required)
   -h, --help                   help for delete-deployment
-      --request string         Raw JSON payload for request body fields
+      --request string         JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

@@ -16,7 +16,7 @@ equinix fabricv4 marketplace-subscriptions get-subscription-by-id [flags]
 
 ```
   -h, --help                     help for get-subscription-by-id
-      --request string           Raw JSON payload for request body fields
+      --request string           JSON payload for request body fields
       --subscription-id string   Subscription UUID (required)
 ```
 

@@ -23,15 +23,17 @@ type debugTransport struct {
 }
 
 func (t *debugTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	// Always check the current debug state, don't rely on cached value
 	if debugMode {
 		// Log the request
-		fmt.Fprintf(os.Stderr, "\n=== HTTP Request ===\n")
+		fmt.Fprintf(os.Stderr, "\n================== HTTP Request ==================\n")
 		reqDump, err := httputil.DumpRequestOut(req, true)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error dumping request: %v\n", err)
 		} else {
 			fmt.Fprintf(os.Stderr, "%s\n", string(reqDump))
 		}
+		fmt.Fprintf(os.Stderr, "==================================================\n")
 	}
 
 	// Execute the request
@@ -39,14 +41,14 @@ func (t *debugTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 
 	if debugMode && resp != nil {
 		// Log the response
-		fmt.Fprintf(os.Stderr, "\n=== HTTP Response ===\n")
+		fmt.Fprintf(os.Stderr, "\n================== HTTP Response =================\n")
 		respDump, dumpErr := httputil.DumpResponse(resp, true)
 		if dumpErr != nil {
 			fmt.Fprintf(os.Stderr, "Error dumping response: %v\n", dumpErr)
 		} else {
 			fmt.Fprintf(os.Stderr, "%s\n", string(respDump))
 		}
-		fmt.Fprintf(os.Stderr, "===================\n\n")
+		fmt.Fprintf(os.Stderr, "==================================================\n\n")
 	}
 
 	return resp, err

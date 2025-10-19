@@ -16,7 +16,9 @@ equinix fabricv4 service-profiles get-service-profile-metros-by-uuid [flags]
 
 ```
   -h, --help                        help for get-service-profile-metros-by-uuid
-      --request string              JSON payload for request body. Available fields: limit (int32), offset (int32)
+      --limit int                   limit field (required)
+      --offset int                  offset field (required)
+      --request string              JSON payload for additional optional fields not exposed as flags
       --service-profile-id string   Service Profile UUID (required)
 ```
 

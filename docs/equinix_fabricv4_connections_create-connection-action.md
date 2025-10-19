@@ -15,9 +15,15 @@ equinix fabricv4 connections create-connection-action [flags]
 ### Options
 
 ```
-      --connection-id string   Connection Id (required)
-  -h, --help                   help for create-connection-action
-      --request string         JSON payload for request body. Available fields: connection-action-request (ConnectionActionRequest)
+      --connection-action-request-additional-properties string        connection-action-request-additional-properties (required) (JSON)
+      --connection-action-request-data-additional-properties string   connection-action-request-data-additional-properties (JSON)
+      --connection-action-request-data-provider-bandwidth int         connection-action-request-data-provider-bandwidth
+      --connection-action-request-data-z-side string                  connection-action-request-data-z-side (JSON)
+      --connection-action-request-description string                  connection-action-request-description
+      --connection-action-request-type string                         connection-action-request-type (required)
+      --connection-id string                                          Connection Id (required)
+  -h, --help                                                          help for create-connection-action
+      --request string                                                JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

@@ -15,9 +15,16 @@ equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
 ### Options
 
 ```
-  -h, --help               help for search-cloud-router-routes
-      --request string     JSON payload for request body. Available fields: route-table-entry-search-request (RouteTableEntrySearchRequest)
-      --router-id string   Router UUID (required)
+  -h, --help                                                                       help for search-cloud-router-routes
+      --request string                                                             JSON payload for additional optional fields not exposed as flags
+      --route-table-entry-search-request-additional-properties string              route-table-entry-search-request-additional-properties (required) (JSON)
+      --route-table-entry-search-request-filter-additional-properties string       route-table-entry-search-request-filter-additional-properties (JSON)
+      --route-table-entry-search-request-filter-and string                         route-table-entry-search-request-filter-and (JSON array)
+      --route-table-entry-search-request-pagination-additional-properties string   route-table-entry-search-request-pagination-additional-properties (JSON)
+      --route-table-entry-search-request-pagination-limit int                      route-table-entry-search-request-pagination-limit
+      --route-table-entry-search-request-pagination-offset int                     route-table-entry-search-request-pagination-offset
+      --route-table-entry-search-request-sort string                               route-table-entry-search-request-sort (JSON array)
+      --router-id string                                                           Router UUID (required)
 ```
 
 ### Options inherited from parent commands

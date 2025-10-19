@@ -17,7 +17,7 @@ equinix fabricv4 route-filters get-route-filter-change-by-uuid [flags]
 ```
       --change-id string         Routing Protocol Change UUID (required)
   -h, --help                     help for get-route-filter-change-by-uuid
-      --request string           Raw JSON payload for request body fields
+      --request string           JSON payload for request body fields
       --route-filter-id string   Route Filters Id (required)
 ```
 

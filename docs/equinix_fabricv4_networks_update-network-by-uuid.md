@@ -15,9 +15,10 @@ equinix fabricv4 networks update-network-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help                help for update-network-by-uuid
-      --network-id string   Network UUID (required)
-      --request string      JSON payload for request body. Available fields: network-change-operation (NetworkChangeOperation)
+  -h, --help                              help for update-network-by-uuid
+      --network-change-operation string   network-change-operation field (required) (JSON or string)
+      --network-id string                 Network UUID (required)
+      --request string                    JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

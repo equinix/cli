@@ -17,7 +17,7 @@ equinix fabricv4 stream-alert-rules get-stream-alert-rule-by-uuid [flags]
 ```
       --alert-rule-id string   alert rule UUID (required)
   -h, --help                   help for get-stream-alert-rule-by-uuid
-      --request string         Raw JSON payload for request body fields
+      --request string         JSON payload for request body fields
       --stream-id string       Stream UUID (required)
 ```
 

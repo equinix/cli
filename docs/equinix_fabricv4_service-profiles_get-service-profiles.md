@@ -15,8 +15,11 @@ equinix fabricv4 service-profiles get-service-profiles [flags]
 ### Options
 
 ```
-  -h, --help             help for get-service-profiles
-      --request string   JSON payload for request body. Available fields: limit (int32), offset (int32), view-point (GetServiceProfilesViewPointParameter)
+  -h, --help                help for get-service-profiles
+      --limit int           limit field (required)
+      --offset int          offset field (required)
+      --request string      JSON payload for additional optional fields not exposed as flags
+      --view-point string   view-point field (required)
 ```
 
 ### Options inherited from parent commands

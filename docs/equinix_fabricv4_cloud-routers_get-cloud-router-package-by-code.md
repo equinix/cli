@@ -16,7 +16,7 @@ equinix fabricv4 cloud-routers get-cloud-router-package-by-code [flags]
 
 ```
   -h, --help                         help for get-cloud-router-package-by-code
-      --request string               Raw JSON payload for request body fields
+      --request string               JSON payload for request body fields
       --router-package-code string   assigned Cloud Router package identifier (required)
 ```
 

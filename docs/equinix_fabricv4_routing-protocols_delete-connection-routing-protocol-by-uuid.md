@@ -17,7 +17,7 @@ equinix fabricv4 routing-protocols delete-connection-routing-protocol-by-uuid [f
 ```
       --connection-id string         Connection Id (required)
   -h, --help                         help for delete-connection-routing-protocol-by-uuid
-      --request string               Raw JSON payload for request body fields
+      --request string               JSON payload for request body fields
       --routing-protocol-id string   Routing Protocol Id (required)
 ```
 

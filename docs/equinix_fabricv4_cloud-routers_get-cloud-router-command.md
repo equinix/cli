@@ -17,7 +17,7 @@ equinix fabricv4 cloud-routers get-cloud-router-command [flags]
 ```
       --command-id string   Command UUID (required)
   -h, --help                help for get-cloud-router-command
-      --request string      Raw JSON payload for request body fields
+      --request string      JSON payload for request body fields
       --router-id string    Router UUID (required)
 ```
 

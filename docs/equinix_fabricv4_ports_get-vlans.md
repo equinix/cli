@@ -17,7 +17,7 @@ equinix fabricv4 ports get-vlans [flags]
 ```
   -h, --help               help for get-vlans
       --port-uuid string   Port UUID (required)
-      --request string     Raw JSON payload for request body fields
+      --request string     JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

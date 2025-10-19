@@ -17,7 +17,7 @@ equinix fabricv4 route-aggregations detach-connection-route-aggregation [flags]
 ```
       --connection-id string          Connection Id (required)
   -h, --help                          help for detach-connection-route-aggregation
-      --request string                Raw JSON payload for request body fields
+      --request string                JSON payload for request body fields
       --route-aggregation-id string   Route Aggregations Id (required)
 ```
 

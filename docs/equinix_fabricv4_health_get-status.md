@@ -16,7 +16,7 @@ equinix fabricv4 health get-status [flags]
 
 ```
   -h, --help             help for get-status
-      --request string   Raw JSON payload for request body fields
+      --request string   JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

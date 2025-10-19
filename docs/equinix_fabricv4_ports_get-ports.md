@@ -16,7 +16,8 @@ equinix fabricv4 ports get-ports [flags]
 
 ```
   -h, --help             help for get-ports
-      --request string   JSON payload for request body. Available fields: name (string)
+      --name string      name field (required)
+      --request string   JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

@@ -17,7 +17,7 @@ equinix fabricv4 routing-protocols replace-connection-routing-protocol-by-uuid [
 ```
       --connection-id string         Connection Id (required)
   -h, --help                         help for replace-connection-routing-protocol-by-uuid
-      --request string               Raw JSON payload for optional request fields
+      --request string               JSON payload for request body. Available fields: routing-protocol-base (RoutingProtocolBase)
       --routing-protocol-id string   Routing Protocol Id (required)
 ```
 

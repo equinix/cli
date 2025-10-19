@@ -17,7 +17,7 @@ equinix fabricv4 deployments action-deployment [flags]
 ```
       --deployment-id string   Deployment UUID (required)
   -h, --help                   help for action-deployment
-      --request string         Raw JSON payload for optional request fields
+      --request string         JSON payload for request body. Available fields: deployment-action-request (DeploymentActionRequest)
 ```
 
 ### Options inherited from parent commands

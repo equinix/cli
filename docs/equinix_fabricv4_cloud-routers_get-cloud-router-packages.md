@@ -16,7 +16,7 @@ equinix fabricv4 cloud-routers get-cloud-router-packages [flags]
 
 ```
   -h, --help             help for get-cloud-router-packages
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: limit (int32), offset (int32)
 ```
 
 ### Options inherited from parent commands

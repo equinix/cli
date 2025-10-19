@@ -18,7 +18,7 @@ equinix fabricv4 cloud-events get-cloud-event-by-asset-id [flags]
       --asset string      asset (required)
       --asset-id string   asset UUID (required)
   -h, --help              help for get-cloud-event-by-asset-id
-      --request string    Raw JSON payload for optional request fields
+      --request string    JSON payload for request body. Available fields: from-date-time (Time), limit (int32), offset (int32), to-date-time (Time)
 ```
 
 ### Options inherited from parent commands

@@ -16,7 +16,7 @@ equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
 
 ```
   -h, --help               help for search-cloud-router-routes
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: route-table-entry-search-request (RouteTableEntrySearchRequest)
       --router-id string   Router UUID (required)
 ```
 

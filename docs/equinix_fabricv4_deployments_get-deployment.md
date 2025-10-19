@@ -17,7 +17,7 @@ equinix fabricv4 deployments get-deployment [flags]
 ```
       --deployment-id string   Deployment UUID (required)
   -h, --help                   help for get-deployment
-      --request string         Raw JSON payload for optional request fields
+      --request string         Raw JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands

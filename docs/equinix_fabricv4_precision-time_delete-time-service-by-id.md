@@ -16,7 +16,7 @@ equinix fabricv4 precision-time delete-time-service-by-id [flags]
 
 ```
   -h, --help                help for delete-time-service-by-id
-      --request string      Raw JSON payload for optional request fields
+      --request string      Raw JSON payload for request body fields
       --service-id string   Service UUID (required)
 ```
 

@@ -16,7 +16,7 @@ equinix fabricv4 deployments search-provider-resources [flags]
 
 ```
   -h, --help             help for search-provider-resources
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: provider-search-request (ProviderSearchRequest)
 ```
 
 ### Options inherited from parent commands

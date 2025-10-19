@@ -16,7 +16,7 @@ equinix fabricv4 stream-subscriptions get-stream-subscriptions [flags]
 
 ```
   -h, --help               help for get-stream-subscriptions
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: limit (int32), offset (int32)
       --stream-id string   Stream UUID (required)
 ```
 

@@ -17,7 +17,7 @@ equinix fabricv4 route-filters detach-connection-route-filter [flags]
 ```
       --connection-id string     Connection Id (required)
   -h, --help                     help for detach-connection-route-filter
-      --request string           Raw JSON payload for optional request fields
+      --request string           Raw JSON payload for request body fields
       --route-filter-id string   Route Filters Id (required)
 ```
 

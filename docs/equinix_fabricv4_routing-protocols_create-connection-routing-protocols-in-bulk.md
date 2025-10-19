@@ -17,7 +17,7 @@ equinix fabricv4 routing-protocols create-connection-routing-protocols-in-bulk [
 ```
       --connection-id string   Connection Id (required)
   -h, --help                   help for create-connection-routing-protocols-in-bulk
-      --request string         Raw JSON payload for optional request fields
+      --request string         JSON payload for request body. Available fields: connection-routing-protocol-post-request (ConnectionRoutingProtocolPostRequest)
 ```
 
 ### Options inherited from parent commands

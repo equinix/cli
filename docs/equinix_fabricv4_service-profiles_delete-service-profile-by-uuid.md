@@ -16,7 +16,7 @@ equinix fabricv4 service-profiles delete-service-profile-by-uuid [flags]
 
 ```
   -h, --help                        help for delete-service-profile-by-uuid
-      --request string              Raw JSON payload for optional request fields
+      --request string              Raw JSON payload for request body fields
       --service-profile-id string   Service Profile UUID (required)
 ```
 

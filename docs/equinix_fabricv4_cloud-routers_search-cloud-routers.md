@@ -16,7 +16,7 @@ equinix fabricv4 cloud-routers search-cloud-routers [flags]
 
 ```
   -h, --help             help for search-cloud-routers
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: cloud-router-search-request (CloudRouterSearchRequest)
 ```
 
 ### Options inherited from parent commands

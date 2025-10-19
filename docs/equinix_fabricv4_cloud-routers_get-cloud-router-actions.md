@@ -16,7 +16,7 @@ equinix fabricv4 cloud-routers get-cloud-router-actions [flags]
 
 ```
   -h, --help               help for get-cloud-router-actions
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: state (CloudRouterActionState)
       --router-id string   Router UUID (required)
 ```
 

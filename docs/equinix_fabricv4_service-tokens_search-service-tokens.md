@@ -16,7 +16,7 @@ equinix fabricv4 service-tokens search-service-tokens [flags]
 
 ```
   -h, --help             help for search-service-tokens
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: limit (float32), offset (float32), service-token-search-request (ServiceTokenSearchRequest)
 ```
 
 ### Options inherited from parent commands

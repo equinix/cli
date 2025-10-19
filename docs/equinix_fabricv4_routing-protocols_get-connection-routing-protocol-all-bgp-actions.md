@@ -17,7 +17,7 @@ equinix fabricv4 routing-protocols get-connection-routing-protocol-all-bgp-actio
 ```
       --connection-id string         Connection Id (required)
   -h, --help                         help for get-connection-routing-protocol-all-bgp-actions
-      --request string               Raw JSON payload for optional request fields
+      --request string               JSON payload for request body. Available fields: limit (int32), offset (int32)
       --routing-protocol-id string   Routing Protocol Id (required)
 ```
 

@@ -16,7 +16,7 @@ equinix fabricv4 streams update-stream-by-uuid [flags]
 
 ```
   -h, --help               help for update-stream-by-uuid
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: stream-put-request (StreamPutRequest)
       --stream-id string   Stream UUID (required)
 ```
 

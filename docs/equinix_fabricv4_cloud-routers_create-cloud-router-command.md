@@ -16,7 +16,7 @@ equinix fabricv4 cloud-routers create-cloud-router-command [flags]
 
 ```
   -h, --help               help for create-cloud-router-command
-      --request string     Raw JSON payload for optional request fields
+      --request string     JSON payload for request body. Available fields: cloud-router-command-post-request (CloudRouterCommandPostRequest)
       --router-id string   Router UUID (required)
 ```
 

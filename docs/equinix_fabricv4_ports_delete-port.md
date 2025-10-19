@@ -17,7 +17,7 @@ equinix fabricv4 ports delete-port [flags]
 ```
   -h, --help             help for delete-port
       --port-id string   Port UUID (required)
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: dry-run (bool)
 ```
 
 ### Options inherited from parent commands

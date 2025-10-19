@@ -16,7 +16,7 @@ equinix fabricv4 connections search-connections [flags]
 
 ```
   -h, --help             help for search-connections
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: search-request (SearchRequest)
 ```
 
 ### Options inherited from parent commands

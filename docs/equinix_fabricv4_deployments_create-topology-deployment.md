@@ -16,7 +16,7 @@ equinix fabricv4 deployments create-topology-deployment [flags]
 
 ```
   -h, --help             help for create-topology-deployment
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: deployment (Deployment)
 ```
 
 ### Options inherited from parent commands

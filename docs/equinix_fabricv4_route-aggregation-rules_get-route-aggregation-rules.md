@@ -16,7 +16,7 @@ equinix fabricv4 route-aggregation-rules get-route-aggregation-rules [flags]
 
 ```
   -h, --help                          help for get-route-aggregation-rules
-      --request string                Raw JSON payload for optional request fields
+      --request string                JSON payload for request body. Available fields: limit (int32), offset (int32)
       --route-aggregation-id string   Route Aggregations Id (required)
 ```
 

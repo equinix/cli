@@ -16,7 +16,7 @@ equinix fabricv4 service-profiles search-service-profiles [flags]
 
 ```
   -h, --help             help for search-service-profiles
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: service-profile-search-request (ServiceProfileSearchRequest), view-point (GetServiceProfilesViewPointParameter)
 ```
 
 ### Options inherited from parent commands

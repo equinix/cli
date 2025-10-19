@@ -16,7 +16,7 @@ equinix fabricv4 connections create-connection [flags]
 
 ```
   -h, --help             help for create-connection
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: connection-post-request (ConnectionPostRequest), dry-run (bool)
 ```
 
 ### Options inherited from parent commands

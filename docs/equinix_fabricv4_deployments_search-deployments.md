@@ -16,7 +16,7 @@ equinix fabricv4 deployments search-deployments [flags]
 
 ```
   -h, --help             help for search-deployments
-      --request string   Raw JSON payload for optional request fields
+      --request string   JSON payload for request body. Available fields: deployment-search-request (DeploymentSearchRequest)
 ```
 
 ### Options inherited from parent commands

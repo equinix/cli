@@ -16,7 +16,7 @@ equinix fabricv4 precision-time update-time-services-by-id [flags]
 
 ```
   -h, --help                help for update-time-services-by-id
-      --request string      Raw JSON payload for optional request fields
+      --request string      JSON payload for request body. Available fields: precision-time-change-operation (PrecisionTimeChangeOperation)
       --service-id string   Service UUID (required)
 ```
 

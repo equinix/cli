@@ -15,9 +15,9 @@ equinix fabricv4 deployments action-deployment [flags]
 ### Options
 
 ```
-      --deployment-action-request-additional-properties string   deployment-action-request-additional-properties (required) (JSON)
-      --deployment-action-request-data string                    deployment-action-request-data (required) (JSON array)
-      --deployment-action-request-type string                    deployment-action-request-type (required)
+      --deployment-action-request-additional-properties string   deployment-action-request-additional-properties (JSON)
+      --deployment-action-request-data string                    deployment-action-request-data (JSON array)
+      --deployment-action-request-type string                    deployment-action-request-type
       --deployment-id string                                     Deployment UUID (required)
   -h, --help                                                     help for action-deployment
       --request string                                           JSON payload for additional optional fields not exposed as flags

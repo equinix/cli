@@ -16,8 +16,8 @@ equinix fabricv4 route-filters get-route-filter-changes [flags]
 
 ```
   -h, --help                     help for get-route-filter-changes
-      --limit int                limit field (required)
-      --offset int               offset field (required)
+      --limit int                limit field
+      --offset int               offset field
       --request string           JSON payload for additional optional fields not exposed as flags
       --route-filter-id string   Route Filters Id (required)
 ```

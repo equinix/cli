@@ -18,8 +18,8 @@ equinix fabricv4 cloud-events get-cloud-event-by-asset-id [flags]
       --asset string      asset (required)
       --asset-id string   asset UUID (required)
   -h, --help              help for get-cloud-event-by-asset-id
-      --limit int         limit field (required)
-      --offset int        offset field (required)
+      --limit int         limit field
+      --offset int        offset field
       --request string    JSON payload for additional optional fields not exposed as flags
 ```
 

@@ -16,7 +16,7 @@ equinix fabricv4 ports search-ports [flags]
 
 ```
   -h, --help                                                             help for search-ports
-      --port-v4-search-request-additional-properties string              port-v4-search-request-additional-properties (required) (JSON)
+      --port-v4-search-request-additional-properties string              port-v4-search-request-additional-properties (JSON)
       --port-v4-search-request-filter-additional-properties string       port-v4-search-request-filter-additional-properties (JSON)
       --port-v4-search-request-filter-and string                         port-v4-search-request-filter-and (JSON array)
       --port-v4-search-request-filter-operator string                    port-v4-search-request-filter-operator

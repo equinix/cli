@@ -17,14 +17,14 @@ equinix fabricv4 connections create-connection [flags]
 ```
       --connection-post-request-a-side-access-point string                              connection-post-request-a-side-access-point (JSON)
       --connection-post-request-a-side-additional-info string                           Any additional information, which is not part of connection metadata or configuration (JSON array)
-      --connection-post-request-a-side-additional-properties string                     connection-post-request-a-side-additional-properties (required) (JSON)
+      --connection-post-request-a-side-additional-properties string                     connection-post-request-a-side-additional-properties (JSON)
       --connection-post-request-a-side-company-profile string                           connection-post-request-a-side-company-profile (JSON)
       --connection-post-request-a-side-internet-access string                           connection-post-request-a-side-internet-access (JSON)
       --connection-post-request-a-side-invitation string                                connection-post-request-a-side-invitation (JSON)
       --connection-post-request-a-side-service-token string                             connection-post-request-a-side-service-token (JSON)
       --connection-post-request-additional-info string                                  Connection additional information (JSON array)
-      --connection-post-request-additional-properties string                            connection-post-request-additional-properties (required) (JSON)
-      --connection-post-request-bandwidth int                                           Connection bandwidth in Mbps (required)
+      --connection-post-request-additional-properties string                            connection-post-request-additional-properties (JSON)
+      --connection-post-request-bandwidth int                                           Connection bandwidth in Mbps
       --connection-post-request-end-customer-additional-properties string               connection-post-request-end-customer-additional-properties (JSON)
       --connection-post-request-end-customer-is-disclosed                               Indicate if endCustomer info should be disclosed or not
       --connection-post-request-end-customer-mdm-id string                              connection-post-request-end-customer-mdm-id
@@ -34,8 +34,8 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-marketplace-subscription-href string                    Marketplace Subscription URI
       --connection-post-request-marketplace-subscription-type string                    connection-post-request-marketplace-subscription-type
       --connection-post-request-marketplace-subscription-uuid string                    Equinix-assigned Marketplace Subscription identifier
-      --connection-post-request-name string                                             Customer-provided connection name (required)
-      --connection-post-request-notifications string                                    Preferences for notifications on connection configuration or status changes (required) (JSON array)
+      --connection-post-request-name string                                             Customer-provided connection name
+      --connection-post-request-notifications string                                    Preferences for notifications on connection configuration or status changes (JSON array)
       --connection-post-request-order-additional-properties string                      connection-post-request-order-additional-properties (JSON)
       --connection-post-request-order-billing-tier string                               Billing tier for connection bandwidth
       --connection-post-request-order-customer-reference-number string                  Customer reference number
@@ -48,15 +48,15 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-redundancy-additional-properties string                 connection-post-request-redundancy-additional-properties (JSON)
       --connection-post-request-redundancy-group string                                 Redundancy group identifier (UUID of primary connection)
       --connection-post-request-redundancy-priority string                              connection-post-request-redundancy-priority
-      --connection-post-request-type string                                             connection-post-request-type (required)
+      --connection-post-request-type string                                             connection-post-request-type
       --connection-post-request-z-side-access-point string                              connection-post-request-z-side-access-point (JSON)
       --connection-post-request-z-side-additional-info string                           Any additional information, which is not part of connection metadata or configuration (JSON array)
-      --connection-post-request-z-side-additional-properties string                     connection-post-request-z-side-additional-properties (required) (JSON)
+      --connection-post-request-z-side-additional-properties string                     connection-post-request-z-side-additional-properties (JSON)
       --connection-post-request-z-side-company-profile string                           connection-post-request-z-side-company-profile (JSON)
       --connection-post-request-z-side-internet-access string                           connection-post-request-z-side-internet-access (JSON)
       --connection-post-request-z-side-invitation string                                connection-post-request-z-side-invitation (JSON)
       --connection-post-request-z-side-service-token string                             connection-post-request-z-side-service-token (JSON)
-      --dry-run                                                                         dry-run field (required)
+      --dry-run                                                                         dry-run field
   -h, --help                                                                            help for create-connection
       --request string                                                                  JSON payload for additional optional fields not exposed as flags
 ```

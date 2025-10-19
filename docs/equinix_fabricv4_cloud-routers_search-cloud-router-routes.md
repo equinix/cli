@@ -17,7 +17,7 @@ equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
 ```
   -h, --help                                                                       help for search-cloud-router-routes
       --request string                                                             JSON payload for additional optional fields not exposed as flags
-      --route-table-entry-search-request-additional-properties string              route-table-entry-search-request-additional-properties (required) (JSON)
+      --route-table-entry-search-request-additional-properties string              route-table-entry-search-request-additional-properties (JSON)
       --route-table-entry-search-request-filter-additional-properties string       route-table-entry-search-request-filter-additional-properties (JSON)
       --route-table-entry-search-request-filter-and string                         route-table-entry-search-request-filter-and (JSON array)
       --route-table-entry-search-request-pagination-additional-properties string   route-table-entry-search-request-pagination-additional-properties (JSON)

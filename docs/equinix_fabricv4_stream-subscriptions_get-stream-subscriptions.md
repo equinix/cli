@@ -16,8 +16,8 @@ equinix fabricv4 stream-subscriptions get-stream-subscriptions [flags]
 
 ```
   -h, --help               help for get-stream-subscriptions
-      --limit int          limit field (required)
-      --offset int         offset field (required)
+      --limit int          limit field
+      --offset int         offset field
       --request string     JSON payload for additional optional fields not exposed as flags
       --stream-id string   Stream UUID (required)
 ```

@@ -18,7 +18,7 @@ equinix fabricv4 route-aggregation-rules create-route-aggregation-rules-in-bulk 
   -h, --help                                                                help for create-route-aggregation-rules-in-bulk
       --request string                                                      JSON payload for additional optional fields not exposed as flags
       --route-aggregation-id string                                         Route Aggregations Id (required)
-      --route-aggregation-rules-post-request-additional-properties string   route-aggregation-rules-post-request-additional-properties (required) (JSON)
+      --route-aggregation-rules-post-request-additional-properties string   route-aggregation-rules-post-request-additional-properties (JSON)
       --route-aggregation-rules-post-request-data string                    Route Aggregation Rule configuration (JSON array)
 ```
 

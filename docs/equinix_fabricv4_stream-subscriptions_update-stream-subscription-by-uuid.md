@@ -18,7 +18,7 @@ equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid [flags]
   -h, --help                                                                           help for update-stream-subscription-by-uuid
       --request string                                                                 JSON payload for additional optional fields not exposed as flags
       --stream-id string                                                               Stream UUID (required)
-      --stream-subscription-put-request-additional-properties string                   stream-subscription-put-request-additional-properties (required) (JSON)
+      --stream-subscription-put-request-additional-properties string                   stream-subscription-put-request-additional-properties (JSON)
       --stream-subscription-put-request-description string                             Customer-provided stream subscription description
       --stream-subscription-put-request-enabled                                        Stream subscription enabled status
       --stream-subscription-put-request-event-selector-additional-properties string    stream-subscription-put-request-event-selector-additional-properties (JSON)

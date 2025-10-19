@@ -15,7 +15,7 @@ equinix fabricv4 stream-alert-rules create-stream-alert-rules [flags]
 ### Options
 
 ```
-      --alert-rule-post-request-additional-properties string                     alert-rule-post-request-additional-properties (required) (JSON)
+      --alert-rule-post-request-additional-properties string                     alert-rule-post-request-additional-properties (JSON)
       --alert-rule-post-request-critical-threshold string                        Stream alert rule metric critical threshold
       --alert-rule-post-request-description string                               Customer-provided stream description
       --alert-rule-post-request-enabled                                          Stream alert rule enabled status

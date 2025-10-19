@@ -15,7 +15,7 @@ equinix fabricv4 cloud-routers search-cloud-router-commands [flags]
 ### Options
 
 ```
-      --cloud-router-command-search-request-additional-properties string              cloud-router-command-search-request-additional-properties (required) (JSON)
+      --cloud-router-command-search-request-additional-properties string              cloud-router-command-search-request-additional-properties (JSON)
       --cloud-router-command-search-request-filter-additional-properties string       cloud-router-command-search-request-filter-additional-properties (JSON)
       --cloud-router-command-search-request-filter-and string                         cloud-router-command-search-request-filter-and (JSON array)
       --cloud-router-command-search-request-pagination-additional-properties string   cloud-router-command-search-request-pagination-additional-properties (JSON)

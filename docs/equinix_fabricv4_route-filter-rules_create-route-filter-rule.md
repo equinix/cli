@@ -18,10 +18,10 @@ equinix fabricv4 route-filter-rules create-route-filter-rule [flags]
   -h, --help                                                   help for create-route-filter-rule
       --request string                                         JSON payload for additional optional fields not exposed as flags
       --route-filter-id string                                 Route Filters Id (required)
-      --route-filter-rules-base-additional-properties string   route-filter-rules-base-additional-properties (required) (JSON)
+      --route-filter-rules-base-additional-properties string   route-filter-rules-base-additional-properties (JSON)
       --route-filter-rules-base-description string             Customer-provided Route Filter Rule description
       --route-filter-rules-base-name string                    route-filter-rules-base-name
-      --route-filter-rules-base-prefix string                  route-filter-rules-base-prefix (required)
+      --route-filter-rules-base-prefix string                  route-filter-rules-base-prefix
       --route-filter-rules-base-prefix-match string            route-filter-rules-base-prefix-match
 ```
 

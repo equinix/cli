@@ -17,7 +17,7 @@ equinix fabricv4 connections search-connections [flags]
 ```
   -h, --help                                                     help for search-connections
       --request string                                           JSON payload for additional optional fields not exposed as flags
-      --search-request-additional-properties string              search-request-additional-properties (required) (JSON)
+      --search-request-additional-properties string              search-request-additional-properties (JSON)
       --search-request-filter-additional-properties string       search-request-filter-additional-properties (JSON)
       --search-request-filter-and string                         search-request-filter-and (JSON array)
       --search-request-filter-operator string                    search-request-filter-operator

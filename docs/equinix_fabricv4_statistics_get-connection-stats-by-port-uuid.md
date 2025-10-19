@@ -18,7 +18,7 @@ equinix fabricv4 statistics get-connection-stats-by-port-uuid [flags]
       --connection-id string   Connection UUID (required)
   -h, --help                   help for get-connection-stats-by-port-uuid
       --request string         JSON payload for additional optional fields not exposed as flags
-      --view-point string      view-point field (required)
+      --view-point string      view-point field
 ```
 
 ### Options inherited from parent commands

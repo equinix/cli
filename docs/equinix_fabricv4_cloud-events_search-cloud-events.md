@@ -15,7 +15,7 @@ equinix fabricv4 cloud-events search-cloud-events [flags]
 ### Options
 
 ```
-      --cloud-event-search-request-additional-properties string              cloud-event-search-request-additional-properties (required) (JSON)
+      --cloud-event-search-request-additional-properties string              cloud-event-search-request-additional-properties (JSON)
       --cloud-event-search-request-filter-additional-properties string       cloud-event-search-request-filter-additional-properties (JSON)
       --cloud-event-search-request-filter-and string                         cloud-event-search-request-filter-and (JSON array)
       --cloud-event-search-request-pagination-additional-properties string   cloud-event-search-request-pagination-additional-properties (JSON)

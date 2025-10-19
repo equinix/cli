@@ -15,7 +15,7 @@ equinix fabricv4 service-tokens create-service-token [flags]
 ### Options
 
 ```
-      --dry-run                                                 dry-run field (required)
+      --dry-run                                                 dry-run field
   -h, --help                                                    help for create-service-token
       --request string                                          JSON payload for additional optional fields not exposed as flags
       --service-token-account-account-name string               Account name
@@ -31,7 +31,7 @@ equinix fabricv4 service-tokens create-service-token [flags]
       --service-token-account-reseller-org-id int               Reseller customer organization identifier
       --service-token-account-reseller-ucm-id string            Reseller account ucmId
       --service-token-account-ucm-id string                     Account ucmId
-      --service-token-additional-properties string              service-token-additional-properties (required) (JSON)
+      --service-token-additional-properties string              service-token-additional-properties (JSON)
       --service-token-changelog-additional-properties string    service-token-changelog-additional-properties (JSON)
       --service-token-changelog-created-by string               Created by User Key
       --service-token-changelog-created-by-email string         Created by User Email Address

@@ -17,7 +17,7 @@ equinix fabricv4 route-aggregations search-route-aggregations [flags]
 ```
   -h, --help                                                                     help for search-route-aggregations
       --request string                                                           JSON payload for additional optional fields not exposed as flags
-      --route-aggregations-search-base-additional-properties string              route-aggregations-search-base-additional-properties (required) (JSON)
+      --route-aggregations-search-base-additional-properties string              route-aggregations-search-base-additional-properties (JSON)
       --route-aggregations-search-base-filter-additional-properties string       route-aggregations-search-base-filter-additional-properties (JSON)
       --route-aggregations-search-base-filter-and string                         route-aggregations-search-base-filter-and (JSON array)
       --route-aggregations-search-base-pagination-additional-properties string   route-aggregations-search-base-pagination-additional-properties (JSON)

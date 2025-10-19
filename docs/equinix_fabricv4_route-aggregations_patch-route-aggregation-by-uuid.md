@@ -18,7 +18,7 @@ equinix fabricv4 route-aggregations patch-route-aggregation-by-uuid [flags]
   -h, --help                                           help for patch-route-aggregation-by-uuid
       --request string                                 JSON payload for additional optional fields not exposed as flags
       --route-aggregation-id string                    Route Aggregations Id (required)
-      --route-aggregations-patch-request-item string   route-aggregations-patch-request-item field (required) (JSON or string)
+      --route-aggregations-patch-request-item string   route-aggregations-patch-request-item field (JSON or string)
 ```
 
 ### Options inherited from parent commands

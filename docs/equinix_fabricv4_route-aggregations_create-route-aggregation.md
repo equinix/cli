@@ -17,12 +17,12 @@ equinix fabricv4 route-aggregations create-route-aggregation [flags]
 ```
   -h, --help                                                           help for create-route-aggregation
       --request string                                                 JSON payload for additional optional fields not exposed as flags
-      --route-aggregations-base-additional-properties string           route-aggregations-base-additional-properties (required) (JSON)
+      --route-aggregations-base-additional-properties string           route-aggregations-base-additional-properties (JSON)
       --route-aggregations-base-description string                     Customer-provided connection description
-      --route-aggregations-base-name string                            route-aggregations-base-name (required)
-      --route-aggregations-base-project-additional-properties string   route-aggregations-base-project-additional-properties (required) (JSON)
-      --route-aggregations-base-project-project-id string              Subscriber-assigned project ID (required)
-      --route-aggregations-base-type string                            route-aggregations-base-type (required)
+      --route-aggregations-base-name string                            route-aggregations-base-name
+      --route-aggregations-base-project-additional-properties string   route-aggregations-base-project-additional-properties (JSON)
+      --route-aggregations-base-project-project-id string              Subscriber-assigned project ID
+      --route-aggregations-base-type string                            route-aggregations-base-type
 ```
 
 ### Options inherited from parent commands

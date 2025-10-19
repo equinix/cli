@@ -17,14 +17,14 @@ equinix fabricv4 service-profiles search-service-profiles [flags]
 ```
   -h, --help                                                                             help for search-service-profiles
       --request string                                                                   JSON payload for additional optional fields not exposed as flags
-      --service-profile-search-request-additional-properties string                      service-profile-search-request-additional-properties (required) (JSON)
+      --service-profile-search-request-additional-properties string                      service-profile-search-request-additional-properties (JSON)
       --service-profile-search-request-filter-service-profile-and-filter string          service-profile-search-request-filter-service-profile-and-filter (JSON)
       --service-profile-search-request-filter-service-profile-simple-expression string   service-profile-search-request-filter-service-profile-simple-expression (JSON)
       --service-profile-search-request-pagination-additional-properties string           service-profile-search-request-pagination-additional-properties (JSON)
       --service-profile-search-request-pagination-limit int                              Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
       --service-profile-search-request-pagination-offset int                             Index of the first element.
       --service-profile-search-request-sort string                                       service-profile-search-request-sort (JSON array)
-      --view-point string                                                                view-point field (required)
+      --view-point string                                                                view-point field
 ```
 
 ### Options inherited from parent commands

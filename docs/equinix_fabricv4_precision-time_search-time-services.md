@@ -17,7 +17,7 @@ equinix fabricv4 precision-time search-time-services [flags]
 ```
   -h, --help                                                                   help for search-time-services
       --request string                                                         JSON payload for additional optional fields not exposed as flags
-      --time-services-search-request-additional-properties string              time-services-search-request-additional-properties (required) (JSON)
+      --time-services-search-request-additional-properties string              time-services-search-request-additional-properties (JSON)
       --time-services-search-request-filter-additional-properties string       time-services-search-request-filter-additional-properties (JSON)
       --time-services-search-request-filter-and string                         time-services-search-request-filter-and (JSON array)
       --time-services-search-request-pagination-additional-properties string   time-services-search-request-pagination-additional-properties (JSON)

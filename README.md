@@ -24,3 +24,50 @@ brew install equinix
 ## Usage
 
 The full CLI documentation can be found [in the docs directory](docs/equinix.md).
+
+### Dynamic Command Registration
+
+The CLI uses reflection to automatically register commands from the Equinix SDK. This approach:
+
+- **Automatically discovers** all API services in the SDK client
+- **Generates commands** for each service and method at build time
+- **Reduces maintenance** - new SDK services are automatically available
+- **Ensures consistency** - command structure mirrors the SDK structure
+
+## Development
+
+### Adding New Services
+
+To onboard a new Equinix service (e.g., fabricv5), use the `onboard` target:
+
+```sh
+make onboard SERVICE=fabricv5
+```
+
+This will scaffold:
+- `cmd/<service>.go` - Command registration
+- `internal/api/<service>.go` - API client setup
+- `cmd/descriptions/<service>.json` - Field descriptions to embed for help
+
+After scaffolding, you'll need to:
+1. Review and adjust the generated files
+2. Ensure the SDK package exists in `github.com/equinix/equinix-sdk-go/services/<service>`
+3. Run `make build` to verify the integration
+
+### Building
+
+```sh
+make build
+```
+
+### Linting
+
+```sh
+make lint
+```
+
+### Generating Documentation
+
+```sh
+make docs
+```

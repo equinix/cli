@@ -14,6 +14,8 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"net/http/httputil"
+	"os"
 
 	equinixoauth2 "github.com/equinix/equinix-sdk-go/extensions/equinixoauth2"
 	"github.com/spf13/viper"
@@ -30,9 +32,43 @@ type Client struct {
 	HTTPClient     *http.Client
 }
 
+// debugTransport wraps an HTTP transport to log requests and responses when debug mode is enabled
+type debugTransport struct {
+	transport http.RoundTripper
+}
+
+func (t *debugTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	// Log the request
+	fmt.Fprintf(os.Stderr, "\n==================== HTTP REQUEST ====================\n")
+	reqDump, err := httputil.DumpRequestOut(req, true)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error dumping request: %v\n", err)
+	} else {
+		fmt.Fprintf(os.Stderr, "%s\n", string(reqDump))
+	}
+	fmt.Fprintf(os.Stderr, "======================================================\n")
+
+	// Execute the request
+	resp, err := t.transport.RoundTrip(req)
+
+	if resp != nil {
+		// Log the response
+		fmt.Fprintf(os.Stderr, "\n==================== HTTP RESPONSE ====================\n")
+		respDump, dumpErr := httputil.DumpResponse(resp, true)
+		if dumpErr != nil {
+			fmt.Fprintf(os.Stderr, "Error dumping response: %v\n", dumpErr)
+		} else {
+			fmt.Fprintf(os.Stderr, "%s\n", string(respDump))
+		}
+		fmt.Fprintf(os.Stderr, "=======================================================\n\n")
+	}
+
+	return resp, err
+}
+
 // NewStandardClient creates a new Client for Equinix APIs that exist under
 // api.equinix.com and use OAuth2 client credentials for authentication
-func NewStandardClient() (*Client, error) {
+func NewStandardClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
 		BaseURL:        "https://api.equinix.com",
 		DefaultHeaders: standardHeaders,
@@ -51,9 +87,26 @@ func NewStandardClient() (*Client, error) {
 		BaseURL:      client.BaseURL,
 	}
 	authTransport := authConfig.New()
-	client.HTTPClient.Transport = authTransport
+
+	// Apply options to potentially wrap the transport
+	transport := http.RoundTripper(authTransport)
+	for _, opt := range options {
+		transport = opt(transport)
+	}
+
+	client.HTTPClient.Transport = transport
 
 	return client, nil
+}
+
+// ClientOption is a function that can modify the HTTP transport
+type ClientOption func(http.RoundTripper) http.RoundTripper
+
+// WithDebug returns a ClientOption that enables debug logging of HTTP requests and responses
+func WithDebug() ClientOption {
+	return func(transport http.RoundTripper) http.RoundTripper {
+		return &debugTransport{transport: transport}
+	}
 }
 
 // NewPortalClient creates a new Client for Equinix APIs that exist under

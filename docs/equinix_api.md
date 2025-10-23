@@ -23,7 +23,7 @@ equinix api [url-path] [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/equinix/equinix.yaml)
+      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
 ```
 
 ### SEE ALSO

@@ -47,6 +47,7 @@ make onboard SERVICE=fabricv5
 This will scaffold:
 - `cmd/<service>.go` - Command registration
 - `internal/api/<service>.go` - API client setup
+- `cmd/descriptions/<service>.json` - Field descriptions to embed for help
 
 After scaffolding, you'll need to:
 1. Review and adjust the generated files

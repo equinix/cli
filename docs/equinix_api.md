@@ -14,6 +14,7 @@ equinix api [url-path] [flags]
 
 ```
   -d, --data string     Data to send with POST/PUT requests
+      --debug           Enable debug logging for HTTP requests and responses
   -f, --format string   Format to use for output (json or yaml) (default "json")
   -h, --help            help for api
   -X, --method string   HTTP method to use (default "GET")

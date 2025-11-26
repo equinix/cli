@@ -111,7 +111,7 @@ func WithDebug() ClientOption {
 
 // NewPortalClient creates a new Client for Equinix APIs that exist under
 // portal.equinix.com and rely on Cookies to transmit OAuth2 tokens
-func NewPortalClient() (*Client, error) {
+func NewPortalClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
 		BaseURL:        "https://portal.equinix.com/api",
 		DefaultHeaders: standardHeaders,
@@ -127,11 +127,19 @@ func NewPortalClient() (*Client, error) {
 	client.DefaultHeaders["Accept"] = "*/*"
 	client.DefaultHeaders["Accept-Encoding"] = "*/*"
 
+	// Apply options to potentially wrap the transport
+	transport := http.RoundTripper(http.DefaultTransport)
+	for _, opt := range options {
+		transport = opt(transport)
+	}
+
+	client.HTTPClient.Transport = transport
+
 	return client, nil
 }
 
 // NewMetalClient creates a new Client for the Equinix Metal API
-func NewMetalClient() (*Client, error) {
+func NewMetalClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
 		BaseURL:        "https://api.equinix.com",
 		DefaultHeaders: standardHeaders,
@@ -143,14 +151,19 @@ func NewMetalClient() (*Client, error) {
 		return nil, errors.New("metal_auth_token not found in env or config")
 	}
 	client.DefaultHeaders["X-Auth-Token"] = token
+
+	// Apply options to potentially wrap the transport
+	transport := http.RoundTripper(http.DefaultTransport)
+	for _, opt := range options {
+		transport = opt(transport)
+	}
+
+	client.HTTPClient.Transport = transport
+
 	return client, nil
 }
 
 // Request makes an HTTP request to the specified API path with the given method and data.
-//
-// TODO: May be useful to support debug logging of requests/responses.  That could
-// be done here but probably better to do it with a custom Transport that is shared
-// across generic and generated clients for a consistent debug experience.
 func (c *Client) Request(apiPath, method string, data string) ([]byte, error) {
 	url := c.BaseURL + "/" + apiPath
 	var body io.Reader

@@ -15,6 +15,7 @@ var method string
 var data string
 var format string
 var portal bool
+var debug bool
 
 // apiCmd represents the api command
 var apiCmd = &cobra.Command{
@@ -27,13 +28,18 @@ var apiCmd = &cobra.Command{
 
 		var client *api.Client
 		var err error
+		var opts []api.ClientOption
+
+		if debug {
+			opts = append(opts, api.WithDebug())
+		}
 
 		if portal {
-			client, err = api.NewPortalClient()
+			client, err = api.NewPortalClient(opts...)
 		} else if isMetalPath(path) {
-			client, err = api.NewMetalClient()
+			client, err = api.NewMetalClient(opts...)
 		} else {
-			client, err = api.NewStandardClient()
+			client, err = api.NewStandardClient(opts...)
 		}
 
 		if err != nil {
@@ -75,6 +81,7 @@ func init() {
 	apiCmd.Flags().StringVarP(&data, "data", "d", "", "Data to send with POST/PUT requests")
 	apiCmd.Flags().StringVarP(&format, "format", "f", "json", "Format to use for output (json or yaml)")
 	apiCmd.Flags().BoolVar(&portal, "portal", false, "Use Equinix Portal API (cookie auth)")
+	apiCmd.Flags().BoolVar(&debug, "debug", false, "Enable debug logging for HTTP requests and responses")
 }
 
 func isMetalPath(path string) bool {

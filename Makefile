@@ -36,8 +36,8 @@ update:
 		exit 1; \
 	fi
 	@echo "Updating service: $(SERVICE)"
-	@echo "Step 1: Updating SDK package..."
-	@go get -u github.com/equinix/equinix-sdk-go/services/$(SERVICE)
+	@echo "Step 1: Fetching SDK package..."
+	@go get $$(go list -f '{{.Path}}@{{.Version}}' -m github.com/equinix/equinix-sdk-go)
 	@go mod tidy
 	@echo ""
 	@echo "Step 2: Extracting SDK descriptions..."
@@ -100,3 +100,28 @@ onboard:
 	@echo "3. Run 'make build' to verify the integration"
 	@echo "4. Run 'make docs' to generate documentation"
 	@echo "5. Update README.md with information about the new service"
+
+# generate-all - Onboard/update all service integrations by fetching latest SDK
+# and looping over all services that exist in the SDK
+# Usage: make generate-all
+# This will:
+# 1. Update the SDK package to the latest version
+# 2. Extract SDK descriptions and save to cmd/descriptions/<service>.json
+generate-all:
+	@echo "Generating all services"
+	@echo "Step 1: Fetching SDK package..."
+	@go get $$(go list -f '{{.Path}}@{{.Version}}' -m github.com/equinix/equinix-sdk-go)
+	@go mod tidy
+	@echo ""
+	@echo "Step 2: Onboarding all service packages in the SDK..."
+	@mkdir -p cmd/descriptions
+	@SDK_PATH=$$(go list -f '{{.Dir}}' -m github.com/equinix/equinix-sdk-go)/services; \
+	if [ -z "$$SDK_PATH" ] || [ ! -d "$$SDK_PATH" ]; then \
+		echo "Error: Could not find SDK path for services"; \
+		echo "Make sure github.com/equinix/equinix-sdk-go/services is a valid module"; \
+		exit 1; \
+	fi; \
+	SERVICES=$$(ls -1 $$SDK_PATH); \
+	for SERVICE in $$SERVICES; do \
+	  $(MAKE) onboard SERVICE=$$SERVICE; \
+	done;

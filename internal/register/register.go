@@ -14,6 +14,7 @@ import (
 	"github.com/equinix/cli/internal/parser"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
+	"gopkg.in/yaml.v3"
 )
 
 // APIClientInterface represents any API client that can be used for command registration
@@ -479,12 +480,26 @@ func executeMethod(cmd *cobra.Command, serviceName string, _ reflect.Method, bui
 
 	// Format and display the result (first return value)
 	if !result[0].IsNil() {
+		var pretty []byte
 		response := result[0].Interface()
-		jsonBytes, err := json.MarshalIndent(response, "", "  ")
+
+		// TODO: move formatting elsewhere, possibly replicating
+		// output package from metal CLI
+		format, err := cmd.InheritedFlags().GetString("format")
+		if err != nil {
+			return fmt.Errorf("failed to get format flag: %w", err)
+		}
+
+		switch format {
+		case "json":
+			pretty, err = json.MarshalIndent(response, "", "  ")
+		case "yaml":
+			pretty, err = yaml.Marshal(response)
+		}
 		if err != nil {
 			return fmt.Errorf("failed to format response: %w", err)
 		}
-		fmt.Println(string(jsonBytes))
+		fmt.Println(string(pretty))
 	} else {
 		// Some endpoints might return no content (e.g., DELETE operations)
 		if httpResp != nil && httpResp.StatusCode >= 200 && httpResp.StatusCode < 300 {

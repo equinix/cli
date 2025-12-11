@@ -1,0 +1,3741 @@
+{
+  "services": {
+    "eia-service": {
+      "service_name": "eia-service",
+      "service_description": "",
+      "methods": {
+        "CreateEquinixInternetAccessv2": {
+          "short_description": "Creates Equinix Internet Access Service",
+          "long_description": "By passing in the appropriate options, you can create Equinix Internet Access Service product. The entire request either succeeds or fails. In case of failure all the changes in the system are rolled back, so the system gets back to its stated before submitting the request",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "CreateEquinixInternetAccessv2Execute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiCreateEquinixInternetAccessv2Request": {
+          "type_name": "ApiCreateEquinixInternetAccessv2Request",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "serviceRequest": {
+              "name": "serviceRequest",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {
+    "APIClient": {
+      "type_name": "APIClient",
+      "description": "APIClient manages communication with the Equinix Internet Access API API v2.0\nIn most cases there should be only one, shared, APIClient.",
+      "fields": {
+        "EIAServiceApi": {
+          "name": "EIAServiceApi",
+          "description": ""
+        },
+        "cfg": {
+          "name": "cfg",
+          "description": ""
+        },
+        "common": {
+          "name": "common",
+          "description": "Reuse a single struct instead of allocating one for each service on the heap."
+        }
+      }
+    },
+    "APIKey": {
+      "type_name": "APIKey",
+      "description": "APIKey provides API key based authentication to a request passed via context using ContextAPIKey",
+      "fields": {
+        "Key": {
+          "name": "Key",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": ""
+        }
+      }
+    },
+    "APIResponse": {
+      "type_name": "APIResponse",
+      "description": "APIResponse stores the API response returned by the server.",
+      "fields": {
+        "Message": {
+          "name": "Message",
+          "description": "",
+          "json_tag": "message"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "Method is the HTTP method used for the request.  This value is always\navailable, even if the embedded *http.Response is nil.",
+          "json_tag": "method"
+        },
+        "Operation": {
+          "name": "Operation",
+          "description": "Operation is the name of the OpenAPI operation.",
+          "json_tag": "operation"
+        },
+        "Payload": {
+          "name": "Payload",
+          "description": "Payload holds the contents of the response body (which may be nil or empty).\nThis is provided here as the raw response.Body() reader will have already\nbeen drained.",
+          "json_tag": "-"
+        },
+        "RequestURL": {
+          "name": "RequestURL",
+          "description": "RequestURL is the request URL. This value is always available, even if the\nembedded *http.Response is nil.",
+          "json_tag": "url"
+        }
+      }
+    },
+    "AdditionalInfo": {
+      "type_name": "AdditionalInfo",
+      "description": "AdditionalInfo Additional info for error",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Property": {
+          "name": "Property",
+          "description": "Request property that caused the error",
+          "json_tag": "property"
+        },
+        "Reason": {
+          "name": "Reason",
+          "description": "Reason of the error",
+          "json_tag": "reason"
+        }
+      }
+    },
+    "ApiCreateEquinixInternetAccessv2Request": {
+      "type_name": "ApiCreateEquinixInternetAccessv2Request",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "serviceRequest": {
+          "name": "serviceRequest",
+          "description": ""
+        }
+      }
+    },
+    "BasicAuth": {
+      "type_name": "BasicAuth",
+      "description": "BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth",
+      "fields": {
+        "Password": {
+          "name": "Password",
+          "description": "",
+          "json_tag": "password"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "",
+          "json_tag": "userName"
+        }
+      }
+    },
+    "BgpRoutingProtocolRequest": {
+      "type_name": "BgpRoutingProtocolRequest",
+      "description": "BgpRoutingProtocolRequest struct for BgpRoutingProtocolRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "BgpAuthKey": {
+          "name": "BgpAuthKey",
+          "description": "BGP authentication key",
+          "json_tag": "bgpAuthKey"
+        },
+        "CustomerAsn": {
+          "name": "CustomerAsn",
+          "description": "Customer Autonomous System Number",
+          "json_tag": "customerAsn"
+        },
+        "CustomerAsnRange": {
+          "name": "CustomerAsnRange",
+          "description": "",
+          "json_tag": "customerAsnRange"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the routing protocol instance",
+          "json_tag": "description"
+        },
+        "ExportPolicy": {
+          "name": "ExportPolicy",
+          "description": "",
+          "json_tag": "exportPolicy"
+        },
+        "Ipv4": {
+          "name": "Ipv4",
+          "description": "",
+          "json_tag": "ipv4"
+        },
+        "Ipv6": {
+          "name": "Ipv6",
+          "description": "",
+          "json_tag": "ipv6"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the routing protocol instance.",
+          "json_tag": "name"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "Change": {
+      "type_name": "Change",
+      "description": "Change struct for Change",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "ChangeLog": {
+      "type_name": "ChangeLog",
+      "description": "ChangeLog struct for ChangeLog",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "description": "Account number of the account used for object creation",
+          "json_tag": "createdBy"
+        },
+        "CreatedByEmail": {
+          "name": "CreatedByEmail",
+          "description": "E-mail of the account used for object creation",
+          "json_tag": "createdByEmail"
+        },
+        "CreatedByFullName": {
+          "name": "CreatedByFullName",
+          "description": "Full name of the account used for object creation",
+          "json_tag": "createdByFullName"
+        },
+        "CreatedDateTime": {
+          "name": "CreatedDateTime",
+          "description": "Date and time of object creation",
+          "json_tag": "createdDateTime"
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "description": "Account number of the account that updated the object last time",
+          "json_tag": "deletedBy"
+        },
+        "DeletedByEmail": {
+          "name": "DeletedByEmail",
+          "description": "E-mail of the account that updated the object last time",
+          "json_tag": "deletedByEmail"
+        },
+        "DeletedByFullName": {
+          "name": "DeletedByFullName",
+          "description": "Full name of the account that updated the object last time",
+          "json_tag": "deletedByFullName"
+        },
+        "DeletedDateTime": {
+          "name": "DeletedDateTime",
+          "description": "Date and time of the account that updated the object last time",
+          "json_tag": "deletedDateTime"
+        },
+        "UpdatedBy": {
+          "name": "UpdatedBy",
+          "description": "Account number of the account that updated the object last time",
+          "json_tag": "updatedBy"
+        },
+        "UpdatedByEmail": {
+          "name": "UpdatedByEmail",
+          "description": "E-mail of the account that updated the object last time",
+          "json_tag": "updatedByEmail"
+        },
+        "UpdatedByFullName": {
+          "name": "UpdatedByFullName",
+          "description": "Full name of the account that updated the object last time",
+          "json_tag": "updatedByFullName"
+        },
+        "UpdatedDateTime": {
+          "name": "UpdatedDateTime",
+          "description": "Date and time of the account that updated the object last time",
+          "json_tag": "updatedDateTime"
+        }
+      }
+    },
+    "Configuration": {
+      "type_name": "Configuration",
+      "description": "Configuration stores the configuration of the API client",
+      "fields": {
+        "Debug": {
+          "name": "Debug",
+          "description": "",
+          "json_tag": "debug"
+        },
+        "DefaultHeader": {
+          "name": "DefaultHeader",
+          "description": "",
+          "json_tag": "defaultHeader"
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "description": ""
+        },
+        "Host": {
+          "name": "Host",
+          "description": "",
+          "json_tag": "host"
+        },
+        "OperationServers": {
+          "name": "OperationServers",
+          "description": ""
+        },
+        "Scheme": {
+          "name": "Scheme",
+          "description": "",
+          "json_tag": "scheme"
+        },
+        "Servers": {
+          "name": "Servers",
+          "description": ""
+        },
+        "UserAgent": {
+          "name": "UserAgent",
+          "description": "",
+          "json_tag": "userAgent"
+        }
+      }
+    },
+    "Contact": {
+      "type_name": "Contact",
+      "description": "Contact struct for Contact",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "RegisteredUser": {
+          "name": "RegisteredUser",
+          "description": "Identifies (e.g., userName) a registered user. If a registered user is specified, then firstName/lastName need not be provided",
+          "json_tag": "registeredUser"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "ContactRequest": {
+      "type_name": "ContactRequest",
+      "description": "ContactRequest struct for ContactRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Availability": {
+          "name": "Availability",
+          "description": "",
+          "json_tag": "availability"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "",
+          "json_tag": "details"
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "description": "",
+          "json_tag": "firstName"
+        },
+        "LastName": {
+          "name": "LastName",
+          "description": "",
+          "json_tag": "lastName"
+        },
+        "Notes": {
+          "name": "Notes",
+          "description": "",
+          "json_tag": "notes"
+        },
+        "Timezone": {
+          "name": "Timezone",
+          "description": "",
+          "json_tag": "timezone"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "ContactRequestDetails": {
+      "type_name": "ContactRequestDetails",
+      "description": "ContactRequestDetails struct for ContactRequestDetails",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Notes": {
+          "name": "Notes",
+          "description": "",
+          "json_tag": "notes"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Value": {
+          "name": "Value",
+          "description": "",
+          "json_tag": "value"
+        }
+      }
+    },
+    "CustomerBillingAccount": {
+      "type_name": "CustomerBillingAccount",
+      "description": "CustomerBillingAccount struct for CustomerBillingAccount",
+      "fields": {
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "Billing account number",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        }
+      }
+    },
+    "CustomerIpBlock": {
+      "type_name": "CustomerIpBlock",
+      "description": "CustomerIpBlock struct for CustomerIpBlock",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "PrefixLength": {
+          "name": "PrefixLength",
+          "description": "The IPv6 routing prefix, sometimes called a subnet mask, is the network portion of an IP address. The prefix length is an integer between 1 and 128 (inclusive) that represents the number of bits set to 1, such as /24 or /60.",
+          "json_tag": "prefixLength"
+        }
+      }
+    },
+    "CustomerRoute": {
+      "type_name": "CustomerRoute",
+      "description": "CustomerRoute struct for CustomerRoute",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "IpBlock": {
+          "name": "IpBlock",
+          "description": "",
+          "json_tag": "ipBlock"
+        }
+      }
+    },
+    "CustomerRouteIpv4Request": {
+      "type_name": "CustomerRouteIpv4Request",
+      "description": "CustomerRouteIpv4Request struct for CustomerRouteIpv4Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "IpBlock": {
+          "name": "IpBlock",
+          "description": "",
+          "json_tag": "ipBlock"
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": "Subnet prefix",
+          "json_tag": "prefix"
+        }
+      }
+    },
+    "CustomerRouteIpv6Request": {
+      "type_name": "CustomerRouteIpv6Request",
+      "description": "CustomerRouteIpv6Request struct for CustomerRouteIpv6Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "IpBlock": {
+          "name": "IpBlock",
+          "description": "",
+          "json_tag": "ipBlock"
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": "Subnet prefix",
+          "json_tag": "prefix"
+        }
+      }
+    },
+    "DirectPeeringIpv4Request": {
+      "type_name": "DirectPeeringIpv4Request",
+      "description": "DirectPeeringIpv4Request struct for DirectPeeringIpv4Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Connection": {
+          "name": "Connection",
+          "description": "",
+          "json_tag": "connection"
+        },
+        "EquinixPeerIps": {
+          "name": "EquinixPeerIps",
+          "description": "Peering IP addresses in Version 4 (IPv4)",
+          "json_tag": "equinixPeerIps"
+        },
+        "EquinixVRRPIp": {
+          "name": "EquinixVRRPIp",
+          "description": "Virtual router group IP addresses in Version 4 (IPv4)",
+          "json_tag": "equinixVRRPIp"
+        }
+      }
+    },
+    "DirectPeeringIpv4RequestConnection": {
+      "type_name": "DirectPeeringIpv4RequestConnection",
+      "description": "DirectPeeringIpv4RequestConnection struct for DirectPeeringIpv4RequestConnection",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "DirectPeeringIpv6Request": {
+      "type_name": "DirectPeeringIpv6Request",
+      "description": "DirectPeeringIpv6Request struct for DirectPeeringIpv6Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Connection": {
+          "name": "Connection",
+          "description": "",
+          "json_tag": "connection"
+        },
+        "EquinixPeerIps": {
+          "name": "EquinixPeerIps",
+          "description": "Peering IP addresses in Version 6 (IPv6)",
+          "json_tag": "equinixPeerIps"
+        },
+        "EquinixVRRPIp": {
+          "name": "EquinixVRRPIp",
+          "description": "Virtual router group IP addresses in Version 6 (IPv6)",
+          "json_tag": "equinixVRRPIp"
+        }
+      }
+    },
+    "DirectRoutingProtocolIpv4Request": {
+      "type_name": "DirectRoutingProtocolIpv4Request",
+      "description": "DirectRoutingProtocolIpv4Request struct for DirectRoutingProtocolIpv4Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CustomerRoutes": {
+          "name": "CustomerRoutes",
+          "description": "Collection of customer routes of IP Version 4 (IPv4)",
+          "json_tag": "customerRoutes"
+        },
+        "Peerings": {
+          "name": "Peerings",
+          "description": "",
+          "json_tag": "peerings"
+        }
+      }
+    },
+    "DirectRoutingProtocolIpv6Request": {
+      "type_name": "DirectRoutingProtocolIpv6Request",
+      "description": "DirectRoutingProtocolIpv6Request struct for DirectRoutingProtocolIpv6Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CustomerRoutes": {
+          "name": "CustomerRoutes",
+          "description": "Collection of customer routes of IP Version 6 (IPv6)",
+          "json_tag": "customerRoutes"
+        },
+        "Peerings": {
+          "name": "Peerings",
+          "description": "",
+          "json_tag": "peerings"
+        }
+      }
+    },
+    "DirectRoutingProtocolRequest": {
+      "type_name": "DirectRoutingProtocolRequest",
+      "description": "DirectRoutingProtocolRequest struct for DirectRoutingProtocolRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the routing protocol instance",
+          "json_tag": "description"
+        },
+        "Ipv4": {
+          "name": "Ipv4",
+          "description": "",
+          "json_tag": "ipv4"
+        },
+        "Ipv6": {
+          "name": "Ipv6",
+          "description": "",
+          "json_tag": "ipv6"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the routing protocol instance.",
+          "json_tag": "name"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "EntityReference": {
+      "type_name": "EntityReference",
+      "description": "EntityReference struct for EntityReference",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        }
+      }
+    },
+    "Error": {
+      "type_name": "Error",
+      "description": "Error Error Response with details",
+      "fields": {
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "Collection of additional information",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CorrelationId": {
+          "name": "CorrelationId",
+          "description": "Correlation ID identifying the request",
+          "json_tag": "correlationId"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "Error details",
+          "json_tag": "details"
+        },
+        "ErrorCode": {
+          "name": "ErrorCode",
+          "description": "Error code",
+          "json_tag": "errorCode\" validate:\"regexp=^EQ-\\\\\\\\d{7}$"
+        },
+        "ErrorMessage": {
+          "name": "ErrorMessage",
+          "description": "Error message",
+          "json_tag": "errorMessage"
+        },
+        "Help": {
+          "name": "Help",
+          "description": "Link to the help information",
+          "json_tag": "help"
+        }
+      }
+    },
+    "ErrorAdditionalInfo": {
+      "type_name": "ErrorAdditionalInfo",
+      "description": "ErrorAdditionalInfo Additional info for error",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Property": {
+          "name": "Property",
+          "description": "Request property that caused the error",
+          "json_tag": "property"
+        },
+        "Reason": {
+          "name": "Reason",
+          "description": "Reason of the error",
+          "json_tag": "reason"
+        }
+      }
+    },
+    "GenericOpenAPIError": {
+      "type_name": "GenericOpenAPIError",
+      "description": "GenericOpenAPIError Provides access to the body, error and model on returned errors.",
+      "fields": {
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "error": {
+          "name": "error",
+          "description": ""
+        },
+        "model": {
+          "name": "model",
+          "description": ""
+        }
+      }
+    },
+    "IpBlock": {
+      "type_name": "IpBlock",
+      "description": "IpBlock struct for IpBlock",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AddressingPlans": {
+          "name": "AddressingPlans",
+          "description": "Collection of addressing plans",
+          "json_tag": "addressingPlans"
+        },
+        "Questions": {
+          "name": "Questions",
+          "description": "Connection of questions",
+          "json_tag": "questions"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "IpBlockAddressingPlans": {
+      "type_name": "IpBlockAddressingPlans",
+      "description": "IpBlockAddressingPlans struct for IpBlockAddressingPlans",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AfterThreeMonths": {
+          "name": "AfterThreeMonths",
+          "description": "Number of ip addresses to be used after 3 months",
+          "json_tag": "afterThreeMonths"
+        },
+        "Immediate": {
+          "name": "Immediate",
+          "description": "Number of ip addresses to be used immediatelly",
+          "json_tag": "immediate"
+        },
+        "Purpose": {
+          "name": "Purpose",
+          "description": "The purpose of IP Subnet",
+          "json_tag": "purpose"
+        },
+        "Size": {
+          "name": "Size",
+          "description": "",
+          "json_tag": "size"
+        }
+      }
+    },
+    "IpBlockIpv4Request": {
+      "type_name": "IpBlockIpv4Request",
+      "description": "IpBlockIpv4Request struct for IpBlockIpv4Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AddressingPlans": {
+          "name": "AddressingPlans",
+          "description": "Collection of addressing plans",
+          "json_tag": "addressingPlans"
+        },
+        "PrefixLength": {
+          "name": "PrefixLength",
+          "description": "Length of the IP block, number after the / (slash)",
+          "json_tag": "prefixLength"
+        },
+        "Questions": {
+          "name": "Questions",
+          "description": "Connection of questions",
+          "json_tag": "questions"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "IpBlockIpv6Request": {
+      "type_name": "IpBlockIpv6Request",
+      "description": "IpBlockIpv6Request struct for IpBlockIpv6Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AddressingPlans": {
+          "name": "AddressingPlans",
+          "description": "Collection of addressing plans",
+          "json_tag": "addressingPlans"
+        },
+        "PrefixLength": {
+          "name": "PrefixLength",
+          "description": "Length of the IP block, number after the / (slash)",
+          "json_tag": "prefixLength"
+        },
+        "Questions": {
+          "name": "Questions",
+          "description": "Connection of questions",
+          "json_tag": "questions"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "IpBlockQuestions": {
+      "type_name": "IpBlockQuestions",
+      "description": "IpBlockQuestions struct for IpBlockQuestions",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Answer": {
+          "name": "Answer",
+          "description": "",
+          "json_tag": "answer"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "IpBlockReadModel": {
+      "type_name": "IpBlockReadModel",
+      "description": "IpBlockReadModel struct for IpBlockReadModel",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "Ip block URI",
+          "json_tag": "href"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "Link": {
+      "type_name": "Link",
+      "description": "Link struct for Link",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Authenticate": {
+          "name": "Authenticate",
+          "description": "",
+          "json_tag": "authenticate"
+        },
+        "ContentType": {
+          "name": "ContentType",
+          "description": "",
+          "json_tag": "contentType"
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "",
+          "json_tag": "method"
+        },
+        "Rel": {
+          "name": "Rel",
+          "description": "self, info, update, delete, statistics, events",
+          "json_tag": "rel"
+        }
+      }
+    },
+    "NullableAdditionalInfo": {
+      "type_name": "NullableAdditionalInfo",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBgpRoutingProtocolRequest": {
+      "type_name": "NullableBgpRoutingProtocolRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBgpRoutingProtocolRequestAllOfCustomerAsnRange": {
+      "type_name": "NullableBgpRoutingProtocolRequestAllOfCustomerAsnRange",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBgpRoutingProtocolRequestAllOfExportPolicy": {
+      "type_name": "NullableBgpRoutingProtocolRequestAllOfExportPolicy",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBillingType": {
+      "type_name": "NullableBillingType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBool": {
+      "type_name": "NullableBool",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableChange": {
+      "type_name": "NullableChange",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableChangeLog": {
+      "type_name": "NullableChangeLog",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableChangeType": {
+      "type_name": "NullableChangeType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableConnectionType": {
+      "type_name": "NullableConnectionType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContact": {
+      "type_name": "NullableContact",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactRequest": {
+      "type_name": "NullableContactRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactRequestAvailability": {
+      "type_name": "NullableContactRequestAvailability",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactRequestDetails": {
+      "type_name": "NullableContactRequestDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactRequestDetailsType": {
+      "type_name": "NullableContactRequestDetailsType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactType": {
+      "type_name": "NullableContactType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCustomerBillingAccount": {
+      "type_name": "NullableCustomerBillingAccount",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCustomerIpBlock": {
+      "type_name": "NullableCustomerIpBlock",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCustomerRoute": {
+      "type_name": "NullableCustomerRoute",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCustomerRouteIpv4Request": {
+      "type_name": "NullableCustomerRouteIpv4Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCustomerRouteIpv6Request": {
+      "type_name": "NullableCustomerRouteIpv6Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDirectPeeringIpv4Request": {
+      "type_name": "NullableDirectPeeringIpv4Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDirectPeeringIpv4RequestConnection": {
+      "type_name": "NullableDirectPeeringIpv4RequestConnection",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDirectPeeringIpv6Request": {
+      "type_name": "NullableDirectPeeringIpv6Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDirectRoutingProtocolIpv4Request": {
+      "type_name": "NullableDirectRoutingProtocolIpv4Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDirectRoutingProtocolIpv6Request": {
+      "type_name": "NullableDirectRoutingProtocolIpv6Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDirectRoutingProtocolRequest": {
+      "type_name": "NullableDirectRoutingProtocolRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableEntityReference": {
+      "type_name": "NullableEntityReference",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableError": {
+      "type_name": "NullableError",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableErrorAdditionalInfo": {
+      "type_name": "NullableErrorAdditionalInfo",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableExportPolicy": {
+      "type_name": "NullableExportPolicy",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat32": {
+      "type_name": "NullableFloat32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat64": {
+      "type_name": "NullableFloat64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt": {
+      "type_name": "NullableInt",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt32": {
+      "type_name": "NullableInt32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt64": {
+      "type_name": "NullableInt64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlock": {
+      "type_name": "NullableIpBlock",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockAddressingPlans": {
+      "type_name": "NullableIpBlockAddressingPlans",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockIpv4Request": {
+      "type_name": "NullableIpBlockIpv4Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockIpv6Request": {
+      "type_name": "NullableIpBlockIpv6Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockQuestions": {
+      "type_name": "NullableIpBlockQuestions",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockQuestionsAnswer": {
+      "type_name": "NullableIpBlockQuestionsAnswer",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockQuestionsType": {
+      "type_name": "NullableIpBlockQuestionsType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockReadModel": {
+      "type_name": "NullableIpBlockReadModel",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIpBlockReadModelType": {
+      "type_name": "NullableIpBlockReadModelType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLink": {
+      "type_name": "NullableLink",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrder": {
+      "type_name": "NullableOrder",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderChangeLog": {
+      "type_name": "NullableOrderChangeLog",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderPurchaseOrder": {
+      "type_name": "NullableOrderPurchaseOrder",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderPurchaseOrderAllOfType": {
+      "type_name": "NullableOrderPurchaseOrderAllOfType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderSignature": {
+      "type_name": "NullableOrderSignature",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderSignatureDelegate": {
+      "type_name": "NullableOrderSignatureDelegate",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderSignatureDelegateRequest": {
+      "type_name": "NullableOrderSignatureDelegateRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderSignatureRequest": {
+      "type_name": "NullableOrderSignatureRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderSignatureSignatory": {
+      "type_name": "NullableOrderSignatureSignatory",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderState": {
+      "type_name": "NullableOrderState",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderType": {
+      "type_name": "NullableOrderType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableProject": {
+      "type_name": "NullableProject",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableProjectReference": {
+      "type_name": "NullableProjectReference",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePurchaseOrderType": {
+      "type_name": "NullablePurchaseOrderType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocol": {
+      "type_name": "NullableRoutingProtocol",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolBgp": {
+      "type_name": "NullableRoutingProtocolBgp",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolBgpAdditionalFields": {
+      "type_name": "NullableRoutingProtocolBgpAdditionalFields",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolCustomerRouteIpv4": {
+      "type_name": "NullableRoutingProtocolCustomerRouteIpv4",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolCustomerRouteIpv6": {
+      "type_name": "NullableRoutingProtocolCustomerRouteIpv6",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolDirect": {
+      "type_name": "NullableRoutingProtocolDirect",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolIpBlock": {
+      "type_name": "NullableRoutingProtocolIpBlock",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolIpv4": {
+      "type_name": "NullableRoutingProtocolIpv4",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolIpv4Request": {
+      "type_name": "NullableRoutingProtocolIpv4Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolIpv6": {
+      "type_name": "NullableRoutingProtocolIpv6",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolIpv6Request": {
+      "type_name": "NullableRoutingProtocolIpv6Request",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolPeeringConnectionItem": {
+      "type_name": "NullableRoutingProtocolPeeringConnectionItem",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolPeeringIpv4": {
+      "type_name": "NullableRoutingProtocolPeeringIpv4",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolPeeringIpv4PeerSubnet": {
+      "type_name": "NullableRoutingProtocolPeeringIpv4PeerSubnet",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolPeeringIpv6": {
+      "type_name": "NullableRoutingProtocolPeeringIpv6",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolPeeringIpv6PeerSubnet": {
+      "type_name": "NullableRoutingProtocolPeeringIpv6PeerSubnet",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolReadModel": {
+      "type_name": "NullableRoutingProtocolReadModel",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolRequest": {
+      "type_name": "NullableRoutingProtocolRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolStatic": {
+      "type_name": "NullableRoutingProtocolStatic",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRoutingProtocolType": {
+      "type_name": "NullableRoutingProtocolType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableService": {
+      "type_name": "NullableService",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceBase": {
+      "type_name": "NullableServiceBase",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceBilling": {
+      "type_name": "NullableServiceBilling",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceChangeLog": {
+      "type_name": "NullableServiceChangeLog",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceOrderContact": {
+      "type_name": "NullableServiceOrderContact",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceOrderReference": {
+      "type_name": "NullableServiceOrderReference",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceOrderRequest": {
+      "type_name": "NullableServiceOrderRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceOrderType": {
+      "type_name": "NullableServiceOrderType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServicePurchaseOrder": {
+      "type_name": "NullableServicePurchaseOrder",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServicePurchaseOrderAttachment": {
+      "type_name": "NullableServicePurchaseOrderAttachment",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceRequest": {
+      "type_name": "NullableServiceRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceRequestAllOfRoutingProtocol": {
+      "type_name": "NullableServiceRequestAllOfRoutingProtocol",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceState": {
+      "type_name": "NullableServiceState",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceType": {
+      "type_name": "NullableServiceType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceTypeV2": {
+      "type_name": "NullableServiceTypeV2",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceUseCase": {
+      "type_name": "NullableServiceUseCase",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableServiceV2": {
+      "type_name": "NullableServiceV2",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableStaticRoutingProtocolRequest": {
+      "type_name": "NullableStaticRoutingProtocolRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableString": {
+      "type_name": "NullableString",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTaggable": {
+      "type_name": "NullableTaggable",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTime": {
+      "type_name": "NullableTime",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableUniqueEntityReference": {
+      "type_name": "NullableUniqueEntityReference",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableUseCaseType": {
+      "type_name": "NullableUseCaseType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "Order": {
+      "type_name": "Order",
+      "description": "Order struct for Order",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ChangeLog": {
+          "name": "ChangeLog",
+          "description": "",
+          "json_tag": "changeLog"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "",
+          "json_tag": "contacts"
+        },
+        "Draft": {
+          "name": "Draft",
+          "description": "",
+          "json_tag": "draft"
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "Links": {
+          "name": "Links",
+          "description": "",
+          "json_tag": "links"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "ReferenceNumber": {
+          "name": "ReferenceNumber",
+          "description": "",
+          "json_tag": "referenceNumber"
+        },
+        "Signature": {
+          "name": "Signature",
+          "description": "",
+          "json_tag": "signature"
+        },
+        "State": {
+          "name": "State",
+          "description": "",
+          "json_tag": "state"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "OrderChangeLog": {
+      "type_name": "OrderChangeLog",
+      "description": "OrderChangeLog struct for OrderChangeLog",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "description": "",
+          "json_tag": "createdBy"
+        },
+        "CreatedByEmail": {
+          "name": "CreatedByEmail",
+          "description": "",
+          "json_tag": "createdByEmail"
+        },
+        "CreatedByFullName": {
+          "name": "CreatedByFullName",
+          "description": "",
+          "json_tag": "createdByFullName"
+        },
+        "CreatedDateTime": {
+          "name": "CreatedDateTime",
+          "description": "",
+          "json_tag": "createdDateTime"
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "description": "",
+          "json_tag": "deletedBy"
+        },
+        "DeletedByEmail": {
+          "name": "DeletedByEmail",
+          "description": "",
+          "json_tag": "deletedByEmail"
+        },
+        "DeletedByFullName": {
+          "name": "DeletedByFullName",
+          "description": "",
+          "json_tag": "deletedByFullName"
+        },
+        "DeletedDateTime": {
+          "name": "DeletedDateTime",
+          "description": "",
+          "json_tag": "deletedDateTime"
+        },
+        "UpdatedBy": {
+          "name": "UpdatedBy",
+          "description": "",
+          "json_tag": "updatedBy"
+        },
+        "UpdatedByEmail": {
+          "name": "UpdatedByEmail",
+          "description": "",
+          "json_tag": "updatedByEmail"
+        },
+        "UpdatedByFullName": {
+          "name": "UpdatedByFullName",
+          "description": "",
+          "json_tag": "updatedByFullName"
+        },
+        "UpdatedDateTime": {
+          "name": "UpdatedDateTime",
+          "description": "",
+          "json_tag": "updatedDateTime"
+        }
+      }
+    },
+    "OrderPurchaseOrder": {
+      "type_name": "OrderPurchaseOrder",
+      "description": "OrderPurchaseOrder struct for OrderPurchaseOrder",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "Number": {
+          "name": "Number",
+          "description": "",
+          "json_tag": "number"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "OrderSignature": {
+      "type_name": "OrderSignature",
+      "description": "OrderSignature struct for OrderSignature",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Delegate": {
+          "name": "Delegate",
+          "description": "",
+          "json_tag": "delegate"
+        },
+        "Signatory": {
+          "name": "Signatory",
+          "description": "",
+          "json_tag": "signatory"
+        }
+      }
+    },
+    "OrderSignatureDelegate": {
+      "type_name": "OrderSignatureDelegate",
+      "description": "OrderSignatureDelegate struct for OrderSignatureDelegate",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Email": {
+          "name": "Email",
+          "description": "Email address that the signature request should be sent to in case of DELEGATE signature",
+          "json_tag": "email"
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "description": "",
+          "json_tag": "firstName"
+        },
+        "LastName": {
+          "name": "LastName",
+          "description": "",
+          "json_tag": "lastName"
+        }
+      }
+    },
+    "OrderSignatureDelegateRequest": {
+      "type_name": "OrderSignatureDelegateRequest",
+      "description": "OrderSignatureDelegateRequest struct for OrderSignatureDelegateRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Email": {
+          "name": "Email",
+          "description": "Email address that the signature request should be sent to in case of DELEGATE signature",
+          "json_tag": "email"
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "description": "",
+          "json_tag": "firstName"
+        },
+        "LastName": {
+          "name": "LastName",
+          "description": "",
+          "json_tag": "lastName"
+        }
+      }
+    },
+    "OrderSignatureRequest": {
+      "type_name": "OrderSignatureRequest",
+      "description": "OrderSignatureRequest struct for OrderSignatureRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Delegate": {
+          "name": "Delegate",
+          "description": "",
+          "json_tag": "delegate"
+        },
+        "Signatory": {
+          "name": "Signatory",
+          "description": "",
+          "json_tag": "signatory"
+        }
+      }
+    },
+    "Project": {
+      "type_name": "Project",
+      "description": "Project struct for Project",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ProjectId": {
+          "name": "ProjectId",
+          "description": "Customer Resource Hierarchy Project identifier",
+          "json_tag": "projectId"
+        }
+      }
+    },
+    "ProjectReference": {
+      "type_name": "ProjectReference",
+      "description": "ProjectReference struct for ProjectReference",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "ProjectId": {
+          "name": "ProjectId",
+          "description": "Customer Resource Hierarchy Project identifier",
+          "json_tag": "projectId"
+        }
+      }
+    },
+    "RoutingProtocol": {
+      "type_name": "RoutingProtocol",
+      "description": "RoutingProtocol struct for RoutingProtocol",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Ipv4": {
+          "name": "Ipv4",
+          "description": "",
+          "json_tag": "ipv4"
+        },
+        "Ipv6": {
+          "name": "Ipv6",
+          "description": "",
+          "json_tag": "ipv6"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "RoutingProtocolBgp": {
+      "type_name": "RoutingProtocolBgp",
+      "description": "RoutingProtocolBgp struct for RoutingProtocolBgp",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "BgpAuthKey": {
+          "name": "BgpAuthKey",
+          "description": "BGP authentication key",
+          "json_tag": "bgpAuthKey"
+        },
+        "CustomerAsn": {
+          "name": "CustomerAsn",
+          "description": "Customer Autonomous System Number",
+          "json_tag": "customerAsn"
+        },
+        "CustomerAsnRange": {
+          "name": "CustomerAsnRange",
+          "description": "",
+          "json_tag": "customerAsnRange"
+        },
+        "EquinixAsn": {
+          "name": "EquinixAsn",
+          "description": "Equinix Autonomous System Number",
+          "json_tag": "equinixAsn"
+        },
+        "ExportPolicy": {
+          "name": "ExportPolicy",
+          "description": "",
+          "json_tag": "exportPolicy"
+        }
+      }
+    },
+    "RoutingProtocolBgpAdditionalFields": {
+      "type_name": "RoutingProtocolBgpAdditionalFields",
+      "description": "RoutingProtocolBgpAdditionalFields BGP routing protocol",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "BgpAuthKey": {
+          "name": "BgpAuthKey",
+          "description": "BGP authentication key",
+          "json_tag": "bgpAuthKey"
+        },
+        "CustomerAsn": {
+          "name": "CustomerAsn",
+          "description": "Customer Autonomous System Number",
+          "json_tag": "customerAsn"
+        },
+        "CustomerAsnRange": {
+          "name": "CustomerAsnRange",
+          "description": "",
+          "json_tag": "customerAsnRange"
+        },
+        "EquinixAsn": {
+          "name": "EquinixAsn",
+          "description": "Equinix Autonomous System Number",
+          "json_tag": "equinixAsn"
+        },
+        "ExportPolicy": {
+          "name": "ExportPolicy",
+          "description": "",
+          "json_tag": "exportPolicy"
+        }
+      }
+    },
+    "RoutingProtocolCustomerRouteIpv4": {
+      "type_name": "RoutingProtocolCustomerRouteIpv4",
+      "description": "RoutingProtocolCustomerRouteIpv4 struct for RoutingProtocolCustomerRouteIpv4",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ImportPolicy": {
+          "name": "ImportPolicy",
+          "description": "",
+          "json_tag": "importPolicy"
+        },
+        "IpBlock": {
+          "name": "IpBlock",
+          "description": "",
+          "json_tag": "ipBlock"
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": "Subnet prefix",
+          "json_tag": "prefix"
+        },
+        "PrefixLength": {
+          "name": "PrefixLength",
+          "description": "Determines the size of ip subnet",
+          "json_tag": "prefixLength"
+        }
+      }
+    },
+    "RoutingProtocolCustomerRouteIpv6": {
+      "type_name": "RoutingProtocolCustomerRouteIpv6",
+      "description": "RoutingProtocolCustomerRouteIpv6 struct for RoutingProtocolCustomerRouteIpv6",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ImportPolicy": {
+          "name": "ImportPolicy",
+          "description": "",
+          "json_tag": "importPolicy"
+        },
+        "IpBlock": {
+          "name": "IpBlock",
+          "description": "",
+          "json_tag": "ipBlock"
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": "Subnet prefix",
+          "json_tag": "prefix"
+        },
+        "PrefixLength": {
+          "name": "PrefixLength",
+          "description": "Determines the size of ip subnet",
+          "json_tag": "prefixLength"
+        }
+      }
+    },
+    "RoutingProtocolDirect": {
+      "type_name": "RoutingProtocolDirect",
+      "description": "RoutingProtocolDirect struct for RoutingProtocolDirect",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        }
+      }
+    },
+    "RoutingProtocolIpBlock": {
+      "type_name": "RoutingProtocolIpBlock",
+      "description": "RoutingProtocolIpBlock struct for RoutingProtocolIpBlock",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CustomerRoute": {
+          "name": "CustomerRoute",
+          "description": "",
+          "json_tag": "customerRoute"
+        }
+      }
+    },
+    "RoutingProtocolIpv4": {
+      "type_name": "RoutingProtocolIpv4",
+      "description": "RoutingProtocolIpv4 struct for RoutingProtocolIpv4",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CustomerRoutes": {
+          "name": "CustomerRoutes",
+          "description": "",
+          "json_tag": "customerRoutes"
+        },
+        "Peerings": {
+          "name": "Peerings",
+          "description": "",
+          "json_tag": "peerings"
+        }
+      }
+    },
+    "RoutingProtocolIpv4Request": {
+      "type_name": "RoutingProtocolIpv4Request",
+      "description": "RoutingProtocolIpv4Request struct for RoutingProtocolIpv4Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CustomerRoutes": {
+          "name": "CustomerRoutes",
+          "description": "Collection of customer routes of IP Version 4 (IPv4)",
+          "json_tag": "customerRoutes"
+        }
+      }
+    },
+    "RoutingProtocolIpv6": {
+      "type_name": "RoutingProtocolIpv6",
+      "description": "RoutingProtocolIpv6 struct for RoutingProtocolIpv6",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CustomerRoutes": {
+          "name": "CustomerRoutes",
+          "description": "",
+          "json_tag": "customerRoutes"
+        },
+        "Peerings": {
+          "name": "Peerings",
+          "description": "",
+          "json_tag": "peerings"
+        }
+      }
+    },
+    "RoutingProtocolIpv6Request": {
+      "type_name": "RoutingProtocolIpv6Request",
+      "description": "RoutingProtocolIpv6Request struct for RoutingProtocolIpv6Request",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CustomerRoutes": {
+          "name": "CustomerRoutes",
+          "description": "Collection of customer routes of IP Version 6 (IPv6)",
+          "json_tag": "customerRoutes"
+        }
+      }
+    },
+    "RoutingProtocolPeeringConnectionItem": {
+      "type_name": "RoutingProtocolPeeringConnectionItem",
+      "description": "RoutingProtocolPeeringConnectionItem struct for RoutingProtocolPeeringConnectionItem",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "Ip block URI",
+          "json_tag": "href"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "RoutingProtocolPeeringIpv4": {
+      "type_name": "RoutingProtocolPeeringIpv4",
+      "description": "RoutingProtocolPeeringIpv4 struct for RoutingProtocolPeeringIpv4",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Connections": {
+          "name": "Connections",
+          "description": "",
+          "json_tag": "connections"
+        },
+        "CustomerPeerIps": {
+          "name": "CustomerPeerIps",
+          "description": "",
+          "json_tag": "customerPeerIps"
+        },
+        "CustomerVRRPIp": {
+          "name": "CustomerVRRPIp",
+          "description": "",
+          "json_tag": "customerVRRPIp"
+        },
+        "EquinixPeerIps": {
+          "name": "EquinixPeerIps",
+          "description": "",
+          "json_tag": "equinixPeerIps"
+        },
+        "EquinixVRRPIp": {
+          "name": "EquinixVRRPIp",
+          "description": "",
+          "json_tag": "equinixVRRPIp"
+        },
+        "PeerSubnet": {
+          "name": "PeerSubnet",
+          "description": "",
+          "json_tag": "peerSubnet"
+        },
+        "VrrpEnabled": {
+          "name": "VrrpEnabled",
+          "description": "Indicates if VRRP is enabled.",
+          "json_tag": "vrrpEnabled"
+        }
+      }
+    },
+    "RoutingProtocolPeeringIpv4PeerSubnet": {
+      "type_name": "RoutingProtocolPeeringIpv4PeerSubnet",
+      "description": "RoutingProtocolPeeringIpv4PeerSubnet struct for RoutingProtocolPeeringIpv4PeerSubnet",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": "Subnet used for peering",
+          "json_tag": "prefix"
+        },
+        "PrefixLength": {
+          "name": "PrefixLength",
+          "description": "",
+          "json_tag": "prefixLength"
+        }
+      }
+    },
+    "RoutingProtocolPeeringIpv6": {
+      "type_name": "RoutingProtocolPeeringIpv6",
+      "description": "RoutingProtocolPeeringIpv6 struct for RoutingProtocolPeeringIpv6",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Connections": {
+          "name": "Connections",
+          "description": "",
+          "json_tag": "connections"
+        },
+        "CustomerPeerIps": {
+          "name": "CustomerPeerIps",
+          "description": "",
+          "json_tag": "customerPeerIps"
+        },
+        "CustomerVRRPIp": {
+          "name": "CustomerVRRPIp",
+          "description": "",
+          "json_tag": "customerVRRPIp"
+        },
+        "EquinixPeerIps": {
+          "name": "EquinixPeerIps",
+          "description": "",
+          "json_tag": "equinixPeerIps"
+        },
+        "EquinixVRRPIp": {
+          "name": "EquinixVRRPIp",
+          "description": "",
+          "json_tag": "equinixVRRPIp"
+        },
+        "PeerSubnet": {
+          "name": "PeerSubnet",
+          "description": "",
+          "json_tag": "peerSubnet"
+        },
+        "VrrpEnabled": {
+          "name": "VrrpEnabled",
+          "description": "Indicates if VRRP is enabled.",
+          "json_tag": "vrrpEnabled"
+        }
+      }
+    },
+    "RoutingProtocolPeeringIpv6PeerSubnet": {
+      "type_name": "RoutingProtocolPeeringIpv6PeerSubnet",
+      "description": "RoutingProtocolPeeringIpv6PeerSubnet struct for RoutingProtocolPeeringIpv6PeerSubnet",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": "Subnet used for peering",
+          "json_tag": "prefix"
+        },
+        "PrefixLength": {
+          "name": "PrefixLength",
+          "description": "",
+          "json_tag": "prefixLength"
+        }
+      }
+    },
+    "RoutingProtocolReadModel": {
+      "type_name": "RoutingProtocolReadModel",
+      "description": "RoutingProtocolReadModel struct for RoutingProtocolReadModel",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ChangeLog": {
+          "name": "ChangeLog",
+          "description": "",
+          "json_tag": "changeLog"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the routing protocol instance",
+          "json_tag": "description"
+        },
+        "Href": {
+          "name": "Href",
+          "description": "Routing protocol URI",
+          "json_tag": "href"
+        },
+        "Ipv4": {
+          "name": "Ipv4",
+          "description": "",
+          "json_tag": "ipv4"
+        },
+        "Ipv6": {
+          "name": "Ipv6",
+          "description": "",
+          "json_tag": "ipv6"
+        },
+        "Links": {
+          "name": "Links",
+          "description": "",
+          "json_tag": "links"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the routing protocol instance.",
+          "json_tag": "name"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "Routing protocol identifier",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "RoutingProtocolRequest": {
+      "type_name": "RoutingProtocolRequest",
+      "description": "RoutingProtocolRequest struct for RoutingProtocolRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the routing protocol instance",
+          "json_tag": "description"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the routing protocol instance.",
+          "json_tag": "name"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "RoutingProtocolStatic": {
+      "type_name": "RoutingProtocolStatic",
+      "description": "RoutingProtocolStatic struct for RoutingProtocolStatic",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        }
+      }
+    },
+    "ServerConfiguration": {
+      "type_name": "ServerConfiguration",
+      "description": "ServerConfiguration stores the information about a server",
+      "fields": {
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "URL": {
+          "name": "URL",
+          "description": ""
+        },
+        "Variables": {
+          "name": "Variables",
+          "description": ""
+        }
+      }
+    },
+    "ServerVariable": {
+      "type_name": "ServerVariable",
+      "description": "ServerVariable stores the information about a server variable",
+      "fields": {
+        "DefaultValue": {
+          "name": "DefaultValue",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "EnumValues": {
+          "name": "EnumValues",
+          "description": ""
+        }
+      }
+    },
+    "Service": {
+      "type_name": "Service",
+      "description": "Service struct for Service",
+      "fields": {
+        "Account": {
+          "name": "Account",
+          "description": "",
+          "json_tag": "account"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Bandwidth": {
+          "name": "Bandwidth",
+          "description": "Service bandwidth in Mbps",
+          "json_tag": "bandwidth"
+        },
+        "Billing": {
+          "name": "Billing",
+          "description": "",
+          "json_tag": "billing"
+        },
+        "ChangeLog": {
+          "name": "ChangeLog",
+          "description": "",
+          "json_tag": "changeLog"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the service instance",
+          "json_tag": "description"
+        },
+        "Draft": {
+          "name": "Draft",
+          "description": "",
+          "json_tag": "draft"
+        },
+        "Links": {
+          "name": "Links",
+          "description": "",
+          "json_tag": "links"
+        },
+        "MinBandwidthCommit": {
+          "name": "MinBandwidthCommit",
+          "description": "Service min bandwidth commit in Mbps",
+          "json_tag": "minBandwidthCommit"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the service instance",
+          "json_tag": "name"
+        },
+        "Order": {
+          "name": "Order",
+          "description": "",
+          "json_tag": "order"
+        },
+        "Project": {
+          "name": "Project",
+          "description": "",
+          "json_tag": "project"
+        },
+        "State": {
+          "name": "State",
+          "description": "",
+          "json_tag": "state"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "UseCase": {
+          "name": "UseCase",
+          "description": "",
+          "json_tag": "useCase"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "ServiceBase": {
+      "type_name": "ServiceBase",
+      "description": "ServiceBase struct for ServiceBase",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Bandwidth": {
+          "name": "Bandwidth",
+          "description": "Service bandwidth in Mbps",
+          "json_tag": "bandwidth"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the service instance",
+          "json_tag": "description"
+        },
+        "MinBandwidthCommit": {
+          "name": "MinBandwidthCommit",
+          "description": "Service min bandwidth commit in Mbps",
+          "json_tag": "minBandwidthCommit"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the service instance",
+          "json_tag": "name"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "UseCase": {
+          "name": "UseCase",
+          "description": "",
+          "json_tag": "useCase"
+        }
+      }
+    },
+    "ServiceChangeLog": {
+      "type_name": "ServiceChangeLog",
+      "description": "ServiceChangeLog struct for ServiceChangeLog",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "description": "",
+          "json_tag": "createdBy"
+        },
+        "CreatedByEmail": {
+          "name": "CreatedByEmail",
+          "description": "",
+          "json_tag": "createdByEmail"
+        },
+        "CreatedByFullName": {
+          "name": "CreatedByFullName",
+          "description": "",
+          "json_tag": "createdByFullName"
+        },
+        "CreatedDateTime": {
+          "name": "CreatedDateTime",
+          "description": "",
+          "json_tag": "createdDateTime"
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "description": "",
+          "json_tag": "deletedBy"
+        },
+        "DeletedByEmail": {
+          "name": "DeletedByEmail",
+          "description": "",
+          "json_tag": "deletedByEmail"
+        },
+        "DeletedByFullName": {
+          "name": "DeletedByFullName",
+          "description": "",
+          "json_tag": "deletedByFullName"
+        },
+        "DeletedDateTime": {
+          "name": "DeletedDateTime",
+          "description": "",
+          "json_tag": "deletedDateTime"
+        },
+        "UpdatedBy": {
+          "name": "UpdatedBy",
+          "description": "",
+          "json_tag": "updatedBy"
+        },
+        "UpdatedByEmail": {
+          "name": "UpdatedByEmail",
+          "description": "",
+          "json_tag": "updatedByEmail"
+        },
+        "UpdatedByFullName": {
+          "name": "UpdatedByFullName",
+          "description": "",
+          "json_tag": "updatedByFullName"
+        },
+        "UpdatedDateTime": {
+          "name": "UpdatedDateTime",
+          "description": "",
+          "json_tag": "updatedDateTime"
+        }
+      }
+    },
+    "ServiceOrderContact": {
+      "type_name": "ServiceOrderContact",
+      "description": "ServiceOrderContact struct for ServiceOrderContact",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Availability": {
+          "name": "Availability",
+          "description": "",
+          "json_tag": "availability"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "",
+          "json_tag": "details"
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "description": "",
+          "json_tag": "firstName"
+        },
+        "LastName": {
+          "name": "LastName",
+          "description": "",
+          "json_tag": "lastName"
+        },
+        "Notes": {
+          "name": "Notes",
+          "description": "",
+          "json_tag": "notes"
+        },
+        "RegisteredUser": {
+          "name": "RegisteredUser",
+          "description": "Identifies (e.g., userName) a registered user. If a registered user is specified, then firstName/lastName need not be provided",
+          "json_tag": "registeredUser"
+        },
+        "Timezone": {
+          "name": "Timezone",
+          "description": "",
+          "json_tag": "timezone"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "ServiceOrderReference": {
+      "type_name": "ServiceOrderReference",
+      "description": "ServiceOrderReference struct for ServiceOrderReference",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "ServiceOrderRequest": {
+      "type_name": "ServiceOrderRequest",
+      "description": "ServiceOrderRequest struct for ServiceOrderRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "",
+          "json_tag": "contacts"
+        },
+        "Draft": {
+          "name": "Draft",
+          "description": "",
+          "json_tag": "draft"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "ReferenceNumber": {
+          "name": "ReferenceNumber",
+          "description": "",
+          "json_tag": "referenceNumber"
+        },
+        "Signature": {
+          "name": "Signature",
+          "description": "",
+          "json_tag": "signature"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        }
+      }
+    },
+    "ServicePurchaseOrder": {
+      "type_name": "ServicePurchaseOrder",
+      "description": "ServicePurchaseOrder struct for ServicePurchaseOrder",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Amount": {
+          "name": "Amount",
+          "description": "Amount",
+          "json_tag": "amount"
+        },
+        "Attachment": {
+          "name": "Attachment",
+          "description": "",
+          "json_tag": "attachment"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Purchase order description",
+          "json_tag": "description"
+        },
+        "EndDate": {
+          "name": "EndDate",
+          "description": "End date in YYYY-MM-DD format",
+          "json_tag": "endDate"
+        },
+        "Number": {
+          "name": "Number",
+          "description": "Purchase order number",
+          "json_tag": "number"
+        },
+        "StartDate": {
+          "name": "StartDate",
+          "description": "Start date in YYYY-MM-DD format",
+          "json_tag": "startDate"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "ServicePurchaseOrderAttachment": {
+      "type_name": "ServicePurchaseOrderAttachment",
+      "description": "ServicePurchaseOrderAttachment struct for ServicePurchaseOrderAttachment",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AttachmentId": {
+          "name": "AttachmentId",
+          "description": "",
+          "json_tag": "attachmentId"
+        }
+      }
+    },
+    "ServiceRequest": {
+      "type_name": "ServiceRequest",
+      "description": "ServiceRequest struct for ServiceRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Connections": {
+          "name": "Connections",
+          "description": "Collection of service connections uuids",
+          "json_tag": "connections"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "",
+          "json_tag": "description"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "",
+          "json_tag": "name"
+        },
+        "Order": {
+          "name": "Order",
+          "description": "",
+          "json_tag": "order"
+        },
+        "RoutingProtocol": {
+          "name": "RoutingProtocol",
+          "description": "",
+          "json_tag": "routingProtocol"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "ServiceRequestAllOfRoutingProtocol": {
+      "type_name": "ServiceRequestAllOfRoutingProtocol",
+      "description": "ServiceRequestAllOfRoutingProtocol - struct for ServiceRequestAllOfRoutingProtocol",
+      "fields": {
+        "BgpRoutingProtocolRequest": {
+          "name": "BgpRoutingProtocolRequest",
+          "description": ""
+        },
+        "DirectRoutingProtocolRequest": {
+          "name": "DirectRoutingProtocolRequest",
+          "description": ""
+        },
+        "StaticRoutingProtocolRequest": {
+          "name": "StaticRoutingProtocolRequest",
+          "description": ""
+        }
+      }
+    },
+    "ServiceV2": {
+      "type_name": "ServiceV2",
+      "description": "ServiceV2 struct for ServiceV2",
+      "fields": {
+        "Account": {
+          "name": "Account",
+          "description": "",
+          "json_tag": "account"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Bandwidth": {
+          "name": "Bandwidth",
+          "description": "Service bandwidth in Mbps",
+          "json_tag": "bandwidth"
+        },
+        "ChangeLog": {
+          "name": "ChangeLog",
+          "description": "",
+          "json_tag": "changeLog"
+        },
+        "Links": {
+          "name": "Links",
+          "description": "",
+          "json_tag": "links"
+        },
+        "Order": {
+          "name": "Order",
+          "description": "",
+          "json_tag": "order"
+        },
+        "Project": {
+          "name": "Project",
+          "description": "",
+          "json_tag": "project"
+        },
+        "State": {
+          "name": "State",
+          "description": "",
+          "json_tag": "state"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "StaticRoutingProtocolRequest": {
+      "type_name": "StaticRoutingProtocolRequest",
+      "description": "StaticRoutingProtocolRequest struct for StaticRoutingProtocolRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the routing protocol instance",
+          "json_tag": "description"
+        },
+        "Ipv4": {
+          "name": "Ipv4",
+          "description": "",
+          "json_tag": "ipv4"
+        },
+        "Ipv6": {
+          "name": "Ipv6",
+          "description": "",
+          "json_tag": "ipv6"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the routing protocol instance.",
+          "json_tag": "name"
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "Taggable": {
+      "type_name": "Taggable",
+      "description": "Taggable struct for Taggable",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Tags": {
+          "name": "Tags",
+          "description": "",
+          "json_tag": "tags"
+        }
+      }
+    },
+    "UniqueEntityReference": {
+      "type_name": "UniqueEntityReference",
+      "description": "UniqueEntityReference struct for UniqueEntityReference",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "Uuid": {
+          "name": "Uuid",
+          "description": "",
+          "json_tag": "uuid"
+        }
+      }
+    },
+    "formFile": {
+      "type_name": "formFile",
+      "fields": {
+        "fileBytes": {
+          "name": "fileBytes",
+          "description": ""
+        },
+        "fileName": {
+          "name": "fileName",
+          "description": ""
+        },
+        "formFileName": {
+          "name": "formFileName",
+          "description": ""
+        }
+      }
+    },
+    "service": {
+      "type_name": "service",
+      "fields": {
+        "client": {
+          "name": "client",
+          "description": ""
+        }
+      }
+    }
+  }
+}

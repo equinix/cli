@@ -10,6 +10,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// TODO: Put service subcommands in separate packages to
+// avoid variable naming collisions
+var {{SERVICE}}Debug bool
+
 //go:embed descriptions/{{SERVICE}}.json
 var {{SERVICE}}Descriptions []byte
 
@@ -21,19 +25,22 @@ var {{SERVICE}}Cmd = &cobra.Command{
 
 The {{SERVICE}} commands are dynamically generated based on the {{SERVICE_DISPLAY}} API client,
 providing access to all available API services.`,
-	PersistentPreRun: func(_ *cobra.Command, _ []string) {
-		// Ensure client is initialized when actually running commands
-		// This validates credentials before execution
-		_, err := {{SERVICE}}.NewClient()
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error initializing {{SERVICE_DISPLAY}} client: %v\n", err)
-			os.Exit(1)
+	PersistentPreRun: func(cmd *cobra.Command, _ []string) {
+		// Inject the client factory into the command context so that
+		// it can be retrieved at execution time
+		executionClientFactory := func() (register.APIClientInterface, error) {
+		    {{SERVICE}}.SetDebug({{SERVICE}}Debug)
+			return {{SERVICE}}.NewClient()
 		}
+		cmd.SetContext(register.ContextWithClientFactory(cmd.Context(), executionClientFactory))
 	},
 }
 
 func init() {
 	rootCmd.AddCommand({{SERVICE}}Cmd)
+
+	// Add common debug flag that will be inherited by all subcommands for {{SERVICE}}
+	{{SERVICE}}Cmd.PersistentFlags().BoolVar(&{{SERVICE}}Debug, "debug", false, "Enable debug logging for HTTP requests")
 
 	// Load SDK descriptions for better command documentation
 	if err := register.LoadDescriptions({{SERVICE}}Descriptions); err != nil {

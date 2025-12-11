@@ -16,20 +16,17 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"os"
+	"strings"
 
+	"github.com/equinix/cli/internal/version"
 	equinixoauth2 "github.com/equinix/equinix-sdk-go/extensions/equinixoauth2"
 	"github.com/spf13/viper"
 )
 
-var standardHeaders = map[string]string{
-	"User-Agent": "equinix-cli/version generic-request-client",
-}
-
 // Client is a generic Equinix API client that can be used for any Equinix API.
 type Client struct {
-	BaseURL        string
-	DefaultHeaders map[string]string
-	HTTPClient     *http.Client
+	BaseURL    string
+	HTTPClient *http.Client
 }
 
 // debugTransport wraps an HTTP transport to log requests and responses when debug mode is enabled
@@ -66,13 +63,34 @@ func (t *debugTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	return resp, err
 }
 
+// headerInjectingTransport wraps an HTTP transport to log requests and responses when debug mode is enabled
+type headerInjectingTransport struct {
+	defaultHeaders map[string]string
+	transport      http.RoundTripper
+}
+
+func (t *headerInjectingTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	for k, v := range t.defaultHeaders {
+		req.Header.Set(k, v)
+	}
+	if req.Body != nil && req.Header.Get("Content-Type") == "" {
+		req.Header.Set("Content-Type", "application/json")
+	}
+
+	// Inject CLI identifier into User-Agent
+	originalUserAgent := req.Header.Get("User-Agent")
+	req.Header.Set("User-Agent", strings.TrimSpace(fmt.Sprintf("equinix-cli/%s %s", version.Version, originalUserAgent)))
+
+	// Execute the request
+	return t.transport.RoundTrip(req)
+}
+
 // NewStandardClient creates a new Client for Equinix APIs that exist under
 // api.equinix.com and use OAuth2 client credentials for authentication
 func NewStandardClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
-		BaseURL:        "https://api.equinix.com",
-		DefaultHeaders: standardHeaders,
-		HTTPClient:     &http.Client{},
+		BaseURL:    "https://api.equinix.com",
+		HTTPClient: &http.Client{},
 	}
 
 	clientID := viper.GetString("equinix_client_id")
@@ -109,23 +127,37 @@ func WithDebug() ClientOption {
 	}
 }
 
+func withDefaultHeaders(headers map[string]string) ClientOption {
+	return func(transport http.RoundTripper) http.RoundTripper {
+		return &headerInjectingTransport{
+			defaultHeaders: headers,
+			transport:      transport,
+		}
+	}
+}
+
 // NewPortalClient creates a new Client for Equinix APIs that exist under
 // portal.equinix.com and rely on Cookies to transmit OAuth2 tokens
 func NewPortalClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
-		BaseURL:        "https://portal.equinix.com/api",
-		DefaultHeaders: standardHeaders,
-		HTTPClient:     &http.Client{},
+		BaseURL:    "https://portal.equinix.com/api",
+		HTTPClient: &http.Client{},
 	}
 
 	cookie := viper.GetString("equinix_portal_cookie")
 	if cookie == "" {
 		return nil, errors.New("portal cookie not found in env or config")
 	}
-	client.DefaultHeaders["Cookie"] = cookie
-	client.DefaultHeaders["User-Agent"] = fmt.Sprintf("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:142.0) Gecko/20100101 Firefox/142.0 %s", client.DefaultHeaders["User-Agent"])
-	client.DefaultHeaders["Accept"] = "*/*"
-	client.DefaultHeaders["Accept-Encoding"] = "*/*"
+
+	defaultHeaders := map[string]string{
+		"Cookie": cookie,
+		// We previously set a browser-like User-Agent header here, but in manual testing this appears to
+		// be unnecessary.  Keeping it as a comment here for reference in case we need to re-enable it later.
+		//"User-Agent":      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:142.0) Gecko/20100101 Firefox/142.0",
+		"Accept":          "*/*",
+		"Accept-Encoding": "*/*",
+	}
+	options = append(options, withDefaultHeaders(defaultHeaders))
 
 	// Apply options to potentially wrap the transport
 	transport := http.RoundTripper(http.DefaultTransport)
@@ -141,16 +173,19 @@ func NewPortalClient(options ...ClientOption) (*Client, error) {
 // NewMetalClient creates a new Client for the Equinix Metal API
 func NewMetalClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
-		BaseURL:        "https://api.equinix.com",
-		DefaultHeaders: standardHeaders,
-		HTTPClient:     &http.Client{},
+		BaseURL:    "https://api.equinix.com",
+		HTTPClient: &http.Client{},
 	}
 
 	token := viper.GetString("metal_auth_token")
 	if token == "" {
 		return nil, errors.New("metal_auth_token not found in env or config")
 	}
-	client.DefaultHeaders["X-Auth-Token"] = token
+
+	defaultHeaders := map[string]string{
+		"X-Auth-Token": token,
+	}
+	options = append(options, withDefaultHeaders(defaultHeaders))
 
 	// Apply options to potentially wrap the transport
 	transport := http.RoundTripper(http.DefaultTransport)
@@ -177,12 +212,6 @@ func (c *Client) Request(apiPath, method string, data string) ([]byte, error) {
 	req, err := http.NewRequest(method, url, body)
 	if err != nil {
 		return nil, err
-	}
-	for k, v := range c.DefaultHeaders {
-		req.Header.Set(k, v)
-	}
-	if data != "" {
-		req.Header.Set("Content-Type", "application/json")
 	}
 	resp, err := c.HTTPClient.Do(req)
 	if err != nil {

@@ -178,12 +178,15 @@ func createMethodCommand(methodName, originalMethodName string, service interfac
 	// Extract description from loaded SDK descriptions or generate default
 	description := extractMethodDescription(service, originalMethodName, builderMethod)
 
+	// Extract the service name to find the matching service in the execution client
+	serviceName := getServiceNameFromType(service)
+
 	cmd := &cobra.Command{
 		Use:   methodName,
 		Short: description.Short,
 		Long:  description.Long,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return executeMethod(cmd, service, method, builderMethod, args, description.ParameterDescriptions)
+			return executeMethod(cmd, serviceName, method, builderMethod, args, description.ParameterDescriptions)
 		},
 	}
 
@@ -320,35 +323,24 @@ func getServiceFromClient(client interface{}, serviceName string) interface{} {
 }
 
 // ClientFactoryFunc is a function that creates a new authenticated API client
-type ClientFactoryFunc func() (interface{}, error)
-
-var clientFactory ClientFactoryFunc
-
-// SetClientFactory sets the factory function for creating authenticated clients
-func SetClientFactory(factory ClientFactoryFunc) {
-	clientFactory = factory
-}
+type ClientFactoryFunc func() (APIClientInterface, error)
 
 // executeMethod performs the actual API call using reflection
-func executeMethod(cmd *cobra.Command, service interface{}, _ reflect.Method, builderMethod reflect.Method, args []string, paramDescriptions []parser.ParameterDescription) error {
-	ctx := context.Background()
-
-	// Create a fresh authenticated client if factory is set
-	if clientFactory != nil {
-		freshClient, err := clientFactory()
-		if err != nil {
-			return fmt.Errorf("failed to create authenticated client: %w", err)
-		}
-
-		// Get the service from the fresh client
-		// Extract the service name to find the matching field
-		serviceName := getServiceNameFromType(service)
-		freshService := getServiceFromClient(freshClient, serviceName)
-		if freshService != nil {
-			service = freshService
-		}
+func executeMethod(cmd *cobra.Command, serviceName string, _ reflect.Method, builderMethod reflect.Method, args []string, paramDescriptions []parser.ParameterDescription) error {
+	ctx := cmd.Context()
+	clientFactory, ok := ClientFactoryFromContext(cmd.Context())
+	if !ok {
+		return fmt.Errorf("missing or invalid method to create authenticated client: %v", ctx.Value("executionClientFactory"))
 	}
 
+	client, err := clientFactory()
+	if err != nil {
+		return fmt.Errorf("failed to create authenticated client: %w", err)
+	}
+
+	// Get the service from the fresh client
+	// Extract the service name to find the matching field
+	service := getServiceFromClient(client, serviceName)
 	serviceValue := reflect.ValueOf(service)
 
 	// Build the arguments for the builder method
@@ -1285,16 +1277,15 @@ func GetServiceList(client APIClientInterface) ([]ServiceInfo, error) {
 // contextKey is used for context values
 type contextKey string
 
-// ContextWithClient adds a client to the context
-func ContextWithClient(ctx context.Context, client interface{}) context.Context {
-	return context.WithValue(ctx, contextKey("client"), client)
+var clientFactoryKey = contextKey("clientFactory")
+
+// ContextWithClientFactory adds a client to the context
+func ContextWithClientFactory(ctx context.Context, clientFactory ClientFactoryFunc) context.Context {
+	return context.WithValue(ctx, clientFactoryKey, clientFactory)
 }
 
-// ClientFromContext retrieves a client from the context
-func ClientFromContext(ctx context.Context) (interface{}, bool) {
-	client := ctx.Value(contextKey("client"))
-	if client == nil {
-		return nil, false
-	}
-	return client, true
+// ClientFactoryFromContext retrieves a client from the context
+func ClientFactoryFromContext(ctx context.Context) (ClientFactoryFunc, bool) {
+	clientFactory, ok := ctx.Value(clientFactoryKey).(ClientFactoryFunc)
+	return clientFactory, ok
 }

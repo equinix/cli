@@ -29,7 +29,7 @@ providing access to all available API services.`,
 		// Inject the client factory into the command context so that
 		// it can be retrieved at execution time
 		executionClientFactory := func() (register.APIClientInterface, error) {
-		    orderhistoryv1.SetDebug(orderhistoryv1Debug)
+			orderhistoryv1.SetDebug(orderhistoryv1Debug)
 			return orderhistoryv1.NewClient()
 		}
 		cmd.SetContext(register.ContextWithClientFactory(cmd.Context(), executionClientFactory))
@@ -67,7 +67,7 @@ func init() {
 	// Uncomment and customize aliases as needed for convenience
 	// Example: Add shorter aliases for commonly used commands
 	// orderhistoryv1Cmd.Aliases = []string{"orderhistory"}
-	// 
+	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := orderhistoryv1Cmd.Find([]string{"connections"}); err == nil {
 	//     if createCmd, _, err := connectionsCmd.Find([]string{"create-connection"}); err == nil {

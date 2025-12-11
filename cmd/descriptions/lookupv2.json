@@ -1,0 +1,1351 @@
+{
+  "services": {
+    "lookup": {
+      "service_name": "lookup",
+      "service_description": "",
+      "methods": {
+        "GetLocationsByPermissionCode": {
+          "short_description": "Get Locations by permission code",
+          "long_description": "This method retrieves all the user’s IBX locations, accounts, cages and cabinets information according to their ordering permission. This includes A-side and Z-side location information for a cross connect order.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "GetLocationsByPermissionCodeExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "RetrieveAllPatchPanels": {
+          "short_description": "Retrieve all patch panels",
+          "long_description": "This method retrieves all available patch panels associated with a cabinet for a user with cross connects ordering permission.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "RetrieveAllPatchPanelsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "RetrieveListOfConnectionServices": {
+          "short_description": "Retrieve list of connection services",
+          "long_description": "This method retrieves a list of supported connection services such as media types, protocol types, connector types and circuit counts.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "RetrieveListOfConnectionServicesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "RetrieveListOfProviders": {
+          "short_description": "Retrieve list of providers",
+          "long_description": "This method retrieves all available cross connect service providers to a user with cross connects ordering permission.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "RetrieveListOfProvidersExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "RetrievePatchPanelDetails": {
+          "short_description": "Retrieve patch panel details",
+          "long_description": "This method retrieves details of a patch panel by its ID to a user with cross connects ordering permission.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            },
+            {
+              "name": "patchPanelId",
+              "description": "ID of patch panel"
+            }
+          ]
+        },
+        "RetrievePatchPanelDetailsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiGetLocationsByPermissionCodeRequest": {
+          "type_name": "ApiGetLocationsByPermissionCodeRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "aSideIbx": {
+              "name": "aSideIbx",
+              "description": ""
+            },
+            "connectionService": {
+              "name": "connectionService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "details": {
+              "name": "details",
+              "description": ""
+            },
+            "ibxs": {
+              "name": "ibxs",
+              "description": ""
+            },
+            "permissionCode": {
+              "name": "permissionCode",
+              "description": ""
+            },
+            "providerAccountNumber": {
+              "name": "providerAccountNumber",
+              "description": ""
+            }
+          }
+        },
+        "ApiRetrieveAllPatchPanelsRequest": {
+          "type_name": "ApiRetrieveAllPatchPanelsRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "aSideIbx": {
+              "name": "aSideIbx",
+              "description": ""
+            },
+            "accountNumber": {
+              "name": "accountNumber",
+              "description": ""
+            },
+            "cabinetId": {
+              "name": "cabinetId",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "providerAccountNumber": {
+              "name": "providerAccountNumber",
+              "description": ""
+            }
+          }
+        },
+        "ApiRetrieveListOfConnectionServicesRequest": {
+          "type_name": "ApiRetrieveListOfConnectionServicesRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "ibx": {
+              "name": "ibx",
+              "description": ""
+            }
+          }
+        },
+        "ApiRetrieveListOfProvidersRequest": {
+          "type_name": "ApiRetrieveListOfProvidersRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "accountNumber": {
+              "name": "accountNumber",
+              "description": ""
+            },
+            "cageId": {
+              "name": "cageId",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiRetrievePatchPanelDetailsRequest": {
+          "type_name": "ApiRetrievePatchPanelDetailsRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "aSideIbx": {
+              "name": "aSideIbx",
+              "description": ""
+            },
+            "accountNumber": {
+              "name": "accountNumber",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "patchPanelId": {
+              "name": "patchPanelId",
+              "description": ""
+            },
+            "providerAccountNumber": {
+              "name": "providerAccountNumber",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {
+    "APIClient": {
+      "type_name": "APIClient",
+      "description": "APIClient manages communication with the Lookup API v2.0\nIn most cases there should be only one, shared, APIClient.",
+      "fields": {
+        "LookupApi": {
+          "name": "LookupApi",
+          "description": ""
+        },
+        "cfg": {
+          "name": "cfg",
+          "description": ""
+        },
+        "common": {
+          "name": "common",
+          "description": "Reuse a single struct instead of allocating one for each service on the heap."
+        }
+      }
+    },
+    "APIKey": {
+      "type_name": "APIKey",
+      "description": "APIKey provides API key based authentication to a request passed via context using ContextAPIKey",
+      "fields": {
+        "Key": {
+          "name": "Key",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": ""
+        }
+      }
+    },
+    "APIResponse": {
+      "type_name": "APIResponse",
+      "description": "APIResponse stores the API response returned by the server.",
+      "fields": {
+        "Message": {
+          "name": "Message",
+          "description": "",
+          "json_tag": "message"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "Method is the HTTP method used for the request.  This value is always\navailable, even if the embedded *http.Response is nil.",
+          "json_tag": "method"
+        },
+        "Operation": {
+          "name": "Operation",
+          "description": "Operation is the name of the OpenAPI operation.",
+          "json_tag": "operation"
+        },
+        "Payload": {
+          "name": "Payload",
+          "description": "Payload holds the contents of the response body (which may be nil or empty).\nThis is provided here as the raw response.Body() reader will have already\nbeen drained.",
+          "json_tag": "-"
+        },
+        "RequestURL": {
+          "name": "RequestURL",
+          "description": "RequestURL is the request URL. This value is always available, even if the\nembedded *http.Response is nil.",
+          "json_tag": "url"
+        }
+      }
+    },
+    "Accounts": {
+      "type_name": "Accounts",
+      "description": "Accounts struct for Accounts",
+      "fields": {
+        "AccountName": {
+          "name": "AccountName",
+          "description": "Customer account name",
+          "json_tag": "accountName"
+        },
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "Customer account number",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AllowOrder": {
+          "name": "AllowOrder",
+          "description": "When set to `true`, User is allowed to place an orders on this account",
+          "json_tag": "allowOrder"
+        }
+      }
+    },
+    "ApiGetLocationsByPermissionCodeRequest": {
+      "type_name": "ApiGetLocationsByPermissionCodeRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "aSideIbx": {
+          "name": "aSideIbx",
+          "description": ""
+        },
+        "connectionService": {
+          "name": "connectionService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "details": {
+          "name": "details",
+          "description": ""
+        },
+        "ibxs": {
+          "name": "ibxs",
+          "description": ""
+        },
+        "permissionCode": {
+          "name": "permissionCode",
+          "description": ""
+        },
+        "providerAccountNumber": {
+          "name": "providerAccountNumber",
+          "description": ""
+        }
+      }
+    },
+    "ApiRetrieveAllPatchPanelsRequest": {
+      "type_name": "ApiRetrieveAllPatchPanelsRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "aSideIbx": {
+          "name": "aSideIbx",
+          "description": ""
+        },
+        "accountNumber": {
+          "name": "accountNumber",
+          "description": ""
+        },
+        "cabinetId": {
+          "name": "cabinetId",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "providerAccountNumber": {
+          "name": "providerAccountNumber",
+          "description": ""
+        }
+      }
+    },
+    "ApiRetrieveListOfConnectionServicesRequest": {
+      "type_name": "ApiRetrieveListOfConnectionServicesRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "ibx": {
+          "name": "ibx",
+          "description": ""
+        }
+      }
+    },
+    "ApiRetrieveListOfProvidersRequest": {
+      "type_name": "ApiRetrieveListOfProvidersRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "accountNumber": {
+          "name": "accountNumber",
+          "description": ""
+        },
+        "cageId": {
+          "name": "cageId",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiRetrievePatchPanelDetailsRequest": {
+      "type_name": "ApiRetrievePatchPanelDetailsRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "aSideIbx": {
+          "name": "aSideIbx",
+          "description": ""
+        },
+        "accountNumber": {
+          "name": "accountNumber",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "patchPanelId": {
+          "name": "patchPanelId",
+          "description": ""
+        },
+        "providerAccountNumber": {
+          "name": "providerAccountNumber",
+          "description": ""
+        }
+      }
+    },
+    "BasicAuth": {
+      "type_name": "BasicAuth",
+      "description": "BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth",
+      "fields": {
+        "Password": {
+          "name": "Password",
+          "description": "",
+          "json_tag": "password"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "",
+          "json_tag": "userName"
+        }
+      }
+    },
+    "CageDetails": {
+      "type_name": "CageDetails",
+      "description": "CageDetails struct for CageDetails",
+      "fields": {
+        "AccountNumbers": {
+          "name": "AccountNumbers",
+          "description": "Customer account number associated with cage",
+          "json_tag": "accountNumbers"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CabinetId": {
+          "name": "CabinetId",
+          "description": "Cabinet Unique space id",
+          "json_tag": "cabinetId"
+        },
+        "CabinetType": {
+          "name": "CabinetType",
+          "description": "",
+          "json_tag": "cabinetType"
+        },
+        "Id": {
+          "name": "Id",
+          "description": "Cage Unique space id",
+          "json_tag": "id"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "Configuration": {
+      "type_name": "Configuration",
+      "description": "Configuration stores the configuration of the API client",
+      "fields": {
+        "Debug": {
+          "name": "Debug",
+          "description": "",
+          "json_tag": "debug"
+        },
+        "DefaultHeader": {
+          "name": "DefaultHeader",
+          "description": "",
+          "json_tag": "defaultHeader"
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "description": ""
+        },
+        "Host": {
+          "name": "Host",
+          "description": "",
+          "json_tag": "host"
+        },
+        "OperationServers": {
+          "name": "OperationServers",
+          "description": ""
+        },
+        "Scheme": {
+          "name": "Scheme",
+          "description": "",
+          "json_tag": "scheme"
+        },
+        "Servers": {
+          "name": "Servers",
+          "description": ""
+        },
+        "UserAgent": {
+          "name": "UserAgent",
+          "description": "",
+          "json_tag": "userAgent"
+        }
+      }
+    },
+    "ConnectionServicesDetailsInner": {
+      "type_name": "ConnectionServicesDetailsInner",
+      "description": "ConnectionServicesDetailsInner struct for ConnectionServicesDetailsInner",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "MediaTypes": {
+          "name": "MediaTypes",
+          "description": "",
+          "json_tag": "mediaTypes"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "",
+          "json_tag": "name"
+        }
+      }
+    },
+    "ConnectionServicesDetailsInnerMediaTypesInner": {
+      "type_name": "ConnectionServicesDetailsInnerMediaTypesInner",
+      "description": "ConnectionServicesDetailsInnerMediaTypesInner struct for ConnectionServicesDetailsInnerMediaTypesInner",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CircuitCounts": {
+          "name": "CircuitCounts",
+          "description": "Intra-Faciltiy Cable (IFC) circuit count options available for the respective connection service. E.g. If the 'circuitCount' is empty, it means there are no available IFC circuits. If '3,6' appears in the circuit count, it means that the IFC circuits options available are 3 circuits and 6 circuits.",
+          "json_tag": "circuitCounts"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "",
+          "json_tag": "name"
+        },
+        "ProtocolTypes": {
+          "name": "ProtocolTypes",
+          "description": "",
+          "json_tag": "protocolTypes"
+        }
+      }
+    },
+    "ConnectionServicesDetailsInnerMediaTypesInnerProtocolTypesInner": {
+      "type_name": "ConnectionServicesDetailsInnerMediaTypesInnerProtocolTypesInner",
+      "description": "ConnectionServicesDetailsInnerMediaTypesInnerProtocolTypesInner struct for ConnectionServicesDetailsInnerMediaTypesInnerProtocolTypesInner",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ConnectorTypes": {
+          "name": "ConnectorTypes",
+          "description": "",
+          "json_tag": "connectorTypes"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "",
+          "json_tag": "name"
+        }
+      }
+    },
+    "ErrorDetails": {
+      "type_name": "ErrorDetails",
+      "description": "ErrorDetails struct for ErrorDetails",
+      "fields": {
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CorrelationId": {
+          "name": "CorrelationId",
+          "description": "",
+          "json_tag": "correlationId"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "",
+          "json_tag": "details"
+        },
+        "ErrorCode": {
+          "name": "ErrorCode",
+          "description": "",
+          "json_tag": "errorCode"
+        },
+        "ErrorMessage": {
+          "name": "ErrorMessage",
+          "description": "",
+          "json_tag": "errorMessage"
+        },
+        "Help": {
+          "name": "Help",
+          "description": "",
+          "json_tag": "help"
+        }
+      }
+    },
+    "GenericOpenAPIError": {
+      "type_name": "GenericOpenAPIError",
+      "description": "GenericOpenAPIError Provides access to the body, error and model on returned errors.",
+      "fields": {
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "error": {
+          "name": "error",
+          "description": ""
+        },
+        "model": {
+          "name": "model",
+          "description": ""
+        }
+      }
+    },
+    "LocationsDetails": {
+      "type_name": "LocationsDetails",
+      "description": "LocationsDetails struct for LocationsDetails",
+      "fields": {
+        "AccessRestricted": {
+          "name": "AccessRestricted",
+          "description": "IBX access is restricted when the value is `true`",
+          "json_tag": "accessRestricted"
+        },
+        "Accounts": {
+          "name": "Accounts",
+          "description": "",
+          "json_tag": "accounts"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cages": {
+          "name": "Cages",
+          "description": "",
+          "json_tag": "cages"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "IBX locations code",
+          "json_tag": "ibx"
+        },
+        "SpecialPrivilege": {
+          "name": "SpecialPrivilege",
+          "description": "When set to `true`, user will be allowed to access IBXs with restricted access. This only applies for specific partners",
+          "json_tag": "specialPrivilege"
+        }
+      }
+    },
+    "LocationsDetailsResponse": {
+      "type_name": "LocationsDetailsResponse",
+      "description": "LocationsDetailsResponse struct for LocationsDetailsResponse",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CrossConnects": {
+          "name": "CrossConnects",
+          "description": "",
+          "json_tag": "crossConnects"
+        }
+      }
+    },
+    "NullableAccounts": {
+      "type_name": "NullableAccounts",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBool": {
+      "type_name": "NullableBool",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageDetails": {
+      "type_name": "NullableCageDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageDetailsCabinetType": {
+      "type_name": "NullableCageDetailsCabinetType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageDetailsType": {
+      "type_name": "NullableCageDetailsType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableConnectionServices": {
+      "type_name": "NullableConnectionServices",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableConnectionServicesDetailsInner": {
+      "type_name": "NullableConnectionServicesDetailsInner",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableConnectionServicesDetailsInnerMediaTypesInner": {
+      "type_name": "NullableConnectionServicesDetailsInnerMediaTypesInner",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableConnectionServicesDetailsInnerMediaTypesInnerProtocolTypesInner": {
+      "type_name": "NullableConnectionServicesDetailsInnerMediaTypesInnerProtocolTypesInner",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableConnectorTypes": {
+      "type_name": "NullableConnectorTypes",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableErrorDetails": {
+      "type_name": "NullableErrorDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat32": {
+      "type_name": "NullableFloat32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat64": {
+      "type_name": "NullableFloat64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableGetLocationsByPermissionCodePermissionCodeParameter": {
+      "type_name": "NullableGetLocationsByPermissionCodePermissionCodeParameter",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt": {
+      "type_name": "NullableInt",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt32": {
+      "type_name": "NullableInt32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt64": {
+      "type_name": "NullableInt64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLocationsDetails": {
+      "type_name": "NullableLocationsDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLocationsDetailsResponse": {
+      "type_name": "NullableLocationsDetailsResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableMediaTypes": {
+      "type_name": "NullableMediaTypes",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchPanelDetails": {
+      "type_name": "NullablePatchPanelDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchPanelDetailsInstallLocations": {
+      "type_name": "NullablePatchPanelDetailsInstallLocations",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchPanelDetailsProvisioningType": {
+      "type_name": "NullablePatchPanelDetailsProvisioningType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchPanelDetailsType": {
+      "type_name": "NullablePatchPanelDetailsType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchPanelResponse": {
+      "type_name": "NullablePatchPanelResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableProtocolTypes": {
+      "type_name": "NullableProtocolTypes",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableProvider": {
+      "type_name": "NullableProvider",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableString": {
+      "type_name": "NullableString",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTime": {
+      "type_name": "NullableTime",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableUserPortDetails": {
+      "type_name": "NullableUserPortDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "PatchPanelDetails": {
+      "type_name": "PatchPanelDetails",
+      "description": "PatchPanelDetails struct for PatchPanelDetails",
+      "fields": {
+        "AccountName": {
+          "name": "AccountName",
+          "description": "Customer cage account name",
+          "json_tag": "accountName"
+        },
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "Customer cage account number",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AvailablePorts": {
+          "name": "AvailablePorts",
+          "description": "Individually identified ports that are available out of the total number of ports.",
+          "json_tag": "availablePorts"
+        },
+        "CabinetId": {
+          "name": "CabinetId",
+          "description": "Cabinet ID",
+          "json_tag": "cabinetId"
+        },
+        "CageId": {
+          "name": "CageId",
+          "description": "Cage ID",
+          "json_tag": "cageId"
+        },
+        "CircuitAvailable": {
+          "name": "CircuitAvailable",
+          "description": "if `true`, circuits are available for patch panel",
+          "json_tag": "circuitAvailable"
+        },
+        "ConnectionServices": {
+          "name": "ConnectionServices",
+          "description": "",
+          "json_tag": "connectionServices"
+        },
+        "DedicatedMediaType": {
+          "name": "DedicatedMediaType",
+          "description": "Type of dedicated media",
+          "json_tag": "dedicatedMediaType"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "IBX location code",
+          "json_tag": "ibx"
+        },
+        "IfcEnabled": {
+          "name": "IfcEnabled",
+          "description": "Identifies if intra-facility cable (IFC) connection is required for patch panel. When `true`, IFC connection is required.",
+          "json_tag": "ifcEnabled"
+        },
+        "InstallLocations": {
+          "name": "InstallLocations",
+          "description": "",
+          "json_tag": "installLocations"
+        },
+        "InstallationRequired": {
+          "name": "InstallationRequired",
+          "description": "If `true`, Equinix will install cross connect from demarcation panel to customer equipment.",
+          "json_tag": "installationRequired"
+        },
+        "PatchPanelId": {
+          "name": "PatchPanelId",
+          "description": "Patch panel ID / serial number",
+          "json_tag": "patchPanelId"
+        },
+        "PreWired": {
+          "name": "PreWired",
+          "description": "Prewired status of cross connects. When `true`, cross connects are prewired",
+          "json_tag": "preWired"
+        },
+        "ProvisioningType": {
+          "name": "ProvisioningType",
+          "description": "",
+          "json_tag": "provisioningType"
+        },
+        "RackLocations": {
+          "name": "RackLocations",
+          "description": "Rack location of patch panel",
+          "json_tag": "rackLocations"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "UsedPortsDetails": {
+          "name": "UsedPortsDetails",
+          "description": "",
+          "json_tag": "usedPortsDetails"
+        }
+      }
+    },
+    "PatchPanelResponse": {
+      "type_name": "PatchPanelResponse",
+      "description": "PatchPanelResponse struct for PatchPanelResponse",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "AvailablePortCount": {
+          "name": "AvailablePortCount",
+          "description": "Available ports for use",
+          "json_tag": "availablePortCount"
+        },
+        "IfcEnabled": {
+          "name": "IfcEnabled",
+          "description": "Patch panel will support only intra facility when `true`",
+          "json_tag": "ifcEnabled"
+        },
+        "PatchPanelId": {
+          "name": "PatchPanelId",
+          "description": "Patch panel unique ID / serial number",
+          "json_tag": "patchPanelId"
+        },
+        "PatchPanelReferenceId": {
+          "name": "PatchPanelReferenceId",
+          "description": "Unique reference ID associated with patch panel",
+          "json_tag": "patchPanelReferenceId"
+        },
+        "ProvisioningType": {
+          "name": "ProvisioningType",
+          "description": "",
+          "json_tag": "provisioningType"
+        }
+      }
+    },
+    "Provider": {
+      "type_name": "Provider",
+      "description": "Provider struct for Provider",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ProviderAccountName": {
+          "name": "ProviderAccountName",
+          "description": "Cage account name of service provider",
+          "json_tag": "providerAccountName"
+        },
+        "ProviderAccountNumber": {
+          "name": "ProviderAccountNumber",
+          "description": "Cage account number of service provider",
+          "json_tag": "providerAccountNumber"
+        }
+      }
+    },
+    "ServerConfiguration": {
+      "type_name": "ServerConfiguration",
+      "description": "ServerConfiguration stores the information about a server",
+      "fields": {
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "URL": {
+          "name": "URL",
+          "description": ""
+        },
+        "Variables": {
+          "name": "Variables",
+          "description": ""
+        }
+      }
+    },
+    "ServerVariable": {
+      "type_name": "ServerVariable",
+      "description": "ServerVariable stores the information about a server variable",
+      "fields": {
+        "DefaultValue": {
+          "name": "DefaultValue",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "EnumValues": {
+          "name": "EnumValues",
+          "description": ""
+        }
+      }
+    },
+    "UserPortDetails": {
+      "type_name": "UserPortDetails",
+      "description": "UserPortDetails struct for UserPortDetails",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CircuitId": {
+          "name": "CircuitId",
+          "description": "",
+          "json_tag": "circuitId"
+        },
+        "ConnectionServicesName": {
+          "name": "ConnectionServicesName",
+          "description": "",
+          "json_tag": "connectionServicesName"
+        },
+        "PortNumber": {
+          "name": "PortNumber",
+          "description": "Port number that is currently in use",
+          "json_tag": "portNumber"
+        },
+        "SerialNumber": {
+          "name": "SerialNumber",
+          "description": "Serial number or cable id",
+          "json_tag": "serialNumber"
+        },
+        "ZSideProviderName": {
+          "name": "ZSideProviderName",
+          "description": "Name of Z-Side service provider",
+          "json_tag": "zSideProviderName"
+        }
+      }
+    },
+    "formFile": {
+      "type_name": "formFile",
+      "fields": {
+        "fileBytes": {
+          "name": "fileBytes",
+          "description": ""
+        },
+        "fileName": {
+          "name": "fileName",
+          "description": ""
+        },
+        "formFileName": {
+          "name": "formFileName",
+          "description": ""
+        }
+      }
+    },
+    "service": {
+      "type_name": "service",
+      "fields": {
+        "client": {
+          "name": "client",
+          "description": ""
+        }
+      }
+    }
+  }
+}

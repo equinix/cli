@@ -1,0 +1,608 @@
+{
+  "services": {
+    "o-auth2-token": {
+      "service_name": "o-auth2-token",
+      "service_description": "",
+      "methods": {
+        "GetOAuth2AccessToken": {
+          "short_description": "Generate New Access Token",
+          "long_description": "This API handles authentication and authorization of the API developer. It returns an access_token which would be valid for 60 minutes. The user account will get locked after 5 successive invalid attempts.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "GetOAuth2AccessTokenExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "RefreshOAuth2AccessToken": {
+          "short_description": "Renew Access Tokens",
+          "long_description": "Use this API to refresh an access token using its refresh token. A valid refresh token is needed to retrieve a new access_token.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "RefreshOAuth2AccessTokenExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiGetOAuth2AccessTokenRequest": {
+          "type_name": "ApiGetOAuth2AccessTokenRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "payload": {
+              "name": "payload",
+              "description": ""
+            }
+          }
+        },
+        "ApiRefreshOAuth2AccessTokenRequest": {
+          "type_name": "ApiRefreshOAuth2AccessTokenRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "payload": {
+              "name": "payload",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {
+    "APIClient": {
+      "type_name": "APIClient",
+      "description": "APIClient manages communication with the Equinix API Authentication API v1.2\nIn most cases there should be only one, shared, APIClient.",
+      "fields": {
+        "OAuth2TokenApi": {
+          "name": "OAuth2TokenApi",
+          "description": ""
+        },
+        "cfg": {
+          "name": "cfg",
+          "description": ""
+        },
+        "common": {
+          "name": "common",
+          "description": "Reuse a single struct instead of allocating one for each service on the heap."
+        }
+      }
+    },
+    "APIKey": {
+      "type_name": "APIKey",
+      "description": "APIKey provides API key based authentication to a request passed via context using ContextAPIKey",
+      "fields": {
+        "Key": {
+          "name": "Key",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": ""
+        }
+      }
+    },
+    "APIResponse": {
+      "type_name": "APIResponse",
+      "description": "APIResponse stores the API response returned by the server.",
+      "fields": {
+        "Message": {
+          "name": "Message",
+          "description": "",
+          "json_tag": "message"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "Method is the HTTP method used for the request.  This value is always\navailable, even if the embedded *http.Response is nil.",
+          "json_tag": "method"
+        },
+        "Operation": {
+          "name": "Operation",
+          "description": "Operation is the name of the OpenAPI operation.",
+          "json_tag": "operation"
+        },
+        "Payload": {
+          "name": "Payload",
+          "description": "Payload holds the contents of the response body (which may be nil or empty).\nThis is provided here as the raw response.Body() reader will have already\nbeen drained.",
+          "json_tag": "-"
+        },
+        "RequestURL": {
+          "name": "RequestURL",
+          "description": "RequestURL is the request URL. This value is always available, even if the\nembedded *http.Response is nil.",
+          "json_tag": "url"
+        }
+      }
+    },
+    "ApiGetOAuth2AccessTokenRequest": {
+      "type_name": "ApiGetOAuth2AccessTokenRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "payload": {
+          "name": "payload",
+          "description": ""
+        }
+      }
+    },
+    "ApiRefreshOAuth2AccessTokenRequest": {
+      "type_name": "ApiRefreshOAuth2AccessTokenRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "payload": {
+          "name": "payload",
+          "description": ""
+        }
+      }
+    },
+    "BasicAuth": {
+      "type_name": "BasicAuth",
+      "description": "BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth",
+      "fields": {
+        "Password": {
+          "name": "Password",
+          "description": "",
+          "json_tag": "password"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "",
+          "json_tag": "userName"
+        }
+      }
+    },
+    "Configuration": {
+      "type_name": "Configuration",
+      "description": "Configuration stores the configuration of the API client",
+      "fields": {
+        "Debug": {
+          "name": "Debug",
+          "description": "",
+          "json_tag": "debug"
+        },
+        "DefaultHeader": {
+          "name": "DefaultHeader",
+          "description": "",
+          "json_tag": "defaultHeader"
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "description": ""
+        },
+        "Host": {
+          "name": "Host",
+          "description": "",
+          "json_tag": "host"
+        },
+        "OperationServers": {
+          "name": "OperationServers",
+          "description": ""
+        },
+        "Scheme": {
+          "name": "Scheme",
+          "description": "",
+          "json_tag": "scheme"
+        },
+        "Servers": {
+          "name": "Servers",
+          "description": ""
+        },
+        "UserAgent": {
+          "name": "UserAgent",
+          "description": "",
+          "json_tag": "userAgent"
+        }
+      }
+    },
+    "GenericOpenAPIError": {
+      "type_name": "GenericOpenAPIError",
+      "description": "GenericOpenAPIError Provides access to the body, error and model on returned errors.",
+      "fields": {
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "error": {
+          "name": "error",
+          "description": ""
+        },
+        "model": {
+          "name": "model",
+          "description": ""
+        }
+      }
+    },
+    "NullableBool": {
+      "type_name": "NullableBool",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat32": {
+      "type_name": "NullableFloat32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat64": {
+      "type_name": "NullableFloat64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt": {
+      "type_name": "NullableInt",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt32": {
+      "type_name": "NullableInt32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt64": {
+      "type_name": "NullableInt64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOauth2RefreshTokenRequest": {
+      "type_name": "NullableOauth2RefreshTokenRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOauth2TokenErrorResponse": {
+      "type_name": "NullableOauth2TokenErrorResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOauth2TokenRequest": {
+      "type_name": "NullableOauth2TokenRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOauth2TokenResponse": {
+      "type_name": "NullableOauth2TokenResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableString": {
+      "type_name": "NullableString",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTime": {
+      "type_name": "NullableTime",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "Oauth2RefreshTokenRequest": {
+      "type_name": "Oauth2RefreshTokenRequest",
+      "description": "Oauth2RefreshTokenRequest struct for Oauth2RefreshTokenRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ClientId": {
+          "name": "ClientId",
+          "description": "API Consumer Key available under \\\"My Apps\\\" in developer portal",
+          "json_tag": "client_id"
+        },
+        "ClientSecret": {
+          "name": "ClientSecret",
+          "description": "API Consumer secret available under \\\"My Apps\\\" in developer portal",
+          "json_tag": "client_secret"
+        },
+        "RefreshToken": {
+          "name": "RefreshToken",
+          "description": "The OAuth2 refresh_token retrieved from the previous successful Access Token API call",
+          "json_tag": "refresh_token"
+        }
+      }
+    },
+    "Oauth2TokenErrorResponse": {
+      "type_name": "Oauth2TokenErrorResponse",
+      "description": "Oauth2TokenErrorResponse struct for Oauth2TokenErrorResponse",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "DeveloperMessage": {
+          "name": "DeveloperMessage",
+          "description": "The error message to be used for auditing purpose by the consuming application",
+          "json_tag": "developer_message"
+        },
+        "ErrorCode": {
+          "name": "ErrorCode",
+          "description": "The code used to identify the error category",
+          "json_tag": "error_code"
+        },
+        "ErrorDomain": {
+          "name": "ErrorDomain",
+          "description": "The module associated with this error",
+          "json_tag": "error_domain"
+        },
+        "ErrorMessage": {
+          "name": "ErrorMessage",
+          "description": "The error message which could be displayed to the end user",
+          "json_tag": "error_message"
+        },
+        "ErrorTitle": {
+          "name": "ErrorTitle",
+          "description": "The error title",
+          "json_tag": "error_title"
+        }
+      }
+    },
+    "Oauth2TokenRequest": {
+      "type_name": "Oauth2TokenRequest",
+      "description": "Oauth2TokenRequest struct for Oauth2TokenRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ClientId": {
+          "name": "ClientId",
+          "description": "API Consumer Key available under \\\"My Apps\\\" in developer portal",
+          "json_tag": "client_id"
+        },
+        "ClientSecret": {
+          "name": "ClientSecret",
+          "description": "API Consumer secret available under \\\"My Apps\\\" in developer portal",
+          "json_tag": "client_secret"
+        },
+        "GrantType": {
+          "name": "GrantType",
+          "description": "The OAuth2 grant type used for authorization. Supported values are \\\"password\\\" \u0026 \\\"client_credentials\\\". user_name and password is not considered in case this value is \\\"client_credentials\\\". If the grant_type is not passed, by default it would consider \\\"password\\\" type in which user_name and password is required. Note that the password grant type is deprecated. Recommended to use grant_type of 'client_credentials' instead.",
+          "json_tag": "grant_type"
+        },
+        "PasswordEncoding": {
+          "name": "PasswordEncoding",
+          "description": "For enhanced security, you may encrypt the password value while requesting for an access_token. Currently only \\\"md5-b64\\\" hashing is supported. Any other value would treat password value as raw string",
+          "json_tag": "password_encoding"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "Deprecated - The Equinix username used to access portals",
+          "json_tag": "user_name"
+        },
+        "UserPassword": {
+          "name": "UserPassword",
+          "description": "Deprecated - The Equinix user password used to access portals",
+          "json_tag": "user_password"
+        }
+      }
+    },
+    "Oauth2TokenResponse": {
+      "type_name": "Oauth2TokenResponse",
+      "description": "Oauth2TokenResponse struct for Oauth2TokenResponse",
+      "fields": {
+        "AccessToken": {
+          "name": "AccessToken",
+          "description": "the OAuth2 Bearer token required to access Equinix API's",
+          "json_tag": "access_token"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "RefreshToken": {
+          "name": "RefreshToken",
+          "description": "The OAuth2 refresh token which could be used to retrieve a new access_token without user credentials. The refresh_token has a max validity of 60 days after which a new Access Token request must be made. Refresh token is Not returned for \\\"client_credentials\\\" grant type",
+          "json_tag": "refresh_token"
+        },
+        "RefreshTokenTimeout": {
+          "name": "RefreshTokenTimeout",
+          "description": "The max validity in seconds for the refresh_token. This field is not retruned for the \\\"client_credentials\\\" grant type",
+          "json_tag": "refresh_token_timeout"
+        },
+        "TokenTimeout": {
+          "name": "TokenTimeout",
+          "description": "The max validity in seconds for this access_token",
+          "json_tag": "token_timeout"
+        },
+        "TokenType": {
+          "name": "TokenType",
+          "description": "The type of access_token returned in this response",
+          "json_tag": "token_type"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "The Equinix user account to which this token is associated with",
+          "json_tag": "user_name"
+        }
+      }
+    },
+    "ServerConfiguration": {
+      "type_name": "ServerConfiguration",
+      "description": "ServerConfiguration stores the information about a server",
+      "fields": {
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "URL": {
+          "name": "URL",
+          "description": ""
+        },
+        "Variables": {
+          "name": "Variables",
+          "description": ""
+        }
+      }
+    },
+    "ServerVariable": {
+      "type_name": "ServerVariable",
+      "description": "ServerVariable stores the information about a server variable",
+      "fields": {
+        "DefaultValue": {
+          "name": "DefaultValue",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "EnumValues": {
+          "name": "EnumValues",
+          "description": ""
+        }
+      }
+    },
+    "formFile": {
+      "type_name": "formFile",
+      "fields": {
+        "fileBytes": {
+          "name": "fileBytes",
+          "description": ""
+        },
+        "fileName": {
+          "name": "fileName",
+          "description": ""
+        },
+        "formFileName": {
+          "name": "formFileName",
+          "description": ""
+        }
+      }
+    },
+    "service": {
+      "type_name": "service",
+      "fields": {
+        "client": {
+          "name": "client",
+          "description": ""
+        }
+      }
+    }
+  }
+}

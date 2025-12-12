@@ -42,6 +42,9 @@ func init() {
 	// Add common debug flag that will be inherited by all subcommands for {{SERVICE}}
 	{{SERVICE}}Cmd.PersistentFlags().BoolVar(&{{SERVICE}}Debug, "debug", false, "Enable debug logging for HTTP requests")
 
+	// Add common format flag that will be inherited by all subcommands for {{SERVICE}}
+	{{SERVICE}}Cmd.PersistentFlags().StringP("format", "f", "json", "Format to use for output (json or yaml)")
+
 	// Load SDK descriptions for better command documentation
 	if err := register.LoadDescriptions({{SERVICE}}Descriptions); err != nil {
 		fmt.Fprintf(os.Stderr, "Warning: Could not load {{SERVICE}} descriptions: %v\n", err)

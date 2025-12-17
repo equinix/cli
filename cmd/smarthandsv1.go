@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/equinix/cli/internal/smarthandsv1"
 	"github.com/equinix/cli/internal/register"
+	"github.com/equinix/cli/internal/smarthandsv1"
 	"github.com/spf13/cobra"
 )
 

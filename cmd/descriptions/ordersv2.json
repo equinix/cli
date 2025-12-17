@@ -1,0 +1,1697 @@
+{
+  "services": {
+    "orders": {
+      "service_name": "orders",
+      "service_description": "",
+      "methods": {
+        "AddNotesToAnOrder": {
+          "short_description": "Add notes to an order",
+          "long_description": "This method adds notes to an order by its ID for a user with permission to view this request.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            },
+            {
+              "name": "orderId",
+              "description": "Identifier of the order"
+            }
+          ]
+        },
+        "AddNotesToAnOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "CancelAnOrder": {
+          "short_description": "Cancel an order",
+          "long_description": "This method cancels an order by its ID for a user with permission to view this request.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            },
+            {
+              "name": "orderId",
+              "description": "Identifier of the order"
+            }
+          ]
+        },
+        "CancelAnOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "GETOrderDetails": {
+          "short_description": "Retrieve an order",
+          "long_description": "This method retrieves an order by its ID for a user with permission to view this request.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            },
+            {
+              "name": "orderId",
+              "description": "Identifier of the Order"
+            }
+          ]
+        },
+        "GETOrderDetailsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "ReplyToAnOrderNegotiation": {
+          "short_description": "Reply to an order negotiation",
+          "long_description": "This method approves or rejects an order negotiation for a user with permission to view this request.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            },
+            {
+              "name": "orderId",
+              "description": "Identifier of the order"
+            }
+          ]
+        },
+        "ReplyToAnOrderNegotiationExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "RetrieveOrderNegotiations": {
+          "short_description": "Retrieve order negotiations",
+          "long_description": "This method retrieves order negotiations by its ID for a user with permission to view this request.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            },
+            {
+              "name": "orderId",
+              "description": "Identifier of the order"
+            }
+          ]
+        },
+        "RetrieveOrderNegotiationsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiAddNotesToAnOrderRequest": {
+          "type_name": "ApiAddNotesToAnOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "noteRequest": {
+              "name": "noteRequest",
+              "description": ""
+            },
+            "orderId": {
+              "name": "orderId",
+              "description": ""
+            }
+          }
+        },
+        "ApiCancelAnOrderRequest": {
+          "type_name": "ApiCancelAnOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "cancelRequest": {
+              "name": "cancelRequest",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "orderId": {
+              "name": "orderId",
+              "description": ""
+            }
+          }
+        },
+        "ApiGETOrderDetailsRequest": {
+          "type_name": "ApiGETOrderDetailsRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "ibxs": {
+              "name": "ibxs",
+              "description": ""
+            },
+            "orderId": {
+              "name": "orderId",
+              "description": ""
+            }
+          }
+        },
+        "ApiReplyToAnOrderNegotiationRequest": {
+          "type_name": "ApiReplyToAnOrderNegotiationRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "negotiationsRequest": {
+              "name": "negotiationsRequest",
+              "description": ""
+            },
+            "orderId": {
+              "name": "orderId",
+              "description": ""
+            }
+          }
+        },
+        "ApiRetrieveOrderNegotiationsRequest": {
+          "type_name": "ApiRetrieveOrderNegotiationsRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "orderId": {
+              "name": "orderId",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {
+    "APIClient": {
+      "type_name": "APIClient",
+      "description": "APIClient manages communication with the Orders API v2.0-beta\nIn most cases there should be only one, shared, APIClient.",
+      "fields": {
+        "OrdersApi": {
+          "name": "OrdersApi",
+          "description": ""
+        },
+        "cfg": {
+          "name": "cfg",
+          "description": ""
+        },
+        "common": {
+          "name": "common",
+          "description": "Reuse a single struct instead of allocating one for each service on the heap."
+        }
+      }
+    },
+    "APIKey": {
+      "type_name": "APIKey",
+      "description": "APIKey provides API key based authentication to a request passed via context using ContextAPIKey",
+      "fields": {
+        "Key": {
+          "name": "Key",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": ""
+        }
+      }
+    },
+    "APIResponse": {
+      "type_name": "APIResponse",
+      "description": "APIResponse stores the API response returned by the server.",
+      "fields": {
+        "Message": {
+          "name": "Message",
+          "description": "",
+          "json_tag": "message"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "Method is the HTTP method used for the request.  This value is always\navailable, even if the embedded *http.Response is nil.",
+          "json_tag": "method"
+        },
+        "Operation": {
+          "name": "Operation",
+          "description": "Operation is the name of the OpenAPI operation.",
+          "json_tag": "operation"
+        },
+        "Payload": {
+          "name": "Payload",
+          "description": "Payload holds the contents of the response body (which may be nil or empty).\nThis is provided here as the raw response.Body() reader will have already\nbeen drained.",
+          "json_tag": "-"
+        },
+        "RequestURL": {
+          "name": "RequestURL",
+          "description": "RequestURL is the request URL. This value is always available, even if the\nembedded *http.Response is nil.",
+          "json_tag": "url"
+        }
+      }
+    },
+    "ApiAddNotesToAnOrderRequest": {
+      "type_name": "ApiAddNotesToAnOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "noteRequest": {
+          "name": "noteRequest",
+          "description": ""
+        },
+        "orderId": {
+          "name": "orderId",
+          "description": ""
+        }
+      }
+    },
+    "ApiCancelAnOrderRequest": {
+      "type_name": "ApiCancelAnOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "cancelRequest": {
+          "name": "cancelRequest",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "orderId": {
+          "name": "orderId",
+          "description": ""
+        }
+      }
+    },
+    "ApiGETOrderDetailsRequest": {
+      "type_name": "ApiGETOrderDetailsRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "ibxs": {
+          "name": "ibxs",
+          "description": ""
+        },
+        "orderId": {
+          "name": "orderId",
+          "description": ""
+        }
+      }
+    },
+    "ApiReplyToAnOrderNegotiationRequest": {
+      "type_name": "ApiReplyToAnOrderNegotiationRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "negotiationsRequest": {
+          "name": "negotiationsRequest",
+          "description": ""
+        },
+        "orderId": {
+          "name": "orderId",
+          "description": ""
+        }
+      }
+    },
+    "ApiRetrieveOrderNegotiationsRequest": {
+      "type_name": "ApiRetrieveOrderNegotiationsRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "orderId": {
+          "name": "orderId",
+          "description": ""
+        }
+      }
+    },
+    "Attachment": {
+      "type_name": "Attachment",
+      "description": "Attachment Attachments",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Id": {
+          "name": "Id",
+          "description": "Identifier of the binary attachment UUID.",
+          "json_tag": "id"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of the binary attachment.",
+          "json_tag": "name"
+        }
+      }
+    },
+    "BasicAuth": {
+      "type_name": "BasicAuth",
+      "description": "BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth",
+      "fields": {
+        "Password": {
+          "name": "Password",
+          "description": "",
+          "json_tag": "password"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "",
+          "json_tag": "userName"
+        }
+      }
+    },
+    "CancelRequest": {
+      "type_name": "CancelRequest",
+      "description": "CancelRequest Cancelling the Order",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "File(s) attached",
+          "json_tag": "attachments"
+        },
+        "LineIds": {
+          "name": "LineIds",
+          "description": "Refers to the `lineId` of product/service.",
+          "json_tag": "lineIds"
+        },
+        "Reason": {
+          "name": "Reason",
+          "description": "Reason for cancellation",
+          "json_tag": "reason"
+        }
+      }
+    },
+    "Configuration": {
+      "type_name": "Configuration",
+      "description": "Configuration stores the configuration of the API client",
+      "fields": {
+        "Debug": {
+          "name": "Debug",
+          "description": "",
+          "json_tag": "debug"
+        },
+        "DefaultHeader": {
+          "name": "DefaultHeader",
+          "description": "",
+          "json_tag": "defaultHeader"
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "description": ""
+        },
+        "Host": {
+          "name": "Host",
+          "description": "",
+          "json_tag": "host"
+        },
+        "OperationServers": {
+          "name": "OperationServers",
+          "description": ""
+        },
+        "Scheme": {
+          "name": "Scheme",
+          "description": "",
+          "json_tag": "scheme"
+        },
+        "Servers": {
+          "name": "Servers",
+          "description": ""
+        },
+        "UserAgent": {
+          "name": "UserAgent",
+          "description": "",
+          "json_tag": "userAgent"
+        }
+      }
+    },
+    "Contacts": {
+      "type_name": "Contacts",
+      "description": "Contacts Contact information.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Availability": {
+          "name": "Availability",
+          "description": "",
+          "json_tag": "availability"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "Reference of the related party, could be a party reference or a party role reference",
+          "json_tag": "details"
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "description": "First name of the contact.",
+          "json_tag": "firstName"
+        },
+        "LastName": {
+          "name": "LastName",
+          "description": "Last name of the contact.",
+          "json_tag": "lastName"
+        },
+        "RegisteredUser": {
+          "name": "RegisteredUser",
+          "description": "Username of a registered user.",
+          "json_tag": "registeredUser"
+        },
+        "Timezone": {
+          "name": "Timezone",
+          "description": "",
+          "json_tag": "timezone"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "ContactsDetails": {
+      "type_name": "ContactsDetails",
+      "description": "ContactsDetails Contact information.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        },
+        "Value": {
+          "name": "Value",
+          "description": "Value of contact details `type`",
+          "json_tag": "value"
+        }
+      }
+    },
+    "ErrorDetails": {
+      "type_name": "ErrorDetails",
+      "description": "ErrorDetails struct for ErrorDetails",
+      "fields": {
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CorrelationId": {
+          "name": "CorrelationId",
+          "description": "",
+          "json_tag": "correlationId"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "",
+          "json_tag": "details"
+        },
+        "ErrorCode": {
+          "name": "ErrorCode",
+          "description": "",
+          "json_tag": "errorCode"
+        },
+        "ErrorMessage": {
+          "name": "ErrorMessage",
+          "description": "",
+          "json_tag": "errorMessage"
+        },
+        "Help": {
+          "name": "Help",
+          "description": "",
+          "json_tag": "help"
+        }
+      }
+    },
+    "GenericOpenAPIError": {
+      "type_name": "GenericOpenAPIError",
+      "description": "GenericOpenAPIError Provides access to the body, error and model on returned errors.",
+      "fields": {
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "error": {
+          "name": "error",
+          "description": ""
+        },
+        "model": {
+          "name": "model",
+          "description": ""
+        }
+      }
+    },
+    "Negotiations": {
+      "type_name": "Negotiations",
+      "description": "Negotiations Negotiations message with alternative date and time",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CreatedDateTime": {
+          "name": "CreatedDateTime",
+          "description": "Negotiations message created date and time by operations team",
+          "json_tag": "createdDateTime"
+        },
+        "Expedited": {
+          "name": "Expedited",
+          "description": "When `true,` requested order is an expedite order",
+          "json_tag": "expedited"
+        },
+        "ExpirationDateTime": {
+          "name": "ExpirationDateTime",
+          "description": "Validity date and time of the negotiation. Negotiations request after this date will no longer be valid.",
+          "json_tag": "expirationDateTime"
+        },
+        "Message": {
+          "name": "Message",
+          "description": "Negotiations message",
+          "json_tag": "message"
+        },
+        "OrderRequestedDateTime": {
+          "name": "OrderRequestedDateTime",
+          "description": "Customer requested order date and time at point of order.",
+          "json_tag": "orderRequestedDateTime"
+        },
+        "ProposedDateTime": {
+          "name": "ProposedDateTime",
+          "description": "Alternative / revised date and time proposed by Equinix for fulfilling the order request.",
+          "json_tag": "proposedDateTime"
+        },
+        "ReferenceId": {
+          "name": "ReferenceId",
+          "description": "Reference id / internal id for customer to identify the actionable order line",
+          "json_tag": "referenceId"
+        }
+      }
+    },
+    "NegotiationsRequest": {
+      "type_name": "NegotiationsRequest",
+      "description": "NegotiationsRequest struct for NegotiationsRequest",
+      "fields": {
+        "Action": {
+          "name": "Action",
+          "description": "",
+          "json_tag": "action"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Reason": {
+          "name": "Reason",
+          "description": "Reason for cancelling the negotiation",
+          "json_tag": "reason"
+        },
+        "ReferenceId": {
+          "name": "ReferenceId",
+          "description": "Unique identifier to reference specific activity or order line id.",
+          "json_tag": "referenceId"
+        }
+      }
+    },
+    "Note": {
+      "type_name": "Note",
+      "description": "Note Extra information about a given entity",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "File(s) attached to the orders. To learn about including attachments in your request, refer to Attachments API.",
+          "json_tag": "attachments"
+        },
+        "Author": {
+          "name": "Author",
+          "description": "Author of the notes",
+          "json_tag": "author"
+        },
+        "CreatedDateTime": {
+          "name": "CreatedDateTime",
+          "description": "Date and time of the note creation in UTC timezone",
+          "json_tag": "createdDateTime"
+        },
+        "Id": {
+          "name": "Id",
+          "description": "Unique identifier of the note",
+          "json_tag": "id"
+        },
+        "ReferenceId": {
+          "name": "ReferenceId",
+          "description": "Unique identifier for referencing notes.",
+          "json_tag": "referenceId"
+        },
+        "Text": {
+          "name": "Text",
+          "description": "The content of the note",
+          "json_tag": "text"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "NoteRequest": {
+      "type_name": "NoteRequest",
+      "description": "NoteRequest Extra notes about a given entity",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "File(s) attached to the Orders. To learn about including attachments in your request, see POST Attachments API.",
+          "json_tag": "attachments"
+        },
+        "ReferenceId": {
+          "name": "ReferenceId",
+          "description": "Unique reference ID associated with notes.",
+          "json_tag": "referenceId"
+        },
+        "Text": {
+          "name": "Text",
+          "description": "The text of the note",
+          "json_tag": "text"
+        }
+      }
+    },
+    "NullableAttachment": {
+      "type_name": "NullableAttachment",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBool": {
+      "type_name": "NullableBool",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCancelRequest": {
+      "type_name": "NullableCancelRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContacts": {
+      "type_name": "NullableContacts",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactsAvailability": {
+      "type_name": "NullableContactsAvailability",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactsDetails": {
+      "type_name": "NullableContactsDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactsDetailsType": {
+      "type_name": "NullableContactsDetailsType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactsType": {
+      "type_name": "NullableContactsType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCurrencyCode": {
+      "type_name": "NullableCurrencyCode",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableErrorDetails": {
+      "type_name": "NullableErrorDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat32": {
+      "type_name": "NullableFloat32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat64": {
+      "type_name": "NullableFloat64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt": {
+      "type_name": "NullableInt",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt32": {
+      "type_name": "NullableInt32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt64": {
+      "type_name": "NullableInt64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableNegotiations": {
+      "type_name": "NullableNegotiations",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableNegotiationsRequest": {
+      "type_name": "NullableNegotiationsRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableNegotiationsRequestAction": {
+      "type_name": "NullableNegotiationsRequestAction",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableNote": {
+      "type_name": "NullableNote",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableNoteRequest": {
+      "type_name": "NullableNoteRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableNoteType": {
+      "type_name": "NullableNoteType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderDetails": {
+      "type_name": "NullableOrderDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrders": {
+      "type_name": "NullableOrders",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrdersBase": {
+      "type_name": "NullableOrdersBase",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrdersBaseChannel": {
+      "type_name": "NullableOrdersBaseChannel",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrdersBaseQuoteRequestType": {
+      "type_name": "NullableOrdersBaseQuoteRequestType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrdersBaseStatus": {
+      "type_name": "NullableOrdersBaseStatus",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrdersBaseSubChannel": {
+      "type_name": "NullableOrdersBaseSubChannel",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrdersLine": {
+      "type_name": "NullableOrdersLine",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrdersLineRequestType": {
+      "type_name": "NullableOrdersLineRequestType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePrice": {
+      "type_name": "NullablePrice",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePriceValueType": {
+      "type_name": "NullablePriceValueType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableProductAdditionalInfoInner": {
+      "type_name": "NullableProductAdditionalInfoInner",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePurchaseOrder": {
+      "type_name": "NullablePurchaseOrder",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePurchaseOrderType": {
+      "type_name": "NullablePurchaseOrderType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableString": {
+      "type_name": "NullableString",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTIMEZONELIST": {
+      "type_name": "NullableTIMEZONELIST",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTime": {
+      "type_name": "NullableTime",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "OrderDetails": {
+      "type_name": "OrderDetails",
+      "description": "OrderDetails struct for OrderDetails",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Details": {
+          "name": "Details",
+          "description": "",
+          "json_tag": "details"
+        }
+      }
+    },
+    "Orders": {
+      "type_name": "Orders",
+      "description": "Orders An order could be request, service or ticket to performs specified activity on an colo businesss",
+      "fields": {
+        "AccountName": {
+          "name": "AccountName",
+          "description": "Customer account name",
+          "json_tag": "accountName"
+        },
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "Customer account number",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "This section is reserved to display product specific information",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cancellable": {
+          "name": "Cancellable",
+          "description": "When `true`, order can be cancelled.",
+          "json_tag": "cancellable"
+        },
+        "Channel": {
+          "name": "Channel",
+          "description": "",
+          "json_tag": "channel"
+        },
+        "ClosedDateTime": {
+          "name": "ClosedDateTime",
+          "description": "The order closed date and time in UTC timezone.",
+          "json_tag": "closedDateTime"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "The related party associated with the ticket.",
+          "json_tag": "contacts"
+        },
+        "CreatedDateTime": {
+          "name": "CreatedDateTime",
+          "description": "The order created date and time in UTC timezone.",
+          "json_tag": "createdDateTime"
+        },
+        "CurrencyCode": {
+          "name": "CurrencyCode",
+          "description": "",
+          "json_tag": "currencyCode"
+        },
+        "CustomerReferenceId": {
+          "name": "CustomerReferenceId",
+          "description": "Customer Reference Number / External Reference Number",
+          "json_tag": "customerReferenceId"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "",
+          "json_tag": "details"
+        },
+        "EstimatedCompletionDateTime": {
+          "name": "EstimatedCompletionDateTime",
+          "description": "The estimated completion date and time in UTC timezone",
+          "json_tag": "estimatedCompletionDateTime"
+        },
+        "Modifiable": {
+          "name": "Modifiable",
+          "description": "When `true`, order can be modified.",
+          "json_tag": "modifiable"
+        },
+        "Notes": {
+          "name": "Notes",
+          "description": "The notes that are associated to the orders.",
+          "json_tag": "notes"
+        },
+        "OrderId": {
+          "name": "OrderId",
+          "description": "Unique identifier of the order.",
+          "json_tag": "orderId"
+        },
+        "QuoteRequestType": {
+          "name": "QuoteRequestType",
+          "description": "",
+          "json_tag": "quoteRequestType"
+        },
+        "Status": {
+          "name": "Status",
+          "description": "",
+          "json_tag": "status"
+        },
+        "SubChannel": {
+          "name": "SubChannel",
+          "description": "",
+          "json_tag": "subChannel"
+        },
+        "UpdatedDateTime": {
+          "name": "UpdatedDateTime",
+          "description": "The order updated date and time in UTC timezone.",
+          "json_tag": "updatedDateTime"
+        }
+      }
+    },
+    "OrdersBase": {
+      "type_name": "OrdersBase",
+      "description": "OrdersBase Orders Base is the properties or attributes which common for every order details",
+      "fields": {
+        "AccountName": {
+          "name": "AccountName",
+          "description": "Customer account name",
+          "json_tag": "accountName"
+        },
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "Customer account number",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "This section is reserved to display product specific information",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cancellable": {
+          "name": "Cancellable",
+          "description": "When `true`, order can be cancelled.",
+          "json_tag": "cancellable"
+        },
+        "Channel": {
+          "name": "Channel",
+          "description": "",
+          "json_tag": "channel"
+        },
+        "ClosedDateTime": {
+          "name": "ClosedDateTime",
+          "description": "The order closed date and time in UTC timezone.",
+          "json_tag": "closedDateTime"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "The related party associated with the ticket.",
+          "json_tag": "contacts"
+        },
+        "CreatedDateTime": {
+          "name": "CreatedDateTime",
+          "description": "The order created date and time in UTC timezone.",
+          "json_tag": "createdDateTime"
+        },
+        "CurrencyCode": {
+          "name": "CurrencyCode",
+          "description": "",
+          "json_tag": "currencyCode"
+        },
+        "CustomerReferenceId": {
+          "name": "CustomerReferenceId",
+          "description": "Customer Reference Number / External Reference Number",
+          "json_tag": "customerReferenceId"
+        },
+        "EstimatedCompletionDateTime": {
+          "name": "EstimatedCompletionDateTime",
+          "description": "The estimated completion date and time in UTC timezone",
+          "json_tag": "estimatedCompletionDateTime"
+        },
+        "Modifiable": {
+          "name": "Modifiable",
+          "description": "When `true`, order can be modified.",
+          "json_tag": "modifiable"
+        },
+        "Notes": {
+          "name": "Notes",
+          "description": "The notes that are associated to the orders.",
+          "json_tag": "notes"
+        },
+        "OrderId": {
+          "name": "OrderId",
+          "description": "Unique identifier of the order.",
+          "json_tag": "orderId"
+        },
+        "QuoteRequestType": {
+          "name": "QuoteRequestType",
+          "description": "",
+          "json_tag": "quoteRequestType"
+        },
+        "Status": {
+          "name": "Status",
+          "description": "",
+          "json_tag": "status"
+        },
+        "SubChannel": {
+          "name": "SubChannel",
+          "description": "",
+          "json_tag": "subChannel"
+        },
+        "UpdatedDateTime": {
+          "name": "UpdatedDateTime",
+          "description": "The order updated date and time in UTC timezone.",
+          "json_tag": "updatedDateTime"
+        }
+      }
+    },
+    "OrdersLine": {
+      "type_name": "OrdersLine",
+      "description": "OrdersLine Orders Line contains information appplicable for all the orders type i.e smart hands, work visit and cross connect",
+      "fields": {
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "This section is reserved to display product specific information",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "File(s) attached to the Orders. To learn about including attachments in your request, see POST Attachments API.",
+          "json_tag": "attachments"
+        },
+        "BillingStartDateTime": {
+          "name": "BillingStartDateTime",
+          "description": "Billing commencement date and time in UTC provided in the RFC3339 format with timezone markers omitted, delimitting date and time with a space, e.g. 2024-12-31 23:59:59",
+          "json_tag": "billingStartDateTime"
+        },
+        "Cabinets": {
+          "name": "Cabinets",
+          "description": "One or more cabinets ID",
+          "json_tag": "cabinets"
+        },
+        "Cage": {
+          "name": "Cage",
+          "description": "Cage ID",
+          "json_tag": "cage"
+        },
+        "Cancellable": {
+          "name": "Cancellable",
+          "description": "When `true`, order can be cancelled",
+          "json_tag": "cancellable"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Description of the orders.",
+          "json_tag": "description"
+        },
+        "EstimatedCompletionDateTime": {
+          "name": "EstimatedCompletionDateTime",
+          "description": "The estimated completion date and time in UTC timezone",
+          "json_tag": "estimatedCompletionDateTime"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "Location code of Equinix datacenter",
+          "json_tag": "ibx"
+        },
+        "LineId": {
+          "name": "LineId",
+          "description": "Unique identifier associated with line item.",
+          "json_tag": "lineId"
+        },
+        "Modifiable": {
+          "name": "Modifiable",
+          "description": "When `true`, order can be modified",
+          "json_tag": "modifiable"
+        },
+        "ParentlineId": {
+          "name": "ParentlineId",
+          "description": "Unique identifier associated with `lineId`to denote hierarchy of the product. When this field is null, item considered to be at root level.",
+          "json_tag": "parentlineId"
+        },
+        "ProductCode": {
+          "name": "ProductCode",
+          "description": "Product code associated with a particular product",
+          "json_tag": "productCode"
+        },
+        "ProductName": {
+          "name": "ProductName",
+          "description": "Product name",
+          "json_tag": "productName"
+        },
+        "ProductType": {
+          "name": "ProductType",
+          "description": "Type of product. Known values include: CROSS_CONNECT, SMART_HANDS, WORK_VISIT, SECURITY_ACCESS, CONFERENCE_ROOM, TROUBLE_TICKET, SHIPMENTS, NETWORK_PORTS, DEINSTALL_CROSS_CONNECT, Equinix Fabric Port/Connection, OTHER",
+          "json_tag": "productType"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "RequestType": {
+          "name": "RequestType",
+          "description": "",
+          "json_tag": "requestType"
+        },
+        "RootlineId": {
+          "name": "RootlineId",
+          "description": "Unique identifier to specify root item. Useful when product order hierarchy exceeds 2.",
+          "json_tag": "rootlineId"
+        },
+        "Status": {
+          "name": "Status",
+          "description": "The current status of the order or service",
+          "json_tag": "status"
+        },
+        "TotalPricing": {
+          "name": "TotalPricing",
+          "description": "Total Pricing details",
+          "json_tag": "totalPricing"
+        },
+        "UnitPricing": {
+          "name": "UnitPricing",
+          "description": "Unit Pricing details",
+          "json_tag": "unitPricing"
+        }
+      }
+    },
+    "Price": {
+      "type_name": "Price",
+      "description": "Price Pricing details for a particular service or order, This can be one time charge or recurring charge",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Type": {
+          "name": "Type",
+          "description": "To indicate the type of `value` and `valueType`. Known values include: ONE_TIME_CHARGE, MONTHLY_CHARGE, MONTHLY_DISCOUNT, ONE_TIME_DISCOUNT, NET_MONTHLY_CHARGE, NET_ONE_TIME_CHARGE",
+          "json_tag": "type"
+        },
+        "Value": {
+          "name": "Value",
+          "description": "To be used with `valueType` and `type`. Can be used to denote price or discount for an order or service",
+          "json_tag": "value"
+        },
+        "ValueType": {
+          "name": "ValueType",
+          "description": "",
+          "json_tag": "valueType"
+        }
+      }
+    },
+    "ProductAdditionalInfoInner": {
+      "type_name": "ProductAdditionalInfoInner",
+      "description": "ProductAdditionalInfoInner struct for ProductAdditionalInfoInner",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Key": {
+          "name": "Key",
+          "description": "",
+          "json_tag": "key"
+        },
+        "Value": {
+          "name": "Value",
+          "description": "",
+          "json_tag": "value"
+        }
+      }
+    },
+    "PurchaseOrder": {
+      "type_name": "PurchaseOrder",
+      "description": "PurchaseOrder Purchase Order",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ClosingDate": {
+          "name": "ClosingDate",
+          "description": "Closing date of purchase order.",
+          "json_tag": "closingDate"
+        },
+        "Number": {
+          "name": "Number",
+          "description": "Purchase order number",
+          "json_tag": "number"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "",
+          "json_tag": "type"
+        }
+      }
+    },
+    "ServerConfiguration": {
+      "type_name": "ServerConfiguration",
+      "description": "ServerConfiguration stores the information about a server",
+      "fields": {
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "URL": {
+          "name": "URL",
+          "description": ""
+        },
+        "Variables": {
+          "name": "Variables",
+          "description": ""
+        }
+      }
+    },
+    "ServerVariable": {
+      "type_name": "ServerVariable",
+      "description": "ServerVariable stores the information about a server variable",
+      "fields": {
+        "DefaultValue": {
+          "name": "DefaultValue",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "EnumValues": {
+          "name": "EnumValues",
+          "description": ""
+        }
+      }
+    },
+    "formFile": {
+      "type_name": "formFile",
+      "fields": {
+        "fileBytes": {
+          "name": "fileBytes",
+          "description": ""
+        },
+        "fileName": {
+          "name": "fileName",
+          "description": ""
+        },
+        "formFileName": {
+          "name": "formFileName",
+          "description": ""
+        }
+      }
+    },
+    "service": {
+      "type_name": "service",
+      "fields": {
+        "client": {
+          "name": "client",
+          "description": ""
+        }
+      }
+    }
+  }
+}

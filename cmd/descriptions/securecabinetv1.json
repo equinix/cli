@@ -1,0 +1,1104 @@
+{
+  "services": {
+    "availability": {
+      "service_name": "availability",
+      "service_description": "",
+      "methods": {
+        "GetProductsAvailability": {
+          "short_description": "Secure Cabinet availability.",
+          "long_description": "Returns the availability of Secure Cabinets and recommended additional products for provided billing account.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            },
+            {
+              "name": "accountNumber",
+              "description": "Billing Account Number."
+            }
+          ]
+        },
+        "GetProductsAvailabilityExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiGetProductsAvailabilityRequest": {
+          "type_name": "ApiGetProductsAvailabilityRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "accountNumber": {
+              "name": "accountNumber",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        }
+      }
+    },
+    "orders": {
+      "service_name": "orders",
+      "service_description": "",
+      "methods": {
+        "CreateOrder": {
+          "short_description": "Order a new Secure Cabinet deployment",
+          "long_description": "Order a new Secure Cabinet deployment and recommended additional products at IBX data centers worldwide.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "CreateOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiCreateOrderRequest": {
+          "type_name": "ApiCreateOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "orderCreateRequest": {
+              "name": "orderCreateRequest",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {
+    "APIClient": {
+      "type_name": "APIClient",
+      "description": "APIClient manages communication with the Secure Cabinet API API v1.0.0\nIn most cases there should be only one, shared, APIClient.",
+      "fields": {
+        "AvailabilityApi": {
+          "name": "AvailabilityApi",
+          "description": ""
+        },
+        "OrdersApi": {
+          "name": "OrdersApi",
+          "description": ""
+        },
+        "cfg": {
+          "name": "cfg",
+          "description": ""
+        },
+        "common": {
+          "name": "common",
+          "description": "Reuse a single struct instead of allocating one for each service on the heap."
+        }
+      }
+    },
+    "APIKey": {
+      "type_name": "APIKey",
+      "description": "APIKey provides API key based authentication to a request passed via context using ContextAPIKey",
+      "fields": {
+        "Key": {
+          "name": "Key",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": ""
+        }
+      }
+    },
+    "APIResponse": {
+      "type_name": "APIResponse",
+      "description": "APIResponse stores the API response returned by the server.",
+      "fields": {
+        "Message": {
+          "name": "Message",
+          "description": "",
+          "json_tag": "message"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "Method is the HTTP method used for the request.  This value is always\navailable, even if the embedded *http.Response is nil.",
+          "json_tag": "method"
+        },
+        "Operation": {
+          "name": "Operation",
+          "description": "Operation is the name of the OpenAPI operation.",
+          "json_tag": "operation"
+        },
+        "Payload": {
+          "name": "Payload",
+          "description": "Payload holds the contents of the response body (which may be nil or empty).\nThis is provided here as the raw response.Body() reader will have already\nbeen drained.",
+          "json_tag": "-"
+        },
+        "RequestURL": {
+          "name": "RequestURL",
+          "description": "RequestURL is the request URL. This value is always available, even if the\nembedded *http.Response is nil.",
+          "json_tag": "url"
+        }
+      }
+    },
+    "AcCircuitConfig": {
+      "type_name": "AcCircuitConfig",
+      "description": "AcCircuitConfig struct for AcCircuitConfig",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Phase": {
+          "name": "Phase",
+          "description": "",
+          "json_tag": "phase"
+        },
+        "Receptacle": {
+          "name": "Receptacle",
+          "description": "Receptacle type",
+          "json_tag": "receptacle"
+        },
+        "SoldAmperage": {
+          "name": "SoldAmperage",
+          "description": "Amperage Numerical Value",
+          "json_tag": "soldAmperage"
+        },
+        "Voltage": {
+          "name": "Voltage",
+          "description": "Voltage numerical value",
+          "json_tag": "voltage"
+        }
+      }
+    },
+    "ApiCreateOrderRequest": {
+      "type_name": "ApiCreateOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "orderCreateRequest": {
+          "name": "orderCreateRequest",
+          "description": ""
+        }
+      }
+    },
+    "ApiGetProductsAvailabilityRequest": {
+      "type_name": "ApiGetProductsAvailabilityRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "accountNumber": {
+          "name": "accountNumber",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "BasicAuth": {
+      "type_name": "BasicAuth",
+      "description": "BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth",
+      "fields": {
+        "Password": {
+          "name": "Password",
+          "description": "",
+          "json_tag": "password"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "",
+          "json_tag": "userName"
+        }
+      }
+    },
+    "Configuration": {
+      "type_name": "Configuration",
+      "description": "Configuration stores the configuration of the API client",
+      "fields": {
+        "Debug": {
+          "name": "Debug",
+          "description": "",
+          "json_tag": "debug"
+        },
+        "DefaultHeader": {
+          "name": "DefaultHeader",
+          "description": "",
+          "json_tag": "defaultHeader"
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "description": ""
+        },
+        "Host": {
+          "name": "Host",
+          "description": "",
+          "json_tag": "host"
+        },
+        "OperationServers": {
+          "name": "OperationServers",
+          "description": ""
+        },
+        "Scheme": {
+          "name": "Scheme",
+          "description": "",
+          "json_tag": "scheme"
+        },
+        "Servers": {
+          "name": "Servers",
+          "description": ""
+        },
+        "UserAgent": {
+          "name": "UserAgent",
+          "description": "",
+          "json_tag": "userAgent"
+        }
+      }
+    },
+    "ContactDetails": {
+      "type_name": "ContactDetails",
+      "description": "ContactDetails Contact person details for technical inquiries.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Email": {
+          "name": "Email",
+          "description": "Email address.",
+          "json_tag": "email"
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "description": "First name.",
+          "json_tag": "firstName"
+        },
+        "LastName": {
+          "name": "LastName",
+          "description": "Last name.",
+          "json_tag": "lastName"
+        },
+        "Phone": {
+          "name": "Phone",
+          "description": "",
+          "json_tag": "phone"
+        }
+      }
+    },
+    "Dimension": {
+      "type_name": "Dimension",
+      "description": "Dimension struct for Dimension",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Unit": {
+          "name": "Unit",
+          "description": "",
+          "json_tag": "unit"
+        },
+        "Value": {
+          "name": "Value",
+          "description": "Dimension Value",
+          "json_tag": "value"
+        }
+      }
+    },
+    "Dimensions": {
+      "type_name": "Dimensions",
+      "description": "Dimensions struct for Dimensions",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Depth": {
+          "name": "Depth",
+          "description": "",
+          "json_tag": "depth"
+        },
+        "Height": {
+          "name": "Height",
+          "description": "",
+          "json_tag": "height"
+        },
+        "Width": {
+          "name": "Width",
+          "description": "",
+          "json_tag": "width"
+        }
+      }
+    },
+    "Error": {
+      "type_name": "Error",
+      "description": "Error Error responses are included with 4xx and 5xx HTTP responses from the API service. Either \\\"error\\\" or \\\"errors\\\" will be set.",
+      "fields": {
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "Contains application specific information for this error. The object inside this array can have any number of application specific properties.",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CorrelationId": {
+          "name": "CorrelationId",
+          "description": "Correlation ID without any sensitive or meaningful information.",
+          "json_tag": "correlationId"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "More information on errors.",
+          "json_tag": "details"
+        },
+        "ErrorCode": {
+          "name": "ErrorCode",
+          "description": "Application error code. Format :EQ-\u003cerror code\u003e",
+          "json_tag": "errorCode\" validate:\"regexp=^EQ-70[0-9]{5}$"
+        },
+        "ErrorMessage": {
+          "name": "ErrorMessage",
+          "description": "Application error message",
+          "json_tag": "errorMessage"
+        },
+        "Help": {
+          "name": "Help",
+          "description": "Help message or URL to a help page for the corresponding errorCode.",
+          "json_tag": "help"
+        }
+      }
+    },
+    "ErrorAdditionalInfo": {
+      "type_name": "ErrorAdditionalInfo",
+      "description": "ErrorAdditionalInfo struct for ErrorAdditionalInfo",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Property": {
+          "name": "Property",
+          "description": "Property at which the error occurs. Can be empty.",
+          "json_tag": "property"
+        },
+        "Reason": {
+          "name": "Reason",
+          "description": "Fallback error message in plain English.",
+          "json_tag": "reason"
+        }
+      }
+    },
+    "GenericOpenAPIError": {
+      "type_name": "GenericOpenAPIError",
+      "description": "GenericOpenAPIError Provides access to the body, error and model on returned errors.",
+      "fields": {
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "error": {
+          "name": "error",
+          "description": ""
+        },
+        "model": {
+          "name": "model",
+          "description": ""
+        }
+      }
+    },
+    "NullableAcCircuitConfig": {
+      "type_name": "NullableAcCircuitConfig",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBool": {
+      "type_name": "NullableBool",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactAvailability": {
+      "type_name": "NullableContactAvailability",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactDetails": {
+      "type_name": "NullableContactDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContractTerm": {
+      "type_name": "NullableContractTerm",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDimension": {
+      "type_name": "NullableDimension",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDimensionUnit": {
+      "type_name": "NullableDimensionUnit",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDimensions": {
+      "type_name": "NullableDimensions",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableError": {
+      "type_name": "NullableError",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableErrorAdditionalInfo": {
+      "type_name": "NullableErrorAdditionalInfo",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFabricPortSpeed": {
+      "type_name": "NullableFabricPortSpeed",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat32": {
+      "type_name": "NullableFloat32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat64": {
+      "type_name": "NullableFloat64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt": {
+      "type_name": "NullableInt",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt32": {
+      "type_name": "NullableInt32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt64": {
+      "type_name": "NullableInt64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderCreateRequest": {
+      "type_name": "NullableOrderCreateRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderCreateResponse": {
+      "type_name": "NullableOrderCreateResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderItem": {
+      "type_name": "NullableOrderItem",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePduConfig": {
+      "type_name": "NullablePduConfig",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePhase": {
+      "type_name": "NullablePhase",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePhone": {
+      "type_name": "NullablePhone",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableProductsAvailability": {
+      "type_name": "NullableProductsAvailability",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableString": {
+      "type_name": "NullableString",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTime": {
+      "type_name": "NullableTime",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableValidationError": {
+      "type_name": "NullableValidationError",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableValidationErrorAdditionalInfo": {
+      "type_name": "NullableValidationErrorAdditionalInfo",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "OrderCreateRequest": {
+      "type_name": "OrderCreateRequest",
+      "description": "OrderCreateRequest struct for OrderCreateRequest",
+      "fields": {
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "Identifier of a billing account, with permission to order colocation products.",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ContractTerm": {
+          "name": "ContractTerm",
+          "description": "",
+          "json_tag": "contractTerm"
+        },
+        "CustomerReference": {
+          "name": "CustomerReference",
+          "description": "Supplementary identifier for your discretionary use. For example, your internal identifier.",
+          "json_tag": "customerReference"
+        },
+        "EndCustomerName": {
+          "name": "EndCustomerName",
+          "description": "End customer name. Applicable and required if a reseller billing account is used.",
+          "json_tag": "endCustomerName"
+        },
+        "IbxCode": {
+          "name": "IbxCode",
+          "description": "IBX data center identifier.",
+          "json_tag": "ibxCode\" validate:\"regexp=^[A-Z]{2}[0-9]+x?$"
+        },
+        "OrderItem": {
+          "name": "OrderItem",
+          "description": "",
+          "json_tag": "orderItem"
+        },
+        "PurchaseOrderNumber": {
+          "name": "PurchaseOrderNumber",
+          "description": "Purchase order number. Optional, unless the billing account requires it.",
+          "json_tag": "purchaseOrderNumber"
+        },
+        "TechnicalContact": {
+          "name": "TechnicalContact",
+          "description": "",
+          "json_tag": "technicalContact"
+        }
+      }
+    },
+    "OrderCreateResponse": {
+      "type_name": "OrderCreateResponse",
+      "description": "OrderCreateResponse struct for OrderCreateResponse",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "OrderNumber": {
+          "name": "OrderNumber",
+          "description": "Order Number",
+          "json_tag": "orderNumber"
+        }
+      }
+    },
+    "OrderItem": {
+      "type_name": "OrderItem",
+      "description": "OrderItem Order details.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CabinetDimensions": {
+          "name": "CabinetDimensions",
+          "description": "",
+          "json_tag": "cabinetDimensions"
+        },
+        "DrawCapacity": {
+          "name": "DrawCapacity",
+          "description": "Maximum, combined power draw of all cabinets in your order, measured in kVA. Applicable values, in 0.5 increments, depend on the IBX data center.",
+          "json_tag": "drawCapacity"
+        },
+        "FabricPort": {
+          "name": "FabricPort",
+          "description": "Indicates if a single, primary Fabric port should be included and delivered to one of the ordered cabinets.",
+          "json_tag": "fabricPort"
+        },
+        "NumberOfCabinets": {
+          "name": "NumberOfCabinets",
+          "description": "The number of ordered cabinets.",
+          "json_tag": "numberOfCabinets"
+        },
+        "Pdus": {
+          "name": "Pdus",
+          "description": "Indicates if an Equinix-recommended set of two PDUs, for single-phase circuit, per cabinet should be installed.",
+          "json_tag": "pdus"
+        }
+      }
+    },
+    "PduConfig": {
+      "type_name": "PduConfig",
+      "description": "PduConfig struct for PduConfig",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Model": {
+          "name": "Model",
+          "description": "Model Code",
+          "json_tag": "model"
+        }
+      }
+    },
+    "Phone": {
+      "type_name": "Phone",
+      "description": "Phone Phone number details.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Availability": {
+          "name": "Availability",
+          "description": "",
+          "json_tag": "availability"
+        },
+        "Number": {
+          "name": "Number",
+          "description": "A phone number in full international format.",
+          "json_tag": "number"
+        }
+      }
+    },
+    "ProductsAvailability": {
+      "type_name": "ProductsAvailability",
+      "description": "ProductsAvailability Information about availability of products in one ibx. Missing pdu configuration means that we don't offer pdu there. Missing fabric port speed means that fabric port is not available there.",
+      "fields": {
+        "AcCircuitConfiguration": {
+          "name": "AcCircuitConfiguration",
+          "description": "",
+          "json_tag": "acCircuitConfiguration"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CabinetDimensions": {
+          "name": "CabinetDimensions",
+          "description": "",
+          "json_tag": "cabinetDimensions"
+        },
+        "FabricPortSpeed": {
+          "name": "FabricPortSpeed",
+          "description": "",
+          "json_tag": "fabricPortSpeed"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "IBX data center identifier.",
+          "json_tag": "ibx\" validate:\"regexp=^[A-Z]{2}[0-9]+x?$"
+        },
+        "MaximumDrawCapacityPerCabinet": {
+          "name": "MaximumDrawCapacityPerCabinet",
+          "description": "The maximum power draw capacity per ordered cabinet.",
+          "json_tag": "maximumDrawCapacityPerCabinet"
+        },
+        "MaximumNumberOfCabinetsToOrder": {
+          "name": "MaximumNumberOfCabinetsToOrder",
+          "description": "Maximum number of cabinets that can be ordered in one order in this ibx.",
+          "json_tag": "maximumNumberOfCabinetsToOrder"
+        },
+        "MinimumDrawCapacityPerCabinet": {
+          "name": "MinimumDrawCapacityPerCabinet",
+          "description": "The minimum power draw capacity per ordered cabinet.",
+          "json_tag": "minimumDrawCapacityPerCabinet"
+        },
+        "PduConfiguration": {
+          "name": "PduConfiguration",
+          "description": "",
+          "json_tag": "pduConfiguration"
+        }
+      }
+    },
+    "ServerConfiguration": {
+      "type_name": "ServerConfiguration",
+      "description": "ServerConfiguration stores the information about a server",
+      "fields": {
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "URL": {
+          "name": "URL",
+          "description": ""
+        },
+        "Variables": {
+          "name": "Variables",
+          "description": ""
+        }
+      }
+    },
+    "ServerVariable": {
+      "type_name": "ServerVariable",
+      "description": "ServerVariable stores the information about a server variable",
+      "fields": {
+        "DefaultValue": {
+          "name": "DefaultValue",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "EnumValues": {
+          "name": "EnumValues",
+          "description": ""
+        }
+      }
+    },
+    "ValidationError": {
+      "type_name": "ValidationError",
+      "description": "ValidationError Error responses are included with 4xx and 5xx HTTP responses from the API service. Either \\\"error\\\" or \\\"errors\\\" will be set.",
+      "fields": {
+        "AdditionalInfo": {
+          "name": "AdditionalInfo",
+          "description": "Contains application specific information for this error. The object inside this array can have any number of application specific properties.",
+          "json_tag": "additionalInfo"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CorrelationId": {
+          "name": "CorrelationId",
+          "description": "Correlation ID without any sensitive or meaningful information.",
+          "json_tag": "correlationId"
+        },
+        "Details": {
+          "name": "Details",
+          "description": "More information on errors.",
+          "json_tag": "details"
+        },
+        "ErrorCode": {
+          "name": "ErrorCode",
+          "description": "Application error code. Format :EQ-\u003cerror code\u003e",
+          "json_tag": "errorCode"
+        },
+        "ErrorMessage": {
+          "name": "ErrorMessage",
+          "description": "Application error message",
+          "json_tag": "errorMessage"
+        },
+        "Help": {
+          "name": "Help",
+          "description": "Help message or URL to a help page for the corresponding errorCode.",
+          "json_tag": "help"
+        }
+      }
+    },
+    "ValidationErrorAdditionalInfo": {
+      "type_name": "ValidationErrorAdditionalInfo",
+      "description": "ValidationErrorAdditionalInfo struct for ValidationErrorAdditionalInfo",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Property": {
+          "name": "Property",
+          "description": "Property at which the validation violation occurs. Can be empty when validation happens at the object top level.",
+          "json_tag": "property"
+        },
+        "Reason": {
+          "name": "Reason",
+          "description": "Fallback error message in plain English.",
+          "json_tag": "reason"
+        },
+        "ValidationParameters": {
+          "name": "ValidationParameters",
+          "description": "A map containing additional violation parameters, these can be used to render localized error messages. The list of available parameters is different for each validationRuleTag.",
+          "json_tag": "validationParameters"
+        },
+        "ValidationRoot": {
+          "name": "ValidationRoot",
+          "description": "Name of the object at which the validation violation occurs. Can be empty when validation happens inline at the request params.",
+          "json_tag": "validationRoot"
+        },
+        "ValidationRuleTag": {
+          "name": "ValidationRuleTag",
+          "description": "Violated validation rule tag.",
+          "json_tag": "validationRuleTag"
+        }
+      }
+    },
+    "formFile": {
+      "type_name": "formFile",
+      "fields": {
+        "fileBytes": {
+          "name": "fileBytes",
+          "description": ""
+        },
+        "fileName": {
+          "name": "fileName",
+          "description": ""
+        },
+        "formFileName": {
+          "name": "formFileName",
+          "description": ""
+        }
+      }
+    },
+    "service": {
+      "type_name": "service",
+      "fields": {
+        "client": {
+          "name": "client",
+          "description": ""
+        }
+      }
+    }
+  }
+}

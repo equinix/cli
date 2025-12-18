@@ -3,7 +3,7 @@ module github.com/equinix/cli
 go 1.24.5
 
 require (
-	github.com/equinix/equinix-sdk-go v0.61.0
+	github.com/equinix/equinix-sdk-go v0.62.0
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.10
 	github.com/spf13/viper v1.21.0

@@ -1,0 +1,1120 @@
+{
+  "services": {
+    "retrieve-orders": {
+      "service_name": "retrieve-orders",
+      "service_description": "",
+      "methods": {
+        "GETRetrieveOrdersLocations": {
+          "short_description": "Retrieve order permissible IBX locations",
+          "long_description": "The API returns locations (IBXs and Cages) where the user's organization has a presence. The user may be able to view orders related to these locations, depending on their permissions.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "GETRetrieveOrdersLocationsExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "POSTOrdersHistory": {
+          "short_description": "Search Orders History",
+          "long_description": "Based on filtering criteria, this method returns a list of orders from the last 12 months for IBX locations where the user has permissions.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "POSTOrdersHistoryExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiGETRetrieveOrdersLocationsRequest": {
+          "type_name": "ApiGETRetrieveOrdersLocationsRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiPOSTOrdersHistoryRequest": {
+          "type_name": "ApiPOSTOrdersHistoryRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {
+    "APIClient": {
+      "type_name": "APIClient",
+      "description": "APIClient manages communication with the Retrieve Orders API API v1.0.0\nIn most cases there should be only one, shared, APIClient.",
+      "fields": {
+        "RetrieveOrdersApi": {
+          "name": "RetrieveOrdersApi",
+          "description": ""
+        },
+        "cfg": {
+          "name": "cfg",
+          "description": ""
+        },
+        "common": {
+          "name": "common",
+          "description": "Reuse a single struct instead of allocating one for each service on the heap."
+        }
+      }
+    },
+    "APIKey": {
+      "type_name": "APIKey",
+      "description": "APIKey provides API key based authentication to a request passed via context using ContextAPIKey",
+      "fields": {
+        "Key": {
+          "name": "Key",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": ""
+        }
+      }
+    },
+    "APIResponse": {
+      "type_name": "APIResponse",
+      "description": "APIResponse stores the API response returned by the server.",
+      "fields": {
+        "Message": {
+          "name": "Message",
+          "description": "",
+          "json_tag": "message"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "Method is the HTTP method used for the request.  This value is always\navailable, even if the embedded *http.Response is nil.",
+          "json_tag": "method"
+        },
+        "Operation": {
+          "name": "Operation",
+          "description": "Operation is the name of the OpenAPI operation.",
+          "json_tag": "operation"
+        },
+        "Payload": {
+          "name": "Payload",
+          "description": "Payload holds the contents of the response body (which may be nil or empty).\nThis is provided here as the raw response.Body() reader will have already\nbeen drained.",
+          "json_tag": "-"
+        },
+        "RequestURL": {
+          "name": "RequestURL",
+          "description": "RequestURL is the request URL. This value is always available, even if the\nembedded *http.Response is nil.",
+          "json_tag": "url"
+        }
+      }
+    },
+    "Account": {
+      "type_name": "Account",
+      "description": "Account struct for Account",
+      "fields": {
+        "AccountName": {
+          "name": "AccountName",
+          "description": "Name of Account",
+          "json_tag": "accountName"
+        },
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "Account Number",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        }
+      }
+    },
+    "ApiGETRetrieveOrdersLocationsRequest": {
+      "type_name": "ApiGETRetrieveOrdersLocationsRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiPOSTOrdersHistoryRequest": {
+      "type_name": "ApiPOSTOrdersHistoryRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "BasicAuth": {
+      "type_name": "BasicAuth",
+      "description": "BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth",
+      "fields": {
+        "Password": {
+          "name": "Password",
+          "description": "",
+          "json_tag": "password"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "",
+          "json_tag": "userName"
+        }
+      }
+    },
+    "Configuration": {
+      "type_name": "Configuration",
+      "description": "Configuration stores the configuration of the API client",
+      "fields": {
+        "Debug": {
+          "name": "Debug",
+          "description": "",
+          "json_tag": "debug"
+        },
+        "DefaultHeader": {
+          "name": "DefaultHeader",
+          "description": "",
+          "json_tag": "defaultHeader"
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "description": ""
+        },
+        "Host": {
+          "name": "Host",
+          "description": "",
+          "json_tag": "host"
+        },
+        "OperationServers": {
+          "name": "OperationServers",
+          "description": ""
+        },
+        "Scheme": {
+          "name": "Scheme",
+          "description": "",
+          "json_tag": "scheme"
+        },
+        "Servers": {
+          "name": "Servers",
+          "description": ""
+        },
+        "UserAgent": {
+          "name": "UserAgent",
+          "description": "",
+          "json_tag": "userAgent"
+        }
+      }
+    },
+    "Filters": {
+      "type_name": "Filters",
+      "description": "Filters struct for Filters",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "DateRange": {
+          "name": "DateRange",
+          "description": "",
+          "json_tag": "dateRange"
+        },
+        "FromDate": {
+          "name": "FromDate",
+          "description": "Date Format Should be mm/dd/yyyy.\u003cbr/\u003e Not applicable when dateRange is provided.",
+          "json_tag": "fromDate"
+        },
+        "Ibxs": {
+          "name": "Ibxs",
+          "description": "ibxs filter",
+          "json_tag": "ibxs"
+        },
+        "OrderStatus": {
+          "name": "OrderStatus",
+          "description": "order status filter",
+          "json_tag": "orderStatus"
+        },
+        "ProductTypes": {
+          "name": "ProductTypes",
+          "description": "Product(order type) filter",
+          "json_tag": "productTypes"
+        },
+        "ToDate": {
+          "name": "ToDate",
+          "description": "Date Format Should be mm/dd/yyyy.\u003cbr/\u003e Not applicable when dateRange is provided",
+          "json_tag": "toDate"
+        }
+      }
+    },
+    "GenericError": {
+      "type_name": "GenericError",
+      "description": "GenericError struct for GenericError",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Errors": {
+          "name": "Errors",
+          "description": "",
+          "json_tag": "errors"
+        },
+        "TicketId": {
+          "name": "TicketId",
+          "description": "",
+          "json_tag": "ticketId"
+        }
+      }
+    },
+    "GenericOpenAPIError": {
+      "type_name": "GenericOpenAPIError",
+      "description": "GenericOpenAPIError Provides access to the body, error and model on returned errors.",
+      "fields": {
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "error": {
+          "name": "error",
+          "description": ""
+        },
+        "model": {
+          "name": "model",
+          "description": ""
+        }
+      }
+    },
+    "IbxDetailForLocationsEndpoint": {
+      "type_name": "IbxDetailForLocationsEndpoint",
+      "description": "IbxDetailForLocationsEndpoint struct for IbxDetailForLocationsEndpoint",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Address": {
+          "name": "Address",
+          "description": "Address of the ibx",
+          "json_tag": "address"
+        },
+        "City": {
+          "name": "City",
+          "description": "City where ibx is located",
+          "json_tag": "city"
+        },
+        "Code": {
+          "name": "Code",
+          "description": "Ibx Code",
+          "json_tag": "code"
+        },
+        "Country": {
+          "name": "Country",
+          "description": "Country where ibx is located",
+          "json_tag": "country"
+        },
+        "Metro": {
+          "name": "Metro",
+          "description": "Metro code where ibx is located",
+          "json_tag": "metro"
+        },
+        "PostalCode": {
+          "name": "PostalCode",
+          "description": "Postal code of ibx location",
+          "json_tag": "postalCode"
+        },
+        "Region": {
+          "name": "Region",
+          "description": "Region where ibx is located",
+          "json_tag": "region"
+        },
+        "State": {
+          "name": "State",
+          "description": "State where ibx is located",
+          "json_tag": "state"
+        }
+      }
+    },
+    "Link": {
+      "type_name": "Link",
+      "description": "Link struct for Link",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Href": {
+          "name": "Href",
+          "description": "",
+          "json_tag": "href"
+        },
+        "Rel": {
+          "name": "Rel",
+          "description": "",
+          "json_tag": "rel"
+        }
+      }
+    },
+    "NotificationContact": {
+      "type_name": "NotificationContact",
+      "description": "NotificationContact struct for NotificationContact",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Email": {
+          "name": "Email",
+          "description": "Notification Contact email",
+          "json_tag": "email"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Notification Contact name",
+          "json_tag": "name"
+        },
+        "Phone": {
+          "name": "Phone",
+          "description": "Notification Contact phone",
+          "json_tag": "phone"
+        }
+      }
+    },
+    "NullableAccount": {
+      "type_name": "NullableAccount",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBool": {
+      "type_name": "NullableBool",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFilters": {
+      "type_name": "NullableFilters",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFiltersDateRange": {
+      "type_name": "NullableFiltersDateRange",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat32": {
+      "type_name": "NullableFloat32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat64": {
+      "type_name": "NullableFloat64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableGenericError": {
+      "type_name": "NullableGenericError",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIbxDetailForLocationsEndpoint": {
+      "type_name": "NullableIbxDetailForLocationsEndpoint",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt": {
+      "type_name": "NullableInt",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt32": {
+      "type_name": "NullableInt32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt64": {
+      "type_name": "NullableInt64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLink": {
+      "type_name": "NullableLink",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLinkRel": {
+      "type_name": "NullableLinkRel",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableNotificationContact": {
+      "type_name": "NullableNotificationContact",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderHeader": {
+      "type_name": "NullableOrderHeader",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderHeaderStatusEnum": {
+      "type_name": "NullableOrderHeaderStatusEnum",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderHistoryResponse": {
+      "type_name": "NullableOrderHistoryResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderSourceEnum": {
+      "type_name": "NullableOrderSourceEnum",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderhistoryapirequest": {
+      "type_name": "NullableOrderhistoryapirequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderhistoryapirequestSourceInner": {
+      "type_name": "NullableOrderhistoryapirequestSourceInner",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOrderingContact": {
+      "type_name": "NullableOrderingContact",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePageDetailsForResponse": {
+      "type_name": "NullablePageDetailsForResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePageRequestModel": {
+      "type_name": "NullablePageRequestModel",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePermissibleLocation": {
+      "type_name": "NullablePermissibleLocation",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableProductTypesEnum": {
+      "type_name": "NullableProductTypesEnum",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableSort": {
+      "type_name": "NullableSort",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableSortDirection": {
+      "type_name": "NullableSortDirection",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableSortName": {
+      "type_name": "NullableSortName",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableString": {
+      "type_name": "NullableString",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTime": {
+      "type_name": "NullableTime",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "OrderHeader": {
+      "type_name": "OrderHeader",
+      "description": "OrderHeader struct for OrderHeader",
+      "fields": {
+        "Account": {
+          "name": "Account",
+          "description": "",
+          "json_tag": "account"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CreatedAt": {
+          "name": "CreatedAt",
+          "description": "Order Created DateTime in ISO Date Format",
+          "json_tag": "createdAt"
+        },
+        "CustomerReferenceNumbers": {
+          "name": "CustomerReferenceNumbers",
+          "description": "List of customer reference numbers for the order lines.",
+          "json_tag": "customerReferenceNumbers"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "List of ibxs for the order lines.",
+          "json_tag": "ibx"
+        },
+        "Links": {
+          "name": "Links",
+          "description": "",
+          "json_tag": "links"
+        },
+        "NotificationContact": {
+          "name": "NotificationContact",
+          "description": "",
+          "json_tag": "notificationContact"
+        },
+        "OrderNumber": {
+          "name": "OrderNumber",
+          "description": "Order number",
+          "json_tag": "orderNumber"
+        },
+        "OrderStatus": {
+          "name": "OrderStatus",
+          "description": "",
+          "json_tag": "orderStatus"
+        },
+        "OrderingContact": {
+          "name": "OrderingContact",
+          "description": "",
+          "json_tag": "orderingContact"
+        },
+        "Type": {
+          "name": "Type",
+          "description": "List Of Proudcts Ordered in the Order.",
+          "json_tag": "type"
+        }
+      }
+    },
+    "OrderHistoryResponse": {
+      "type_name": "OrderHistoryResponse",
+      "description": "OrderHistoryResponse struct for OrderHistoryResponse",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Content": {
+          "name": "Content",
+          "description": "",
+          "json_tag": "content"
+        },
+        "Links": {
+          "name": "Links",
+          "description": "",
+          "json_tag": "links"
+        },
+        "Page": {
+          "name": "Page",
+          "description": "",
+          "json_tag": "page"
+        }
+      }
+    },
+    "Orderhistoryapirequest": {
+      "type_name": "Orderhistoryapirequest",
+      "description": "Orderhistoryapirequest struct for Orderhistoryapirequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Filters": {
+          "name": "Filters",
+          "description": "",
+          "json_tag": "filters"
+        },
+        "Page": {
+          "name": "Page",
+          "description": "",
+          "json_tag": "page"
+        },
+        "Q": {
+          "name": "Q",
+          "description": "Query value to be queried against source values(Or operation against all sources).\u003cbr/\u003eSupports partial text search",
+          "json_tag": "q"
+        },
+        "Sorts": {
+          "name": "Sorts",
+          "description": "",
+          "json_tag": "sorts"
+        },
+        "Source": {
+          "name": "Source",
+          "description": "\u003cb\u003eORDER_NUMBER:\u003c/b\u003e Search by order number(1-123456789).\u003cbr\u003e\u003cb\u003eCUSTOMER_REFERENCE_NUMBER:\u003c/b\u003e Search by customer reference number which was entered as part place order.\u003cbr\u003e\u003cb\u003eTROUBLE_TICKET_NUMBER:\u003c/b\u003e Search by trouble ticket numnber(5-123456).\u003cbr\u003e\u003cb\u003eWORK_ACTIVITY_NUMBER:\u003c/b\u003e Search by work order activity number(3-123456).",
+          "json_tag": "source"
+        }
+      }
+    },
+    "OrderingContact": {
+      "type_name": "OrderingContact",
+      "description": "OrderingContact struct for OrderingContact",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Email": {
+          "name": "Email",
+          "description": "Ordering Contact email",
+          "json_tag": "email"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Ordering Contact name",
+          "json_tag": "name"
+        },
+        "Phone": {
+          "name": "Phone",
+          "description": "Ordering Contact phone",
+          "json_tag": "phone"
+        }
+      }
+    },
+    "PageDetailsForResponse": {
+      "type_name": "PageDetailsForResponse",
+      "description": "PageDetailsForResponse struct for PageDetailsForResponse",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Number": {
+          "name": "Number",
+          "description": "Current page number",
+          "json_tag": "number"
+        },
+        "Size": {
+          "name": "Size",
+          "description": "Page Size",
+          "json_tag": "size"
+        },
+        "TotalElements": {
+          "name": "TotalElements",
+          "description": "Total number of records",
+          "json_tag": "totalElements"
+        },
+        "TotalPages": {
+          "name": "TotalPages",
+          "description": "Total number of pages",
+          "json_tag": "totalPages"
+        }
+      }
+    },
+    "PageRequestModel": {
+      "type_name": "PageRequestModel",
+      "description": "PageRequestModel struct for PageRequestModel",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Number": {
+          "name": "Number",
+          "description": "Page number indexed from 0.",
+          "json_tag": "number"
+        },
+        "Size": {
+          "name": "Size",
+          "description": "Page Size.",
+          "json_tag": "size"
+        }
+      }
+    },
+    "PermissibleLocation": {
+      "type_name": "PermissibleLocation",
+      "description": "PermissibleLocation struct for PermissibleLocation",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cages": {
+          "name": "Cages",
+          "description": "",
+          "json_tag": "cages"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "",
+          "json_tag": "ibx"
+        }
+      }
+    },
+    "ServerConfiguration": {
+      "type_name": "ServerConfiguration",
+      "description": "ServerConfiguration stores the information about a server",
+      "fields": {
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "URL": {
+          "name": "URL",
+          "description": ""
+        },
+        "Variables": {
+          "name": "Variables",
+          "description": ""
+        }
+      }
+    },
+    "ServerVariable": {
+      "type_name": "ServerVariable",
+      "description": "ServerVariable stores the information about a server variable",
+      "fields": {
+        "DefaultValue": {
+          "name": "DefaultValue",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "EnumValues": {
+          "name": "EnumValues",
+          "description": ""
+        }
+      }
+    },
+    "Sort": {
+      "type_name": "Sort",
+      "description": "Sort struct for Sort",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Direction": {
+          "name": "Direction",
+          "description": "",
+          "json_tag": "direction"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "",
+          "json_tag": "name"
+        }
+      }
+    },
+    "formFile": {
+      "type_name": "formFile",
+      "fields": {
+        "fileBytes": {
+          "name": "fileBytes",
+          "description": ""
+        },
+        "fileName": {
+          "name": "fileName",
+          "description": ""
+        },
+        "formFileName": {
+          "name": "formFileName",
+          "description": ""
+        }
+      }
+    },
+    "service": {
+      "type_name": "service",
+      "fields": {
+        "client": {
+          "name": "client",
+          "description": ""
+        }
+      }
+    }
+  }
+}

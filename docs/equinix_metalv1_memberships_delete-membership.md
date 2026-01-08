@@ -1,0 +1,34 @@
+## equinix metalv1 memberships delete-membership
+
+Delete the membership
+
+### Synopsis
+
+Deletes the membership.
+
+Use --request flag to provide optional JSON payload fields.
+
+```
+equinix metalv1 memberships delete-membership [flags]
+```
+
+### Options
+
+```
+  -h, --help             help for delete-membership
+      --id string        Membership UUID (required)
+      --request string   JSON payload for request body fields
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug           Enable debug logging for HTTP requests
+  -f, --format string   Format to use for output (json or yaml) (default "json")
+```
+
+### SEE ALSO
+
+* [equinix metalv1 memberships](equinix_metalv1_memberships.md)	 - Manage memberships resources
+

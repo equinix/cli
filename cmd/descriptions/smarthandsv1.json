@@ -1,0 +1,3232 @@
+{
+  "services": {
+    "smarthands": {
+      "service_name": "smarthands",
+      "service_description": "",
+      "methods": {
+        "GetLocation": {
+          "short_description": "Get locations(ibx, cage) details for placing smart hands based on smart hands permission for user",
+          "long_description": "Get locations(ibx, cage) details for placing smart hands based on smart hands permission for user",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "GetLocationExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandCableRequestOrder": {
+          "short_description": "This API is used to request cables per your specifications for your equipment.",
+          "long_description": "This API is used to request cables per your specifications for your equipment.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandCableRequestOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandCageCleanupOrder": {
+          "short_description": "Request trash removal or cage cleanup",
+          "long_description": "This API is used to request trash removal or cage cleanup",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandCageCleanupOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandCageEscortOrder": {
+          "short_description": "Request a patch cable to be moved between devices",
+          "long_description": "This API is used to request a patch cable to be moved between devices",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandCageEscortOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandLocatePackageOrder": {
+          "short_description": "Get the location of your package(s) at an IBX.",
+          "long_description": "This API is used to get the location of your package(s) at an IBX.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandLocatePackageOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandMoveJumperCableOrder": {
+          "short_description": "This API is used to request a patch cable to be moved between devices.",
+          "long_description": "This API is used to request a patch cable to be moved between devices.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandMoveJumperCableOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandOrder": {
+          "short_description": "Request equipment installation per your specifications by an IBX Technician",
+          "long_description": "Request equipment installation per your specifications by an IBX Technician",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandOthersOrder": {
+          "short_description": "Request a Smart Hands order not listed in catalogue",
+          "long_description": "This API is used to request a Smart Hands order not listed in catalogue",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandOthersOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandPatchCableInstallOrder": {
+          "short_description": "Request installation of a cross connect patch cable by an IBX Technician.",
+          "long_description": "Request installation of a cross connect patch cable by an IBX Technician.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandPatchCableInstallOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandPatchCableRemovalOrder": {
+          "short_description": "Request removal of a cross connect cable by an IBX Technician.",
+          "long_description": "Request removal of a cross connect cable by an IBX Technician.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandPatchCableRemovalOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandPicturesDocumentOrder": {
+          "short_description": "Request an IBX Technician to provide cage-related pictures or documentation.",
+          "long_description": "Request an IBX Technician to provide cage-related pictures or documentation.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandPicturesDocumentOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandRunJumperCableOrder": {
+          "short_description": "This API is used to request a jumper cable to be ran between devices.",
+          "long_description": "This API is used to request a jumper cable to be ran between devices.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandRunJumperCableOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "HandleSmartHandShipmentUnpackOrder": {
+          "short_description": "Request inbound shipment unpacking and packaging disposal.",
+          "long_description": "This API is used to request inbound shipment unpacking and packaging disposal.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "HandleSmartHandShipmentUnpackOrderExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        },
+        "SmartHandTypes": {
+          "short_description": "All supported smart hands types API.",
+          "long_description": "Smart Hands Types API provides all types of supported smart hands.",
+          "parameters": [
+            {
+              "name": "ctx",
+              "description": "for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background()."
+            }
+          ]
+        },
+        "SmartHandTypesExecute": {
+          "short_description": "Execute executes the request",
+          "long_description": ""
+        }
+      },
+      "types": {
+        "ApiGetLocationRequest": {
+          "type_name": "ApiGetLocationRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "cages": {
+              "name": "cages",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            },
+            "detail": {
+              "name": "detail",
+              "description": ""
+            },
+            "ibxs": {
+              "name": "ibxs",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandCableRequestOrderRequest": {
+          "type_name": "ApiHandleSmartHandCableRequestOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandCageCleanupOrderRequest": {
+          "type_name": "ApiHandleSmartHandCageCleanupOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandCageEscortOrderRequest": {
+          "type_name": "ApiHandleSmartHandCageEscortOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandLocatePackageOrderRequest": {
+          "type_name": "ApiHandleSmartHandLocatePackageOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandMoveJumperCableOrderRequest": {
+          "type_name": "ApiHandleSmartHandMoveJumperCableOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandOrderRequest": {
+          "type_name": "ApiHandleSmartHandOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandOthersOrderRequest": {
+          "type_name": "ApiHandleSmartHandOthersOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandPatchCableInstallOrderRequest": {
+          "type_name": "ApiHandleSmartHandPatchCableInstallOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandPatchCableRemovalOrderRequest": {
+          "type_name": "ApiHandleSmartHandPatchCableRemovalOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandPicturesDocumentOrderRequest": {
+          "type_name": "ApiHandleSmartHandPicturesDocumentOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandRunJumperCableOrderRequest": {
+          "type_name": "ApiHandleSmartHandRunJumperCableOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiHandleSmartHandShipmentUnpackOrderRequest": {
+          "type_name": "ApiHandleSmartHandShipmentUnpackOrderRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "body": {
+              "name": "body",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        },
+        "ApiSmartHandTypesRequest": {
+          "type_name": "ApiSmartHandTypesRequest",
+          "fields": {
+            "ApiService": {
+              "name": "ApiService",
+              "description": ""
+            },
+            "authorization": {
+              "name": "authorization",
+              "description": ""
+            },
+            "ctx": {
+              "name": "ctx",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {
+    "APIClient": {
+      "type_name": "APIClient",
+      "description": "APIClient manages communication with the Smart Hands API v1.0\nIn most cases there should be only one, shared, APIClient.",
+      "fields": {
+        "SmarthandsApi": {
+          "name": "SmarthandsApi",
+          "description": ""
+        },
+        "cfg": {
+          "name": "cfg",
+          "description": ""
+        },
+        "common": {
+          "name": "common",
+          "description": "Reuse a single struct instead of allocating one for each service on the heap."
+        }
+      }
+    },
+    "APIKey": {
+      "type_name": "APIKey",
+      "description": "APIKey provides API key based authentication to a request passed via context using ContextAPIKey",
+      "fields": {
+        "Key": {
+          "name": "Key",
+          "description": ""
+        },
+        "Prefix": {
+          "name": "Prefix",
+          "description": ""
+        }
+      }
+    },
+    "APIResponse": {
+      "type_name": "APIResponse",
+      "description": "APIResponse stores the API response returned by the server.",
+      "fields": {
+        "Message": {
+          "name": "Message",
+          "description": "",
+          "json_tag": "message"
+        },
+        "Method": {
+          "name": "Method",
+          "description": "Method is the HTTP method used for the request.  This value is always\navailable, even if the embedded *http.Response is nil.",
+          "json_tag": "method"
+        },
+        "Operation": {
+          "name": "Operation",
+          "description": "Operation is the name of the OpenAPI operation.",
+          "json_tag": "operation"
+        },
+        "Payload": {
+          "name": "Payload",
+          "description": "Payload holds the contents of the response body (which may be nil or empty).\nThis is provided here as the raw response.Body() reader will have already\nbeen drained.",
+          "json_tag": "-"
+        },
+        "RequestURL": {
+          "name": "RequestURL",
+          "description": "RequestURL is the request URL. This value is always available, even if the\nembedded *http.Response is nil.",
+          "json_tag": "url"
+        }
+      }
+    },
+    "Account": {
+      "type_name": "Account",
+      "description": "Account struct for Account",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cabinets": {
+          "name": "Cabinets",
+          "description": "List of Cabinets",
+          "json_tag": "cabinets"
+        },
+        "IsCreditHold": {
+          "name": "IsCreditHold",
+          "description": "Is credit Hold account",
+          "json_tag": "isCreditHold"
+        },
+        "IsPOBearing": {
+          "name": "IsPOBearing",
+          "description": "Is PO Bearing account",
+          "json_tag": "isPOBearing"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Name of Account",
+          "json_tag": "name"
+        },
+        "Number": {
+          "name": "Number",
+          "description": "Account Number",
+          "json_tag": "number"
+        }
+      }
+    },
+    "ApiGetLocationRequest": {
+      "type_name": "ApiGetLocationRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "cages": {
+          "name": "cages",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        },
+        "detail": {
+          "name": "detail",
+          "description": ""
+        },
+        "ibxs": {
+          "name": "ibxs",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandCableRequestOrderRequest": {
+      "type_name": "ApiHandleSmartHandCableRequestOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandCageCleanupOrderRequest": {
+      "type_name": "ApiHandleSmartHandCageCleanupOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandCageEscortOrderRequest": {
+      "type_name": "ApiHandleSmartHandCageEscortOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandLocatePackageOrderRequest": {
+      "type_name": "ApiHandleSmartHandLocatePackageOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandMoveJumperCableOrderRequest": {
+      "type_name": "ApiHandleSmartHandMoveJumperCableOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandOrderRequest": {
+      "type_name": "ApiHandleSmartHandOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandOthersOrderRequest": {
+      "type_name": "ApiHandleSmartHandOthersOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandPatchCableInstallOrderRequest": {
+      "type_name": "ApiHandleSmartHandPatchCableInstallOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandPatchCableRemovalOrderRequest": {
+      "type_name": "ApiHandleSmartHandPatchCableRemovalOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandPicturesDocumentOrderRequest": {
+      "type_name": "ApiHandleSmartHandPicturesDocumentOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandRunJumperCableOrderRequest": {
+      "type_name": "ApiHandleSmartHandRunJumperCableOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiHandleSmartHandShipmentUnpackOrderRequest": {
+      "type_name": "ApiHandleSmartHandShipmentUnpackOrderRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "ApiSmartHandTypesRequest": {
+      "type_name": "ApiSmartHandTypesRequest",
+      "fields": {
+        "ApiService": {
+          "name": "ApiService",
+          "description": ""
+        },
+        "authorization": {
+          "name": "authorization",
+          "description": ""
+        },
+        "ctx": {
+          "name": "ctx",
+          "description": ""
+        }
+      }
+    },
+    "Attachment": {
+      "type_name": "Attachment",
+      "description": "Attachment struct for Attachment",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Id": {
+          "name": "Id",
+          "description": "Attachement Id generated from Attachment Api",
+          "json_tag": "id"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Attachment file name, Please make sure attachment name which is used while uploading via Attachment Api",
+          "json_tag": "name"
+        }
+      }
+    },
+    "BasicAuth": {
+      "type_name": "BasicAuth",
+      "description": "BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth",
+      "fields": {
+        "Password": {
+          "name": "Password",
+          "description": "",
+          "json_tag": "password"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "",
+          "json_tag": "userName"
+        }
+      }
+    },
+    "Cabinets": {
+      "type_name": "Cabinets",
+      "description": "Cabinets struct for Cabinets",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cabinet": {
+          "name": "Cabinet",
+          "description": "Cabinet Number",
+          "json_tag": "cabinet"
+        },
+        "CabinetType": {
+          "name": "CabinetType",
+          "description": "Cabinet Type, Eg. Regular, Demarc",
+          "json_tag": "cabinetType"
+        }
+      }
+    },
+    "CableRequestRequest": {
+      "type_name": "CableRequestRequest",
+      "description": "CableRequestRequest struct for CableRequestRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "CableRequestRequestServiceDetails": {
+      "type_name": "CableRequestRequestServiceDetails",
+      "description": "CableRequestRequestServiceDetails Please fill out the Media Type, Connector Type and Length (Specify in cm or ft) for each jumper cable and attach it to the form or complete scope of work text box when 'Quantity' is greater than 1. You may mix jumper types but if you require more than 10 cables, the site will contact you for scheduling of your request based on parts and availability. Please select the best option for your scheduling needs. If 'Quantity' is 1, then below 'Media Type', 'Connector Type' and 'Length (feet/cm)' objects are mandatory.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ConnectorType": {
+          "name": "ConnectorType",
+          "description": "",
+          "json_tag": "connectorType"
+        },
+        "Length": {
+          "name": "Length",
+          "description": "Length (feet/cm).",
+          "json_tag": "length"
+        },
+        "MediaType": {
+          "name": "MediaType",
+          "description": "",
+          "json_tag": "mediaType"
+        },
+        "Quantity": {
+          "name": "Quantity",
+          "description": "",
+          "json_tag": "quantity"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        }
+      }
+    },
+    "Cage": {
+      "type_name": "Cage",
+      "description": "Cage struct for Cage",
+      "fields": {
+        "Accounts": {
+          "name": "Accounts",
+          "description": "List of Accounts",
+          "json_tag": "accounts"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cage": {
+          "name": "Cage",
+          "description": "Cage or Suite",
+          "json_tag": "cage"
+        },
+        "CageTypes": {
+          "name": "CageTypes",
+          "description": "Cage Types",
+          "json_tag": "cageTypes"
+        }
+      }
+    },
+    "CageCleanupRequest": {
+      "type_name": "CageCleanupRequest",
+      "description": "CageCleanupRequest struct for CageCleanupRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "CageCleanupRequestServiceDetails": {
+      "type_name": "CageCleanupRequestServiceDetails",
+      "description": "CageCleanupRequestServiceDetails Cage Cleanup",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "DampMoistMopRequired": {
+          "name": "DampMoistMopRequired",
+          "description": "Is Damp Moist Mop Requested?",
+          "json_tag": "dampMoistMopRequired"
+        },
+        "PermissionToDiscardBoxes": {
+          "name": "PermissionToDiscardBoxes",
+          "description": "Permission To Discard Boxes?",
+          "json_tag": "permissionToDiscardBoxes"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        }
+      }
+    },
+    "CageEscortRequest": {
+      "type_name": "CageEscortRequest",
+      "description": "CageEscortRequest struct for CageEscortRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "CageEscortRequestServiceDetails": {
+      "type_name": "CageEscortRequestServiceDetails",
+      "description": "CageEscortRequestServiceDetails Escort to Open Cage/Open Cabinet",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "DurationVisit": {
+          "name": "DurationVisit",
+          "description": "",
+          "json_tag": "durationVisit"
+        },
+        "OpenCabinetForVisitor": {
+          "name": "OpenCabinetForVisitor",
+          "description": "Open the Cabinet for the Visitor?",
+          "json_tag": "openCabinetForVisitor"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        },
+        "SupervisionReqForVisitor": {
+          "name": "SupervisionReqForVisitor",
+          "description": "Supervision Required For the Visitor?",
+          "json_tag": "supervisionReqForVisitor"
+        },
+        "WorkVisitOrderNumber": {
+          "name": "WorkVisitOrderNumber",
+          "description": "Work Visit Order Number",
+          "json_tag": "\\\"workVisitOrderNumber\\\" validate:\\\"regexp=^[ A-Za-z0-9~!|\\\\\\\\[\\\\\\\\]@#$%^\u0026*()_+:\\\\\\\"\u003c\u003e?\\\\/."
+        }
+      }
+    },
+    "Configuration": {
+      "type_name": "Configuration",
+      "description": "Configuration stores the configuration of the API client",
+      "fields": {
+        "Debug": {
+          "name": "Debug",
+          "description": "",
+          "json_tag": "debug"
+        },
+        "DefaultHeader": {
+          "name": "DefaultHeader",
+          "description": "",
+          "json_tag": "defaultHeader"
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "description": ""
+        },
+        "Host": {
+          "name": "Host",
+          "description": "",
+          "json_tag": "host"
+        },
+        "OperationServers": {
+          "name": "OperationServers",
+          "description": ""
+        },
+        "Scheme": {
+          "name": "Scheme",
+          "description": "",
+          "json_tag": "scheme"
+        },
+        "Servers": {
+          "name": "Servers",
+          "description": ""
+        },
+        "UserAgent": {
+          "name": "UserAgent",
+          "description": "",
+          "json_tag": "userAgent"
+        }
+      }
+    },
+    "ContactInfo": {
+      "type_name": "ContactInfo",
+      "description": "ContactInfo Use this model to build contact object. Ordering and notification contacts are are always equinix registered contacts and we only expect username and rest of the details will be looked up. It is important to know that when username is provided all other attributes apart from contactType will be ignored",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ContactType": {
+          "name": "ContactType",
+          "description": "",
+          "json_tag": "contactType"
+        },
+        "Email": {
+          "name": "Email",
+          "description": "Valid email address of the contact",
+          "json_tag": "email"
+        },
+        "MobilePhone": {
+          "name": "MobilePhone",
+          "description": "Mobile Phone of the contact",
+          "json_tag": "mobilePhone"
+        },
+        "MobilePhoneCountryCode": {
+          "name": "MobilePhoneCountryCode",
+          "description": "Country Code of Mobile Phone of the contact",
+          "json_tag": "mobilePhoneCountryCode"
+        },
+        "MobilePhonePrefToCall": {
+          "name": "MobilePhonePrefToCall",
+          "description": "",
+          "json_tag": "mobilePhonePrefToCall"
+        },
+        "MobilePhoneTimeZone": {
+          "name": "MobilePhoneTimeZone",
+          "description": "Mobile Phone TimeZone",
+          "json_tag": "mobilePhoneTimeZone"
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Full Name of the Contact, Eg. 'First_Name' + 'Last_Name'",
+          "json_tag": "name"
+        },
+        "UserName": {
+          "name": "UserName",
+          "description": "User Name",
+          "json_tag": "userName"
+        },
+        "WorkPhone": {
+          "name": "WorkPhone",
+          "description": "Primary Phone of the contact",
+          "json_tag": "workPhone"
+        },
+        "WorkPhoneCountryCode": {
+          "name": "WorkPhoneCountryCode",
+          "description": "Country Code of Primary Phone of the contact",
+          "json_tag": "workPhoneCountryCode"
+        },
+        "WorkPhonePrefToCall": {
+          "name": "WorkPhonePrefToCall",
+          "description": "",
+          "json_tag": "workPhonePrefToCall"
+        },
+        "WorkPhoneTimeZone": {
+          "name": "WorkPhoneTimeZone",
+          "description": "Work Phone TimeZone",
+          "json_tag": "workPhoneTimeZone"
+        }
+      }
+    },
+    "CrossConnectInstall": {
+      "type_name": "CrossConnectInstall",
+      "description": "CrossConnectInstall struct for CrossConnectInstall",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "DeviceCabinet": {
+          "name": "DeviceCabinet",
+          "description": "Cross Connect Cabinet",
+          "json_tag": "deviceCabinet"
+        },
+        "DeviceConnectorType": {
+          "name": "DeviceConnectorType",
+          "description": "Cross Connect Device Connector Type",
+          "json_tag": "deviceConnectorType"
+        },
+        "DeviceDetails": {
+          "name": "DeviceDetails",
+          "description": "Cross Connect Device Details",
+          "json_tag": "deviceDetails"
+        },
+        "DevicePort": {
+          "name": "DevicePort",
+          "description": "Cross Connect Device Port",
+          "json_tag": "devicePort"
+        },
+        "LightLinkVerification": {
+          "name": "LightLinkVerification",
+          "description": "Cross Connect Light Link Verification (Optional). Select this option if you would like a light reading provided and tx/rx verification after the cross connect is completed. In order to verify the correct transmit/receive alignment, please ensure your Z-Side Cross Connect Partner has their end fully extended to their equipment and their port is enabled. A separate billable activity will be created.",
+          "json_tag": "lightLinkVerification"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Scope of work",
+          "json_tag": "scopeOfWork"
+        },
+        "SerialNumber": {
+          "name": "SerialNumber",
+          "description": "Cross Connect serialNumber",
+          "json_tag": "serialNumber"
+        }
+      }
+    },
+    "CrossConnectRemoval": {
+      "type_name": "CrossConnectRemoval",
+      "description": "CrossConnectRemoval struct for CrossConnectRemoval",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "DeviceCabinet": {
+          "name": "DeviceCabinet",
+          "description": "Cross Connect Cabinet",
+          "json_tag": "deviceCabinet"
+        },
+        "DeviceConnectorType": {
+          "name": "DeviceConnectorType",
+          "description": "Cross Connect Device Connector Type",
+          "json_tag": "deviceConnectorType"
+        },
+        "DeviceDetails": {
+          "name": "DeviceDetails",
+          "description": "Cross Connect Device Details",
+          "json_tag": "deviceDetails"
+        },
+        "DevicePort": {
+          "name": "DevicePort",
+          "description": "Cross Connect Device Port",
+          "json_tag": "devicePort"
+        },
+        "RemovePatchCableWithLiveTraffic": {
+          "name": "RemovePatchCableWithLiveTraffic",
+          "description": "Proceed with the de-install if live traffic is detected (Optional). By selecting this option, I agree to the terms of removal with live traffic. Please be advised that Equinix will complete the requested removal based on your instruction and will not be responsible for any service outages resulting from this removal.",
+          "json_tag": "removePatchCableWithLiveTraffic"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Scope of work",
+          "json_tag": "scopeOfWork"
+        },
+        "SerialNumber": {
+          "name": "SerialNumber",
+          "description": "Cross Connect serialNumber",
+          "json_tag": "serialNumber"
+        }
+      }
+    },
+    "Device": {
+      "type_name": "Device",
+      "description": "Device struct for Device",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Name": {
+          "name": "Name",
+          "description": "Device name",
+          "json_tag": "name"
+        },
+        "Port": {
+          "name": "Port",
+          "description": "Device port",
+          "json_tag": "port"
+        },
+        "Slot": {
+          "name": "Slot",
+          "description": "Device slot",
+          "json_tag": "slot"
+        }
+      }
+    },
+    "EquipmentInstallRequest": {
+      "type_name": "EquipmentInstallRequest",
+      "description": "EquipmentInstallRequest struct for EquipmentInstallRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "EquipmentInstallRequestServiceDetails": {
+      "type_name": "EquipmentInstallRequestServiceDetails",
+      "description": "EquipmentInstallRequestServiceDetails struct for EquipmentInstallRequestServiceDetails",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "DeviceLocation": {
+          "name": "DeviceLocation",
+          "description": "Device Location",
+          "json_tag": "deviceLocation"
+        },
+        "ElevationDrawingAttached": {
+          "name": "ElevationDrawingAttached",
+          "description": "Elevation drawing attached?",
+          "json_tag": "elevationDrawingAttached"
+        },
+        "InstallationPoint": {
+          "name": "InstallationPoint",
+          "description": "Installation Point",
+          "json_tag": "installationPoint"
+        },
+        "InstalledEquipmentPhotoRequired": {
+          "name": "InstalledEquipmentPhotoRequired",
+          "description": "Installed Equipment Photo Required?",
+          "json_tag": "installedEquipmentPhotoRequired"
+        },
+        "MountHardwareIncluded": {
+          "name": "MountHardwareIncluded",
+          "description": "Mount hardware included?",
+          "json_tag": "mountHardwareIncluded"
+        },
+        "NeedSupportFromASubmarineCableStationEngineer": {
+          "name": "NeedSupportFromASubmarineCableStationEngineer",
+          "description": "This flag is only applicable to Submarine Cable IBXs",
+          "json_tag": "needSupportFromASubmarineCableStationEngineer"
+        },
+        "PatchDevices": {
+          "name": "PatchDevices",
+          "description": "Patch Devices?",
+          "json_tag": "patchDevices"
+        },
+        "PatchingInfo": {
+          "name": "PatchingInfo",
+          "description": "Patching info",
+          "json_tag": "patchingInfo"
+        },
+        "PowerItOn": {
+          "name": "PowerItOn",
+          "description": "Power it on?",
+          "json_tag": "powerItOn"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        }
+      }
+    },
+    "GenericError": {
+      "type_name": "GenericError",
+      "description": "GenericError struct for GenericError",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Errors": {
+          "name": "Errors",
+          "description": "",
+          "json_tag": "errors"
+        },
+        "TicketId": {
+          "name": "TicketId",
+          "description": "",
+          "json_tag": "ticketId"
+        }
+      }
+    },
+    "GenericOpenAPIError": {
+      "type_name": "GenericOpenAPIError",
+      "description": "GenericOpenAPIError Provides access to the body, error and model on returned errors.",
+      "fields": {
+        "body": {
+          "name": "body",
+          "description": ""
+        },
+        "error": {
+          "name": "error",
+          "description": ""
+        },
+        "model": {
+          "name": "model",
+          "description": ""
+        }
+      }
+    },
+    "GetLocation200Response": {
+      "type_name": "GetLocation200Response",
+      "description": "GetLocation200Response struct for GetLocation200Response",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Locations": {
+          "name": "Locations",
+          "description": "",
+          "json_tag": "locations"
+        }
+      }
+    },
+    "IbxLocation": {
+      "type_name": "IbxLocation",
+      "description": "IbxLocation IBX, Cage, Accounts and Cabinet  information",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cages": {
+          "name": "Cages",
+          "description": "",
+          "json_tag": "cages"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "",
+          "json_tag": "ibx"
+        }
+      }
+    },
+    "IbxLocationCagesInner": {
+      "type_name": "IbxLocationCagesInner",
+      "description": "IbxLocationCagesInner struct for IbxLocationCagesInner",
+      "fields": {
+        "AccountNumber": {
+          "name": "AccountNumber",
+          "description": "",
+          "json_tag": "accountNumber"
+        },
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cabinets": {
+          "name": "Cabinets",
+          "description": "",
+          "json_tag": "cabinets"
+        },
+        "Cage": {
+          "name": "Cage",
+          "description": "",
+          "json_tag": "cage"
+        }
+      }
+    },
+    "LocatePackageRequest": {
+      "type_name": "LocatePackageRequest",
+      "description": "LocatePackageRequest struct for LocatePackageRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "LocatePackageRequestServiceDetails": {
+      "type_name": "LocatePackageRequestServiceDetails",
+      "description": "LocatePackageRequestServiceDetails Shipment Unpacking",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "PackageDescription": {
+          "name": "PackageDescription",
+          "description": "Package Description",
+          "json_tag": "\\\"packageDescription\\\" validate:\\\"regexp=^[ A-Za-z0-9~!|\\\\\\\\[\\\\\\\\]@#$%^\u0026*()_+:\\\\\\\"\u003c\u003e?\\\\/."
+        },
+        "PossibleLocation": {
+          "name": "PossibleLocation",
+          "description": "Possible Location",
+          "json_tag": "\\\"possibleLocation\\\" validate:\\\"regexp=^[ A-Za-z0-9~!|\\\\\\\\[\\\\\\\\]@#$%^\u0026*()_+:\\\\\\\"\u003c\u003e?\\\\/."
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        },
+        "ShipmentOrderNumber": {
+          "name": "ShipmentOrderNumber",
+          "description": "Inbound Shipment Order Number",
+          "json_tag": "\\\"shipmentOrderNumber\\\" validate:\\\"regexp=^[ A-Za-z0-9~!|\\\\\\\\[\\\\\\\\]@#$%^\u0026*()_+:\\\\\\\"\u003c\u003e?\\\\/."
+        },
+        "TrackingNumber": {
+          "name": "TrackingNumber",
+          "description": "Tracking Number",
+          "json_tag": "\\\"trackingNumber\\\" validate:\\\"regexp=^[ A-Za-z0-9~!|\\\\\\\\[\\\\\\\\]@#$%^\u0026*()_+:\\\\\\\"\u003c\u003e?\\\\/."
+        }
+      }
+    },
+    "Location": {
+      "type_name": "Location",
+      "description": "Location struct for Location",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Cages": {
+          "name": "Cages",
+          "description": "List of cage",
+          "json_tag": "cages"
+        },
+        "Ibx": {
+          "name": "Ibx",
+          "description": "Ibx Name",
+          "json_tag": "ibx"
+        }
+      }
+    },
+    "MoveJumperCableRequest": {
+      "type_name": "MoveJumperCableRequest",
+      "description": "MoveJumperCableRequest struct for MoveJumperCableRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "MoveJumperCableRequestServiceDetails": {
+      "type_name": "MoveJumperCableRequestServiceDetails",
+      "description": "MoveJumperCableRequestServiceDetails Move Jumper Cable Service Details Object. Please fill out the Cable ID, Current Device (Name, Slot, Port) and New Device (Name, Slot, Port) details for each jumper cable and attach it to the form or complete scope of work text box when 'Quantity' is greater than 1. You may mix jumper types but if you require more than 12 jumpers ran, the site will contact you for scheduling of your request based on parts and availability. Please select the best option for your scheduling needs. If 'Quantity' is 1, then below 'currentDeviceDetails' and 'newDeviceDetails' objects are mandatory.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CableId": {
+          "name": "CableId",
+          "description": "Enter Cable ID or ‘None’ if not applicable. This field is mandatory if 'Quantity' is 1.",
+          "json_tag": "cableId"
+        },
+        "CurrentDeviceDetails": {
+          "name": "CurrentDeviceDetails",
+          "description": "",
+          "json_tag": "currentDeviceDetails"
+        },
+        "NewDeviceDetails": {
+          "name": "NewDeviceDetails",
+          "description": "",
+          "json_tag": "newDeviceDetails"
+        },
+        "Quantity": {
+          "name": "Quantity",
+          "description": "",
+          "json_tag": "quantity"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        }
+      }
+    },
+    "NullableAccount": {
+      "type_name": "NullableAccount",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableAttachment": {
+      "type_name": "NullableAttachment",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableBool": {
+      "type_name": "NullableBool",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCabinets": {
+      "type_name": "NullableCabinets",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCableRequestRequest": {
+      "type_name": "NullableCableRequestRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCableRequestRequestServiceDetails": {
+      "type_name": "NullableCableRequestRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCableRequestRequestServiceDetailsConnectorType": {
+      "type_name": "NullableCableRequestRequestServiceDetailsConnectorType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCableRequestRequestServiceDetailsMediaType": {
+      "type_name": "NullableCableRequestRequestServiceDetailsMediaType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCableRequestRequestServiceDetailsQuantity": {
+      "type_name": "NullableCableRequestRequestServiceDetailsQuantity",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCage": {
+      "type_name": "NullableCage",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageCleanupRequest": {
+      "type_name": "NullableCageCleanupRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageCleanupRequestServiceDetails": {
+      "type_name": "NullableCageCleanupRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageEscortRequest": {
+      "type_name": "NullableCageEscortRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageEscortRequestServiceDetails": {
+      "type_name": "NullableCageEscortRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCageEscortRequestServiceDetailsDurationVisit": {
+      "type_name": "NullableCageEscortRequestServiceDetailsDurationVisit",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactInfo": {
+      "type_name": "NullableContactInfo",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactInfoContactType": {
+      "type_name": "NullableContactInfoContactType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableContactInfoWorkPhonePrefToCall": {
+      "type_name": "NullableContactInfoWorkPhonePrefToCall",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCrossConnectInstall": {
+      "type_name": "NullableCrossConnectInstall",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableCrossConnectRemoval": {
+      "type_name": "NullableCrossConnectRemoval",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableDevice": {
+      "type_name": "NullableDevice",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableEquipmentInstallRequest": {
+      "type_name": "NullableEquipmentInstallRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableEquipmentInstallRequestServiceDetails": {
+      "type_name": "NullableEquipmentInstallRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat32": {
+      "type_name": "NullableFloat32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableFloat64": {
+      "type_name": "NullableFloat64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableGenericError": {
+      "type_name": "NullableGenericError",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableGetLocation200Response": {
+      "type_name": "NullableGetLocation200Response",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIbxLocation": {
+      "type_name": "NullableIbxLocation",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableIbxLocationCagesInner": {
+      "type_name": "NullableIbxLocationCagesInner",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt": {
+      "type_name": "NullableInt",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt32": {
+      "type_name": "NullableInt32",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableInt64": {
+      "type_name": "NullableInt64",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLocatePackageRequest": {
+      "type_name": "NullableLocatePackageRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLocatePackageRequestServiceDetails": {
+      "type_name": "NullableLocatePackageRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableLocation": {
+      "type_name": "NullableLocation",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableMoveJumperCableRequest": {
+      "type_name": "NullableMoveJumperCableRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableMoveJumperCableRequestServiceDetails": {
+      "type_name": "NullableMoveJumperCableRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableMoveJumperCableRequestServiceDetailsQuantity": {
+      "type_name": "NullableMoveJumperCableRequestServiceDetailsQuantity",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOtherRequest": {
+      "type_name": "NullableOtherRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableOtherRequestServiceDetails": {
+      "type_name": "NullableOtherRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchCableInstallRequest": {
+      "type_name": "NullablePatchCableInstallRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchCableInstallRequestServiceDetails": {
+      "type_name": "NullablePatchCableInstallRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchCableRemovalRequest": {
+      "type_name": "NullablePatchCableRemovalRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePatchCableRemovalRequestServiceDetails": {
+      "type_name": "NullablePatchCableRemovalRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePicturesDocumentRequest": {
+      "type_name": "NullablePicturesDocumentRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePicturesDocumentRequestServiceDetails": {
+      "type_name": "NullablePicturesDocumentRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePicturesDocumentRequestServiceDetailsCameraProvidedBy": {
+      "type_name": "NullablePicturesDocumentRequestServiceDetailsCameraProvidedBy",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePurchaseOrder": {
+      "type_name": "NullablePurchaseOrder",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullablePurchaseOrderPurchaseOrderType": {
+      "type_name": "NullablePurchaseOrderPurchaseOrderType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRunJumperCableRequest": {
+      "type_name": "NullableRunJumperCableRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRunJumperCableRequestServiceDetails": {
+      "type_name": "NullableRunJumperCableRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRunJumperCableRequestServiceDetailsConnector": {
+      "type_name": "NullableRunJumperCableRequestServiceDetailsConnector",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRunJumperCableRequestServiceDetailsJumperType": {
+      "type_name": "NullableRunJumperCableRequestServiceDetailsJumperType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableRunJumperCableRequestServiceDetailsMediaType": {
+      "type_name": "NullableRunJumperCableRequestServiceDetailsMediaType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableScheduleInfo": {
+      "type_name": "NullableScheduleInfo",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableScheduleInfoScheduleType": {
+      "type_name": "NullableScheduleInfoScheduleType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableShipmentUnpackRequest": {
+      "type_name": "NullableShipmentUnpackRequest",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableShipmentUnpackRequestServiceDetails": {
+      "type_name": "NullableShipmentUnpackRequestServiceDetails",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableSmartHandTypes200Response": {
+      "type_name": "NullableSmartHandTypes200Response",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableSmarthandResponse": {
+      "type_name": "NullableSmarthandResponse",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableSmarthandType": {
+      "type_name": "NullableSmarthandType",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableString": {
+      "type_name": "NullableString",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "NullableTime": {
+      "type_name": "NullableTime",
+      "fields": {
+        "isSet": {
+          "name": "isSet",
+          "description": ""
+        },
+        "value": {
+          "name": "value",
+          "description": ""
+        }
+      }
+    },
+    "OtherRequest": {
+      "type_name": "OtherRequest",
+      "description": "OtherRequest struct for OtherRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "OtherRequestServiceDetails": {
+      "type_name": "OtherRequestServiceDetails",
+      "description": "OtherRequestServiceDetails Other",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        }
+      }
+    },
+    "PatchCableInstallRequest": {
+      "type_name": "PatchCableInstallRequest",
+      "description": "PatchCableInstallRequest struct for PatchCableInstallRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "PatchCableInstallRequestServiceDetails": {
+      "type_name": "PatchCableInstallRequestServiceDetails",
+      "description": "PatchCableInstallRequestServiceDetails struct for PatchCableInstallRequestServiceDetails",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CrossConnects": {
+          "name": "CrossConnects",
+          "description": "",
+          "json_tag": "crossConnects"
+        }
+      }
+    },
+    "PatchCableRemovalRequest": {
+      "type_name": "PatchCableRemovalRequest",
+      "description": "PatchCableRemovalRequest struct for PatchCableRemovalRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "PatchCableRemovalRequestServiceDetails": {
+      "type_name": "PatchCableRemovalRequestServiceDetails",
+      "description": "PatchCableRemovalRequestServiceDetails struct for PatchCableRemovalRequestServiceDetails",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CrossConnects": {
+          "name": "CrossConnects",
+          "description": "",
+          "json_tag": "crossConnects"
+        }
+      }
+    },
+    "PicturesDocumentRequest": {
+      "type_name": "PicturesDocumentRequest",
+      "description": "PicturesDocumentRequest struct for PicturesDocumentRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "PicturesDocumentRequestServiceDetails": {
+      "type_name": "PicturesDocumentRequestServiceDetails",
+      "description": "PicturesDocumentRequestServiceDetails struct for PicturesDocumentRequestServiceDetails",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CameraProvidedBy": {
+          "name": "CameraProvidedBy",
+          "description": "",
+          "json_tag": "cameraProvidedBy"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "Descrption of the Photo/Document. If documentOnly is false, this field is mandatory.",
+          "json_tag": "description"
+        },
+        "DocumentOnly": {
+          "name": "DocumentOnly",
+          "description": "Do you need documents or pictures? Set true if you need documents.",
+          "json_tag": "documentOnly"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        },
+        "SpecificDateAndTime": {
+          "name": "SpecificDateAndTime",
+          "description": "Would you like to request a specific date and time? If true, Scheduling should not be STANDARD. If documentOnly is false, this field is mandatory.",
+          "json_tag": "specificDateAndTime"
+        }
+      }
+    },
+    "PurchaseOrder": {
+      "type_name": "PurchaseOrder",
+      "description": "PurchaseOrder Use this model to pass purchase order reference information. When purchase order selection type is EXEMTED, number is not required",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Number": {
+          "name": "Number",
+          "description": "Purchase Order Number",
+          "json_tag": "number"
+        },
+        "PurchaseOrderType": {
+          "name": "PurchaseOrderType",
+          "description": "",
+          "json_tag": "purchaseOrderType"
+        }
+      }
+    },
+    "RunJumperCableRequest": {
+      "type_name": "RunJumperCableRequest",
+      "description": "RunJumperCableRequest struct for RunJumperCableRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "RunJumperCableRequestServiceDetails": {
+      "type_name": "RunJumperCableRequestServiceDetails",
+      "description": "RunJumperCableRequestServiceDetails Move Jumper Cable Service Details Object. Please fill out the Media Type, Connector Type, Cable ID(optional), 'Should Equinix provide you Tx/Rx light levels, Yes Or No?', Devices to Connect details for Device#1 (Name/Panel, Device Slot, Device Ports) and Device#2(Optional) (Name/Panel, Device Slot, Device Ports) details for each jumper cable and attach it to the form or complete scope of work text box when 'Quantity' is greater than 1. If any device is being shipped to Equinix, please include the shipment number. You may mix jumper types but if you require more than 12 jumpers ran, the site will contact you for scheduling of your request based on parts and availability. Please select the best option for your scheduling needs. If ‘Quantity’ is 1, then ‘Jumper Type’, Media Type, Connector Type, 'Should Equinix provide you Tx/Rx light levels?' and Device details are mandatory.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CableId": {
+          "name": "CableId",
+          "description": "Cable ID",
+          "json_tag": "cableId"
+        },
+        "Connector": {
+          "name": "Connector",
+          "description": "",
+          "json_tag": "connector"
+        },
+        "DeviceDetails": {
+          "name": "DeviceDetails",
+          "description": "",
+          "json_tag": "deviceDetails"
+        },
+        "JumperType": {
+          "name": "JumperType",
+          "description": "",
+          "json_tag": "jumperType"
+        },
+        "MediaType": {
+          "name": "MediaType",
+          "description": "",
+          "json_tag": "mediaType"
+        },
+        "ProvideTxRxLightLevels": {
+          "name": "ProvideTxRxLightLevels",
+          "description": "Provide Tx/Rx Light Levels",
+          "json_tag": "provideTxRxLightLevels"
+        },
+        "Quantity": {
+          "name": "Quantity",
+          "description": "",
+          "json_tag": "quantity"
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        }
+      }
+    },
+    "ScheduleInfo": {
+      "type_name": "ScheduleInfo",
+      "description": "ScheduleInfo Use this model to pass the scheduling option that best meets your needs. Please remember that additional approvals or fees may be required for expedited requests.",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "RequestedCompletionDate": {
+          "name": "RequestedCompletionDate",
+          "description": "Requested Completion Date Time (ISO Date)\u003cbr\u003eCannot Past Date.",
+          "json_tag": "requestedCompletionDate"
+        },
+        "RequestedStartDate": {
+          "name": "RequestedStartDate",
+          "description": "Requested Start Date Time (ISO Date)\u003cbr\u003e Cannot Past Date.",
+          "json_tag": "requestedStartDate"
+        },
+        "ScheduleType": {
+          "name": "ScheduleType",
+          "description": "",
+          "json_tag": "scheduleType"
+        }
+      }
+    },
+    "ServerConfiguration": {
+      "type_name": "ServerConfiguration",
+      "description": "ServerConfiguration stores the information about a server",
+      "fields": {
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "URL": {
+          "name": "URL",
+          "description": ""
+        },
+        "Variables": {
+          "name": "Variables",
+          "description": ""
+        }
+      }
+    },
+    "ServerVariable": {
+      "type_name": "ServerVariable",
+      "description": "ServerVariable stores the information about a server variable",
+      "fields": {
+        "DefaultValue": {
+          "name": "DefaultValue",
+          "description": ""
+        },
+        "Description": {
+          "name": "Description",
+          "description": ""
+        },
+        "EnumValues": {
+          "name": "EnumValues",
+          "description": ""
+        }
+      }
+    },
+    "ShipmentUnpackRequest": {
+      "type_name": "ShipmentUnpackRequest",
+      "description": "ShipmentUnpackRequest struct for ShipmentUnpackRequest",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Attachments": {
+          "name": "Attachments",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API. Maximum size of an attachment is 2MB with the following formats - bmp, jpg, jpeg, gif, png, tif, tiff, txt, doc, docx, xls, xlsx, ppt, pps, ppsx, pdf, and vsd.",
+          "json_tag": "attachments"
+        },
+        "Contacts": {
+          "name": "Contacts",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal.",
+          "json_tag": "contacts"
+        },
+        "CustomerReferenceNumber": {
+          "name": "CustomerReferenceNumber",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "json_tag": "customerReferenceNumber"
+        },
+        "IbxLocation": {
+          "name": "IbxLocation",
+          "description": "",
+          "json_tag": "ibxLocation"
+        },
+        "PurchaseOrder": {
+          "name": "PurchaseOrder",
+          "description": "",
+          "json_tag": "purchaseOrder"
+        },
+        "Schedule": {
+          "name": "Schedule",
+          "description": "",
+          "json_tag": "schedule"
+        },
+        "ServiceDetails": {
+          "name": "ServiceDetails",
+          "description": "",
+          "json_tag": "serviceDetails"
+        }
+      }
+    },
+    "ShipmentUnpackRequestServiceDetails": {
+      "type_name": "ShipmentUnpackRequestServiceDetails",
+      "description": "ShipmentUnpackRequestServiceDetails Shipment Unpacking",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "CopyOfPackingSlipNeeded": {
+          "name": "CopyOfPackingSlipNeeded",
+          "description": "Copy of Packaging Slip Needed?",
+          "json_tag": "copyOfPackingSlipNeeded"
+        },
+        "DiscardShipmentMaterial": {
+          "name": "DiscardShipmentMaterial",
+          "description": "Discard Shipment Material?",
+          "json_tag": "discardShipmentMaterial"
+        },
+        "InboundShipmentOrderNumber": {
+          "name": "InboundShipmentOrderNumber",
+          "description": "Inbound Shipment Order Number",
+          "json_tag": "\\\"inboundShipmentOrderNumber\\\" validate:\\\"regexp=^[ A-Za-z0-9~!|\\\\\\\\[\\\\\\\\]@#$%^\u0026*()_+:\\\\\\\"\u003c\u003e?\\\\/."
+        },
+        "ScopeOfWork": {
+          "name": "ScopeOfWork",
+          "description": "Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.",
+          "json_tag": "scopeOfWork"
+        }
+      }
+    },
+    "SmartHandTypes200Response": {
+      "type_name": "SmartHandTypes200Response",
+      "description": "SmartHandTypes200Response struct for SmartHandTypes200Response",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Smarthands": {
+          "name": "Smarthands",
+          "description": "",
+          "json_tag": "smarthands"
+        }
+      }
+    },
+    "SmarthandResponse": {
+      "type_name": "SmarthandResponse",
+      "description": "SmarthandResponse Order has been submitted successfully",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "OrderNumber": {
+          "name": "OrderNumber",
+          "description": "Order Number",
+          "json_tag": "orderNumber"
+        }
+      }
+    },
+    "SmarthandType": {
+      "type_name": "SmarthandType",
+      "description": "SmarthandType struct for SmarthandType",
+      "fields": {
+        "AdditionalProperties": {
+          "name": "AdditionalProperties",
+          "description": ""
+        },
+        "Type": {
+          "name": "Type",
+          "description": "Smarthand Type",
+          "json_tag": "type"
+        },
+        "TypeDescription": {
+          "name": "TypeDescription",
+          "description": "Description of Smarthand Type",
+          "json_tag": "typeDescription"
+        }
+      }
+    },
+    "formFile": {
+      "type_name": "formFile",
+      "fields": {
+        "fileBytes": {
+          "name": "fileBytes",
+          "description": ""
+        },
+        "fileName": {
+          "name": "fileName",
+          "description": ""
+        },
+        "formFileName": {
+          "name": "formFileName",
+          "description": ""
+        }
+      }
+    },
+    "service": {
+      "type_name": "service",
+      "fields": {
+        "client": {
+          "name": "client",
+          "description": ""
+        }
+      }
+    }
+  }
+}

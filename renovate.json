@@ -6,5 +6,11 @@
   ],
   "postUpdateOptions": [
     "gomodTidy"
-  ]
+  ],
+  "postUpgradeTasks": [{
+    "commands": [
+      "make docs"
+    ],
+    "executionMode": "branch"
+  }]
 }

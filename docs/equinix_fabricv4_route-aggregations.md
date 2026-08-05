@@ -34,5 +34,6 @@ Commands for managing route-aggregations resources in the API
 * [equinix fabricv4 route-aggregations get-route-aggregation-changes](equinix_fabricv4_route-aggregations_get-route-aggregation-changes.md)	 - Get All Changes
 * [equinix fabricv4 route-aggregations get-route-aggregation-connections](equinix_fabricv4_route-aggregations_get-route-aggregation-connections.md)	 - Get All Connections on Route Aggregation
 * [equinix fabricv4 route-aggregations patch-route-aggregation-by-uuid](equinix_fabricv4_route-aggregations_patch-route-aggregation-by-uuid.md)	 - Patch Aggregation
+* [equinix fabricv4 route-aggregations search-cloud-router-route-aggregation-attachments](equinix_fabricv4_route-aggregations_search-cloud-router-route-aggregation-attachments.md)	 - Execute search-cloud-router-route-aggregation-attachments operation
 * [equinix fabricv4 route-aggregations search-route-aggregations](equinix_fabricv4_route-aggregations_search-route-aggregations.md)	 - Search Aggregations
 

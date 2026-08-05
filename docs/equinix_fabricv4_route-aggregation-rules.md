@@ -32,4 +32,5 @@ Commands for managing route-aggregation-rules resources in the API
 * [equinix fabricv4 route-aggregation-rules get-route-aggregation-rules](equinix_fabricv4_route-aggregation-rules_get-route-aggregation-rules.md)	 - GetRARules
 * [equinix fabricv4 route-aggregation-rules patch-route-aggregation-rule-by-uuid](equinix_fabricv4_route-aggregation-rules_patch-route-aggregation-rule-by-uuid.md)	 - PatchRARule
 * [equinix fabricv4 route-aggregation-rules replace-route-aggregation-rule-by-uuid](equinix_fabricv4_route-aggregation-rules_replace-route-aggregation-rule-by-uuid.md)	 - ReplaceRARule
+* [equinix fabricv4 route-aggregation-rules search-route-aggregation-rules](equinix_fabricv4_route-aggregation-rules_search-route-aggregation-rules.md)	 - Execute search-route-aggregation-rules operation
 

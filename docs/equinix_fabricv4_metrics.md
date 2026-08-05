@@ -24,5 +24,6 @@ Commands for managing metrics resources in the API
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix fauricv4 resources
 * [equinix fabricv4 metrics get-metric-by-asset-id](equinix_fabricv4_metrics_get-metric-by-asset-id.md)	 - Get Metrics by Asset Id
+* [equinix fabricv4 metrics get-metric-by-name](equinix_fabricv4_metrics_get-metric-by-name.md)	 - Execute get-metric-by-name operation
 * [equinix fabricv4 metrics search-metrics](equinix_fabricv4_metrics_search-metrics.md)	 - Search Metrics
 

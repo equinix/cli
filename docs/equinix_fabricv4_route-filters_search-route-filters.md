@@ -15,18 +15,15 @@ equinix fabricv4 route-filters search-route-filters [flags]
 ### Options
 
 ```
-  -h, --help                                                                help for search-route-filters
-      --request string                                                      JSON payload for additional optional fields not exposed as flags
-      --route-filters-search-base-additional-properties string              route-filters-search-base-additional-properties (JSON)
-      --route-filters-search-base-filter-additional-properties string       route-filters-search-base-filter-additional-properties (JSON)
-      --route-filters-search-base-filter-and string                         route-filters-search-base-filter-and (JSON array)
-      --route-filters-search-base-pagination-additional-properties string   route-filters-search-base-pagination-additional-properties (JSON)
-      --route-filters-search-base-pagination-limit int                      Maximum number of search results returned per page. Number must be between 1 and 100, and the default is 20.
-      --route-filters-search-base-pagination-next string                    URL relative to the next item in the response.
-      --route-filters-search-base-pagination-offset int                     Index of the first item returned in the response. The default is 0.
-      --route-filters-search-base-pagination-previous string                URL relative to the previous item in the response.
-      --route-filters-search-base-pagination-total int                      Total number of elements returned.
-      --route-filters-search-base-sort string                               route-filters-search-base-sort (JSON array)
+  -h, --help                                                                   help for search-route-filters
+      --request string                                                         JSON payload for additional optional fields not exposed as flags
+      --route-filters-search-request-additional-properties string              route-filters-search-request-additional-properties (JSON)
+      --route-filters-search-request-filter-search-and-expression string       route-filters-search-request-filter-search-and-expression (JSON)
+      --route-filters-search-request-filter-search-or-expression string        route-filters-search-request-filter-search-or-expression (JSON)
+      --route-filters-search-request-pagination-additional-properties string   route-filters-search-request-pagination-additional-properties (JSON)
+      --route-filters-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --route-filters-search-request-pagination-offset int                     Index of the first element.
+      --route-filters-search-request-sort string                               route-filters-search-request-sort (JSON array)
 ```
 
 ### Options inherited from parent commands

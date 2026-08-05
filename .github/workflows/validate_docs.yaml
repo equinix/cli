@@ -13,7 +13,7 @@ jobs:
       - name: Determine if PR is from Renovate
         id: author_check
         run: |
-          is_renovate=${{github.actor == 'renovate[bot]' && startsWith(github.head_ref, 'renovate/')}}
+          is_renovate=${{github.actor == 'ctreatma' && startsWith(github.head_ref, 'auto')}}
           echo "is_renovate=$is_renovate" | tee $GITHUB_OUTPUT
 
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1

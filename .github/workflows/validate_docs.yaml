@@ -16,6 +16,10 @@ jobs:
           is_renovate=${{github.actor == 'ctreatma' && startsWith(github.head_ref, 'auto')}}
           echo "is_renovate=$is_renovate" | tee $GITHUB_OUTPUT
 
+
+      - name: Debug step outputs
+        run: echo "${{ toJSON(steps.author_check) }}"
+
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         if: steps.author_check.outputs.is_renovate != 'true'
         with:

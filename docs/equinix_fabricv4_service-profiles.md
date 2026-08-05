@@ -24,6 +24,7 @@ Commands for managing service-profiles resources in the API
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix fauricv4 resources
 * [equinix fabricv4 service-profiles create-service-profile](equinix_fabricv4_service-profiles_create-service-profile.md)	 - Create Profile
+* [equinix fabricv4 service-profiles create-service-profile-action](equinix_fabricv4_service-profiles_create-service-profile-action.md)	 - Execute create-service-profile-action operation
 * [equinix fabricv4 service-profiles delete-service-profile-by-uuid](equinix_fabricv4_service-profiles_delete-service-profile-by-uuid.md)	 - Delete Profile
 * [equinix fabricv4 service-profiles get-service-profile-by-uuid](equinix_fabricv4_service-profiles_get-service-profile-by-uuid.md)	 - Get Profile
 * [equinix fabricv4 service-profiles get-service-profile-metros-by-uuid](equinix_fabricv4_service-profiles_get-service-profile-metros-by-uuid.md)	 - Get Profile Metros

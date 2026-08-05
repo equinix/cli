@@ -32,4 +32,5 @@ Commands for managing route-filter-rules resources in the API
 * [equinix fabricv4 route-filter-rules get-route-filter-rules](equinix_fabricv4_route-filter-rules_get-route-filter-rules.md)	 - Get Route Filter Rules
 * [equinix fabricv4 route-filter-rules patch-route-filter-rule-by-uuid](equinix_fabricv4_route-filter-rules_patch-route-filter-rule-by-uuid.md)	 - Patch Route Filter Rule
 * [equinix fabricv4 route-filter-rules replace-route-filter-rule-by-uuid](equinix_fabricv4_route-filter-rules_replace-route-filter-rule-by-uuid.md)	 - Replace Route Filter Rule
+* [equinix fabricv4 route-filter-rules search-route-filter-rules](equinix_fabricv4_route-filter-rules_search-route-filter-rules.md)	 - Execute search-route-filter-rules operation
 

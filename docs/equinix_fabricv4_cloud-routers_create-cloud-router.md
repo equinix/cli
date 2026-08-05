@@ -42,6 +42,7 @@ equinix fabricv4 cloud-routers create-cloud-router [flags]
       --cloud-router-post-request-notifications string                                    Preferences for notifications on connection configuration or status changes (JSON array)
       --cloud-router-post-request-order-additional-properties string                      cloud-router-post-request-order-additional-properties (JSON)
       --cloud-router-post-request-order-billing-tier string                               Billing tier for connection bandwidth
+      --cloud-router-post-request-order-contracted-bandwidth int                          cloud-router-post-request-order-contracted-bandwidth
       --cloud-router-post-request-order-customer-reference-number string                  Customer reference number
       --cloud-router-post-request-order-order-id string                                   Order Identification
       --cloud-router-post-request-order-order-number string                               Order Reference Number

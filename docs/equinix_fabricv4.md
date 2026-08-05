@@ -26,10 +26,16 @@ providing access to all available API services.
 ### SEE ALSO
 
 * [equinix](equinix.md)	 - Equinix CLI
+* [equinix fabricv4 agent-templates](equinix_fabricv4_agent-templates.md)	 - Manage agent-templates resources
+* [equinix fabricv4 agents](equinix_fabricv4_agents.md)	 - Manage agents resources
 * [equinix fabricv4 cloud-events](equinix_fabricv4_cloud-events.md)	 - Manage cloud-events resources
 * [equinix fabricv4 cloud-routers](equinix_fabricv4_cloud-routers.md)	 - Manage cloud-routers resources
+* [equinix fabricv4 company-profiles](equinix_fabricv4_company-profiles.md)	 - Manage company-profiles resources
 * [equinix fabricv4 connections](equinix_fabricv4_connections.md)	 - Manage connections resources
 * [equinix fabricv4 health](equinix_fabricv4_health.md)	 - Manage health resources
+* [equinix fabricv4 internet-access-services](equinix_fabricv4_internet-access-services.md)	 - Manage internet-access-services resources
+* [equinix fabricv4 ip-blocks](equinix_fabricv4_ip-blocks.md)	 - Manage ip-blocks resources
+* [equinix fabricv4 logos](equinix_fabricv4_logos.md)	 - Manage logos resources
 * [equinix fabricv4 marketplace-subscriptions](equinix_fabricv4_marketplace-subscriptions.md)	 - Manage marketplace-subscriptions resources
 * [equinix fabricv4 metrics](equinix_fabricv4_metrics.md)	 - Manage metrics resources
 * [equinix fabricv4 metros](equinix_fabricv4_metros.md)	 - Manage metros resources
@@ -49,4 +55,5 @@ providing access to all available API services.
 * [equinix fabricv4 stream-alert-rules](equinix_fabricv4_stream-alert-rules.md)	 - Manage stream-alert-rules resources
 * [equinix fabricv4 stream-subscriptions](equinix_fabricv4_stream-subscriptions.md)	 - Manage stream-subscriptions resources
 * [equinix fabricv4 streams](equinix_fabricv4_streams.md)	 - Manage streams resources
+* [equinix fabricv4 tags](equinix_fabricv4_tags.md)	 - Manage tags resources
 

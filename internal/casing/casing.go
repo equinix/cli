@@ -21,6 +21,11 @@ var acronyms = []string{
 
 func isUpper(r rune) bool { return r >= 'A' && r <= 'Z' }
 func isLower(r rune) bool { return r >= 'a' && r <= 'z' }
+func isDigit(r rune) bool { return r >= '0' && r <= '9' }
+
+// isWordContinuation reports whether r continues the current word rather
+// than starting a new one, e.g. the "2" in "OAuth2" or "IPv4".
+func isWordContinuation(r rune) bool { return isLower(r) || isDigit(r) }
 
 // CamelToKebab converts a CamelCase or camelCase identifier to kebab-case,
 // keeping known initialisms (e.g. "BGP", "SSH", "IP") together as a single
@@ -54,9 +59,10 @@ func CamelToKebab(s string) string {
 
 		if j-i == 1 {
 			// A single leading capital starts an ordinary word; absorb any
-			// lowercase letters that follow it (e.g. "Get" or "Aside").
+			// lowercase letters or digits that follow it (e.g. "Get",
+			// "Aside", or the "4" in "Ipv4").
 			k := j
-			for k < n && isLower(runes[k]) {
+			for k < n && isWordContinuation(runes[k]) {
 				k++
 			}
 			words = append(words, string(runes[i:k]))
@@ -79,10 +85,11 @@ func CamelToKebab(s string) string {
 			pos := i + matchLen
 			if pos == j {
 				// The acronym consumed the whole capital run; any lowercase
-				// letters immediately after it are a suffix (e.g. the "s"
-				// in "VLANs"), not the start of a new word.
+				// letters or digits immediately after it are a suffix (e.g.
+				// the "s" in "VLANs", or the "2" in "OAuth2"), not the start
+				// of a new word.
 				k := pos
-				for k < n && isLower(runes[k]) {
+				for k < n && isWordContinuation(runes[k]) {
 					k++
 				}
 				word += string(runes[pos:k])

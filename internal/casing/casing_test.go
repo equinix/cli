@@ -42,6 +42,10 @@ func TestCamelToKebab(t *testing.T) {
 		"GetConnectionByUuid": "get-connection-by-uuid",
 		"ServiceProfilesApi":  "service-profiles-api",
 		"ConnectionsApi":      "connections-api",
+		"OAuth2TokenApi":      "oauth2-token-api",
+		"GetOAuth2Token":      "get-oauth2-token",
+		"IPv4Address":         "ipv4-address",
+		"IPv6Address":         "ipv6-address",
 	}
 
 	for input, want := range cases {

@@ -15,13 +15,13 @@ equinix metalv1 devices create-bgp-session [flags]
 ### Options
 
 ```
-      --b-g-p-session-input-additional-properties string   b-g-p-session-input-additional-properties (JSON)
-      --b-g-p-session-input-address_family string          b-g-p-session-input-address_family
-      --b-g-p-session-input-default_route                  Set the default route policy.
-  -h, --help                                               help for create-bgp-session
-      --id string                                          Device UUID (required)
-      --include string                                     include field (JSON or string)
-      --request string                                     JSON payload for additional optional fields not exposed as flags
+      --bgp-session-input-additional-properties string   bgp-session-input-additional-properties (JSON)
+      --bgp-session-input-address_family string          bgp-session-input-address_family
+      --bgp-session-input-default_route                  Set the default route policy.
+  -h, --help                                             help for create-bgp-session
+      --id string                                        Device UUID (required)
+      --include string                                   include field (JSON or string)
+      --request string                                   JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

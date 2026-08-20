@@ -23,10 +23,10 @@ Commands for managing authentication resources in the API
 ### SEE ALSO
 
 * [equinix metalv1](equinix_metalv1.md)	 - Manage Equinix metalv1 resources
-* [equinix metalv1 authentication create-a-p-i-key](equinix_metalv1_authentication_create-a-p-i-key.md)	 - Create an API key
-* [equinix metalv1 authentication create-project-a-p-i-key](equinix_metalv1_authentication_create-project-a-p-i-key.md)	 - Create an API key for a project.
-* [equinix metalv1 authentication delete-a-p-i-key](equinix_metalv1_authentication_delete-a-p-i-key.md)	 - Delete the API key
-* [equinix metalv1 authentication delete-user-a-p-i-key](equinix_metalv1_authentication_delete-user-a-p-i-key.md)	 - Delete the API key
-* [equinix metalv1 authentication find-a-p-i-keys](equinix_metalv1_authentication_find-a-p-i-keys.md)	 - Retrieve all user API keys
-* [equinix metalv1 authentication find-project-a-p-i-keys](equinix_metalv1_authentication_find-project-a-p-i-keys.md)	 - Retrieve all API keys for the project.
+* [equinix metalv1 authentication create-api-key](equinix_metalv1_authentication_create-api-key.md)	 - Create an API key
+* [equinix metalv1 authentication create-project-api-key](equinix_metalv1_authentication_create-project-api-key.md)	 - Create an API key for a project.
+* [equinix metalv1 authentication delete-api-key](equinix_metalv1_authentication_delete-api-key.md)	 - Delete the API key
+* [equinix metalv1 authentication delete-user-api-key](equinix_metalv1_authentication_delete-user-api-key.md)	 - Delete the API key
+* [equinix metalv1 authentication find-api-keys](equinix_metalv1_authentication_find-api-keys.md)	 - Retrieve all user API keys
+* [equinix metalv1 authentication find-project-api-keys](equinix_metalv1_authentication_find-project-api-keys.md)	 - Retrieve all API keys for the project.
 

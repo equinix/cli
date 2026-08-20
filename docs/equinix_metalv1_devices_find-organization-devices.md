@@ -30,7 +30,7 @@ equinix metalv1 devices find-organization-devices [flags]
       --reserved               reserved field
       --search string          search field
       --tag string             tag field
-      --type_ string           type_ field
+      --type-_ string          type-_ field
 ```
 
 ### Options inherited from parent commands

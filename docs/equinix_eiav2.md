@@ -26,5 +26,5 @@ providing access to all available API services.
 ### SEE ALSO
 
 * [equinix](equinix.md)	 - Equinix CLI
-* [equinix eiav2 e-i-a-service](equinix_eiav2_e-i-a-service.md)	 - Manage e-i-a-service resources
+* [equinix eiav2 eia-service](equinix_eiav2_eia-service.md)	 - Manage eia-service resources
 

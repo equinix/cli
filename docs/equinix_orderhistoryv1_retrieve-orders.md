@@ -23,6 +23,6 @@ Commands for managing retrieve-orders resources in the API
 ### SEE ALSO
 
 * [equinix orderhistoryv1](equinix_orderhistoryv1.md)	 - Manage Equinix orderhistoryv1 resources
-* [equinix orderhistoryv1 retrieve-orders g-e-t-retrieve-orders-locations](equinix_orderhistoryv1_retrieve-orders_g-e-t-retrieve-orders-locations.md)	 - Retrieve order permissible IBX locations
-* [equinix orderhistoryv1 retrieve-orders p-o-s-t-orders-history](equinix_orderhistoryv1_retrieve-orders_p-o-s-t-orders-history.md)	 - Search Orders History
+* [equinix orderhistoryv1 retrieve-orders get-retrieve-orders-locations](equinix_orderhistoryv1_retrieve-orders_get-retrieve-orders-locations.md)	 - Retrieve order permissible IBX locations
+* [equinix orderhistoryv1 retrieve-orders post-orders-history](equinix_orderhistoryv1_retrieve-orders_post-orders-history.md)	 - Search Orders History
 

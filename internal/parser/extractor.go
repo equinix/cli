@@ -11,6 +11,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/equinix/cli/internal/casing"
 )
 
 // ParameterDescription holds documentation for a parameter
@@ -214,7 +216,7 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 		// Extract service name from receiver type if not already set
 		if serviceName == "" && strings.HasSuffix(receiverType, "ApiService") {
 			serviceName = strings.TrimSuffix(receiverType, "ApiService")
-			serviceName = camelToKebab(serviceName)
+			serviceName = casing.CamelToKebab(serviceName)
 		}
 
 		// Ensure service exists in map
@@ -302,18 +304,6 @@ func parseFile(filePath string, descriptions *SDKDescriptions) error {
 	}
 
 	return nil
-}
-
-// camelToKebab converts CamelCase to kebab-case
-func camelToKebab(s string) string {
-	var result strings.Builder
-	for i, r := range s {
-		if i > 0 && r >= 'A' && r <= 'Z' {
-			result.WriteRune('-')
-		}
-		result.WriteRune(r)
-	}
-	return strings.ToLower(result.String())
 }
 
 // SaveToFile saves descriptions to a JSON file

@@ -25,7 +25,7 @@ Commands for managing orders resources in the API
 * [equinix ordersv2](equinix_ordersv2.md)	 - Manage Equinix ordersv2 resources
 * [equinix ordersv2 orders add-notes-to-an-order](equinix_ordersv2_orders_add-notes-to-an-order.md)	 - Add notes to an order
 * [equinix ordersv2 orders cancel-an-order](equinix_ordersv2_orders_cancel-an-order.md)	 - Cancel an order
-* [equinix ordersv2 orders g-e-t-order-details](equinix_ordersv2_orders_g-e-t-order-details.md)	 - Retrieve an order
+* [equinix ordersv2 orders get-order-details](equinix_ordersv2_orders_get-order-details.md)	 - Retrieve an order
 * [equinix ordersv2 orders reply-to-an-order-negotiation](equinix_ordersv2_orders_reply-to-an-order-negotiation.md)	 - Reply to an order negotiation
 * [equinix ordersv2 orders retrieve-order-negotiations](equinix_ordersv2_orders_retrieve-order-negotiations.md)	 - Retrieve order negotiations
 

@@ -26,5 +26,5 @@ providing access to all available API services.
 ### SEE ALSO
 
 * [equinix](equinix.md)	 - Equinix CLI
-* [equinix accesstokenv1 o-auth2-token](equinix_accesstokenv1_o-auth2-token.md)	 - Manage o-auth2-token resources
+* [equinix accesstokenv1 oauth2-token](equinix_accesstokenv1_oauth2-token.md)	 - Manage oauth2-token resources
 

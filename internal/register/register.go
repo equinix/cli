@@ -11,6 +11,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/equinix/cli/internal/casing"
 	"github.com/equinix/cli/internal/parser"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
@@ -96,16 +97,7 @@ func extractServiceName(fieldName string) string {
 	name := strings.TrimSuffix(fieldName, "ApiService")
 	name = strings.TrimSuffix(name, "Api")
 
-	// Convert camelCase to kebab-case
-	var result strings.Builder
-	for i, r := range name {
-		if i > 0 && r >= 'A' && r <= 'Z' {
-			result.WriteRune('-')
-		}
-		result.WriteRune(r)
-	}
-
-	return strings.ToLower(result.String())
+	return casing.CamelToKebab(name)
 }
 
 // createServiceCommand creates a Cobra command for a specific API service
@@ -163,15 +155,7 @@ func extractMethodName(methodName string) string {
 	methodName = strings.TrimSuffix(methodName, "Execute")
 
 	// Convert the whole method name to kebab-case for uniqueness
-	var result strings.Builder
-	for i, r := range methodName {
-		if i > 0 && r >= 'A' && r <= 'Z' {
-			result.WriteRune('-')
-		}
-		result.WriteRune(r)
-	}
-
-	return strings.ToLower(result.String())
+	return casing.CamelToKebab(methodName)
 }
 
 // createMethodCommand creates a Cobra command for a specific API method
@@ -270,16 +254,7 @@ func getServiceNameFromType(service interface{}) string {
 	// Remove "ApiService" suffix
 	typeName = strings.TrimSuffix(typeName, "ApiService")
 
-	// Convert to kebab-case
-	var result strings.Builder
-	for i, r := range typeName {
-		if i > 0 && r >= 'A' && r <= 'Z' {
-			result.WriteRune('-')
-		}
-		result.WriteRune(r)
-	}
-
-	return strings.ToLower(result.String())
+	return casing.CamelToKebab(typeName)
 }
 
 // getServiceFromClient extracts a service field from the client by service name
@@ -525,16 +500,7 @@ func getParamNameFromPosition(method reflect.Method, position int, paramDescript
 	// Remove pointer indicators
 	typeName = strings.TrimPrefix(typeName, "*")
 
-	// Convert to kebab-case
-	var result strings.Builder
-	for i, r := range typeName {
-		if i > 0 && r >= 'A' && r <= 'Z' {
-			result.WriteRune('-')
-		}
-		result.WriteRune(r)
-	}
-
-	name := strings.ToLower(result.String())
+	name := casing.CamelToKebab(typeName)
 
 	// First, try to get parameter name from SDK descriptions
 	// The descriptions are now in order, so we can match by position
@@ -550,7 +516,7 @@ func getParamNameFromPosition(method reflect.Method, position int, paramDescript
 			}
 			if actualParamIndex == paramIndex {
 				// Found the matching parameter
-				return camelToKebab(param.Name)
+				return casing.CamelToKebab(param.Name)
 			}
 			actualParamIndex++
 		}
@@ -613,18 +579,6 @@ func getParamNameFromPosition(method reflect.Method, position int, paramDescript
 	}
 
 	return name
-}
-
-// camelToKebab converts camelCase to kebab-case
-func camelToKebab(s string) string {
-	var result strings.Builder
-	for i, r := range s {
-		if i > 0 && r >= 'A' && r <= 'Z' {
-			result.WriteRune('-')
-		}
-		result.WriteRune(r)
-	}
-	return strings.ToLower(result.String())
 }
 
 // getValueFromFlag retrieves a flag value and converts it to the target type
@@ -692,7 +646,7 @@ func buildStructFromFlags(cmd *cobra.Command, prefix string, structType reflect.
 		}
 
 		// Convert to kebab-case for CLI flag name
-		flagName := camelToKebab(fieldName)
+		flagName := casing.CamelToKebab(fieldName)
 		if prefix != "" {
 			flagName = prefix + "-" + flagName
 		}
@@ -819,7 +773,7 @@ func applyFlagsToRequestBuilder(cmd *cobra.Command, requestBuilder reflect.Value
 		}
 
 		// Get the flag name for this setter
-		flagName := camelToKebab(method.Name)
+		flagName := casing.CamelToKebab(method.Name)
 
 		// Get the parameter type for this setter
 		paramType := method.Type.In(1)
@@ -976,7 +930,7 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 				if method.Type.NumIn() == 2 && method.Type.NumOut() == 1 && method.Name != "Execute" {
 					// This looks like a setter
 					paramType := method.Type.In(1)
-					paramName := camelToKebab(method.Name)
+					paramName := casing.CamelToKebab(method.Name)
 
 					// Expand this setter parameter into flags
 					// All setter parameters are optional - they're optional fields on the request builder
@@ -1172,7 +1126,7 @@ func expandStructFieldsWithDepth(cmd *cobra.Command, prefix string, structType r
 		}
 
 		// Convert to kebab-case for CLI
-		flagName := camelToKebab(fieldName)
+		flagName := casing.CamelToKebab(fieldName)
 		if prefix != "" {
 			flagName = prefix + "-" + flagName
 		}

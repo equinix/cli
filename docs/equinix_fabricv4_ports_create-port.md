@@ -101,11 +101,11 @@ equinix fabricv4 ports create-port [flags]
       --port-request-location-region string                             port-request-location-region
       --port-request-name string                                        Equinix assigned response attribute for Port name
       --port-request-notifications string                               Notification preferences (JSON array)
-      --port-request-operation-access-v-c-count int                     Total number of connections.
+      --port-request-operation-access-vc-count int                      Total number of connections.
       --port-request-operation-additional-properties string             port-request-operation-additional-properties (JSON)
       --port-request-operation-connection-count int                     Total number of connections.
-      --port-request-operation-evpl-v-c-count int                       Total number of connections.
-      --port-request-operation-fg-v-c-count int                         Total number of connections.
+      --port-request-operation-evpl-vc-count int                        Total number of connections.
+      --port-request-operation-fg-vc-count int                          Total number of connections.
       --port-request-operation-op-status-changed-at string              port-request-operation-op-status-changed-at (JSON)
       --port-request-operation-operational-status string                port-request-operation-operational-status
       --port-request-order-additional-properties string                 port-request-order-additional-properties (JSON)

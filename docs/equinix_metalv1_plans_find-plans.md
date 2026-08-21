@@ -21,7 +21,7 @@ equinix metalv1 plans find-plans [flags]
       --include string      include field (JSON or string)
       --request string      JSON payload for additional optional fields not exposed as flags
       --slug string         slug field
-      --type_ string        type_ field
+      --type-_ string       type-_ field
 ```
 
 ### Options inherited from parent commands

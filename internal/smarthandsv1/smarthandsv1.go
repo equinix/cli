@@ -21,16 +21,8 @@ func NewClient() (*smarthandsv1.APIClient, error) {
 		opts = append(opts, api.WithDebug())
 	}
 
-	// TEMP: use a Metal client for the metalv1 service
-	// until it is removed from public SDKs
-	var stdClient *api.Client
-	var err error
-	if "smarthandsv1" == "metalv1" {
-		stdClient, err = api.NewMetalClient(opts...)
-	} else {
-		// Use the standard client setup for authentication
-		stdClient, err = api.NewStandardClient(opts...)
-	}
+	// Use the standard client setup for authentication
+	stdClient, err = api.NewStandardClient(opts...)
 
 	if err != nil {
 		return nil, err

@@ -34,5 +34,6 @@ Commands for managing route-filters resources in the API
 * [equinix fabricv4 route-filters get-route-filter-changes](equinix_fabricv4_route-filters_get-route-filter-changes.md)	 - Get All Changes
 * [equinix fabricv4 route-filters get-route-filter-connections](equinix_fabricv4_route-filters_get-route-filter-connections.md)	 - Get All Connections on Route Filter
 * [equinix fabricv4 route-filters patch-route-filter-by-uuid](equinix_fabricv4_route-filters_patch-route-filter-by-uuid.md)	 - Patch Route Filter
+* [equinix fabricv4 route-filters search-cloud-router-route-filter-attachments](equinix_fabricv4_route-filters_search-cloud-router-route-filter-attachments.md)	 - Search Cloud Router Route Filter Attachments
 * [equinix fabricv4 route-filters search-route-filters](equinix_fabricv4_route-filters_search-route-filters.md)	 - Search Route Filters
 

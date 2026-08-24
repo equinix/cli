@@ -4,7 +4,7 @@ Get Route Table Actions
 
 ### Synopsis
 
-This API provides capability to fetch action status
+This API provides capability to fetch all actions for a given cloud router
 
 Use --request flag to provide optional JSON payload fields.
 

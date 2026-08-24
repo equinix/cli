@@ -22,7 +22,7 @@ func NewClient() (*orderhistoryv1.APIClient, error) {
 	}
 
 	// Use the standard client setup for authentication
-	stdClient, err = api.NewStandardClient(opts...)
+	stdClient, err := api.NewStandardClient(opts...)
 
 	if err != nil {
 		return nil, err

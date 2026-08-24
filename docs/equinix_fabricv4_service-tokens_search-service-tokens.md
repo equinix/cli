@@ -23,6 +23,7 @@ equinix fabricv4 service-tokens search-service-tokens [flags]
       --service-token-search-request-filter-additional-properties string       service-token-search-request-filter-additional-properties (JSON)
       --service-token-search-request-filter-and string                         service-token-search-request-filter-and (JSON array)
       --service-token-search-request-filter-operator string                    service-token-search-request-filter-operator
+      --service-token-search-request-filter-or string                          service-token-search-request-filter-or (JSON array)
       --service-token-search-request-filter-property string                    service-token-search-request-filter-property
       --service-token-search-request-filter-values string                      service-token-search-request-filter-values (JSON array)
       --service-token-search-request-pagination-additional-properties string   service-token-search-request-pagination-additional-properties (JSON)

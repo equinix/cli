@@ -26,4 +26,5 @@ Commands for managing cloud-events resources in the API
 * [equinix fabricv4 cloud-events get-cloud-event](equinix_fabricv4_cloud-events_get-cloud-event.md)	 - Get Cloud Event
 * [equinix fabricv4 cloud-events get-cloud-event-by-asset-id](equinix_fabricv4_cloud-events_get-cloud-event-by-asset-id.md)	 - Get Cloud Events by Asset Id
 * [equinix fabricv4 cloud-events search-cloud-events](equinix_fabricv4_cloud-events_search-cloud-events.md)	 - Search Cloud Events
+* [equinix fabricv4 cloud-events search-last-op-events](equinix_fabricv4_cloud-events_search-last-op-events.md)	 - Search Last Operational Cloud Events
 

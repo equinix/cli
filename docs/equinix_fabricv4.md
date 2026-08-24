@@ -26,14 +26,27 @@ providing access to all available API services.
 ### SEE ALSO
 
 * [equinix](equinix.md)	 - Equinix CLI
+* [equinix fabricv4 application-domains](equinix_fabricv4_application-domains.md)	 - Manage application-domains resources
+* [equinix fabricv4 application-links](equinix_fabricv4_application-links.md)	 - Manage application-links resources
+* [equinix fabricv4 application-services](equinix_fabricv4_application-services.md)	 - Manage application-services resources
+* [equinix fabricv4 application-subscriptions](equinix_fabricv4_application-subscriptions.md)	 - Manage application-subscriptions resources
 * [equinix fabricv4 cloud-events](equinix_fabricv4_cloud-events.md)	 - Manage cloud-events resources
 * [equinix fabricv4 cloud-routers](equinix_fabricv4_cloud-routers.md)	 - Manage cloud-routers resources
+* [equinix fabricv4 company-profiles](equinix_fabricv4_company-profiles.md)	 - Manage company-profiles resources
 * [equinix fabricv4 connections](equinix_fabricv4_connections.md)	 - Manage connections resources
+* [equinix fabricv4 fabric-one](equinix_fabricv4_fabric-one.md)	 - Manage fabric-one resources
+* [equinix fabricv4 gateways](equinix_fabricv4_gateways.md)	 - Manage gateways resources
 * [equinix fabricv4 health](equinix_fabricv4_health.md)	 - Manage health resources
+* [equinix fabricv4 internet-access-services](equinix_fabricv4_internet-access-services.md)	 - Manage internet-access-services resources
+* [equinix fabricv4 internet-exchange-services](equinix_fabricv4_internet-exchange-services.md)	 - Manage internet-exchange-services resources
+* [equinix fabricv4 ip-blocks](equinix_fabricv4_ip-blocks.md)	 - Manage ip-blocks resources
+* [equinix fabricv4 loas](equinix_fabricv4_loas.md)	 - Manage loas resources
+* [equinix fabricv4 logos](equinix_fabricv4_logos.md)	 - Manage logos resources
 * [equinix fabricv4 marketplace-subscriptions](equinix_fabricv4_marketplace-subscriptions.md)	 - Manage marketplace-subscriptions resources
 * [equinix fabricv4 metrics](equinix_fabricv4_metrics.md)	 - Manage metrics resources
 * [equinix fabricv4 metros](equinix_fabricv4_metros.md)	 - Manage metros resources
 * [equinix fabricv4 networks](equinix_fabricv4_networks.md)	 - Manage networks resources
+* [equinix fabricv4 optical-metro-connects](equinix_fabricv4_optical-metro-connects.md)	 - Manage optical-metro-connects resources
 * [equinix fabricv4 port-packages](equinix_fabricv4_port-packages.md)	 - Manage port-packages resources
 * [equinix fabricv4 ports](equinix_fabricv4_ports.md)	 - Manage ports resources
 * [equinix fabricv4 precision-time](equinix_fabricv4_precision-time.md)	 - Manage precision-time resources
@@ -49,4 +62,5 @@ providing access to all available API services.
 * [equinix fabricv4 stream-alert-rules](equinix_fabricv4_stream-alert-rules.md)	 - Manage stream-alert-rules resources
 * [equinix fabricv4 stream-subscriptions](equinix_fabricv4_stream-subscriptions.md)	 - Manage stream-subscriptions resources
 * [equinix fabricv4 streams](equinix_fabricv4_streams.md)	 - Manage streams resources
+* [equinix fabricv4 tags](equinix_fabricv4_tags.md)	 - Manage tags resources
 

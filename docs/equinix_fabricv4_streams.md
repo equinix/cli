@@ -29,7 +29,8 @@ Commands for managing streams resources in the API
 * [equinix fabricv4 streams get-stream-asset-by-uuid](equinix_fabricv4_streams_get-stream-asset-by-uuid.md)	 - Get Asset
 * [equinix fabricv4 streams get-stream-by-uuid](equinix_fabricv4_streams_get-stream-by-uuid.md)	 - Get Stream
 * [equinix fabricv4 streams get-streams](equinix_fabricv4_streams_get-streams.md)	 - Get Streams
-* [equinix fabricv4 streams get-streams-assets](equinix_fabricv4_streams_get-streams-assets.md)	 - Get Assets
+* [equinix fabricv4 streams search-stream-assets](equinix_fabricv4_streams_search-stream-assets.md)	 - Search Stream Assets
+* [equinix fabricv4 streams search-streams](equinix_fabricv4_streams_search-streams.md)	 - Search Streams
 * [equinix fabricv4 streams update-stream-asset-by-uuid](equinix_fabricv4_streams_update-stream-asset-by-uuid.md)	 - Attach Asset
 * [equinix fabricv4 streams update-stream-by-uuid](equinix_fabricv4_streams_update-stream-by-uuid.md)	 - Update Stream
 

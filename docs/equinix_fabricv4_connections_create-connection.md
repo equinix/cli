@@ -18,9 +18,6 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-a-side-access-point string                              connection-post-request-a-side-access-point (JSON)
       --connection-post-request-a-side-additional-info string                           Any additional information, which is not part of connection metadata or configuration (JSON array)
       --connection-post-request-a-side-additional-properties string                     connection-post-request-a-side-additional-properties (JSON)
-      --connection-post-request-a-side-company-profile string                           connection-post-request-a-side-company-profile (JSON)
-      --connection-post-request-a-side-internet-access string                           connection-post-request-a-side-internet-access (JSON)
-      --connection-post-request-a-side-invitation string                                connection-post-request-a-side-invitation (JSON)
       --connection-post-request-a-side-service-token string                             connection-post-request-a-side-service-token (JSON)
       --connection-post-request-additional-info string                                  Connection additional information (JSON array)
       --connection-post-request-additional-properties string                            connection-post-request-additional-properties (JSON)
@@ -38,6 +35,7 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-notifications string                                    Preferences for notifications on connection configuration or status changes (JSON array)
       --connection-post-request-order-additional-properties string                      connection-post-request-order-additional-properties (JSON)
       --connection-post-request-order-billing-tier string                               Billing tier for connection bandwidth
+      --connection-post-request-order-contracted-bandwidth int                          Contracted bandwidth
       --connection-post-request-order-customer-reference-number string                  Customer reference number
       --connection-post-request-order-order-id string                                   Order Identification
       --connection-post-request-order-order-number string                               Order Reference Number
@@ -52,9 +50,6 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-z-side-access-point string                              connection-post-request-z-side-access-point (JSON)
       --connection-post-request-z-side-additional-info string                           Any additional information, which is not part of connection metadata or configuration (JSON array)
       --connection-post-request-z-side-additional-properties string                     connection-post-request-z-side-additional-properties (JSON)
-      --connection-post-request-z-side-company-profile string                           connection-post-request-z-side-company-profile (JSON)
-      --connection-post-request-z-side-internet-access string                           connection-post-request-z-side-internet-access (JSON)
-      --connection-post-request-z-side-invitation string                                connection-post-request-z-side-invitation (JSON)
       --connection-post-request-z-side-service-token string                             connection-post-request-z-side-service-token (JSON)
       --dry-run                                                                         dry-run field
   -h, --help                                                                            help for create-connection

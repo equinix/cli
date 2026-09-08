@@ -1,6 +1,6 @@
 ## equinix fabricv4 stream-alert-rules delete-stream-alert-rule-by-uuid
 
-Update Stream Alert Rules
+Delete Stream Alert Rules
 
 ### Synopsis
 

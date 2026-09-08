@@ -4,7 +4,7 @@ Search Route Table Actions
 
 ### Synopsis
 
-This API provides capability to refresh route table and bgp session summary information
+This API provides capability to search route table actions for a given cloud router
 
 Use --request flag to provide optional JSON payload fields.
 

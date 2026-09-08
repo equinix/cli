@@ -35,8 +35,6 @@ Commands for managing cloud-routers resources in the API
 * [equinix fabricv4 cloud-routers get-cloud-router-command](equinix_fabricv4_cloud-routers_get-cloud-router-command.md)	 - Get Command
 * [equinix fabricv4 cloud-routers get-cloud-router-package-by-code](equinix_fabricv4_cloud-routers_get-cloud-router-package-by-code.md)	 - Get Package Details
 * [equinix fabricv4 cloud-routers get-cloud-router-packages](equinix_fabricv4_cloud-routers_get-cloud-router-packages.md)	 - List Packages
-* [equinix fabricv4 cloud-routers get-gateway-attachment-to-cloud-router-by-uuid](equinix_fabricv4_cloud-routers_get-gateway-attachment-to-cloud-router-by-uuid.md)	 - Get Gateway Attachment details to a Cloud Router
-* [equinix fabricv4 cloud-routers list-gateway-attachments-to-cloud-router](equinix_fabricv4_cloud-routers_list-gateway-attachments-to-cloud-router.md)	 - List Cloud Routers of a Gateway Attachment.
 * [equinix fabricv4 cloud-routers search-cloud-router-commands](equinix_fabricv4_cloud-routers_search-cloud-router-commands.md)	 - Search Commands
 * [equinix fabricv4 cloud-routers search-cloud-router-routes](equinix_fabricv4_cloud-routers_search-cloud-router-routes.md)	 - Search Route Table
 * [equinix fabricv4 cloud-routers search-cloud-routers](equinix_fabricv4_cloud-routers_search-cloud-routers.md)	 - Search Routers

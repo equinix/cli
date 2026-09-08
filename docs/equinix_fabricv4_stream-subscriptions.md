@@ -27,5 +27,6 @@ Commands for managing stream-subscriptions resources in the API
 * [equinix fabricv4 stream-subscriptions delete-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_delete-stream-subscription-by-uuid.md)	 - Delete Subscription
 * [equinix fabricv4 stream-subscriptions get-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_get-stream-subscription-by-uuid.md)	 - Get Subscription
 * [equinix fabricv4 stream-subscriptions get-stream-subscriptions](equinix_fabricv4_stream-subscriptions_get-stream-subscriptions.md)	 - Get Subscriptions
+* [equinix fabricv4 stream-subscriptions search-stream-subscriptions](equinix_fabricv4_stream-subscriptions_search-stream-subscriptions.md)	 - Search Stream Subscriptions
 * [equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid](equinix_fabricv4_stream-subscriptions_update-stream-subscription-by-uuid.md)	 - Update Subscription
 

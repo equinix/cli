@@ -22,7 +22,6 @@ Command-line interface for Equinix APIs
 * [equinix eiav2](equinix_eiav2.md)	 - Manage Equinix eiav2 resources
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix fauricv4 resources
 * [equinix lookupv2](equinix_lookupv2.md)	 - Manage Equinix lookupv2 resources
-* [equinix metalv1](equinix_metalv1.md)	 - Manage Equinix metalv1 resources
 * [equinix orderhistoryv1](equinix_orderhistoryv1.md)	 - Manage Equinix orderhistoryv1 resources
 * [equinix ordersv2](equinix_ordersv2.md)	 - Manage Equinix ordersv2 resources
 * [equinix securecabinetv1](equinix_securecabinetv1.md)	 - Manage Equinix securecauinetv1 resources

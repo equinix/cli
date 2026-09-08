@@ -15,11 +15,10 @@ equinix fabricv4 service-profiles update-service-profile-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help                          help for update-service-profile-by-uuid
-      --if-match string               if-match field
-      --json-patch-operation string   json-patch-operation field (JSON or string)
-      --request string                JSON payload for additional optional fields not exposed as flags
-      --service-profile-id string     Service Profile UUID (required)
+  -h, --help                                      help for update-service-profile-by-uuid
+      --request string                            JSON payload for additional optional fields not exposed as flags
+      --service-profile-id string                 Service Profile UUID (required)
+      --service-profile-update-operation string   service-profile-update-operation field (JSON or string)
 ```
 
 ### Options inherited from parent commands

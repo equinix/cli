@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/equinix/cli/internal/{{SERVICE}}"
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
 )
@@ -17,13 +18,15 @@ var {{SERVICE}}Debug bool
 //go:embed descriptions/{{SERVICE}}.json
 var {{SERVICE}}Descriptions []byte
 
-// {{SERVICE}}Cmd represents the {{SERVICE}} command
+// {{SERVICE}}Cmd represents the {{SERVICE}} command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var {{SERVICE}}Cmd = &cobra.Command{
-	Use:   "{{SERVICE}}",
-	Short: "Manage Equinix {{SERVICE_DISPLAY}} resources",
-	Long: `Commands for managing Equinix {{SERVICE_DISPLAY}} resources.
+	Use:     naming.CanonicalServiceName("{{SERVICE}}"),
+	Aliases: naming.ServiceAliases("{{SERVICE}}"),
+	Short:   "Manage Equinix {{SERVICE}} resources",
+	Long: `Commands for managing Equinix {{SERVICE}} resources.
 
-The {{SERVICE}} commands are dynamically generated based on the {{SERVICE_DISPLAY}} API client,
+The {{SERVICE}} commands are dynamically generated based on the {{SERVICE}} API client,
 providing access to all available API services.`,
 	PersistentPreRun: func(cmd *cobra.Command, _ []string) {
 		// Inject the client factory into the command context so that
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register {{SERVICE}} commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// {{SERVICE}}Cmd.Aliases = []string{"{{SERVICE_ALIAS}}"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := {{SERVICE}}Cmd.Find([]string{"connections"}); err == nil {

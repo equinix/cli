@@ -12,7 +12,7 @@ func SetDebug(enabled bool) {
 	debugMode = enabled
 }
 
-// NewClient creates a new fauricv4 API client using the standard
+// NewClient creates a new fabricv4 API client using the standard
 // authentication configuration from internal/api
 func NewClient() (*fabricv4.APIClient, error) {
 	// Build client options based on debug mode
@@ -28,7 +28,7 @@ func NewClient() (*fabricv4.APIClient, error) {
 		return nil, err
 	}
 
-	// Configure the fauricv4 client
+	// Configure the fabricv4 client
 	configuration := fabricv4.NewConfiguration()
 	configuration.HTTPClient = stdClient.HTTPClient
 	configuration.AddDefaultHeader("X-SOURCE", "equinix-cli")
@@ -36,7 +36,7 @@ func NewClient() (*fabricv4.APIClient, error) {
 	return fabricv4.NewAPIClient(configuration), nil
 }
 
-// NewClientForDiscovery creates a fauricv4 API client for command discovery
+// NewClientForDiscovery creates a fabricv4 API client for command discovery
 // This is used at CLI initialization time to register commands without requiring credentials
 func NewClientForDiscovery() (*fabricv4.APIClient, error) {
 	// Create a basic client with no authentication for structure discovery only

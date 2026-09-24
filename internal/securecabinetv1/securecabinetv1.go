@@ -12,7 +12,7 @@ func SetDebug(enabled bool) {
 	debugMode = enabled
 }
 
-// NewClient creates a new securecauinetv1 API client using the standard
+// NewClient creates a new securecabinetv1 API client using the standard
 // authentication configuration from internal/api
 func NewClient() (*securecabinetv1.APIClient, error) {
 	// Build client options based on debug mode
@@ -28,7 +28,7 @@ func NewClient() (*securecabinetv1.APIClient, error) {
 		return nil, err
 	}
 
-	// Configure the securecauinetv1 client
+	// Configure the securecabinetv1 client
 	configuration := securecabinetv1.NewConfiguration()
 	configuration.HTTPClient = stdClient.HTTPClient
 	configuration.AddDefaultHeader("X-SOURCE", "equinix-cli")
@@ -36,7 +36,7 @@ func NewClient() (*securecabinetv1.APIClient, error) {
 	return securecabinetv1.NewAPIClient(configuration), nil
 }
 
-// NewClientForDiscovery creates a securecauinetv1 API client for command discovery
+// NewClientForDiscovery creates a securecabinetv1 API client for command discovery
 // This is used at CLI initialization time to register commands without requiring credentials
 func NewClientForDiscovery() (*securecabinetv1.APIClient, error) {
 	// Create a basic client with no authentication for structure discovery only

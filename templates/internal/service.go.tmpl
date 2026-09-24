@@ -12,7 +12,7 @@ func SetDebug(enabled bool) {
 	debugMode = enabled
 }
 
-// NewClient creates a new {{SERVICE_DISPLAY}} API client using the standard
+// NewClient creates a new {{SERVICE}} API client using the standard
 // authentication configuration from internal/api
 func NewClient() (*{{SERVICE}}.APIClient, error) {
 	// Build client options based on debug mode
@@ -28,7 +28,7 @@ func NewClient() (*{{SERVICE}}.APIClient, error) {
 		return nil, err
 	}
 
-	// Configure the {{SERVICE_DISPLAY}} client
+	// Configure the {{SERVICE}} client
 	configuration := {{SERVICE}}.NewConfiguration()
 	configuration.HTTPClient = stdClient.HTTPClient
 	configuration.AddDefaultHeader("X-SOURCE", "equinix-cli")
@@ -36,7 +36,7 @@ func NewClient() (*{{SERVICE}}.APIClient, error) {
 	return {{SERVICE}}.NewAPIClient(configuration), nil
 }
 
-// NewClientForDiscovery creates a {{SERVICE_DISPLAY}} API client for command discovery
+// NewClientForDiscovery creates a {{SERVICE}} API client for command discovery
 // This is used at CLI initialization time to register commands without requiring credentials
 func NewClientForDiscovery() (*{{SERVICE}}.APIClient, error) {
 	// Create a basic client with no authentication for structure discovery only

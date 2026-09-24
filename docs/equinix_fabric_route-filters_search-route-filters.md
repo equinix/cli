@@ -1,0 +1,40 @@
+## equinix fabric route-filters search-route-filters
+
+Search Route Filters
+
+### Synopsis
+
+This API provides capability to search Route Filters
+
+Use --request flag to provide optional JSON payload fields.
+
+```
+equinix fabric route-filters search-route-filters [flags]
+```
+
+### Options
+
+```
+  -h, --help                                                                   help for search-route-filters
+      --request string                                                         JSON payload for additional optional fields not exposed as flags
+      --route-filters-search-request-additional-properties string              route-filters-search-request-additional-properties (JSON)
+      --route-filters-search-request-filter-search-and-expression string       route-filters-search-request-filter-search-and-expression (JSON)
+      --route-filters-search-request-filter-search-or-expression string        route-filters-search-request-filter-search-or-expression (JSON)
+      --route-filters-search-request-pagination-additional-properties string   route-filters-search-request-pagination-additional-properties (JSON)
+      --route-filters-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --route-filters-search-request-pagination-offset int                     Index of the first element.
+      --route-filters-search-request-sort string                               route-filters-search-request-sort (JSON array)
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug           Enable debug logging for HTTP requests
+  -f, --format string   Format to use for output (json or yaml) (default "json")
+```
+
+### SEE ALSO
+
+* [equinix fabric route-filters](equinix_fabric_route-filters.md)	 - Manage route-filters resources
+

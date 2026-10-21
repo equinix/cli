@@ -268,30 +268,22 @@ func getServiceFromClient(client interface{}, serviceName string) interface{} {
 		return nil
 	}
 
-	// Convert kebab-case service name back to field name format
-	// e.g., "cloud-routers" -> "CloudRouters"
-	parts := strings.Split(serviceName, "-")
-	var fieldNameBuilder strings.Builder
-	for _, part := range parts {
-		if len(part) > 0 {
-			fieldNameBuilder.WriteString(strings.ToUpper(string(part[0])))
-			if len(part) > 1 {
-				fieldNameBuilder.WriteString(part[1:])
-			}
-		}
-	}
-	fieldNameBase := fieldNameBuilder.String()
-
-	// Try to find the field with Api or ApiService suffix
+	// Match by converting each field name forward with the same casing rules
+	// used to derive serviceName, rather than reversing the (lossy) kebab
+	// conversion. e.g. field "OAuth2TokenApi" -> "oauth2-token".
 	for i := 0; i < clientValue.NumField(); i++ {
-		field := clientValue.Type().Field(i)
-		fieldName := field.Name
+		fieldName := clientValue.Type().Field(i).Name
 
-		// Check if this matches the service name
-		if strings.HasPrefix(fieldName, fieldNameBase) {
-			if strings.HasSuffix(fieldName, "Api") || strings.HasSuffix(fieldName, "ApiService") {
-				return clientValue.Field(i).Interface()
-			}
+		base := strings.TrimSuffix(fieldName, "ApiService")
+		if base == fieldName {
+			base = strings.TrimSuffix(fieldName, "Api")
+		}
+		if base == fieldName {
+			continue
+		}
+
+		if casing.CamelToKebab(base) == serviceName {
+			return clientValue.Field(i).Interface()
 		}
 	}
 
@@ -317,6 +309,9 @@ func executeMethod(cmd *cobra.Command, serviceName string, _ reflect.Method, bui
 	// Get the service from the fresh client
 	// Extract the service name to find the matching field
 	service := getServiceFromClient(client, serviceName)
+	if service == nil {
+		return fmt.Errorf("service %q not found on API client", serviceName)
+	}
 	serviceValue := reflect.ValueOf(service)
 
 	// Build the arguments for the builder method

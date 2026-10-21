@@ -170,34 +170,6 @@ func NewPortalClient(options ...ClientOption) (*Client, error) {
 	return client, nil
 }
 
-// NewMetalClient creates a new Client for the Equinix Metal API
-func NewMetalClient(options ...ClientOption) (*Client, error) {
-	client := &Client{
-		BaseURL:    "https://api.equinix.com",
-		HTTPClient: &http.Client{},
-	}
-
-	token := viper.GetString("metal_auth_token")
-	if token == "" {
-		return nil, errors.New("metal_auth_token not found in env or config")
-	}
-
-	defaultHeaders := map[string]string{
-		"X-Auth-Token": token,
-	}
-	options = append(options, withDefaultHeaders(defaultHeaders))
-
-	// Apply options to potentially wrap the transport
-	transport := http.RoundTripper(http.DefaultTransport)
-	for _, opt := range options {
-		transport = opt(transport)
-	}
-
-	client.HTTPClient.Transport = transport
-
-	return client, nil
-}
-
 // Request makes an HTTP request to the specified API path with the given method and data.
 func (c *Client) Request(apiPath, method string, data string) ([]byte, error) {
 	url := c.BaseURL + "/" + apiPath

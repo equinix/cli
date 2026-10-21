@@ -80,21 +80,6 @@ func initConfig() {
 			// Another error occurred while reading the config file; handle it as a fatal error
 			cobra.CheckErr(err)
 		}
-
-		// Read Metal auth token from metal CLI config if it
-		// wasn't set in env or equinix config
-		if viper.GetString("metal_auth_token") == "" {
-			metal := viper.New()
-			metalPath := home + "/.config/equinix/metal.yaml"
-			metal.SetConfigFile(metalPath)
-			err = metal.MergeInConfig()
-
-			// We don't care if there's an error reading the file, since
-			// this CLI prefers equinix.yaml and related env vars for config
-			if err == nil && metal.GetString("token") != "" {
-				viper.Set("metal_auth_token", metal.GetString("token"))
-			}
-		}
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match

@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"regexp"
 
 	"github.com/equinix/cli/internal/api"
 	"github.com/spf13/cobra"
@@ -36,8 +35,6 @@ var apiCmd = &cobra.Command{
 
 		if portal {
 			client, err = api.NewPortalClient(opts...)
-		} else if isMetalPath(path) {
-			client, err = api.NewMetalClient(opts...)
 		} else {
 			client, err = api.NewStandardClient(opts...)
 		}
@@ -82,9 +79,4 @@ func init() {
 	apiCmd.Flags().StringVarP(&format, "format", "f", "json", "Format to use for output (json or yaml)")
 	apiCmd.Flags().BoolVar(&portal, "portal", false, "Use Equinix Portal API (cookie auth)")
 	apiCmd.Flags().BoolVar(&debug, "debug", false, "Enable debug logging for HTTP requests and responses")
-}
-
-func isMetalPath(path string) bool {
-	metalPattern := regexp.MustCompile(`^/?metal(/.*)?$`)
-	return metalPattern.MatchString(path)
 }

@@ -18,6 +18,7 @@ If you prefer, you can also install `equinix` with Homebrew by running the follo
 
 ```sh
 brew tap equinix/homebrew-tap
+brew trust --cask equinix/tap/equinix
 brew install equinix
 ```
 

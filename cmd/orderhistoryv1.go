@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/orderhistoryv1"
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
@@ -17,10 +18,12 @@ var orderhistoryv1Debug bool
 //go:embed descriptions/orderhistoryv1.json
 var orderhistoryv1Descriptions []byte
 
-// orderhistoryv1Cmd represents the orderhistoryv1 command
+// orderhistoryv1Cmd represents the orderhistoryv1 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var orderhistoryv1Cmd = &cobra.Command{
-	Use:   "orderhistoryv1",
-	Short: "Manage Equinix orderhistoryv1 resources",
+	Use:     naming.CanonicalServiceName("orderhistoryv1"),
+	Aliases: naming.ServiceAliases("orderhistoryv1"),
+	Short:   "Manage Equinix orderhistoryv1 resources",
 	Long: `Commands for managing Equinix orderhistoryv1 resources.
 
 The orderhistoryv1 commands are dynamically generated based on the orderhistoryv1 API client,
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register orderhistoryv1 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// orderhistoryv1Cmd.Aliases = []string{"orderhistory"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := orderhistoryv1Cmd.Find([]string{"connections"}); err == nil {

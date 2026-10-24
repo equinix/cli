@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/equinix/cli/internal/lookupv2"
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
 )
@@ -17,10 +18,12 @@ var lookupv2Debug bool
 //go:embed descriptions/lookupv2.json
 var lookupv2Descriptions []byte
 
-// lookupv2Cmd represents the lookupv2 command
+// lookupv2Cmd represents the lookupv2 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var lookupv2Cmd = &cobra.Command{
-	Use:   "lookupv2",
-	Short: "Manage Equinix lookupv2 resources",
+	Use:     naming.CanonicalServiceName("lookupv2"),
+	Aliases: naming.ServiceAliases("lookupv2"),
+	Short:   "Manage Equinix lookupv2 resources",
 	Long: `Commands for managing Equinix lookupv2 resources.
 
 The lookupv2 commands are dynamically generated based on the lookupv2 API client,
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register lookupv2 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// lookupv2Cmd.Aliases = []string{"lookup"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := lookupv2Cmd.Find([]string{"connections"}); err == nil {

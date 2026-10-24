@@ -1,0 +1,34 @@
+## equinix fabric company-profiles delete-company-profile
+
+Delete Company Profile
+
+### Synopsis
+
+Delete company profile by UUID <font color="red"> <sup color='red'>Beta</sup></font>
+
+Use --request flag to provide optional JSON payload fields.
+
+```
+equinix fabric company-profiles delete-company-profile [flags]
+```
+
+### Options
+
+```
+      --company-profile-id string   Company Profile UUID (required)
+  -h, --help                        help for delete-company-profile
+      --request string              JSON payload for request body fields
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug           Enable debug logging for HTTP requests
+  -f, --format string   Format to use for output (json or yaml) (default "json")
+```
+
+### SEE ALSO
+
+* [equinix fabric company-profiles](equinix_fabric_company-profiles.md)	 - Manage company-profiles resources
+

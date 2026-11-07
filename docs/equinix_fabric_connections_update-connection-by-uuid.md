@@ -1,0 +1,36 @@
+## equinix fabric connections update-connection-by-uuid
+
+Update by ID
+
+### Synopsis
+
+Update Connection by ID
+
+Use --request flag to provide optional JSON payload fields.
+
+```
+equinix fabric connections update-connection-by-uuid [flags]
+```
+
+### Options
+
+```
+      --connection-change-operation string   connection-change-operation field (JSON or string)
+      --connection-id string                 Connection Id (required)
+      --dry-run                              dry-run field
+  -h, --help                                 help for update-connection-by-uuid
+      --request string                       JSON payload for additional optional fields not exposed as flags
+```
+
+### Options inherited from parent commands
+
+```
+      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug           Enable debug logging for HTTP requests
+  -f, --format string   Format to use for output (json or yaml) (default "json")
+```
+
+### SEE ALSO
+
+* [equinix fabric connections](equinix_fabric_connections.md)	 - Manage connections resources
+

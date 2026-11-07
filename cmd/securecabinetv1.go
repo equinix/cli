@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/equinix/cli/internal/securecabinetv1"
 	"github.com/spf13/cobra"
@@ -17,13 +18,15 @@ var securecabinetv1Debug bool
 //go:embed descriptions/securecabinetv1.json
 var securecabinetv1Descriptions []byte
 
-// securecabinetv1Cmd represents the securecabinetv1 command
+// securecabinetv1Cmd represents the securecabinetv1 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var securecabinetv1Cmd = &cobra.Command{
-	Use:   "securecabinetv1",
-	Short: "Manage Equinix securecauinetv1 resources",
-	Long: `Commands for managing Equinix securecauinetv1 resources.
+	Use:     naming.CanonicalServiceName("securecabinetv1"),
+	Aliases: naming.ServiceAliases("securecabinetv1"),
+	Short:   "Manage Equinix securecabinetv1 resources",
+	Long: `Commands for managing Equinix securecabinetv1 resources.
 
-The securecabinetv1 commands are dynamically generated based on the securecauinetv1 API client,
+The securecabinetv1 commands are dynamically generated based on the securecabinetv1 API client,
 providing access to all available API services.`,
 	PersistentPreRun: func(cmd *cobra.Command, _ []string) {
 		// Inject the client factory into the command context so that
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register securecabinetv1 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// securecabinetv1Cmd.Aliases = []string{"securecabinet"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := securecabinetv1Cmd.Find([]string{"connections"}); err == nil {

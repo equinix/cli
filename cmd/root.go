@@ -63,6 +63,7 @@ func initConfig() {
 	if cfgFile != "" {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
+		cobra.CheckErr(viper.ReadInConfig())
 	} else {
 		// Find home directory.
 		home, err := os.UserHomeDir()

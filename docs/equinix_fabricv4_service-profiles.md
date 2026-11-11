@@ -29,7 +29,7 @@ Commands for managing service-profiles resources in the API
 * [equinix fabricv4 service-profiles get-service-profile-by-uuid](equinix_fabricv4_service-profiles_get-service-profile-by-uuid.md)	 - Get Profile
 * [equinix fabricv4 service-profiles get-service-profile-environments-by-uuid](equinix_fabricv4_service-profiles_get-service-profile-environments-by-uuid.md)	 - Get Profile Environments
 * [equinix fabricv4 service-profiles get-service-profile-metros-by-uuid](equinix_fabricv4_service-profiles_get-service-profile-metros-by-uuid.md)	 - Get Profile Metros
-* [equinix fabricv4 service-profiles get-service-profiles](equinix_fabricv4_service-profiles_get-service-profiles.md)	 - Get all Profiles
+* [equinix fabricv4 service-profiles list-service-profiles](equinix_fabricv4_service-profiles_list-service-profiles.md)	 - Execute list-service-profiles operation
 * [equinix fabricv4 service-profiles put-service-profile-by-uuid](equinix_fabricv4_service-profiles_put-service-profile-by-uuid.md)	 - Replace Profile
 * [equinix fabricv4 service-profiles search-service-profiles](equinix_fabricv4_service-profiles_search-service-profiles.md)	 - Profile Search
 * [equinix fabricv4 service-profiles service-profile-environment-action](equinix_fabricv4_service-profiles_service-profile-environment-action.md)	 - Service Profile Environment Actions

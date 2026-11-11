@@ -23,6 +23,9 @@ Commands for managing internet-exchange-services resources in the API
 ### SEE ALSO
 
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix fauricv4 resources
+* [equinix fabricv4 internet-exchange-services create-exchange-service](equinix_fabricv4_internet-exchange-services_create-exchange-service.md)	 - Execute create-exchange-service operation
+* [equinix fabricv4 internet-exchange-services create-exchange-service-action](equinix_fabricv4_internet-exchange-services_create-exchange-service-action.md)	 - Execute create-exchange-service-action operation
 * [equinix fabricv4 internet-exchange-services get-exchange-service-by-id](equinix_fabricv4_internet-exchange-services_get-exchange-service-by-id.md)	 - Get Internet Exchange Service
 * [equinix fabricv4 internet-exchange-services search-exchange-service](equinix_fabricv4_internet-exchange-services_search-exchange-service.md)	 - Search Internet Exchange Service
+* [equinix fabricv4 internet-exchange-services update-exchange-service-by-id](equinix_fabricv4_internet-exchange-services_update-exchange-service-by-id.md)	 - Execute update-exchange-service-by-id operation
 

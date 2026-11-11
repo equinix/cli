@@ -22,10 +22,6 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-additional-info string                                  Connection additional information (JSON array)
       --connection-post-request-additional-properties string                            connection-post-request-additional-properties (JSON)
       --connection-post-request-bandwidth int                                           Connection bandwidth in Mbps
-      --connection-post-request-end-customer-additional-properties string               connection-post-request-end-customer-additional-properties (JSON)
-      --connection-post-request-end-customer-is-disclosed                               Indicate if endCustomer info should be disclosed or not
-      --connection-post-request-end-customer-mdm-id string                              connection-post-request-end-customer-mdm-id
-      --connection-post-request-end-customer-name string                                connection-post-request-end-customer-name
       --connection-post-request-geo-scope string                                        connection-post-request-geo-scope
       --connection-post-request-marketplace-subscription-additional-properties string   connection-post-request-marketplace-subscription-additional-properties (JSON)
       --connection-post-request-marketplace-subscription-href string                    Marketplace Subscription URI
@@ -44,7 +40,9 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-project-additional-properties string                    connection-post-request-project-additional-properties (JSON)
       --connection-post-request-project-project-id string                               Subscriber-assigned project ID
       --connection-post-request-redundancy-additional-properties string                 connection-post-request-redundancy-additional-properties (JSON)
+      --connection-post-request-redundancy-description string                           connection-post-request-redundancy-description
       --connection-post-request-redundancy-group string                                 Redundancy group identifier (UUID of primary connection)
+      --connection-post-request-redundancy-name string                                  connection-post-request-redundancy-name
       --connection-post-request-redundancy-priority string                              connection-post-request-redundancy-priority
       --connection-post-request-type string                                             connection-post-request-type
       --connection-post-request-z-side-access-point string                              connection-post-request-z-side-access-point (JSON)

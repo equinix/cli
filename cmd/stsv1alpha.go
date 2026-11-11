@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/equinix/cli/internal/stsv1alpha"
 	"github.com/spf13/cobra"
@@ -17,10 +18,12 @@ var stsv1alphaDebug bool
 //go:embed descriptions/stsv1alpha.json
 var stsv1alphaDescriptions []byte
 
-// stsv1alphaCmd represents the stsv1alpha command
+// stsv1alphaCmd represents the stsv1alpha command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var stsv1alphaCmd = &cobra.Command{
-	Use:   "stsv1alpha",
-	Short: "Manage Equinix stsv1alpha resources",
+	Use:     naming.CanonicalServiceName("stsv1alpha"),
+	Aliases: naming.ServiceAliases("stsv1alpha"),
+	Short:   "Manage Equinix stsv1alpha resources",
 	Long: `Commands for managing Equinix stsv1alpha resources.
 
 The stsv1alpha commands are dynamically generated based on the stsv1alpha API client,
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register stsv1alpha commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// stsv1alphaCmd.Aliases = []string{"stsv1alpha"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := stsv1alphaCmd.Find([]string{"connections"}); err == nil {

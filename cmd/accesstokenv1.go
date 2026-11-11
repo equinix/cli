@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/equinix/cli/internal/accesstokenv1"
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
 )
@@ -17,10 +18,12 @@ var accesstokenv1Debug bool
 //go:embed descriptions/accesstokenv1.json
 var accesstokenv1Descriptions []byte
 
-// accesstokenv1Cmd represents the accesstokenv1 command
+// accesstokenv1Cmd represents the accesstokenv1 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var accesstokenv1Cmd = &cobra.Command{
-	Use:   "accesstokenv1",
-	Short: "Manage Equinix accesstokenv1 resources",
+	Use:     naming.CanonicalServiceName("accesstokenv1"),
+	Aliases: naming.ServiceAliases("accesstokenv1"),
+	Short:   "Manage Equinix accesstokenv1 resources",
 	Long: `Commands for managing Equinix accesstokenv1 resources.
 
 The accesstokenv1 commands are dynamically generated based on the accesstokenv1 API client,
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register accesstokenv1 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// accesstokenv1Cmd.Aliases = []string{"accesstoken"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := accesstokenv1Cmd.Find([]string{"connections"}); err == nil {

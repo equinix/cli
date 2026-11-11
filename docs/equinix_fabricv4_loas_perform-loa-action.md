@@ -15,7 +15,7 @@ equinix fabricv4 loas perform-loa-action [flags]
 ### Options
 
 ```
-  -h, --help                                                   help for perform-loa-action
+  -h, --help[=true|false]                                      help for perform-loa-action
       --loa-action-request-additional-properties string        loa-action-request-additional-properties (JSON)
       --loa-action-request-data-additional-properties string   loa-action-request-data-additional-properties (JSON)
       --loa-action-request-data-demarcation-point string       loa-action-request-data-demarcation-point (JSON)
@@ -29,9 +29,9 @@ equinix fabricv4 loas perform-loa-action [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

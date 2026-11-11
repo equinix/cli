@@ -22,16 +22,16 @@ equinix fabricv4 application-links search-app-links [flags]
       --app-link-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
       --app-link-search-request-pagination-offset int                     Index of the first element.
       --app-link-search-request-sort string                               app-link-search-request-sort (JSON array)
-  -h, --help                                                              help for search-app-links
+  -h, --help[=true|false]                                                 help for search-app-links
       --request string                                                    JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

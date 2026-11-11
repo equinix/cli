@@ -20,16 +20,16 @@ equinix fabricv4 application-links attach-app-service-to-app-link [flags]
       --app-link-attach-service-request-geo-scope string               Geo scope for the App Service
       --app-link-id string                                             App Link UUID (required)
       --app-service-id string                                          App Service UUID (required)
-  -h, --help                                                           help for attach-app-service-to-app-link
+  -h, --help[=true|false]                                              help for attach-app-service-to-app-link
       --request string                                                 JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

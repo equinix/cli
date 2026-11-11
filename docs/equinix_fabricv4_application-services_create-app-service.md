@@ -23,16 +23,16 @@ equinix fabricv4 application-services create-app-service [flags]
       --app-service-post-request-project-project-id string              Subscriber-assigned project ID
       --app-service-post-request-source-domains string                  List of source domains from where traffic is allowed (JSON array)
       --app-service-post-request-type string                            app-service-post-request-type
-  -h, --help                                                            help for create-app-service
+  -h, --help[=true|false]                                               help for create-app-service
       --request string                                                  JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

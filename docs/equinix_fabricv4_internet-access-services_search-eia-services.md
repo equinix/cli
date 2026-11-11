@@ -15,7 +15,7 @@ equinix fabricv4 internet-access-services search-eia-services [flags]
 ### Options
 
 ```
-  -h, --help                                                                     help for search-eia-services
+  -h, --help[=true|false]                                                        help for search-eia-services
       --internet-access-search-request-additional-properties string              internet-access-search-request-additional-properties (JSON)
       --internet-access-search-request-filter-additional-properties string       internet-access-search-request-filter-additional-properties (JSON)
       --internet-access-search-request-filter-and string                         internet-access-search-request-filter-and (JSON array)
@@ -33,9 +33,9 @@ equinix fabricv4 internet-access-services search-eia-services [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

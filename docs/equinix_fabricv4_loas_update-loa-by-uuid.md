@@ -15,7 +15,7 @@ equinix fabricv4 loas update-loa-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help                           help for update-loa-by-uuid
+  -h, --help[=true|false]              help for update-loa-by-uuid
       --loa-id string                  Loa UUID (required)
       --loa-replace-operation string   loa-replace-operation field (JSON or string)
       --request string                 JSON payload for additional optional fields not exposed as flags
@@ -24,9 +24,9 @@ equinix fabricv4 loas update-loa-by-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

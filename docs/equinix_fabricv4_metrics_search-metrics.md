@@ -15,7 +15,7 @@ equinix fabricv4 metrics search-metrics [flags]
 ### Options
 
 ```
-  -h, --help                                                             help for search-metrics
+  -h, --help[=true|false]                                                help for search-metrics
       --metrics-search-request-additional-properties string              metrics-search-request-additional-properties (JSON)
       --metrics-search-request-filter-additional-properties string       metrics-search-request-filter-additional-properties (JSON)
       --metrics-search-request-filter-and string                         metrics-search-request-filter-and (JSON array)
@@ -28,9 +28,9 @@ equinix fabricv4 metrics search-metrics [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

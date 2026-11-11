@@ -15,7 +15,7 @@ equinix fabricv4 service-profiles search-service-profiles [flags]
 ### Options
 
 ```
-  -h, --help                                                                             help for search-service-profiles
+  -h, --help[=true|false]                                                                help for search-service-profiles
       --request string                                                                   JSON payload for additional optional fields not exposed as flags
       --service-profile-search-request-additional-properties string                      service-profile-search-request-additional-properties (JSON)
       --service-profile-search-request-filter-service-profile-and-filter string          service-profile-search-request-filter-service-profile-and-filter (JSON)
@@ -30,9 +30,9 @@ equinix fabricv4 service-profiles search-service-profiles [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

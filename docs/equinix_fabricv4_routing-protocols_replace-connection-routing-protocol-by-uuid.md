@@ -15,32 +15,32 @@ equinix fabricv4 routing-protocols replace-connection-routing-protocol-by-uuid [
 ### Options
 
 ```
-      --connection-id string                                                              Connection Id (required)
-  -h, --help                                                                              help for replace-connection-routing-protocol-by-uuid
-      --request string                                                                    JSON payload for additional optional fields not exposed as flags
-      --routing-protocol-base-routing-protocol-bgp-type-additional-properties string      routing-protocol-base-routing-protocol-bgp-type-additional-properties (JSON)
-      --routing-protocol-base-routing-protocol-bgp-type-as-override-enabled               Enable AS number override
-      --routing-protocol-base-routing-protocol-bgp-type-bfd string                        routing-protocol-base-routing-protocol-bgp-type-bfd (JSON)
-      --routing-protocol-base-routing-protocol-bgp-type-bgp-auth-key string               BGP authorization key
-      --routing-protocol-base-routing-protocol-bgp-type-bgp-ipv4 string                   routing-protocol-base-routing-protocol-bgp-type-bgp-ipv4 (JSON)
-      --routing-protocol-base-routing-protocol-bgp-type-bgp-ipv6 string                   routing-protocol-base-routing-protocol-bgp-type-bgp-ipv6 (JSON)
-      --routing-protocol-base-routing-protocol-bgp-type-customer-asn int                  Customer asn
-      --routing-protocol-base-routing-protocol-bgp-type-name string                       routing-protocol-base-routing-protocol-bgp-type-name
-      --routing-protocol-base-routing-protocol-bgp-type-type string                       routing-protocol-base-routing-protocol-bgp-type-type
-      --routing-protocol-base-routing-protocol-direct-type-additional-properties string   routing-protocol-base-routing-protocol-direct-type-additional-properties (JSON)
-      --routing-protocol-base-routing-protocol-direct-type-direct-ipv4 string             routing-protocol-base-routing-protocol-direct-type-direct-ipv4 (JSON)
-      --routing-protocol-base-routing-protocol-direct-type-direct-ipv6 string             routing-protocol-base-routing-protocol-direct-type-direct-ipv6 (JSON)
-      --routing-protocol-base-routing-protocol-direct-type-name string                    routing-protocol-base-routing-protocol-direct-type-name
-      --routing-protocol-base-routing-protocol-direct-type-type string                    routing-protocol-base-routing-protocol-direct-type-type
-      --routing-protocol-id string                                                        Routing Protocol Id (required)
+      --connection-id string                                                               Connection Id (required)
+  -h, --help[=true|false]                                                                  help for replace-connection-routing-protocol-by-uuid
+      --request string                                                                     JSON payload for additional optional fields not exposed as flags
+      --routing-protocol-base-routing-protocol-bgp-type-additional-properties string       routing-protocol-base-routing-protocol-bgp-type-additional-properties (JSON)
+      --routing-protocol-base-routing-protocol-bgp-type-as-override-enabled[=true|false]   Enable AS number override
+      --routing-protocol-base-routing-protocol-bgp-type-bfd string                         routing-protocol-base-routing-protocol-bgp-type-bfd (JSON)
+      --routing-protocol-base-routing-protocol-bgp-type-bgp-auth-key string                BGP authorization key
+      --routing-protocol-base-routing-protocol-bgp-type-bgp-ipv4 string                    routing-protocol-base-routing-protocol-bgp-type-bgp-ipv4 (JSON)
+      --routing-protocol-base-routing-protocol-bgp-type-bgp-ipv6 string                    routing-protocol-base-routing-protocol-bgp-type-bgp-ipv6 (JSON)
+      --routing-protocol-base-routing-protocol-bgp-type-customer-asn int                   Customer asn
+      --routing-protocol-base-routing-protocol-bgp-type-name string                        routing-protocol-base-routing-protocol-bgp-type-name
+      --routing-protocol-base-routing-protocol-bgp-type-type string                        routing-protocol-base-routing-protocol-bgp-type-type
+      --routing-protocol-base-routing-protocol-direct-type-additional-properties string    routing-protocol-base-routing-protocol-direct-type-additional-properties (JSON)
+      --routing-protocol-base-routing-protocol-direct-type-direct-ipv4 string              routing-protocol-base-routing-protocol-direct-type-direct-ipv4 (JSON)
+      --routing-protocol-base-routing-protocol-direct-type-direct-ipv6 string              routing-protocol-base-routing-protocol-direct-type-direct-ipv6 (JSON)
+      --routing-protocol-base-routing-protocol-direct-type-name string                     routing-protocol-base-routing-protocol-direct-type-name
+      --routing-protocol-base-routing-protocol-direct-type-type string                     routing-protocol-base-routing-protocol-direct-type-type
+      --routing-protocol-id string                                                         Routing Protocol Id (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

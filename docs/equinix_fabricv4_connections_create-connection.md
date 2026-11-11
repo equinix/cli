@@ -49,17 +49,17 @@ equinix fabricv4 connections create-connection [flags]
       --connection-post-request-z-side-additional-info string                           Any additional information, which is not part of connection metadata or configuration (JSON array)
       --connection-post-request-z-side-additional-properties string                     connection-post-request-z-side-additional-properties (JSON)
       --connection-post-request-z-side-service-token string                             connection-post-request-z-side-service-token (JSON)
-      --dry-run                                                                         dry-run field
-  -h, --help                                                                            help for create-connection
+      --dry-run[=true|false]                                                            dry-run field
+  -h, --help[=true|false]                                                               help for create-connection
       --request string                                                                  JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

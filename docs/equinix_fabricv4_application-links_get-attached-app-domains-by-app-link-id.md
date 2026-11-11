@@ -17,7 +17,7 @@ equinix fabricv4 application-links get-attached-app-domains-by-app-link-id [flag
 ```
       --app-link-id string         App Link UUID (required)
       --attachment-status string   attachment-status field (JSON or string)
-  -h, --help                       help for get-attached-app-domains-by-app-link-id
+  -h, --help[=true|false]          help for get-attached-app-domains-by-app-link-id
       --limit int                  limit field
       --offset int                 offset field
       --order string               order field
@@ -28,9 +28,9 @@ equinix fabricv4 application-links get-attached-app-domains-by-app-link-id [flag
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

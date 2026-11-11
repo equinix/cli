@@ -23,14 +23,14 @@ equinix fabricv4 stream-alert-rules create-stream-alert-rules [flags]
       --alert-rule-post-request-detection-method-type string                        alert-rule-post-request-detection-method-type
       --alert-rule-post-request-detection-method-warning-threshold string           Stream alert rule metric warning threshold
       --alert-rule-post-request-detection-method-window-size string                 Stream alert rule metric window size
-      --alert-rule-post-request-enabled                                             Stream alert rule enabled status
+      --alert-rule-post-request-enabled[=true|false]                                Stream alert rule enabled status
       --alert-rule-post-request-metric-selector-additional-properties string        alert-rule-post-request-metric-selector-additional-properties (JSON)
       --alert-rule-post-request-metric-selector-include string                      Stream alert rule filtered by metric name (JSON array)
       --alert-rule-post-request-name string                                         Customer-provided stream name
       --alert-rule-post-request-resource-selector-additional-properties string      alert-rule-post-request-resource-selector-additional-properties (JSON)
       --alert-rule-post-request-resource-selector-include /fabric/v4/ports/<uuid>   ### Supported metric names to use on filters with property /subject:   * /fabric/v4/ports/<uuid> - port metrics   * `/fabric/v4/connections/<uuid>` - connection metrics   * `/fabric/v4/metros/<metroCode>` - metro latency metrics (JSON array)
       --alert-rule-post-request-type string                                         alert-rule-post-request-type
-  -h, --help                                                                        help for create-stream-alert-rules
+  -h, --help[=true|false]                                                           help for create-stream-alert-rules
       --request string                                                              JSON payload for additional optional fields not exposed as flags
       --stream-id string                                                            Stream UUID (required)
 ```
@@ -38,9 +38,9 @@ equinix fabricv4 stream-alert-rules create-stream-alert-rules [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

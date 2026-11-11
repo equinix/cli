@@ -18,17 +18,17 @@ equinix fabricv4 streams delete-stream-device [flags]
 ### Options
 
 ```
-  -h, --help               help for delete-stream-device
-      --request string     JSON payload for request body fields
-      --stream-id string   stream-id (required)
+  -h, --help[=true|false]   help for delete-stream-device
+      --request string      JSON payload for request body fields
+      --stream-id string    stream-id (required)
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

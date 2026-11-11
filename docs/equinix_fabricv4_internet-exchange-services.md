@@ -9,15 +9,15 @@ Commands for managing internet-exchange-services resources in the API
 ### Options
 
 ```
-  -h, --help   help for internet-exchange-services
+  -h, --help[=true|false]   help for internet-exchange-services
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

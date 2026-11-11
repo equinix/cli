@@ -36,16 +36,16 @@ equinix smarthandsv1 smarthands handle-smart-hand-locate-package-order [flags]
       --body-service-details-scope-of-work string           Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.
       --body-service-details-shipment-order-number string   Inbound Shipment Order Number
       --body-service-details-tracking-number string         Tracking Number
-  -h, --help                                                help for handle-smart-hand-locate-package-order
+  -h, --help[=true|false]                                   help for handle-smart-hand-locate-package-order
       --request string                                      JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

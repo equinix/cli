@@ -15,8 +15,8 @@ equinix fabricv4 service-tokens update-service-token-by-uuid [flags]
 ### Options
 
 ```
-      --dry-run                                 dry-run field
-  -h, --help                                    help for update-service-token-by-uuid
+      --dry-run[=true|false]                    dry-run field
+  -h, --help[=true|false]                       help for update-service-token-by-uuid
       --request string                          JSON payload for additional optional fields not exposed as flags
       --service-token-change-operation string   service-token-change-operation field (JSON or string)
       --service-token-id string                 Service Token UUID (required)
@@ -25,9 +25,9 @@ equinix fabricv4 service-tokens update-service-token-by-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

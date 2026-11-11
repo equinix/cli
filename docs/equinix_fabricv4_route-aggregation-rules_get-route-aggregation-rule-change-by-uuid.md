@@ -16,7 +16,7 @@ equinix fabricv4 route-aggregation-rules get-route-aggregation-rule-change-by-uu
 
 ```
       --change-id string                   Route Aggregation Rule Change UUID (required)
-  -h, --help                               help for get-route-aggregation-rule-change-by-uuid
+  -h, --help[=true|false]                  help for get-route-aggregation-rule-change-by-uuid
       --request string                     JSON payload for request body fields
       --route-aggregation-id string        Route Aggregations Id (required)
       --route-aggregation-rule-id string   Route Aggregation Rules Id (required)
@@ -25,9 +25,9 @@ equinix fabricv4 route-aggregation-rules get-route-aggregation-rule-change-by-uu
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

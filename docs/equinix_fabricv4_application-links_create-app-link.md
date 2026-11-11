@@ -25,16 +25,16 @@ equinix fabricv4 application-links create-app-link [flags]
       --app-link-post-request-router-additional-properties string    app-link-post-request-router-additional-properties (JSON)
       --app-link-post-request-router-uuid string                     Cloud Router UUID
       --app-link-post-request-type string                            app-link-post-request-type
-  -h, --help                                                         help for create-app-link
+  -h, --help[=true|false]                                            help for create-app-link
       --request string                                               JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

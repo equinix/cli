@@ -9,8 +9,8 @@ Command-line interface for Equinix APIs
 ### Options
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-  -h, --help            help for equinix
+      --config string       config file (default is $HOME/.config/equinix/equinix.yaml)
+  -h, --help[=true|false]   help for equinix
 ```
 
 ### SEE ALSO

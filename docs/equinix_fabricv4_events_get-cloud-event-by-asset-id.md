@@ -19,7 +19,7 @@ equinix fabricv4 events get-cloud-event-by-asset-id [flags]
 
 ```
       --cloud-event-asset-type string   cloud-event-asset-type (required)
-  -h, --help                            help for get-cloud-event-by-asset-id
+  -h, --help[=true|false]               help for get-cloud-event-by-asset-id
       --limit int                       limit field
       --offset int                      offset field
       --param-2 string                  param-2 (required)
@@ -29,9 +29,9 @@ equinix fabricv4 events get-cloud-event-by-asset-id [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

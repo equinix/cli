@@ -15,7 +15,7 @@ equinix fabricv4 streams update-stream-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help                                              help for update-stream-by-uuid
+  -h, --help[=true|false]                                 help for update-stream-by-uuid
       --request string                                    JSON payload for additional optional fields not exposed as flags
       --stream-id string                                  Stream UUID (required)
       --stream-put-request-additional-properties string   stream-put-request-additional-properties (JSON)
@@ -26,9 +26,9 @@ equinix fabricv4 streams update-stream-by-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

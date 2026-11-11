@@ -15,7 +15,7 @@ equinix ordersv2 orders reply-to-an-order-negotiation [flags]
 ### Options
 
 ```
-  -h, --help                                                help for reply-to-an-order-negotiation
+  -h, --help[=true|false]                                   help for reply-to-an-order-negotiation
       --negotiations-request-action string                  negotiations-request-action
       --negotiations-request-additional-properties string   negotiations-request-additional-properties (JSON)
       --negotiations-request-reason string                  Reason for cancelling the negotiation
@@ -27,9 +27,9 @@ equinix ordersv2 orders reply-to-an-order-negotiation [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

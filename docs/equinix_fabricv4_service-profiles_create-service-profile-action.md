@@ -15,7 +15,7 @@ equinix fabricv4 service-profiles create-service-profile-action [flags]
 ### Options
 
 ```
-  -h, --help                                                          help for create-service-profile-action
+  -h, --help[=true|false]                                             help for create-service-profile-action
       --request string                                                JSON payload for additional optional fields not exposed as flags
       --service-profile-action-request-additional-properties string   service-profile-action-request-additional-properties (JSON)
       --service-profile-action-request-description string             Action description
@@ -26,9 +26,9 @@ equinix fabricv4 service-profiles create-service-profile-action [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

@@ -18,27 +18,27 @@ equinix fabricv4 cross-connects perform-cross-connect-action [flags]
 ### Options
 
 ```
-      --cross-connect-action-request-additional-properties string         cross-connect-action-request-additional-properties (JSON)
-      --cross-connect-action-request-data-additional-properties string    cross-connect-action-request-data-additional-properties (JSON)
-      --cross-connect-action-request-data-attachments string              cross-connect-action-request-data-attachments (JSON array)
-      --cross-connect-action-request-data-live-traffic-consent-provided   cross-connect-action-request-data-live-traffic-consent-provided
-      --cross-connect-action-request-data-notes string                    cross-connect-action-request-data-notes (JSON array)
-      --cross-connect-action-request-data-notifications string            cross-connect-action-request-data-notifications (JSON array)
-      --cross-connect-action-request-data-order string                    cross-connect-action-request-data-order (JSON)
-      --cross-connect-action-request-data-schedule string                 cross-connect-action-request-data-schedule (JSON)
-      --cross-connect-action-request-data-services string                 cross-connect-action-request-data-services (JSON array)
-      --cross-connect-action-request-type string                          cross-connect-action-request-type
-  -h, --help                                                              help for perform-cross-connect-action
-      --param-1 string                                                    param-1 (required)
-      --request string                                                    JSON payload for additional optional fields not exposed as flags
+      --cross-connect-action-request-additional-properties string                      cross-connect-action-request-additional-properties (JSON)
+      --cross-connect-action-request-data-additional-properties string                 cross-connect-action-request-data-additional-properties (JSON)
+      --cross-connect-action-request-data-attachments string                           cross-connect-action-request-data-attachments (JSON array)
+      --cross-connect-action-request-data-live-traffic-consent-provided[=true|false]   cross-connect-action-request-data-live-traffic-consent-provided
+      --cross-connect-action-request-data-notes string                                 cross-connect-action-request-data-notes (JSON array)
+      --cross-connect-action-request-data-notifications string                         cross-connect-action-request-data-notifications (JSON array)
+      --cross-connect-action-request-data-order string                                 cross-connect-action-request-data-order (JSON)
+      --cross-connect-action-request-data-schedule string                              cross-connect-action-request-data-schedule (JSON)
+      --cross-connect-action-request-data-services string                              cross-connect-action-request-data-services (JSON array)
+      --cross-connect-action-request-type string                                       cross-connect-action-request-type
+  -h, --help[=true|false]                                                              help for perform-cross-connect-action
+      --param-1 string                                                                 param-1 (required)
+      --request string                                                                 JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

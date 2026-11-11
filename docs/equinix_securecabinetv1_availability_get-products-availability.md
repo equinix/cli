@@ -16,16 +16,16 @@ equinix securecabinetv1 availability get-products-availability [flags]
 
 ```
       --account-number string   Billing Account Number. (required)
-  -h, --help                    help for get-products-availability
+  -h, --help[=true|false]       help for get-products-availability
       --request string          JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

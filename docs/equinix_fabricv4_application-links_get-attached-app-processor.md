@@ -18,18 +18,18 @@ equinix fabricv4 application-links get-attached-app-processor [flags]
 ### Options
 
 ```
-  -h, --help             help for get-attached-app-processor
-      --param-1 string   param-1 (required)
-      --param-2 string   param-2 (required)
-      --request string   JSON payload for request body fields
+  -h, --help[=true|false]   help for get-attached-app-processor
+      --param-1 string      param-1 (required)
+      --param-2 string      param-2 (required)
+      --request string      JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

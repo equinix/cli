@@ -30,16 +30,16 @@ equinix fabricv4 loas create-loa [flags]
       --create-loa-request-loa-location string                  create-loa-request-loa-location (JSON)
       --create-loa-request-loa-name string                      A short, descriptive name for this LOA.
       --create-loa-request-loa-type string                      create-loa-request-loa-type
-  -h, --help                                                    help for create-loa
+  -h, --help[=true|false]                                       help for create-loa
       --request string                                          JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

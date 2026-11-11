@@ -16,16 +16,16 @@ equinix fabricv4 company-profiles get-company-profile-service-profiles [flags]
 
 ```
       --company-profile-id string   Company Profile UUID (required)
-  -h, --help                        help for get-company-profile-service-profiles
+  -h, --help[=true|false]           help for get-company-profile-service-profiles
       --request string              JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

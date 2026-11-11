@@ -15,7 +15,7 @@ equinix ordersv2 orders add-notes-to-an-order [flags]
 ### Options
 
 ```
-  -h, --help                                        help for add-notes-to-an-order
+  -h, --help[=true|false]                           help for add-notes-to-an-order
       --note-request-additional-properties string   note-request-additional-properties (JSON)
       --note-request-attachments string             File(s) attached to the Orders. To learn about including attachments in your request, see POST Attachments API. (JSON array)
       --note-request-reference-id string            Unique reference ID associated with notes.
@@ -27,9 +27,9 @@ equinix ordersv2 orders add-notes-to-an-order [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

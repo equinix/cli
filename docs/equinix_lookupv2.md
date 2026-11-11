@@ -12,9 +12,9 @@ providing access to all available API services.
 ### Options
 
 ```
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
-  -h, --help            help for lookupv2
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
+  -h, --help[=true|false]    help for lookupv2
 ```
 
 ### Options inherited from parent commands

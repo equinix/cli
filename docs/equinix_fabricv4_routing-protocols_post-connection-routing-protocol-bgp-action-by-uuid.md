@@ -18,7 +18,7 @@ equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-b
       --bgp-action-request-additional-properties string   bgp-action-request-additional-properties (JSON)
       --bgp-action-request-type string                    bgp-action-request-type
       --connection-id string                              Connection Id (required)
-  -h, --help                                              help for post-connection-routing-protocol-bgp-action-by-uuid
+  -h, --help[=true|false]                                 help for post-connection-routing-protocol-bgp-action-by-uuid
       --request string                                    JSON payload for additional optional fields not exposed as flags
       --routing-protocol-id string                        Routing Protocol Id (required)
 ```
@@ -26,9 +26,9 @@ equinix fabricv4 routing-protocols post-connection-routing-protocol-bgp-action-b
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

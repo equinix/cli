@@ -18,7 +18,7 @@ equinix fabricv4 precision-time-services fulfill-time-services [flags]
 ### Options
 
 ```
-  -h, --help                                                                                     help for fulfill-time-services
+  -h, --help[=true|false]                                                                        help for fulfill-time-services
       --param-1 string                                                                           param-1 (required)
       --precision-time-service-request-additional-properties string                              precision-time-service-request-additional-properties (JSON)
       --precision-time-service-request-connections string                                        precision-time-service-request-connections (JSON array)
@@ -54,9 +54,9 @@ equinix fabricv4 precision-time-services fulfill-time-services [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

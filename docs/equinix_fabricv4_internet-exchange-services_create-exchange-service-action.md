@@ -20,7 +20,7 @@ equinix fabricv4 internet-exchange-services create-exchange-service-action [flag
 ```
       --exchange-service-action-request-additional-properties string   exchange-service-action-request-additional-properties (JSON)
       --exchange-service-action-request-type string                    exchange-service-action-request-type
-  -h, --help                                                           help for create-exchange-service-action
+  -h, --help[=true|false]                                              help for create-exchange-service-action
       --param-1 string                                                 param-1 (required)
       --request string                                                 JSON payload for additional optional fields not exposed as flags
 ```
@@ -28,9 +28,9 @@ equinix fabricv4 internet-exchange-services create-exchange-service-action [flag
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

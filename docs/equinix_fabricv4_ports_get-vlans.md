@@ -16,8 +16,10 @@ equinix fabricv4 ports get-vlans [flags]
 
 ```
   -h, --help               help for get-vlans
+      --limit int          limit field
+      --offset int         offset field
       --port-uuid string   Port UUID (required)
-      --request string     JSON payload for request body fields
+      --request string     JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands

@@ -17,6 +17,7 @@ equinix fabricv4 connections create-connection-action [flags]
 ```
       --connection-action-request-additional-properties string        connection-action-request-additional-properties (JSON)
       --connection-action-request-data-additional-properties string   connection-action-request-data-additional-properties (JSON)
+      --connection-action-request-data-operation string               connection-action-request-data-operation (JSON)
       --connection-action-request-data-provider-bandwidth int         Authorization key bandwidth in Mbps
       --connection-action-request-data-z-side string                  connection-action-request-data-z-side (JSON)
       --connection-action-request-description string                  Connection rejection reason detail

@@ -17,10 +17,7 @@ equinix fabricv4 optical-metro-connects create-optical-connect [flags]
 ```
   -h, --help                                                                   help for create-optical-connect
       --optical-connect-post-request-a-side-additional-properties string       optical-connect-post-request-a-side-additional-properties (JSON)
-      --optical-connect-post-request-a-side-connector-type string              optical-connect-post-request-a-side-connector-type
-      --optical-connect-post-request-a-side-patch-panel-id string              Unique identifier of the patch panel.
-      --optical-connect-post-request-a-side-patch-panel-port-a string          Specify the desired port number for Port A. <br> When ports are not provided, next available ports will be used.
-      --optical-connect-post-request-a-side-patch-panel-port-b string          Specify the desired port number for Port B. <br> When ports are not provided, next available ports will be used. <br> Required for Connector type FC, SC and ST only.
+      --optical-connect-post-request-a-side-demarcation-point string           optical-connect-post-request-a-side-demarcation-point (JSON)
       --optical-connect-post-request-account-account-name string               Account name
       --optical-connect-post-request-account-account-number int                Account number
       --optical-connect-post-request-account-additional-properties string      optical-connect-post-request-account-additional-properties (JSON)
@@ -49,12 +46,9 @@ equinix fabricv4 optical-metro-connects create-optical-connect [flags]
       --optical-connect-post-request-redundancy-priority string                optical-connect-post-request-redundancy-priority
       --optical-connect-post-request-type string                               optical-connect-post-request-type
       --optical-connect-post-request-z-side-additional-properties string       optical-connect-post-request-z-side-additional-properties (JSON)
-      --optical-connect-post-request-z-side-connector-type string              optical-connect-post-request-z-side-connector-type
+      --optical-connect-post-request-z-side-demarcation-point string           optical-connect-post-request-z-side-demarcation-point (JSON)
       --optical-connect-post-request-z-side-loa string                         optical-connect-post-request-z-side-loa (JSON)
       --optical-connect-post-request-z-side-location string                    optical-connect-post-request-z-side-location (JSON)
-      --optical-connect-post-request-z-side-patch-panel-id string              Unique identifier of the patch panel.
-      --optical-connect-post-request-z-side-patch-panel-port-a string          Specify the desired port number for Port A. <br> When ports are not provided, next available ports will be used.
-      --optical-connect-post-request-z-side-patch-panel-port-b string          Specify the desired port number for Port B. <br> When ports are not provided, next available ports will be used. <br> Required for Connector type FC, SC and ST only.
       --request string                                                         JSON payload for additional optional fields not exposed as flags
 ```
 

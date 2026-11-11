@@ -18,7 +18,7 @@ equinix fabricv4 application-links create-app-link [flags]
       --app-link-post-request-additional-properties string           app-link-post-request-additional-properties (JSON)
       --app-link-post-request-bandwidth int                          App Link aggregated data transfer capacity in Mbps
       --app-link-post-request-description string                     Customer-provided App Link description
-      --app-link-post-request-ipv4-address string                    AppLink IP address
+      --app-link-post-request-ipv4-subnet string                     app-link-post-request-ipv4-subnet
       --app-link-post-request-name string                            Customer-provided App Link name
       --app-link-post-request-project-additional-properties string   app-link-post-request-project-additional-properties (JSON)
       --app-link-post-request-project-project-id string              Subscriber-assigned project ID

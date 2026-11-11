@@ -18,6 +18,10 @@ equinix fabricv4 cloud-routers search-cloud-routers [flags]
       --cloud-router-search-request-additional-properties string              cloud-router-search-request-additional-properties (JSON)
       --cloud-router-search-request-filter-additional-properties string       cloud-router-search-request-filter-additional-properties (JSON)
       --cloud-router-search-request-filter-and string                         cloud-router-search-request-filter-and (JSON array)
+      --cloud-router-search-request-filter-operator string                    cloud-router-search-request-filter-operator
+      --cloud-router-search-request-filter-or string                          cloud-router-search-request-filter-or (JSON array)
+      --cloud-router-search-request-filter-property string                    cloud-router-search-request-filter-property
+      --cloud-router-search-request-filter-values string                      cloud-router-search-request-filter-values (JSON array)
       --cloud-router-search-request-pagination-additional-properties string   cloud-router-search-request-pagination-additional-properties (JSON)
       --cloud-router-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
       --cloud-router-search-request-pagination-offset int                     Index of the first element.

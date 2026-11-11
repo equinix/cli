@@ -15,6 +15,7 @@ import (
 	"log"
 	"net/http"
 	"net/http/httputil"
+	"net/url"
 	"os"
 	"strings"
 
@@ -85,11 +86,52 @@ func (t *headerInjectingTransport) RoundTrip(req *http.Request) (*http.Response,
 	return t.transport.RoundTrip(req)
 }
 
+// DefaultEndpoint is the base URL of the production Equinix API.
+const DefaultEndpoint = "https://api.equinix.com"
+
+// EndpointKey is the config key (and, via viper.AutomaticEnv, the
+// EQUINIX_API_ENDPOINT environment variable) that overrides DefaultEndpoint.
+const EndpointKey = "equinix_api_endpoint"
+
+// Endpoint returns the configured API base URL, or DefaultEndpoint.
+func Endpoint() string {
+	if e := strings.TrimRight(viper.GetString(EndpointKey), "/"); e != "" {
+		return e
+	}
+	return DefaultEndpoint
+}
+
+// IsDefaultEndpoint reports whether endpoint points at api.equinix.com.
+func IsDefaultEndpoint(endpoint string) bool {
+	u, err := url.Parse(endpoint)
+	return err == nil && u.Hostname() == "api.equinix.com"
+}
+
+// endpointTransport sends requests the SDKs build for api.equinix.com to a
+// different endpoint instead, so every service follows EQUINIX_API_ENDPOINT
+// without each one having to override its server list.
+type endpointTransport struct {
+	target    *url.URL
+	transport http.RoundTripper
+}
+
+func (t *endpointTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	if req.URL.Host == "api.equinix.com" {
+		req = req.Clone(req.Context())
+		req.URL.Scheme = t.target.Scheme
+		req.URL.Host = t.target.Host
+		req.URL.Path = strings.TrimRight(t.target.Path, "/") + req.URL.Path
+		req.Host = ""
+	}
+	return t.transport.RoundTrip(req)
+}
+
 // NewStandardClient creates a new Client for Equinix APIs that exist under
-// api.equinix.com and use OAuth2 client credentials for authentication
+// api.equinix.com (or EQUINIX_API_ENDPOINT) and use OAuth2 client credentials
+// for authentication
 func NewStandardClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
-		BaseURL:    "https://api.equinix.com",
+		BaseURL:    Endpoint(),
 		HTTPClient: &http.Client{},
 	}
 
@@ -108,6 +150,13 @@ func NewStandardClient(options ...ClientOption) (*Client, error) {
 
 	// Apply options to potentially wrap the transport
 	transport := http.RoundTripper(authTransport)
+	if client.BaseURL != DefaultEndpoint {
+		target, err := url.Parse(client.BaseURL)
+		if err != nil || target.Host == "" {
+			return nil, fmt.Errorf("invalid %s %q", EndpointKey, client.BaseURL)
+		}
+		transport = &endpointTransport{target: target, transport: transport}
+	}
 	for _, opt := range options {
 		transport = opt(transport)
 	}

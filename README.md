@@ -24,4 +24,10 @@ brew install equinix
 
 ## Usage
 
+Run `equinix init` to create or enter API credentials and save them to
+`~/.config/equinix/equinix.yaml`. Credentials can also be supplied with the
+`EQUINIX_CLIENT_ID` and `EQUINIX_CLIENT_SECRET` environment variables, and a
+non-production API can be selected with `EQUINIX_API_ENDPOINT` (or
+`equinix init --api-endpoint`).
+
 The full CLI documentation can be found [in the docs directory](docs/equinix.md).

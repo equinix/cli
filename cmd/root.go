@@ -22,6 +22,8 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"errors"
+	"io/fs"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -63,7 +65,14 @@ func initConfig() {
 	if cfgFile != "" {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
-		cobra.CheckErr(viper.ReadInConfig())
+		err := viper.ReadInConfig()
+		// `equinix init` creates the file, so it may not exist yet. Cobra
+		// only parses flags for the command being run, so this is true only
+		// while init runs.
+		if errors.Is(err, fs.ErrNotExist) && initCmd.Flags().Parsed() {
+			err = nil
+		}
+		cobra.CheckErr(err)
 	} else {
 		// Find home directory.
 		home, err := os.UserHomeDir()

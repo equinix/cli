@@ -21,6 +21,7 @@ Command-line interface for Equinix APIs
 * [equinix docs](equinix_docs.md)	 - Generate markdown documentation for this CLI
 * [equinix eiav2](equinix_eiav2.md)	 - Manage Equinix eiav2 resources
 * [equinix fabricv4](equinix_fabricv4.md)	 - Manage Equinix fauricv4 resources
+* [equinix init](equinix_init.md)	 - Configure API credentials
 * [equinix lookupv2](equinix_lookupv2.md)	 - Manage Equinix lookupv2 resources
 * [equinix orderhistoryv1](equinix_orderhistoryv1.md)	 - Manage Equinix orderhistoryv1 resources
 * [equinix ordersv2](equinix_ordersv2.md)	 - Manage Equinix ordersv2 resources

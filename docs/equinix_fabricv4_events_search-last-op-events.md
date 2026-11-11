@@ -18,7 +18,7 @@ equinix fabricv4 events search-last-op-events [flags]
 ### Options
 
 ```
-  -h, --help                                                                help for search-last-op-events
+  -h, --help[=true|false]                                                   help for search-last-op-events
       --live-event-search-request-additional-properties string              live-event-search-request-additional-properties (JSON)
       --live-event-search-request-filter-additional-properties string       live-event-search-request-filter-additional-properties (JSON)
       --live-event-search-request-filter-and string                         live-event-search-request-filter-and (JSON array)
@@ -31,9 +31,9 @@ equinix fabricv4 events search-last-op-events [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

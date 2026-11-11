@@ -17,7 +17,7 @@ equinix fabricv4 ports add-to-lag [flags]
 ```
       --bulk-physical-port-additional-properties string   bulk-physical-port-additional-properties (JSON)
       --bulk-physical-port-data string                    add physical ports to virtual port (JSON array)
-  -h, --help                                              help for add-to-lag
+  -h, --help[=true|false]                                 help for add-to-lag
       --port-id string                                    Port UUID (required)
       --request string                                    JSON payload for additional optional fields not exposed as flags
 ```
@@ -25,9 +25,9 @@ equinix fabricv4 ports add-to-lag [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

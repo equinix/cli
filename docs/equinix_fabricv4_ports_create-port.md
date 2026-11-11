@@ -15,8 +15,8 @@ equinix fabricv4 ports create-port [flags]
 ### Options
 
 ```
-      --dry-run                                                         dry-run field
-  -h, --help                                                            help for create-port
+      --dry-run[=true|false]                                            dry-run field
+  -h, --help[=true|false]                                               help for create-port
       --port-request-account-account-number int                         Account number
       --port-request-account-additional-properties string               port-request-account-additional-properties (JSON)
       --port-request-additional-properties string                       port-request-additional-properties (JSON)
@@ -37,7 +37,7 @@ equinix fabricv4 ports create-port [flags]
       --port-request-encapsulation-additional-properties string         port-request-encapsulation-additional-properties (JSON)
       --port-request-encapsulation-tag-protocol-id string               Port encapsulation tag protocol identifier
       --port-request-encapsulation-type string                          port-request-encapsulation-type
-      --port-request-lag-enabled                                        Indicates whether Link Aggregation Group (LAG) is enabled on this port
+      --port-request-lag-enabled[=true|false]                           Indicates whether Link Aggregation Group (LAG) is enabled on this port
       --port-request-loas string                                        Port Loas (JSON array)
       --port-request-location-additional-properties string              port-request-location-additional-properties (JSON)
       --port-request-location-metro-code string                         port-request-location-metro-code
@@ -55,7 +55,7 @@ equinix fabricv4 ports create-port [flags]
       --port-request-project-additional-properties string               port-request-project-additional-properties (JSON)
       --port-request-project-project-id string                          Subscriber-assigned project ID
       --port-request-redundancy-additional-properties string            port-request-redundancy-additional-properties (JSON)
-      --port-request-redundancy-enabled                                 Access point redundancy
+      --port-request-redundancy-enabled[=true|false]                    Access point redundancy
       --port-request-redundancy-group string                            Port UUID of respective primary port
                                                                         Deprecated
       --port-request-redundancy-priority string                         port-request-redundancy-priority
@@ -69,9 +69,9 @@ equinix fabricv4 ports create-port [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

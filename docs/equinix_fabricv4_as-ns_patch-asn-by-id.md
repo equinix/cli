@@ -19,7 +19,7 @@ equinix fabricv4 as-ns patch-asn-by-id [flags]
 
 ```
       --asn-patch-operation string   asn-patch-operation field (JSON or string)
-  -h, --help                         help for patch-asn-by-id
+  -h, --help[=true|false]            help for patch-asn-by-id
       --id string                    id (required)
       --request string               JSON payload for additional optional fields not exposed as flags
 ```
@@ -27,9 +27,9 @@ equinix fabricv4 as-ns patch-asn-by-id [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

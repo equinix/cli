@@ -15,18 +15,18 @@ equinix fabricv4 loas get-loa-actions-by-uuid [flags]
 ### Options
 
 ```
-      --action-id string   Action UUID (required)
-  -h, --help               help for get-loa-actions-by-uuid
-      --loa-id string      Loa UUID (required)
-      --request string     JSON payload for request body fields
+      --action-id string    Action UUID (required)
+  -h, --help[=true|false]   help for get-loa-actions-by-uuid
+      --loa-id string       Loa UUID (required)
+      --request string      JSON payload for request body fields
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

@@ -17,16 +17,16 @@ equinix fabricv4 application-links update-app-link-by-uuid [flags]
 ```
       --app-link-change-operation string   app-link-change-operation field (JSON or string)
       --app-link-id string                 App Link UUID (required)
-  -h, --help                               help for update-app-link-by-uuid
+  -h, --help[=true|false]                  help for update-app-link-by-uuid
       --request string                     JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

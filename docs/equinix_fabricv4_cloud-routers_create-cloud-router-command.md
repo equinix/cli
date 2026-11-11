@@ -28,7 +28,7 @@ equinix fabricv4 cloud-routers create-cloud-router-command [flags]
       --cloud-router-command-post-request-request-source-connection string       cloud-router-command-post-request-request-source-connection (JSON)
       --cloud-router-command-post-request-request-timeout PING_COMMAND           Timeout in seconds for Fabric Cloud Router Command:   - For PING_COMMAND: Packet timeout duration. The default value is 5.   - For `TRACEROUTE_COMMAND`: Probe timeout duration.     The default value is 2 and it is not configurable.
       --cloud-router-command-post-request-type string                            cloud-router-command-post-request-type
-  -h, --help                                                                     help for create-cloud-router-command
+  -h, --help[=true|false]                                                        help for create-cloud-router-command
       --request string                                                           JSON payload for additional optional fields not exposed as flags
       --router-id string                                                         Router UUID (required)
 ```
@@ -36,9 +36,9 @@ equinix fabricv4 cloud-routers create-cloud-router-command [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

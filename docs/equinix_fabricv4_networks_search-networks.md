@@ -15,7 +15,7 @@ equinix fabricv4 networks search-networks [flags]
 ### Options
 
 ```
-  -h, --help                                                             help for search-networks
+  -h, --help[=true|false]                                                help for search-networks
       --network-search-request-additional-properties string              network-search-request-additional-properties (JSON)
       --network-search-request-filter-additional-properties string       network-search-request-filter-additional-properties (JSON)
       --network-search-request-filter-and string                         network-search-request-filter-and (JSON array)
@@ -33,9 +33,9 @@ equinix fabricv4 networks search-networks [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

@@ -15,8 +15,8 @@ equinix fabricv4 networks create-network [flags]
 ### Options
 
 ```
-      --dry-run                                                      dry-run field
-  -h, --help                                                         help for create-network
+      --dry-run[=true|false]                                         dry-run field
+  -h, --help[=true|false]                                            help for create-network
       --network-post-request-additional-properties string            network-post-request-additional-properties (JSON)
       --network-post-request-location-additional-properties string   network-post-request-location-additional-properties (JSON)
       --network-post-request-location-ibx string                     Deprecated
@@ -36,9 +36,9 @@ equinix fabricv4 networks create-network [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

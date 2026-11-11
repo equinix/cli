@@ -15,7 +15,7 @@ equinix fabricv4 ip-blocks search-ip-blocks [flags]
 ### Options
 
 ```
-  -h, --help                                                                    help for search-ip-blocks
+  -h, --help[=true|false]                                                       help for search-ip-blocks
       --ip-blocks-search-request-body-additional-properties string              ip-blocks-search-request-body-additional-properties (JSON)
       --ip-blocks-search-request-body-filter-additional-properties string       ip-blocks-search-request-body-filter-additional-properties (JSON)
       --ip-blocks-search-request-body-filter-and string                         ip-blocks-search-request-body-filter-and (JSON array)
@@ -29,9 +29,9 @@ equinix fabricv4 ip-blocks search-ip-blocks [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

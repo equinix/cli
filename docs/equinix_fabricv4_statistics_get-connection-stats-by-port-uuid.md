@@ -16,7 +16,7 @@ equinix fabricv4 statistics get-connection-stats-by-port-uuid [flags]
 
 ```
       --connection-id string   Connection UUID (required)
-  -h, --help                   help for get-connection-stats-by-port-uuid
+  -h, --help[=true|false]      help for get-connection-stats-by-port-uuid
       --request string         JSON payload for additional optional fields not exposed as flags
       --view-point string      view-point field
 ```
@@ -24,9 +24,9 @@ equinix fabricv4 statistics get-connection-stats-by-port-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

@@ -15,7 +15,7 @@ equinix fabricv4 connections search-connections [flags]
 ### Options
 
 ```
-  -h, --help                                                     help for search-connections
+  -h, --help[=true|false]                                        help for search-connections
       --request string                                           JSON payload for additional optional fields not exposed as flags
       --search-request-additional-properties string              search-request-additional-properties (JSON)
       --search-request-filter-additional-properties string       search-request-filter-additional-properties (JSON)
@@ -33,9 +33,9 @@ equinix fabricv4 connections search-connections [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

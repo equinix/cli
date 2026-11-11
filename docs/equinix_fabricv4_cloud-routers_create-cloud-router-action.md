@@ -22,7 +22,7 @@ equinix fabricv4 cloud-routers create-cloud-router-action [flags]
       --cloud-router-action-request-connection-type string                    cloud-router-action-request-connection-type
       --cloud-router-action-request-connection-uuid string                    Connection UUID
       --cloud-router-action-request-type string                               cloud-router-action-request-type
-  -h, --help                                                                  help for create-cloud-router-action
+  -h, --help[=true|false]                                                     help for create-cloud-router-action
       --request string                                                        JSON payload for additional optional fields not exposed as flags
       --router-id string                                                      Router UUID (required)
 ```
@@ -30,9 +30,9 @@ equinix fabricv4 cloud-routers create-cloud-router-action [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

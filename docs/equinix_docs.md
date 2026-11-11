@@ -20,7 +20,7 @@ equinix docs <destination>
 ### Options
 
 ```
-  -h, --help   help for docs
+  -h, --help[=true|false]   help for docs
 ```
 
 ### Options inherited from parent commands

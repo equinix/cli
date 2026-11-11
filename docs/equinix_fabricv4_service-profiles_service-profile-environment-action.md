@@ -24,7 +24,7 @@ equinix fabricv4 service-profiles service-profile-environment-action [flags]
       --environment-action-request-key-details-value string                   Provider Encoded activation key
       --environment-action-request-type string                                environment-action-request-type
       --environment-id string                                                 Provider Environment Reference (required)
-  -h, --help                                                                  help for service-profile-environment-action
+  -h, --help[=true|false]                                                     help for service-profile-environment-action
       --request string                                                        JSON payload for additional optional fields not exposed as flags
       --service-profile-id string                                             Service Profile UUID (required)
 ```
@@ -32,9 +32,9 @@ equinix fabricv4 service-profiles service-profile-environment-action [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

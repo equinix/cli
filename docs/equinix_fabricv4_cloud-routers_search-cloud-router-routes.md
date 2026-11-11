@@ -15,7 +15,7 @@ equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
 ### Options
 
 ```
-  -h, --help                                                                       help for search-cloud-router-routes
+  -h, --help[=true|false]                                                          help for search-cloud-router-routes
       --request string                                                             JSON payload for additional optional fields not exposed as flags
       --route-table-entry-search-request-additional-properties string              route-table-entry-search-request-additional-properties (JSON)
       --route-table-entry-search-request-filter-additional-properties string       route-table-entry-search-request-filter-additional-properties (JSON)
@@ -30,9 +30,9 @@ equinix fabricv4 cloud-routers search-cloud-router-routes [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

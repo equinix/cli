@@ -15,8 +15,8 @@ equinix fabricv4 ports update-port-by-uuid [flags]
 ### Options
 
 ```
-      --dry-run                        dry-run field
-  -h, --help                           help for update-port-by-uuid
+      --dry-run[=true|false]           dry-run field
+  -h, --help[=true|false]              help for update-port-by-uuid
       --port-change-operation string   port-change-operation field (JSON or string)
       --port-id string                 Port UUID (required)
       --request string                 JSON payload for additional optional fields not exposed as flags
@@ -25,9 +25,9 @@ equinix fabricv4 ports update-port-by-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

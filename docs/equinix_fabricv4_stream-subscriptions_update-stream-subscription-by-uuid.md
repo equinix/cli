@@ -15,12 +15,12 @@ equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help                                                                           help for update-stream-subscription-by-uuid
+  -h, --help[=true|false]                                                              help for update-stream-subscription-by-uuid
       --request string                                                                 JSON payload for additional optional fields not exposed as flags
       --stream-id string                                                               Stream UUID (required)
       --stream-subscription-put-request-additional-properties string                   stream-subscription-put-request-additional-properties (JSON)
       --stream-subscription-put-request-description string                             Customer-provided stream subscription description
-      --stream-subscription-put-request-enabled                                        Stream subscription enabled status
+      --stream-subscription-put-request-enabled[=true|false]                           Stream subscription enabled status
       --stream-subscription-put-request-event-selector-additional-properties string    stream-subscription-put-request-event-selector-additional-properties (JSON)
       --stream-subscription-put-request-event-selector-except string                   stream-subscription-put-request-event-selector-except (JSON array)
       --stream-subscription-put-request-event-selector-include string                  stream-subscription-put-request-event-selector-include (JSON array)
@@ -31,7 +31,7 @@ equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid [flags]
       --stream-subscription-put-request-metric-selector-include string                 stream-subscription-put-request-metric-selector-include (JSON array)
       --stream-subscription-put-request-name string                                    Customer-provided stream subscription name
       --stream-subscription-put-request-sink-additional-properties string              stream-subscription-put-request-sink-additional-properties (JSON)
-      --stream-subscription-put-request-sink-batch-enabled                             batch mode on/off
+      --stream-subscription-put-request-sink-batch-enabled[=true|false]                batch mode on/off
       --stream-subscription-put-request-sink-batch-size-max int                        maximum batch size
       --stream-subscription-put-request-sink-batch-wait-time-max int                   maximum batch waiting time
       --stream-subscription-put-request-sink-credential string                         stream-subscription-put-request-sink-credential (JSON)
@@ -46,9 +46,9 @@ equinix fabricv4 stream-subscriptions update-stream-subscription-by-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

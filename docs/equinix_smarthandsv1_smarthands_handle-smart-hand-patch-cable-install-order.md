@@ -32,16 +32,16 @@ equinix smarthandsv1 smarthands handle-smart-hand-patch-cable-install-order [fla
       --body-schedule-schedule-type string                  body-schedule-schedule-type
       --body-service-details-additional-properties string   body-service-details-additional-properties (JSON)
       --body-service-details-cross-connects string          body-service-details-cross-connects (JSON array)
-  -h, --help                                                help for handle-smart-hand-patch-cable-install-order
+  -h, --help[=true|false]                                   help for handle-smart-hand-patch-cable-install-order
       --request string                                      JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

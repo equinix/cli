@@ -18,7 +18,7 @@ equinix fabricv4 cloud-router-packages get-cloud-router-package-by-code [flags]
 ### Options
 
 ```
-  -h, --help                         help for get-cloud-router-package-by-code
+  -h, --help[=true|false]            help for get-cloud-router-package-by-code
       --request string               JSON payload for request body fields
       --router-package-code string   router-package-code (required)
 ```
@@ -26,9 +26,9 @@ equinix fabricv4 cloud-router-packages get-cloud-router-package-by-code [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

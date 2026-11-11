@@ -18,7 +18,7 @@ equinix fabricv4 precision-time-services update-time-services-by-id [flags]
 ### Options
 
 ```
-  -h, --help                                     help for update-time-services-by-id
+  -h, --help[=true|false]                        help for update-time-services-by-id
       --id string                                id (required)
       --precision-time-change-operation string   precision-time-change-operation field (JSON or string)
       --request string                           JSON payload for additional optional fields not exposed as flags
@@ -27,9 +27,9 @@ equinix fabricv4 precision-time-services update-time-services-by-id [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

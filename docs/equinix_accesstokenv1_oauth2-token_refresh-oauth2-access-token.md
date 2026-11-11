@@ -18,7 +18,7 @@ equinix accesstokenv1 oauth2-token refresh-oauth2-access-token [flags]
 ### Options
 
 ```
-  -h, --help                                   help for refresh-oauth2-access-token
+  -h, --help[=true|false]                      help for refresh-oauth2-access-token
       --payload-additional-properties string   payload-additional-properties (JSON)
       --payload-client_id string               API Consumer Key available under \"My Apps\" in developer portal
       --payload-client_secret string           API Consumer secret available under \"My Apps\" in developer portal
@@ -29,9 +29,9 @@ equinix accesstokenv1 oauth2-token refresh-oauth2-access-token [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

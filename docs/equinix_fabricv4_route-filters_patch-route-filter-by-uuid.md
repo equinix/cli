@@ -15,7 +15,7 @@ equinix fabricv4 route-filters patch-route-filter-by-uuid [flags]
 ### Options
 
 ```
-  -h, --help                                      help for patch-route-filter-by-uuid
+  -h, --help[=true|false]                         help for patch-route-filter-by-uuid
       --request string                            JSON payload for additional optional fields not exposed as flags
       --route-filter-id string                    Route Filters Id (required)
       --route-filters-patch-request-item string   route-filters-patch-request-item field (JSON or string)
@@ -24,9 +24,9 @@ equinix fabricv4 route-filters patch-route-filter-by-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

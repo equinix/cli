@@ -27,7 +27,7 @@ equinix fabricv4 company-profiles search-company-profile [flags]
       --company-profile-search-request-sort-additional-properties string         company-profile-search-request-sort-additional-properties (JSON)
       --company-profile-search-request-sort-direction string                     company-profile-search-request-sort-direction
       --company-profile-search-request-sort-property /name                       Property to sort by. Supported values:  * /name - Company profile name  * `/state` - Company profile state  * `/changeLog/updatedDateTime` - Date and time the profile was last updated  * `/changeLog/createdDateTime` - Date and time the profile was created
-  -h, --help                                                                     help for search-company-profile
+  -h, --help[=true|false]                                                        help for search-company-profile
       --request string                                                           JSON payload for additional optional fields not exposed as flags
       --view-point string                                                        view-point field
 ```
@@ -35,9 +35,9 @@ equinix fabricv4 company-profiles search-company-profile [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

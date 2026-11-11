@@ -15,7 +15,7 @@ equinix fabricv4 route-aggregations search-route-aggregations [flags]
 ### Options
 
 ```
-  -h, --help                                                                        help for search-route-aggregations
+  -h, --help[=true|false]                                                           help for search-route-aggregations
       --request string                                                              JSON payload for additional optional fields not exposed as flags
       --route-aggregations-search-request-additional-properties string              route-aggregations-search-request-additional-properties (JSON)
       --route-aggregations-search-request-filter-search-and-expression string       route-aggregations-search-request-filter-search-and-expression (JSON)
@@ -29,9 +29,9 @@ equinix fabricv4 route-aggregations search-route-aggregations [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

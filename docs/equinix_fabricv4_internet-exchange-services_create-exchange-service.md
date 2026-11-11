@@ -53,16 +53,16 @@ equinix fabricv4 internet-exchange-services create-exchange-service [flags]
       --exchange-service-create-request-routing-protocol-customer-asn int                        exchange-service-create-request-routing-protocol-customer-asn
       --exchange-service-create-request-routing-protocol-mac-address string                      exchange-service-create-request-routing-protocol-mac-address
       --exchange-service-create-request-type string                                              exchange-service-create-request-type
-  -h, --help                                                                                     help for create-exchange-service
+  -h, --help[=true|false]                                                                        help for create-exchange-service
       --request string                                                                           JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

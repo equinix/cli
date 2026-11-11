@@ -15,7 +15,7 @@ equinix fabricv4 optical-metro-connects search-optical-connect [flags]
 ### Options
 
 ```
-  -h, --help                                                                     help for search-optical-connect
+  -h, --help[=true|false]                                                        help for search-optical-connect
       --optical-connect-search-request-additional-properties string              optical-connect-search-request-additional-properties (JSON)
       --optical-connect-search-request-filter-additional-properties string       optical-connect-search-request-filter-additional-properties (JSON)
       --optical-connect-search-request-filter-and string                         optical-connect-search-request-filter-and (JSON array)
@@ -29,9 +29,9 @@ equinix fabricv4 optical-metro-connects search-optical-connect [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

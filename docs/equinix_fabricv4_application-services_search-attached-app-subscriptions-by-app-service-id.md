@@ -23,16 +23,16 @@ equinix fabricv4 application-services search-attached-app-subscriptions-by-app-s
       --app-service-attached-app-subscription-search-request-pagination-offset int                     Index of the first element.
       --app-service-attached-app-subscription-search-request-sort string                               app-service-attached-app-subscription-search-request-sort (JSON array)
       --app-service-id string                                                                          App Service UUID (required)
-  -h, --help                                                                                           help for search-attached-app-subscriptions-by-app-service-id
+  -h, --help[=true|false]                                                                              help for search-attached-app-subscriptions-by-app-service-id
       --request string                                                                                 JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

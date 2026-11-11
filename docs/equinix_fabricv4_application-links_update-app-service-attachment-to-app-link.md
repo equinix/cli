@@ -18,16 +18,16 @@ equinix fabricv4 application-links update-app-service-attachment-to-app-link [fl
       --app-link-app-service-attachment-change-operation string   app-link-app-service-attachment-change-operation field (JSON or string)
       --app-link-id string                                        App Link UUID (required)
       --app-service-id string                                     App Service UUID (required)
-  -h, --help                                                      help for update-app-service-attachment-to-app-link
+  -h, --help[=true|false]                                         help for update-app-service-attachment-to-app-link
       --request string                                            JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

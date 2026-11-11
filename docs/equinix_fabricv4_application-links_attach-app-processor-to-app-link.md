@@ -20,7 +20,7 @@ equinix fabricv4 application-links attach-app-processor-to-app-link [flags]
 ```
       --app-link-attach-processor-request-additional-properties string   app-link-attach-processor-request-additional-properties (JSON)
       --app-link-attach-processor-request-config string                  app-link-attach-processor-request-config
-  -h, --help                                                             help for attach-app-processor-to-app-link
+  -h, --help[=true|false]                                                help for attach-app-processor-to-app-link
       --param-1 string                                                   param-1 (required)
       --param-2 string                                                   param-2 (required)
       --request string                                                   JSON payload for additional optional fields not exposed as flags
@@ -29,9 +29,9 @@ equinix fabricv4 application-links attach-app-processor-to-app-link [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

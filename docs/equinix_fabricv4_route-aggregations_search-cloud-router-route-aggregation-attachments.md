@@ -25,7 +25,7 @@ equinix fabricv4 route-aggregations search-cloud-router-route-aggregation-attach
       --cloud-router-route-aggregations-search-base-pagination-previous string                                    URL relative to the previous item in the response.
       --cloud-router-route-aggregations-search-base-pagination-total int                                          Total number of elements returned.
       --cloud-router-route-aggregations-search-base-sort string                                                   cloud-router-route-aggregations-search-base-sort (JSON array)
-  -h, --help                                                                                                      help for search-cloud-router-route-aggregation-attachments
+  -h, --help[=true|false]                                                                                         help for search-cloud-router-route-aggregation-attachments
       --request string                                                                                            JSON payload for additional optional fields not exposed as flags
       --router-id string                                                                                          Cloud Router UUID (required)
 ```
@@ -33,9 +33,9 @@ equinix fabricv4 route-aggregations search-cloud-router-route-aggregation-attach
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

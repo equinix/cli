@@ -32,16 +32,16 @@ equinix fabricv4 as-ns create-asn [flags]
       --create-asn-request-project-project-id string                                  Subscriber-assigned project ID
       --create-asn-request-range string                                               create-asn-request-range
       --create-asn-request-rir-region string                                          create-asn-request-rir-region
-  -h, --help                                                                          help for create-asn
+  -h, --help[=true|false]                                                             help for create-asn
       --request string                                                                JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

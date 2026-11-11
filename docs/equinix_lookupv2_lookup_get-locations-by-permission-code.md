@@ -17,8 +17,8 @@ equinix lookupv2 lookup get-locations-by-permission-code [flags]
 ```
       --a-side-ibx string                a-side-ibx field
       --connection-service string        connection-service field
-      --details                          details field
-  -h, --help                             help for get-locations-by-permission-code
+      --details[=true|false]             details field
+  -h, --help[=true|false]                help for get-locations-by-permission-code
       --ibxs string                      ibxs field (JSON or string)
       --permission-code string           permission-code field
       --provider-account-number string   provider-account-number field
@@ -28,9 +28,9 @@ equinix lookupv2 lookup get-locations-by-permission-code [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

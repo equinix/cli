@@ -16,7 +16,7 @@ equinix fabricv4 route-aggregations attach-connection-route-aggregation [flags]
 
 ```
       --connection-id string          Connection Id (required)
-  -h, --help                          help for attach-connection-route-aggregation
+  -h, --help[=true|false]             help for attach-connection-route-aggregation
       --request string                JSON payload for request body fields
       --route-aggregation-id string   Route Aggregations Id (required)
 ```
@@ -24,9 +24,9 @@ equinix fabricv4 route-aggregations attach-connection-route-aggregation [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

@@ -22,7 +22,7 @@ equinix fabricv4 cloud-routers search-cloud-router-commands [flags]
       --cloud-router-command-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
       --cloud-router-command-search-request-pagination-offset int                     Index of the first element.
       --cloud-router-command-search-request-sort string                               cloud-router-command-search-request-sort (JSON array)
-  -h, --help                                                                          help for search-cloud-router-commands
+  -h, --help[=true|false]                                                             help for search-cloud-router-commands
       --request string                                                                JSON payload for additional optional fields not exposed as flags
       --router-id string                                                              Router UUID (required)
 ```
@@ -30,9 +30,9 @@ equinix fabricv4 cloud-routers search-cloud-router-commands [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

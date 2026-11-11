@@ -16,7 +16,7 @@ equinix fabricv4 networks get-network-change-by-uuid [flags]
 
 ```
       --change-id string    Network Change UUID (required)
-  -h, --help                help for get-network-change-by-uuid
+  -h, --help[=true|false]   help for get-network-change-by-uuid
       --network-id string   Network UUID (required)
       --request string      JSON payload for request body fields
 ```
@@ -24,9 +24,9 @@ equinix fabricv4 networks get-network-change-by-uuid [flags]
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

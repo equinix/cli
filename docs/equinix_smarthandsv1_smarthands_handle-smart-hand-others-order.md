@@ -32,16 +32,16 @@ equinix smarthandsv1 smarthands handle-smart-hand-others-order [flags]
       --body-schedule-schedule-type string                  body-schedule-schedule-type
       --body-service-details-additional-properties string   body-service-details-additional-properties (JSON)
       --body-service-details-scope-of-work string           Enter any additional details that will help our technicians execute your request. You may also attach your scope of work as a document if you exceed the character limit in this field.
-  -h, --help                                                help for handle-smart-hand-others-order
+  -h, --help[=true|false]                                   help for handle-smart-hand-others-order
       --request string                                      JSON payload for additional optional fields not exposed as flags
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --config string   config file (default is $HOME/.config/equinix/equinix.yaml)
-      --debug           Enable debug logging for HTTP requests
-  -f, --format string   Format to use for output (json or yaml) (default "json")
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
 ```
 
 ### SEE ALSO

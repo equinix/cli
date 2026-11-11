@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"os/exec"
+	"os/signal"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -18,6 +19,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"go.yaml.in/yaml/v3"
+	"golang.org/x/term"
 )
 
 const (
@@ -26,7 +28,8 @@ const (
 )
 
 var (
-	initEndpoint string
+	initEndpoint    string
+	initSTSEndpoint string
 
 	// Overridable in tests.
 	openBrowser = defaultOpenBrowser
@@ -52,6 +55,8 @@ unchanged.`,
 func init() {
 	initCmd.Flags().StringVar(&initEndpoint, "api-endpoint", "",
 		"Equinix API base URL to save to the config file (env EQUINIX_API_ENDPOINT, default "+api.DefaultEndpoint+")")
+	initCmd.Flags().StringVar(&initSTSEndpoint, "sts-endpoint", "",
+		"Equinix STS base URL to save to the config file (env EQUINIX_STS_ENDPOINT, default "+api.DefaultSTSEndpoint+")")
 	rootCmd.AddCommand(initCmd)
 }
 
@@ -89,7 +94,7 @@ func runInit(in io.Reader, out io.Writer) error {
 		_, _ = fmt.Fprintln(out, "No client ID entered; config file left unchanged.")
 		return nil
 	}
-	clientSecret, err := prompt(r, out, "Client Secret: ")
+	clientSecret, err := promptSecret(in, r, out, "Client Secret: ")
 	if err != nil {
 		return err
 	}
@@ -112,6 +117,9 @@ func runInit(in io.Reader, out io.Writer) error {
 	if initEndpoint != "" {
 		values[api.EndpointKey] = endpoint
 	}
+	if initSTSEndpoint != "" {
+		values[api.STSEndpointKey] = strings.TrimRight(initSTSEndpoint, "/")
+	}
 	if err := updateConfigFile(path, values); err != nil {
 		return err
 	}
@@ -128,6 +136,46 @@ func prompt(r *bufio.Reader, out io.Writer, label string) (string, error) {
 		return "", err
 	}
 	return strings.TrimSpace(line), nil
+}
+
+// promptSecret is prompt without echoing what's typed, when in is a terminal.
+func promptSecret(in io.Reader, r *bufio.Reader, out io.Writer, label string) (string, error) {
+	f, ok := in.(*os.File)
+	if !ok || !term.IsTerminal(int(f.Fd())) {
+		return prompt(r, out, label)
+	}
+	fd := int(f.Fd())
+	state, err := term.GetState(fd)
+	if err != nil {
+		return "", err
+	}
+
+	// ReadPassword turns echo off but leaves Ctrl-C as a signal, which would
+	// otherwise exit with the terminal still not echoing.
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, os.Interrupt)
+	done := make(chan struct{})
+	defer func() {
+		signal.Stop(sigs)
+		close(done)
+	}()
+	go func() {
+		select {
+		case <-sigs:
+			_ = term.Restore(fd, state)
+			_, _ = fmt.Fprintln(out)
+			os.Exit(130)
+		case <-done:
+		}
+	}()
+
+	_, _ = fmt.Fprint(out, label)
+	secret, err := term.ReadPassword(fd)
+	_, _ = fmt.Fprintln(out)
+	if err != nil {
+		return "", err
+	}
+	return strings.TrimSpace(string(secret)), nil
 }
 
 // configPath is the file --config points to, or the default config file.

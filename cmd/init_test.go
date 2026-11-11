@@ -36,7 +36,7 @@ func setupInit(t *testing.T, verifyErr error) (cfg string, opened *[]string, ver
 	t.Cleanup(func() {
 		openBrowser, verifyToken = origOpen, origVerify
 		cfgFile = ""
-		initEndpoint = ""
+		initEndpoint, initSTSEndpoint = "", ""
 		viper.Reset()
 	})
 	return cfg, opened, verified
@@ -144,7 +144,8 @@ func TestInit_FailedTokenCheckLeavesConfigUnchanged(t *testing.T) {
 
 func TestInit_CustomEndpointSkipsInstructions(t *testing.T) {
 	cfg, opened, verified := setupInit(t, nil)
-	initEndpoint = "https://uatapi.equinix.com/"
+	initEndpoint = "https://mockapi.example.com/"
+	initSTSEndpoint = "https://mocksts.example.com/"
 
 	var out bytes.Buffer
 	// No create question is asked, so the first line is the client ID.
@@ -154,17 +155,18 @@ func TestInit_CustomEndpointSkipsInstructions(t *testing.T) {
 	if len(*opened) != 0 || strings.Contains(out.String(), developerDocsURL) {
 		t.Errorf("instructions shouldn't be shown for a custom endpoint:\n%s", out.String())
 	}
-	if want := (initCall{"https://uatapi.equinix.com", "my-id", "my-secret"}); len(*verified) != 1 || (*verified)[0] != want {
+	if want := (initCall{"https://mockapi.example.com", "my-id", "my-secret"}); len(*verified) != 1 || (*verified)[0] != want {
 		t.Errorf("expected token check %v, got %v", want, *verified)
 	}
-	if got := readYAML(t, cfg); got["equinix_api_endpoint"] != "https://uatapi.equinix.com" {
-		t.Errorf("expected endpoint saved, got %v", got)
+	got := readYAML(t, cfg)
+	if got["equinix_api_endpoint"] != "https://mockapi.example.com" || got["equinix_sts_endpoint"] != "https://mocksts.example.com" {
+		t.Errorf("expected endpoints saved, got %v", got)
 	}
 }
 
 func TestInit_EndpointFromEnv(t *testing.T) {
 	_, opened, verified := setupInit(t, nil)
-	t.Setenv("EQUINIX_API_ENDPOINT", "https://uatapi.equinix.com")
+	t.Setenv("EQUINIX_API_ENDPOINT", "https://mockapi.example.com")
 	viper.AutomaticEnv()
 
 	var out bytes.Buffer
@@ -174,7 +176,7 @@ func TestInit_EndpointFromEnv(t *testing.T) {
 	if len(*opened) != 0 {
 		t.Errorf("browser shouldn't open for a custom endpoint")
 	}
-	if len(*verified) != 1 || (*verified)[0].endpoint != "https://uatapi.equinix.com" {
+	if len(*verified) != 1 || (*verified)[0].endpoint != "https://mockapi.example.com" {
 		t.Errorf("expected token check against env endpoint, got %v", *verified)
 	}
 }

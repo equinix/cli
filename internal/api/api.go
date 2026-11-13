@@ -7,8 +7,6 @@
 package api
 
 import (
-	"bytes"
-	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
@@ -175,15 +173,14 @@ func (c *Client) Request(apiPath, method string, data string) ([]byte, error) {
 	url := c.BaseURL + "/" + apiPath
 	var body io.Reader
 	if data != "" {
-		b, err := json.Marshal(data)
-		if err != nil {
-			return nil, err
-		}
-		body = bytes.NewBuffer(b)
+		body = strings.NewReader(data)
 	}
 	req, err := http.NewRequest(method, url, body)
 	if err != nil {
 		return nil, err
+	}
+	if body != nil {
+		req.Header.Set("Content-Type", "application/json")
 	}
 	resp, err := c.HTTPClient.Do(req)
 	if err != nil {

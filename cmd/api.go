@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -50,10 +51,19 @@ var apiCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		var raw interface{}
-		var pretty []byte
-		err = json.Unmarshal(resp, &raw)
+		if len(bytes.TrimSpace(resp)) == 0 {
+			// e.g. 204 No Content
+			return
+		}
 
+		var raw interface{}
+		if err := json.Unmarshal(resp, &raw); err != nil {
+			// Not JSON, so there is nothing to reformat
+			fmt.Println(string(resp))
+			return
+		}
+
+		var pretty []byte
 		// TODO: move formatting elsewhere, possibly replicating
 		// output package from metal CLI
 		switch format {

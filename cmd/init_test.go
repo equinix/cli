@@ -148,8 +148,8 @@ func TestInit_CustomEndpointSkipsInstructions(t *testing.T) {
 	initSTSEndpoint = "https://mocksts.example.com/"
 
 	var out bytes.Buffer
-	// No create question is asked, so the first line is the client ID.
-	if err := runInit(strings.NewReader("my-id\nmy-secret\n"), &out); err != nil {
+	// The create question is still asked; answering yes shows no instructions.
+	if err := runInit(strings.NewReader("y\nmy-id\nmy-secret\n"), &out); err != nil {
 		t.Fatal(err)
 	}
 	if len(*opened) != 0 || strings.Contains(out.String(), developerDocsURL) {
@@ -170,7 +170,7 @@ func TestInit_EndpointFromEnv(t *testing.T) {
 	viper.AutomaticEnv()
 
 	var out bytes.Buffer
-	if err := runInit(strings.NewReader("my-id\nmy-secret\n"), &out); err != nil {
+	if err := runInit(strings.NewReader("\nmy-id\nmy-secret\n"), &out); err != nil {
 		t.Fatal(err)
 	}
 	if len(*opened) != 0 {
@@ -195,7 +195,7 @@ func TestE2E_InitVerifiesTokenAgainstEndpoint(t *testing.T) {
 		viper.Reset()
 	})
 
-	rootCmd.SetIn(strings.NewReader("test-id\ntest-secret\n"))
+	rootCmd.SetIn(strings.NewReader("n\ntest-id\ntest-secret\n"))
 	rootCmd.SetOut(&bytes.Buffer{})
 	t.Cleanup(func() { rootCmd.SetIn(nil); rootCmd.SetOut(nil) })
 	rootCmd.SetArgs([]string{"--config", cfg, "init", "--api-endpoint", api.URL})

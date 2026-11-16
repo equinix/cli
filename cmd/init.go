@@ -72,12 +72,14 @@ func runInit(in io.Reader, out io.Writer) error {
 	_, _ = fmt.Fprintf(out, "Config file: %s\n", path)
 	if !api.IsDefaultEndpoint(endpoint) {
 		_, _ = fmt.Fprintf(out, "API endpoint: %s\n", endpoint)
-	} else {
-		create, err := prompt(r, out, "Create a new API credential? [Y/n]: ")
-		if err != nil {
-			return err
-		}
-		if create == "" || strings.EqualFold(create, "y") || strings.EqualFold(create, "yes") {
+	}
+	create, err := prompt(r, out, "Create a new API credential? [Y/n]: ")
+	if err != nil {
+		return err
+	}
+	if create == "" || strings.EqualFold(create, "y") || strings.EqualFold(create, "yes") {
+		// The Portal and its docs only issue credentials for api.equinix.com.
+		if api.IsDefaultEndpoint(endpoint) {
 			_, _ = fmt.Fprintf(out, "\nOpen %s\n", developerAppsURL)
 			if err := openBrowser(developerAppsURL); err != nil {
 				_, _ = fmt.Fprintln(out, "(couldn't open a browser; open the link above yourself)")

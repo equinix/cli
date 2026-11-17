@@ -45,6 +45,15 @@ After generating, you'll need to:
 make build
 ```
 
+## Testing
+
+```sh
+make test
+```
+
+CI runs the `TestE2E_` tests in the e2e workflow and everything else in the
+test workflow.
+
 ## Linting
 
 ```sh

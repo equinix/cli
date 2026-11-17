@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/spf13/viper"
-	"go.yaml.in/yaml/v3"
+	"go.yaml.in/yaml/v4"
 )
 
 type initCall struct {

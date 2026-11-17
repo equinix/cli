@@ -15,13 +15,16 @@ jobs:
       - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7.1.0
         with:
           go-version-file: go.mod
-      - name: Determine golangci-lint version
-        id: golangcilint
-        run: |
-          line=$(grep GOLANGCI_LINT_VERSION= Makefile)
-          version=$(echo ${line} | cut -d = -f2)
-          echo "version=$version" >> "$GITHUB_OUTPUT"
+          cache-dependency-path: |
+            go.sum
+            tools/go.sum
+      # golangci-lint is versioned as a Go tool dependency in tools/go.mod (kept
+      # separate from the application module) so Renovate keeps it up to date.
+      # Building it with the toolchain from go.mod ensures it is never older than
+      # the Go version it lints.
+      - name: Build golangci-lint
+        run: go build -modfile=tools/go.mod -o "$(go env GOPATH)/bin/golangci-lint" github.com/golangci/golangci-lint/v2/cmd/golangci-lint
       - name: golangci-lint
         uses: golangci/golangci-lint-action@ba0d7d2ec06a0ea1cb5fa41b2e4a3ab91d21278a # v9.3.0
         with:
-          version: ${{ steps.golangcilint.outputs.version }}
+          install-mode: none

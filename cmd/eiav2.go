@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/equinix/cli/internal/eiav2"
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
 )
@@ -17,10 +18,12 @@ var eiav2Debug bool
 //go:embed descriptions/eiav2.json
 var eiav2Descriptions []byte
 
-// eiav2Cmd represents the eiav2 command
+// eiav2Cmd represents the eiav2 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var eiav2Cmd = &cobra.Command{
-	Use:   "eiav2",
-	Short: "Manage Equinix eiav2 resources",
+	Use:     naming.CanonicalServiceName("eiav2"),
+	Aliases: naming.ServiceAliases("eiav2"),
+	Short:   "Manage Equinix eiav2 resources",
 	Long: `Commands for managing Equinix eiav2 resources.
 
 The eiav2 commands are dynamically generated based on the eiav2 API client,
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register eiav2 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// eiav2Cmd.Aliases = []string{"eia"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := eiav2Cmd.Find([]string{"connections"}); err == nil {

@@ -8,7 +8,7 @@ import (
 
 	"github.com/equinix/cli/internal/api"
 	"github.com/spf13/cobra"
-	"go.yaml.in/yaml/v3"
+	"go.yaml.in/yaml/v4"
 )
 
 var method string

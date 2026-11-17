@@ -1,4 +1,4 @@
-.PHONY: lint fix build docs docs-check onboard update
+.PHONY: lint fix test build docs docs-check onboard update
 BINARY=equinix
 
 GOLANGCI_LINT_VERSION=v2.3.0
@@ -9,6 +9,9 @@ lint:
 
 fix:
 	$(GOLANGCI_LINT) run -v --fix
+
+test:
+	go test -count=1 ./...
 
 build:
 	go build $(LDFLAGS) -o bin/$(BINARY) main.go
@@ -74,13 +77,10 @@ onboard:
 	@echo "Step 1: Creating service scaffolding..."
 	@mkdir -p cmd
 	@sed -e 's/{{SERVICE}}/$(SERVICE)/g' \
-	     -e 's/{{SERVICE_DISPLAY}}/$(shell echo $(SERVICE) | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g' | sed 's/v\([0-9]\)/v\1/g' | sed 's/\b\(.\)/\u\1/g')/g' \
-	     -e 's/{{SERVICE_ALIAS}}/$(shell echo $(SERVICE) | sed 's/v[0-9]*$$//')/g' \
 	     templates/cmd/service.go.tmpl > cmd/$(SERVICE).go
 	@echo "  - Created cmd/$(SERVICE).go"
 	@mkdir -p internal/$(SERVICE)
 	@sed -e 's/{{SERVICE}}/$(SERVICE)/g' \
-	     -e 's/{{SERVICE_DISPLAY}}/$(shell echo $(SERVICE) | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g' | sed 's/v\([0-9]\)/v\1/g' | sed 's/\b\(.\)/\u\1/g')/g' \
 	     templates/internal/service.go.tmpl > internal/$(SERVICE)/$(SERVICE).go
 	@echo "  - Created internal/$(SERVICE)/$(SERVICE).go"
 	@echo ""

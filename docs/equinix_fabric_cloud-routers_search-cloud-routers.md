@@ -1,0 +1,44 @@
+## equinix fabric cloud-routers search-cloud-routers
+
+Search Routers
+
+### Synopsis
+
+The API provides capability to get list of user's Cloud Routers using search criteria, including optional filtering, pagination and sorting
+
+Use --request flag to provide optional JSON payload fields.
+
+```
+equinix fabric cloud-routers search-cloud-routers [flags]
+```
+
+### Options
+
+```
+      --cloud-router-search-request-additional-properties string              cloud-router-search-request-additional-properties (JSON)
+      --cloud-router-search-request-filter-additional-properties string       cloud-router-search-request-filter-additional-properties (JSON)
+      --cloud-router-search-request-filter-and string                         cloud-router-search-request-filter-and (JSON array)
+      --cloud-router-search-request-filter-operator string                    cloud-router-search-request-filter-operator
+      --cloud-router-search-request-filter-or string                          cloud-router-search-request-filter-or (JSON array)
+      --cloud-router-search-request-filter-property string                    cloud-router-search-request-filter-property
+      --cloud-router-search-request-filter-values string                      cloud-router-search-request-filter-values (JSON array)
+      --cloud-router-search-request-pagination-additional-properties string   cloud-router-search-request-pagination-additional-properties (JSON)
+      --cloud-router-search-request-pagination-limit int                      Number of elements to be requested per page. Number must be between 1 and 100, and the default is 20.
+      --cloud-router-search-request-pagination-offset int                     Index of the first element.
+      --cloud-router-search-request-sort string                               cloud-router-search-request-sort (JSON array)
+  -h, --help[=true|false]                                                     help for search-cloud-routers
+      --request string                                                        JSON payload for additional optional fields not exposed as flags
+```
+
+### Options inherited from parent commands
+
+```
+      --config string        config file (default is $HOME/.config/equinix/equinix.yaml)
+      --debug[=true|false]   Enable debug logging for HTTP requests
+  -f, --format string        Format to use for output (json or yaml) (default "json")
+```
+
+### SEE ALSO
+
+* [equinix fabric cloud-routers](equinix_fabric_cloud-routers.md)	 - Manage cloud-routers resources
+

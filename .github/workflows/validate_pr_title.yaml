@@ -1,14 +1,19 @@
 name: "Validate PR Title"
 
+# Runs with the unprivileged `pull_request` trigger so no write token or secrets
+# are exposed to PR-controlled input. Commenting on the PR is handled by
+# validate_pr_comment.yaml, which runs via `workflow_run`.
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - edited
       - synchronize
+      - reopened
 
 permissions:
-  pull-requests: write
+  contents: read
+  pull-requests: read
 
 jobs:
   check-pr-title:
@@ -20,26 +25,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
-        # When the previous steps fails, the workflow would stop. By adding this
-        # condition you can continue the execution with the populated error message.
-        if: always() && (steps.lint_pr_title.outputs.error_message != null)
+      # Hand the result to the commenting workflow. The error message derives from the
+      # PR title, so it is passed via env and written to a file, never interpolated
+      # into the script.
+      - name: Write validation result
+        if: always()
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          ERROR_MESSAGE: ${{ steps.lint_pr_title.outputs.error_message }}
+        run: |
+          mkdir -p validation-result
+          printf '%s' "$PR_NUMBER" > validation-result/pr-number
+          if [ -n "$ERROR_MESSAGE" ]; then
+            printf '%s' "$ERROR_MESSAGE" > validation-result/error-message
+          fi
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
         with:
-          header: pr-title-lint-error
-          message: |
-            Hey there and thank you for opening this pull request! 👋🏼
-
-            We require pull request titles to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) and it looks like your proposed title needs to be adjusted.
-
-            Details:
-
-            ```
-            ${{ steps.lint_pr_title.outputs.error_message }}
-            ```
-
-      # Delete a previous comment when the issue has been resolved
-      - if: ${{ steps.lint_pr_title.outputs.error_message == null }}
-        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
-        with:
-          header: pr-title-lint-error
-          delete: true
+          name: validation-result
+          path: validation-result
+          retention-days: 1

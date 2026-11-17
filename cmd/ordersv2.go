@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/ordersv2"
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
@@ -17,10 +18,12 @@ var ordersv2Debug bool
 //go:embed descriptions/ordersv2.json
 var ordersv2Descriptions []byte
 
-// ordersv2Cmd represents the ordersv2 command
+// ordersv2Cmd represents the ordersv2 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var ordersv2Cmd = &cobra.Command{
-	Use:   "ordersv2",
-	Short: "Manage Equinix ordersv2 resources",
+	Use:     naming.CanonicalServiceName("ordersv2"),
+	Aliases: naming.ServiceAliases("ordersv2"),
+	Short:   "Manage Equinix ordersv2 resources",
 	Long: `Commands for managing Equinix ordersv2 resources.
 
 The ordersv2 commands are dynamically generated based on the ordersv2 API client,
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register ordersv2 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// ordersv2Cmd.Aliases = []string{"orders"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := ordersv2Cmd.Find([]string{"connections"}); err == nil {

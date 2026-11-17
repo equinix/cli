@@ -15,6 +15,7 @@ import (
 	"log"
 	"net/http"
 	"net/http/httputil"
+	"net/url"
 	"os"
 	"strings"
 
@@ -85,11 +86,88 @@ func (t *headerInjectingTransport) RoundTrip(req *http.Request) (*http.Response,
 	return t.transport.RoundTrip(req)
 }
 
+// DefaultEndpoint is the base URL of the production Equinix API.
+const DefaultEndpoint = "https://api.equinix.com"
+
+// DefaultSTSEndpoint is the base URL of the production Equinix Security Token
+// Service (stsv1alpha).
+const DefaultSTSEndpoint = "https://sts.eqix.equinix.com"
+
+// EndpointKey is the config key (and, via viper.AutomaticEnv, the
+// EQUINIX_API_ENDPOINT environment variable) that overrides DefaultEndpoint.
+const EndpointKey = "equinix_api_endpoint"
+
+// STSEndpointKey is the config key (and EQUINIX_STS_ENDPOINT environment
+// variable) that overrides DefaultSTSEndpoint.
+const STSEndpointKey = "equinix_sts_endpoint"
+
+func configuredURL(key, def string) string {
+	if e := strings.TrimRight(viper.GetString(key), "/"); e != "" {
+		return e
+	}
+	return def
+}
+
+// Endpoint returns the configured API base URL, or DefaultEndpoint.
+func Endpoint() string { return configuredURL(EndpointKey, DefaultEndpoint) }
+
+// STSEndpoint returns the configured STS base URL, or DefaultSTSEndpoint.
+func STSEndpoint() string { return configuredURL(STSEndpointKey, DefaultSTSEndpoint) }
+
+// IsDefaultEndpoint reports whether endpoint points at api.equinix.com.
+func IsDefaultEndpoint(endpoint string) bool {
+	u, err := url.Parse(endpoint)
+	return err == nil && u.Hostname() == "api.equinix.com"
+}
+
+// endpointTransport sends requests the SDKs build for a production host to a
+// configured endpoint instead, so every service follows EQUINIX_API_ENDPOINT
+// and EQUINIX_STS_ENDPOINT without each one having to override its server
+// list.
+type endpointTransport struct {
+	targets   map[string]*url.URL // production host -> replacement base URL
+	transport http.RoundTripper
+}
+
+func (t *endpointTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	if target, ok := t.targets[req.URL.Host]; ok {
+		req = req.Clone(req.Context())
+		req.URL.Scheme = target.Scheme
+		req.URL.Host = target.Host
+		req.URL.Path = strings.TrimRight(target.Path, "/") + req.URL.Path
+		req.Host = ""
+	}
+	return t.transport.RoundTrip(req)
+}
+
+// endpointTargets returns the hosts whose requests should be redirected,
+// keyed by production host.
+func endpointTargets() (map[string]*url.URL, error) {
+	targets := map[string]*url.URL{}
+	for _, e := range []struct{ key, def, configured string }{
+		{EndpointKey, DefaultEndpoint, Endpoint()},
+		{STSEndpointKey, DefaultSTSEndpoint, STSEndpoint()},
+	} {
+		if e.configured == e.def {
+			continue
+		}
+		target, err := url.Parse(e.configured)
+		if err != nil || target.Scheme == "" || target.Host == "" {
+			return nil, fmt.Errorf("invalid %s %q", e.key, e.configured)
+		}
+		def, _ := url.Parse(e.def)
+		targets[def.Host] = target
+	}
+	return targets, nil
+}
+
 // NewStandardClient creates a new Client for Equinix APIs that exist under
-// api.equinix.com and use OAuth2 client credentials for authentication
+// api.equinix.com (or EQUINIX_API_ENDPOINT), or sts.eqix.equinix.com (or
+// EQUINIX_STS_ENDPOINT), and use OAuth2 client credentials
+// for authentication
 func NewStandardClient(options ...ClientOption) (*Client, error) {
 	client := &Client{
-		BaseURL:    "https://api.equinix.com",
+		BaseURL:    Endpoint(),
 		HTTPClient: &http.Client{},
 	}
 
@@ -108,6 +186,13 @@ func NewStandardClient(options ...ClientOption) (*Client, error) {
 
 	// Apply options to potentially wrap the transport
 	transport := http.RoundTripper(authTransport)
+	targets, err := endpointTargets()
+	if err != nil {
+		return nil, err
+	}
+	if len(targets) > 0 {
+		transport = &endpointTransport{targets: targets, transport: transport}
+	}
 	for _, opt := range options {
 		transport = opt(transport)
 	}

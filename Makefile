@@ -1,4 +1,4 @@
-.PHONY: lint fix build docs docs-check onboard update
+.PHONY: lint fix test build docs docs-check onboard update
 BINARY=equinix
 
 GOLANGCI_LINT_VERSION=v2.3.0
@@ -9,6 +9,9 @@ lint:
 
 fix:
 	$(GOLANGCI_LINT) run -v --fix
+
+test:
+	go test -count=1 ./...
 
 build:
 	go build $(LDFLAGS) -o bin/$(BINARY) main.go

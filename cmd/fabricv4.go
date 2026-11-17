@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/equinix/cli/internal/fabricv4"
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/spf13/cobra"
 )
@@ -17,13 +18,15 @@ var fabricv4Debug bool
 //go:embed descriptions/fabricv4.json
 var fabricv4Descriptions []byte
 
-// fabricv4Cmd represents the fabricv4 command
+// fabricv4Cmd represents the fabricv4 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var fabricv4Cmd = &cobra.Command{
-	Use:   "fabricv4",
-	Short: "Manage Equinix fauricv4 resources",
-	Long: `Commands for managing Equinix fauricv4 resources.
+	Use:     naming.CanonicalServiceName("fabricv4"),
+	Aliases: naming.ServiceAliases("fabricv4"),
+	Short:   "Manage Equinix fabricv4 resources",
+	Long: `Commands for managing Equinix fabricv4 resources.
 
-The fabricv4 commands are dynamically generated based on the fauricv4 API client,
+The fabricv4 commands are dynamically generated based on the fabricv4 API client,
 providing access to all available API services.`,
 	PersistentPreRun: func(cmd *cobra.Command, _ []string) {
 		// Inject the client factory into the command context so that
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register fabricv4 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// fabricv4Cmd.Aliases = []string{"fabric"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := fabricv4Cmd.Find([]string{"connections"}); err == nil {

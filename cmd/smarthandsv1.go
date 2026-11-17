@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/equinix/cli/internal/naming"
 	"github.com/equinix/cli/internal/register"
 	"github.com/equinix/cli/internal/smarthandsv1"
 	"github.com/spf13/cobra"
@@ -17,10 +18,12 @@ var smarthandsv1Debug bool
 //go:embed descriptions/smarthandsv1.json
 var smarthandsv1Descriptions []byte
 
-// smarthandsv1Cmd represents the smarthandsv1 command
+// smarthandsv1Cmd represents the smarthandsv1 command. It is named after the
+// canonical service name, with the versioned API name kept as an alias.
 var smarthandsv1Cmd = &cobra.Command{
-	Use:   "smarthandsv1",
-	Short: "Manage Equinix smarthandsv1 resources",
+	Use:     naming.CanonicalServiceName("smarthandsv1"),
+	Aliases: naming.ServiceAliases("smarthandsv1"),
+	Short:   "Manage Equinix smarthandsv1 resources",
 	Long: `Commands for managing Equinix smarthandsv1 resources.
 
 The smarthandsv1 commands are dynamically generated based on the smarthandsv1 API client,
@@ -67,9 +70,8 @@ func init() {
 		fmt.Fprintf(os.Stderr, "Warning: Failed to register smarthandsv1 commands: %v\n", err)
 	}
 
-	// Uncomment and customize aliases as needed for convenience
-	// Example: Add shorter aliases for commonly used commands
-	// smarthandsv1Cmd.Aliases = []string{"smarthands"}
+	// The versioned API name is already registered as an alias of the
+	// canonical command name; add further aliases here as needed.
 	//
 	// Or add aliases to specific subcommands after registration:
 	// if connectionsCmd, _, err := smarthandsv1Cmd.Find([]string{"connections"}); err == nil {

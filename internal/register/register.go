@@ -50,7 +50,7 @@ func ServiceCommands(parentCmd *cobra.Command, client APIClientInterface, _ stri
 	}
 
 	clientValue := reflect.ValueOf(client)
-	if clientValue.Kind() == reflect.Ptr {
+	if clientValue.Kind() == reflect.Pointer {
 		clientValue = clientValue.Elem()
 	}
 
@@ -260,7 +260,7 @@ func getServiceNameFromType(service interface{}) string {
 // getServiceFromClient extracts a service field from the client by service name
 func getServiceFromClient(client interface{}, serviceName string) interface{} {
 	clientValue := reflect.ValueOf(client)
-	if clientValue.Kind() == reflect.Ptr {
+	if clientValue.Kind() == reflect.Pointer {
 		clientValue = clientValue.Elem()
 	}
 
@@ -579,7 +579,7 @@ func getParamNameFromPosition(method reflect.Method, position int, paramDescript
 // getValueFromFlag retrieves a flag value and converts it to the target type
 func getValueFromFlag(cmd *cobra.Command, flagName string, targetType reflect.Type) reflect.Value {
 	// Handle pointer types
-	isPtr := targetType.Kind() == reflect.Ptr
+	isPtr := targetType.Kind() == reflect.Pointer
 	if isPtr {
 		targetType = targetType.Elem()
 	}
@@ -653,7 +653,7 @@ func buildStructFromFlags(cmd *cobra.Command, prefix string, structType reflect.
 
 		// Get the field type
 		fieldType := field.Type
-		isPtr := fieldType.Kind() == reflect.Ptr
+		isPtr := fieldType.Kind() == reflect.Pointer
 		if isPtr {
 			fieldType = fieldType.Elem()
 		}
@@ -723,7 +723,7 @@ func parseJSONToType(jsonStr string, targetType reflect.Type) reflect.Value {
 // convertStringToType converts a string to the target type
 func convertStringToType(value string, targetType reflect.Type) reflect.Value {
 	// Handle pointer types
-	if targetType.Kind() == reflect.Ptr {
+	if targetType.Kind() == reflect.Pointer {
 		targetType = targetType.Elem()
 	}
 
@@ -779,7 +779,7 @@ func applyFlagsToRequestBuilder(cmd *cobra.Command, requestBuilder reflect.Value
 			var paramValue reflect.Value
 
 			// Handle pointer types
-			isPtr := paramType.Kind() == reflect.Ptr
+			isPtr := paramType.Kind() == reflect.Pointer
 			actualType := paramType
 			if isPtr {
 				actualType = paramType.Elem()
@@ -867,7 +867,7 @@ func applyJSONToRequestBuilder(requestBuilder reflect.Value, jsonData map[string
 // convertJSONValueToType converts a JSON value to a reflect.Value of the target type
 func convertJSONValueToType(jsonValue interface{}, targetType reflect.Type) reflect.Value {
 	// Handle pointer types
-	if targetType.Kind() == reflect.Ptr {
+	if targetType.Kind() == reflect.Pointer {
 		targetType = targetType.Elem()
 	}
 
@@ -912,9 +912,9 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 	if builderType.NumOut() > 0 {
 		returnType := builderType.Out(0)
 		// Check if the return type has setter methods that suggest request body fields
-		if returnType.Kind() == reflect.Struct || (returnType.Kind() == reflect.Ptr && returnType.Elem().Kind() == reflect.Struct) {
+		if returnType.Kind() == reflect.Struct || (returnType.Kind() == reflect.Pointer && returnType.Elem().Kind() == reflect.Struct) {
 			actualType := returnType
-			if returnType.Kind() == reflect.Ptr {
+			if returnType.Kind() == reflect.Pointer {
 				actualType = returnType.Elem()
 			}
 
@@ -978,7 +978,7 @@ func registerBuilderMethodFlags(cmd *cobra.Command, builderMethod reflect.Method
 func addSetterFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type, _ reflect.Method, sdkDescription string) {
 	// Setter parameters are always optional by definition
 	// Handle pointer types
-	if paramType.Kind() == reflect.Ptr {
+	if paramType.Kind() == reflect.Pointer {
 		paramType = paramType.Elem()
 	}
 
@@ -1013,7 +1013,7 @@ func addSetterFlagForType(cmd *cobra.Command, paramName string, paramType reflec
 // addBuilderFlagForType adds an appropriate flag for a builder method parameter
 func addBuilderFlagForType(cmd *cobra.Command, paramName string, paramType reflect.Type, _ reflect.Method, sdkDescription string) {
 	// Handle pointer types
-	isOptional := paramType.Kind() == reflect.Ptr
+	isOptional := paramType.Kind() == reflect.Pointer
 	if isOptional {
 		paramType = paramType.Elem()
 	}
@@ -1133,9 +1133,9 @@ func expandStructFieldsWithDepth(cmd *cobra.Command, prefix string, structType r
 
 		// Determine if field is optional (pointer or has omitempty)
 		fieldType := field.Type
-		isOptional := parentOptional || fieldType.Kind() == reflect.Ptr || strings.Contains(jsonTag, "omitempty")
+		isOptional := parentOptional || fieldType.Kind() == reflect.Pointer || strings.Contains(jsonTag, "omitempty")
 
-		if fieldType.Kind() == reflect.Ptr {
+		if fieldType.Kind() == reflect.Pointer {
 			fieldType = fieldType.Elem()
 		}
 
@@ -1195,7 +1195,7 @@ func GetServiceList(client APIClientInterface) ([]ServiceInfo, error) {
 	}
 
 	clientValue := reflect.ValueOf(client)
-	if clientValue.Kind() == reflect.Ptr {
+	if clientValue.Kind() == reflect.Pointer {
 		clientValue = clientValue.Elem()
 	}
 

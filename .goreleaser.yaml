@@ -5,6 +5,7 @@ version: 2
 before:
   hooks:
     - go mod tidy
+    - sh -c 'mkdir -p completions && for shell in bash zsh fish; do go run . completion "$shell" > "completions/equinix.$shell"; done'
 builds:
   - main: ./main.go
     env:
@@ -28,6 +29,7 @@ archives:
     name_template: "equinix-{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
     files:
       - LICENSE
+      - completions/*
 checksum:
   name_template: "equinix_{{ .Version }}_checksums.txt"
 release:
@@ -38,6 +40,10 @@ homebrew_casks:
     homepage: "https://docs.equinix.com/"
     description: "Official Equinix CLI"
     license: "MIT"
+    completions:
+      bash: completions/equinix.bash
+      zsh: completions/equinix.zsh
+      fish: completions/equinix.fish
     commit_msg_template: "Brew formula update for equinix version {{ .Tag }}"
     hooks:
       post:

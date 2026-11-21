@@ -65,3 +65,39 @@ func TestE2E_APINonJSONResponseIsPrintedAsIs(t *testing.T) {
 		t.Errorf("output = %q, want %q", out, "OK\n")
 	}
 }
+
+// An unknown --format used to make the request and print a blank line.
+func TestE2E_APIRejectsUnknownFormat(t *testing.T) {
+	var requests int
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		requests++
+		w.Header().Set("Content-Type", "application/json")
+		_ = json.NewEncoder(w).Encode(map[string]string{
+			"access_token":  "fake-token",
+			"token_timeout": "3600",
+			"token_type":    "Bearer",
+			"user_name":     "fake-user",
+			"id":            "abc",
+		})
+	}))
+	t.Cleanup(srv.Close)
+	target, err := url.Parse(srv.URL)
+	if err != nil {
+		t.Fatal(err)
+	}
+	orig := http.DefaultTransport
+	http.DefaultTransport = redirectTransport{target: target, base: orig}
+	t.Cleanup(func() { http.DefaultTransport = orig })
+	t.Cleanup(func() { format = "json" })
+
+	out, err := runCLI(t, "api", "fabric/v4/ports", "--format", "xml")
+	if err == nil {
+		t.Fatalf("command succeeded with --format xml, output %q", out)
+	}
+	if want := `invalid --format "xml": must be json or yaml`; err.Error() != want {
+		t.Errorf("error = %q, want %q", err, want)
+	}
+	if requests != 0 {
+		t.Errorf("made %d API requests, want none", requests)
+	}
+}

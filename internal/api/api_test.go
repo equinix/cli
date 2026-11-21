@@ -2,6 +2,7 @@ package api
 
 import (
 	"net/http"
+	"net/http/httptest"
 	"testing"
 
 	"github.com/spf13/viper"
@@ -75,5 +76,31 @@ func TestEndpointTargetsInvalid(t *testing.T) {
 	viper.Set(STSEndpointKey, "mocksts.example.com")
 	if _, err := endpointTargets(); err == nil {
 		t.Error("expected an error for an endpoint without a scheme")
+	}
+}
+
+func TestRequestKeepsErrorBody(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		switch r.URL.Path {
+		case "/fabric/v4/ports/missing":
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusNotFound)
+			_, _ = w.Write([]byte(`[{"errorCode":"EQ-3142102","errorMessage":"Port not found"}]` + "\n"))
+		default:
+			w.WriteHeader(http.StatusBadGateway)
+		}
+	}))
+	t.Cleanup(srv.Close)
+	c := &Client{BaseURL: srv.URL, HTTPClient: srv.Client()}
+
+	_, err := c.Request("fabric/v4/ports/missing", http.MethodGet, "")
+	want := `API error: 404 Not Found: [{"errorCode":"EQ-3142102","errorMessage":"Port not found"}]`
+	if err == nil || err.Error() != want {
+		t.Errorf("error = %v, want %q", err, want)
+	}
+
+	_, err = c.Request("fabric/v4/other", http.MethodGet, "")
+	if want := "API error: 502 Bad Gateway"; err == nil || err.Error() != want {
+		t.Errorf("error = %v, want %q", err, want)
 	}
 }

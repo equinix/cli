@@ -7,6 +7,7 @@
 package api
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"io"
@@ -280,6 +281,12 @@ func (c *Client) Request(apiPath, method string, data string) ([]byte, error) {
 	}()
 
 	if resp.StatusCode >= 400 {
+		// The error body (code, message, field details) is the useful part
+		// of the response, so keep it in the error.
+		body, _ := io.ReadAll(resp.Body)
+		if msg := bytes.TrimSpace(body); len(msg) > 0 {
+			return nil, fmt.Errorf("API error: %s: %s", resp.Status, msg)
+		}
 		return nil, fmt.Errorf("API error: %s", resp.Status)
 	}
 	return io.ReadAll(resp.Body)

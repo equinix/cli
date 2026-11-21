@@ -23,6 +23,13 @@ var apiCmd = &cobra.Command{
 	Short: "Make a raw API request to the given Equinix API path",
 	Long:  `Make a raw authenticated request to the Equinix API using your configured credentials.`,
 	Args:  cobra.ExactArgs(1),
+	PreRunE: func(_ *cobra.Command, _ []string) error {
+		switch format {
+		case "json", "yaml":
+			return nil
+		}
+		return fmt.Errorf("invalid --format %q: must be json or yaml", format)
+	},
 	Run: func(_ *cobra.Command, args []string) {
 		path := args[0]
 

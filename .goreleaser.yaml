@@ -47,9 +47,9 @@ homebrew_casks:
     commit_msg_template: "Brew formula update for equinix version {{ .Tag }}"
     hooks:
       post:
-        install: |
-          if OS.mac?
-            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/equinix"]
+        install_steps: |
+          on_macos do
+            run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{ .StagedPath }}/equinix"]
           end
     repository:
       owner: equinix
